@@ -2,36 +2,47 @@
 layout: default
 title: Home
 ---
+<link rel="stylesheet" href="public/css/treeData.min.css">
+<style>
+  .content{
+    padding: 0;
+    margin: 0;
+  }
+  #tree{
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+</style>
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url | absolute_url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<div id="tree"></div>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+<script src="public/js/treeData.js"></script>
+<script type="text/javascript"> 
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ '/' | absolute_url }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | absolute_url }}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+  var tree = {
+       1 : {value : "Introduction to Model Rocketry", href : "/intro/", parent : ""},
+       2 : {value : "Sensor Theory", href : "/s-theory/", parent : "1"},
+       3 : {value : "Sensor Communication", href : "/s-comm/", parent : "2"},
+       4 : {value : "Sensor Processing", href : "/s-proc/", parent : "3"},
+       5 : {value : "Sensor Fusion", href : "/s-fusion/", parent : "4"},
+       6 : {value : "Control Theory", href : "/c-theory/", parent : "2"},
+       7 : {value : "PID Control", href : "/pid/", parent : "6"},
+       8 : {value : "Step Chain", href : "/setp-chain/", parent : "6"},
+       9 : {value : "Flight Mechanics", href : "/flight-mec/", parent : "1"},
+       10 : {value : "CAD Design for Rocketry", href : "/cad/", parent : "9"},
+       11 : {value : "3D Printing", href : "/3d/", parent : "10"},
+       12 : {value : "Electronics Integration", href : "/elec-int/", parent : "11"},
+       13 : {value : "Parachute System", href : "/parachute/", parent : "11"},
+       14 : {value : "Thrust Vector Control", href : "/tvc/", parent : "11"},
+       15 : {value : "Flight Safety", href : "/safety/", parent : "9"},
+       16 : {value : "Telemetry", href : "/telemetry/", parent : "15"},
+       17 : {value : "Flight", href : "/flight/", parent : "16"},
+       18 : {value : "Data Analysis", href : "/analysis/", parent : "17"},
+       19 : {value : "Electronics Design", href : "/elec-design/", parent : "1"},
+       20 : {value : "Stack Extensions", href : "/extensions/", parent : "19"},
+  };
+  
+  TreeData(tree, "#tree");
+  
+  </script>
