@@ -14,8 +14,12 @@ Des is a ~~test~~ seitn
 ### Bilder
 
 ![](/assets/images/Test.svg)
-
+![](/assets/images/Buffalo%20L%20ascent%20configuration.jpg)
 ### Tables
+![[DSC00747.jpg]]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LRCEFE33eys?si=59FWeKCvFPn9ruj-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 
 | Z1S1  | Z1S2  | fasf   |
 | ----- | ----- | ------ |
