@@ -3,19 +3,52 @@ layout: page
 title: Electronics Design
 permalink: elec-design
 ---
-## Level 1 - Printed Circuit Boards
+## Level  1 - Getting to know the Rocketree Flightcomputer
 
-## Level 2 - Microcontroller
+### Overview
+Rocketree CORE, FUSION, and OUT
 
-## Level 3 - Sensors 
+### Rocketree CORE
+SD Card
+ESP32
 
-## Level 4 - Outputs
+### Rocketree FUSION
+BMI088
+BMP388
+STM32F7 
 
-## Level 5 - Schematic
+### Rocketree OUT
+Pyro Channels 
+Servo Ports
+STM32G0
 
-## Level 6 - Layout
+### Rocketree Connect 
+I2C
 
-## Level 7 - Routing
+
+### Activity 1
+
+
+
+
+
+
+
+
+
+## Level 2 - Printed Circuit Boards
+
+## Level 3 - Microcontroller
+
+## Level 4 - Sensors 
+
+## Level 5 - Outputs
+
+## Level 6 - Schematic
+
+## Level 7 - Layout
+
+## Level 8 - Routing
 
 
 - [ ] Milk
