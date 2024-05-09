@@ -63,13 +63,23 @@ Therefore, our rockets shall be designed in a way
 - to reduce the front facing aera as much as possible. 
 - and to feature an optimized aerodynamic shape to reduce the drag coefficient.
 
-This is why most rockets, enclose all mechanisms, wires, and parts inside, feature smooth outisde surfaces, and have a cone-shaped rocket tip. 
-
-### Stability
-
-
+This is why most rockets, enclose all mechanisms, wires, and parts inside, feature smooth outside surfaces, and have a cone-shaped rocket tip. 
 
 ### Thrust
+
+Now we know which forces will act on our vehicle. 
+In order for the vehicle to lift-off, these forces must be overcome by the thrust force that the rocket creates with its engine. 
+
+In the case of model rockets, solid rocket motor are used. These are comparable to the engine of a fireworks rocket. Once they are ignited, they burn until no full is left. 
+
+These engines are bought online, and classified into different classes. Ranging from an A class engine all the way to O. The higher the letter in the alphabet the higher the total impulse will be. 
+The total impulse is the area under the motor's thrust over the burn time.
+
+An A-class engine, for example, has a total impulse bwetw1.26 to 2.5 Ns.
+
+
+
+
 
 Conventional model rocketry → passive stabilization (aerodynamic shape), and parachute deployment (mechanical system, or electronics system), sometimes data logger to estimate reached altitude. 
 Most of the time only the aerodynamic shape is created 
