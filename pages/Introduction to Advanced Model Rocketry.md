@@ -111,17 +111,17 @@ Table 3:
 | FrSky Archer Plus RS | 24 €           |
 | Total                | 260 €          |
 
-| Product                                     | Description                 | Price to be sold at |
-| ------------------------------------------- | --------------------------- | ------------------- |
-| Rocketree OUT                               | Single board                | 19 €                |
-| Rocketree FUSION                            | Single board                | 49 €                |
-| Rocketree CORE                              | Single board                | 79 €                |
-| Rocketree Rocket Pack                       | 3D printed model rocket     | 109 €               |
-| **Rocketree Electronics and Software Pack** | Table 1                     | 249 €               |
-| **Rocketree Starter Pack**                  | Table 1 + Table 2           | 349 €               |
-| Rocketree RC Extension                      | Table 3                     | 299 €               |
-| Rocketree Ultimate Pack                     | Table 1 + Table 2 + Table 3 | 599 €               |
-| Rocketree Classroom Pack                    | 3x Rocketree Starter Pack   | 999 €               |
+| Product                                   | Description                 | Price to be sold at |
+| ----------------------------------------- | --------------------------- | ------------------- |
+| Rocketree OUT                             | Single board                | 19 €                |
+| Rocketree FUSION                          | Single board                | 49 €                |
+| Rocketree CORE                            | Single board                | 79 €                |
+| Rocketree Rocket Pack                     | 3D printed model rocket     | 109 €               |
+| **Rocketree Electronics & Software Pack** | Table 1                     | 249 €               |
+| **Rocketree Starter Pack**                | Table 1 + Table 2           | 349 €               |
+| Rocketree RC Extension                    | Table 3                     | 299 €               |
+| Rocketree Ultimate Pack                   | Table 1 + Table 2 + Table 3 | 599 €               |
+| Rocketree Classroom Pack                  | 3x Rocketree Starter Pack   | 999 €               |
 
 
 
