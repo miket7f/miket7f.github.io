@@ -8,15 +8,26 @@ Estimated time: 1h
 ## Level 1 - Model Rocketry 
 People all over the world are building and launching model rockets. 
 
-In conventional model rocketry, usually a rocket must only accomplish two goals: reach a certain altitude and a recover successfully. 
+In conventional model rocketry, a rocket must only accomplish two goals: reach a certain altitude and recover successfully. 
 
 The reached altitude is largely dependent on the following three aspects: the engine, the weight, and the aerodynamic shape of the vehicle. So, in conventional model rocketry, these three aspects must be matched to the mission that should be accomplished.
 ### Weight
+One of the main challenges of aerospace engineering, is to create systems that are light enough to still be able to lift-off. 
 
+As you probably know: 
+On Earth there is a force created by the weight that is called 
 
+$F = g * m$
+
+$F = G*\dfrac{m_1*m_2}{r}$
 
 ### Thrust
+
+
+
 ### Drag & Stability 
+
+
 
 
 
