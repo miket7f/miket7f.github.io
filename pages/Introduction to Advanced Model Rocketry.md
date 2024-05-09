@@ -105,8 +105,9 @@ Real rockets, almost never solely utilize passive stabilization, as their TTWR i
 This is where advanced model rocketry comes into play. It tries to implement concepts, mechanisms, and systems that are used in the real aerospace industry. This results in more complex model rockets, enabling aerospace enthusiasts to learn the concepts of real rocketry while working at the affordable model rocket scale. 
 
 An ambitious goal like this requires many more project aspects and skill sets than conventional model rockets do. These will be described in [Level 3 - Areas of expertise in Advanced Model Rocketry]
-## Level 2  - Passively vs actively stabilized flight
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZKGJ7PqF6NQ?si=zfisWgye1aUtQOLB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+## Level 2 - Passively vs actively stabilized flight
 
 ## Level 3 - Areas of expertise in Advanced Model Rocketry
 
