@@ -29,7 +29,7 @@ If the physical design of the rocket is done, the proper engine is selected, and
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wfUrUc6JtHw?si=hJ_v5sFWVHvJLoUD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Advanced Model Rocketry
+### Real Rocketry
 
 Conventional model rocketry, is certainly a fun endeavor and relatively easy to do. However, it has almost nothing to do with the real deal.
 
@@ -39,9 +39,21 @@ For a rocket to escape Earth, it must enter Earth's orbit. Orbit insertion can o
 
 To do so, electronics system, advanced software, and complex physical systems are incorporated inside each and every launch vehicle. 
 
-**Advanced model rocketry** takes model rocketry a step further, by implementing  these concepts into miniaturized rockets. It enables aerospace enthusiasts to learn the concepts of real rocketry while working at the affordable model rocket scale. 
+### Advanced Model Rocketry
+In **advanced model rocketry** the above mentioned concepts are implemented at the miniature scale, enabling aerospace enthusiasts to learn real aerospace concepts at an affordable scale. 
 
 ![](/assets/images/DSC_0019.jpg)
+
+With it the possibilities are endless, and there is no roof which could limit ambitious goals. BPS space, for example, simulated a Falcon Heavy flight with booster separation and active stabilization at the model rocket scale. While BPS space and TTB Aerospace both accomplished a propulsive landing just like SpaceX. Again other build the world's lightest thrust vector control model rocket (JM Space). 
+
+BPS Space - Falcon Heavy Flight 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QQt-9SSJ51c?si=4i4WCLzYsMDAbKZr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+TTB Aerospace - Propulsive Landing 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1GanrexRyVY?si=0dlvtpG1x3V514Lx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+JM Space - Lightest Thrust Vector Controlled Model Rocket
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VAYQdZdDQqg?si=aQCZFwezD-x88Zdt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Level 2 - Areas of Knowledge
 
