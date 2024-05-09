@@ -110,13 +110,14 @@ Select the class of the solid rocket engine that would be required for the lunar
 | N            | 10,240 - 20,480    |
 | O            | 20,480 - 40,960    |
 | P            | 40,960 - 81920     |
-## Level 2 - Passively vs actively stabilized flight
+## Level 2 - Flight Stability 
 ### Center of gravity
 ### Center of pressure
 ### Passive stability
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/H0uI2ab52DE?si=BxVhyr2O4vzXRvdw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Fins
-### Active stabilization
-#### Thrust Vector Control
-#### Other Systems
+
+## Level 3 - Active Stabilization
+### Thrust Vector Control
+### Other Systems

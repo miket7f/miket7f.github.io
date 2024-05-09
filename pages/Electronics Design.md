@@ -26,32 +26,26 @@ STM32G0
 I2C
 
 
-### Activity 1
-
-
-
-
-
-
-
-
-
 ## Level 2 - Printed Circuit Boards
 
+### Schematic
+
+### Layout
+
+### Routing
+
 ## Level 3 - Microcontroller
+### ESP32
+### STM32
 
 ## Level 4 - Sensors 
 
+### Gyroscope 
+### Accelerometer
+### Barometer
+
 ## Level 5 - Outputs
 
-## Level 6 - Schematic
+### Pyro Channel
+### Servos
 
-## Level 7 - Layout
-
-## Level 8 - Routing
-
-
-- [ ] Milk
-- [ ] Bread
-- [ ] Taste
-- [ ] Blabla 
