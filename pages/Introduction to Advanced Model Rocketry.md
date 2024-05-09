@@ -8,9 +8,10 @@ Estimated time: 1h
 ## Level 1 - Model Rocketry 
 People all over the world are building and launching model rockets. 
 
-In conventional model rocketry, a rocket must only accomplish two goals: reach a certain altitude and recover successfully. 
+In conventional model rocketry, the success of a model rocket launch is usually determined by the altitude that is reached. 
 
-The reached altitude is largely dependent on the following three aspects: the engine, the weight, and the aerodynamic shape of the vehicle. In rocketry, these three aspects must be matched to the mission that should be accomplished.
+The reached altitude is largely dependent on the following three aspects: the engine, the weight, and the aerodynamic shape of the vehicle. These aspects must be matched to each other for a conventional model rocket flight to be successful. 
+
 ### Weight
 As you probably know there is a force that is acting on every object on Earth that is called the gravitational force. 
 
@@ -42,7 +43,6 @@ This force depends on the masses of both bodies, as well as on the distance of t
 The formula also implies that the further our vehicle distances itself from Earth the less force it will have to overcome. 
 
 ### Drag 
-
 We have been lucky that our planet come with an atmosphere that provides oxygen, regulates our planet's temperature, and protects us from solar radiation. 
 
 Yet, when leaving Earth, it is the second obstacle that we have to overcome. 
@@ -66,26 +66,45 @@ Therefore, our rockets shall be designed in a way
 This is why most rockets, enclose all mechanisms, wires, and parts inside, feature smooth outside surfaces, and have a cone-shaped rocket tip. 
 
 ### Thrust
-
 Now we know which forces will act on our vehicle. 
-In order for the vehicle to lift-off, these forces must be overcome by the thrust force that the rocket creates with its engine. 
+In order for the vehicle to lift-off, these forces must be overcome by the thrust force that the rocket engine creates. 
 
 In the case of model rockets, solid rocket motor are used. These are comparable to the engine of a fireworks rocket. Once they are ignited, they burn until no full is left. 
 
-These engines are bought online, and classified into different classes. Ranging from an A class engine all the way to O. The higher the letter in the alphabet the higher the total impulse will be. 
-The total impulse is the area under the motor's thrust over the burn time.
+#### Engine Classification
+These engines are bought online and for every engine three characterisitics are usually given: thrust, burn time, and the thrust curve. 
 
-An A-class engine, for example, has a total impulse bwetw1.26 to 2.5 Ns.
+The thrust indicates the average force the rocket engine will provide. Logically, this force shall be greater than the gravitational force that acts on the vehicle. 
 
+The burn time indicates for how long the rocket motor will burn, which together with the thrust largely determines the altitude that can be reached with a certain engine. 
 
+And finally, there is the thrust curve that represents the thrust over the burn time to gain an understanding on how the thrust of the engine will change over the burn duration. 
 
+The area under the thrust curve is the total impulse. According to the total impulse solid rocket engines are classified from A all the way up to O.  The higher the letter in the alphabet the higher the total impulse will be. 
 
+An A-class engine, for example, has a total impulse between 1.26 to 2.5 Ns.
+There are multiple ways for a solid rocket engine to classify as A. 
+An engine that has thrust of 2.5 Newton for 1 second for example has the same total impulse, as an engine that has thrust of 1 Newton and burns for 2.5 seconds. 
 
-Conventional model rocketry → passive stabilization (aerodynamic shape), and parachute deployment (mechanical system, or electronics system), sometimes data logger to estimate reached altitude. 
-Most of the time only the aerodynamic shape is created 
-Altitude largely depends on the used class of engines and the weight of the vehicle
+Still it is important which engine to chose, because with one of them the rocket might lift-off, while with the other, the gravitational force would be too high. 
 
-This approach is very different to the real aerospace industry, and relatively easy to do. 
+#### Thrust to Weight Ratio
+This is where the thrust to weight ratio (TTWR) comes into play. 
+
+$TTWR = \dfrac{F_t}{F_g}$
+
+It indicates the ratio between the gravitational force to the thrust of the rocket engine. 
+If it is larger than one, the rocket is expected to lift off, and the higher the ratio is the faster the vehicle will accelerate. 
+
+### Stability 
+Model rocket enthusiasts usually chose short burning rocket engines over longer burning ones, as this results in a very high TTWR. If this ratio is high enough, passive stabilization can be achieved by adding fins to the rear end of the rocket. How passive stabilization exactly works will be described in [Level 2  - Passively vs actively stabilized flight].
+
+Real rockets, almost never solely utilize passive stabilization, as their TTWR is quite low at the beginning of the flight. Further, passive stabilization ceases to work in the upper layers of the atmosphere and allows for now active control. 
+
+### The case for Advanced Model Rocketry
+This is where advanced model rocketry comes into play. It tries to implement concepts, mechanisms, and systems that are used in the real aerospace industry. This results in more complex model rockets, enabling aerospace enthusiasts to learn the concepts of real rocketry while working at the affordable model rocket scale. 
+
+An ambitious goal like this requires many more project aspects and skill sets than conventional model rockets do. These will be described in [Level 3 - Areas of expertise in Advanced Model Rocketry]
 ## Level 2  - Passively vs actively stabilized flight
 
 
