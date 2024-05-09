@@ -96,18 +96,35 @@ $TTWR = \dfrac{F_t}{F_g}$
 It indicates the ratio between the gravitational force to the thrust of the rocket engine. 
 If it is larger than one, the rocket is expected to lift off, and the higher the ratio is the faster the vehicle will accelerate. 
 
-### Stability 
+### Activity 1
+Calculate the gravitational force that is acting on the Apollo lunar lander standing on the Moon. 
+
+$m_{Lander} = 14,696 kg$
+$m_{Moon}= 7.35*10^{22} kg$
+$r_{Moon} = 1,737.4km$
+
+### Activity 2
+Select the class of the solid rocket engine that would be required for the lunar lander to be able to hoover above the ground. Assume a burn time of around 1 second. 
+
+| Engine Class | Total impulse [Ns] |
+| ------------ | ------------------ |
+| M            | 5,120 - 10,240     |
+| N            | 10,240 - 20,480    |
+| O            | 20,480 - 40,960    |
+| P            | 40,960 - 81920     |
+
+## Level 2 - The Case for Advanced Model Rocketry 
 Model rocket enthusiasts usually chose short burning rocket engines over longer burning ones, as this results in a very high TTWR. If this ratio is high enough, passive stabilization can be achieved by adding fins to the rear end of the rocket. How passive stabilization exactly works will be described in [Level 2  - Passively vs actively stabilized flight].
 
 Real rockets, almost never solely utilize passive stabilization, as their TTWR is quite low at the beginning of the flight. Further, passive stabilization ceases to work in the upper layers of the atmosphere and allows for now active control. 
 
-### The case for Advanced Model Rocketry
 This is where advanced model rocketry comes into play. It tries to implement concepts, mechanisms, and systems that are used in the real aerospace industry. This results in more complex model rockets, enabling aerospace enthusiasts to learn the concepts of real rocketry while working at the affordable model rocket scale. 
 
 An ambitious goal like this requires many more project aspects and skill sets than conventional model rockets do. These will be described in [Level 3 - Areas of expertise in Advanced Model Rocketry]
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZKGJ7PqF6NQ?si=zfisWgye1aUtQOLB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-## Level 2 - Passively vs actively stabilized flight
+
+## Level 3 - Passively vs actively stabilized flight
 ### Center of gravity
 ### Center of pressure
 ### Passive stability
@@ -120,5 +137,5 @@ An ambitious goal like this requires many more project aspects and skill sets th
 
 
 
-## Level 3 - Areas of expertise in Advanced Model Rocketry
+## Level 4 - Areas of expertise in Advanced Model Rocketry
 
