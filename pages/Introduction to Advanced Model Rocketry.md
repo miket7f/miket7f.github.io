@@ -108,6 +108,17 @@ An ambitious goal like this requires many more project aspects and skill sets th
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZKGJ7PqF6NQ?si=zfisWgye1aUtQOLB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## Level 2 - Passively vs actively stabilized flight
+### Center of gravity
+### Center of pressure
+### Passive stability
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/H0uI2ab52DE?si=BxVhyr2O4vzXRvdw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+### Fins
+### Active stabilization
+#### Thrust Vector Control
+#### Other Systems
+
+
 
 ## Level 3 - Areas of expertise in Advanced Model Rocketry
 
