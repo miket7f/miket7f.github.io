@@ -133,10 +133,61 @@ Now, select the skill that sounds most interesting to you!
 - Rocket Flight
 
 ## Level 3 - Getting to know the hardware
+
+To make the use of Rocketree most convenient we provide you with products that make the start into advanced model rocketry more seamless.
+
+For each path and skill that follows you will build upon our products. 
+If, for example, you want to focus on software design, you will need a flight computer to program.
+If, on the other hand, you want to get insights into launching rockets, then you will need a physical model, a flight computer, and the according software. 
+By using our products you can focus on the skill you want to develop, without having to create all aspects of advanced model rocketry yourself. 
+
+We provide you with 
+- our flight computer system **Rocketree Stack**
+- our flight software **Rocketree OS**
+- our post-flight analysis tool **Rocketree Studio**
+- and our rocket **Buffalo**
+
+As you will work with those products, a lot, we want to briefly introduce you to them.
 ### Rocketree Stack
+Rocketree Stack is our newest flight computer system. 
+A flight computer has to carry out many different tasks, and most often those are united on a single PCB. However, our design is highly modular and splits the tasks across three different boards.
+
+Buffalo Stack: 
+![](/assets/images/DSC00751-2.jpg)
+
+One module runs the main flight software and handles telemetry, another one  provides readily processed sensor data, and yet another one controls the outputs.
+
+Resulting in
+- Rocketree CORE (upper module)
+- Rocketree FUSION (middle module)
+- Rocketree OUT (lower module)
+### Rocketree CORE
+Rocketree CORE is always required. It is powered by a LiPo battery and features the power management for the entire flight computer system. Further, it bears functionality to store flight data and embeds connectivity.
+### Rocketree FUSION
+Then, there is Rocketree  FUSION. Its task is to perform reliable state estimation and provide accurate position, velocity and attitude estimates to the CORE board for flight decisions and TVC.
+
+We achieve this by fusing IMU and barometer data in real-time using state-of-the-art sensor fusion algorithms. We also plan on incorporating GNSS signals into future versions of this board to facilitate longer flights with larger horizontal deviations from the launch site.
+
+The fusion module operates in different modes to fit the varying circumstances during different stages of the flight. E.g., in stationary mode, when the rocket sits still on the launch pad, the accelerometer is used to estimate the rocket’s attitude based on earth’s gravity since it is free of drift. However, during flight, gravity is not the only force acting on the rocket. So, attitude is primarily determined by integrating gyroscope readings. To mitigate the effects of drift and to define a reference altitude, all sensors are calibrated before flight.
+
+### Rocketree OUT
+The third board is the Buffalo OUT. This one incorporates pyro channels to trigger heating wires and electric ignitors, as well as servo ports to control the thrust vector control system.
+
+### Rocketree CONNECT
+The boards interface with each other via this stackable header that we call Rocketree CONNECT.
+Rocketree CONNECT, supplies battery voltage, regulated 5V, and regulated 3.3V from the CORE board to all the other sub-boards.
+
+Further this connector incorporates the communication interface “the I2C bus” where the CORE board is the MASTER.
+
+A total of 255 FUSION and OUT boards could be added to one CORE board, which makes its use cases almost endless.
+
+Regarding microcontrollers, the CORE board features the ESP32 to allow for Bluetooth and WiFi capabilities.
+
+### Rocketree OS
+### Rocketree Studio
 ### Buffalo
 
-### Rocketree Studio
+
 
 
 
