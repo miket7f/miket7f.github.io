@@ -44,7 +44,10 @@ In **advanced model rocketry** the above mentioned concepts are implemented at t
 
 ![](/assets/images/DSC_0019.jpg)
 
-With it the possibilities are endless, and there is no roof which could limit ambitious goals. BPS space, for example, simulated a Falcon Heavy flight with booster separation and active stabilization at the model rocket scale. While BPS space and TTB Aerospace both accomplished a propulsive landing just like SpaceX. Again other build the world's lightest thrust vector control model rocket (JM Space). 
+In advanced model rocketry the possibilities are endless, and there is no roof which could limit ambitious goals. BPS space, for example, simulated a Falcon Heavy flight with booster separation and active stabilization at the model rocket scale. While BPS space and TTB Aerospace both accomplished a propulsive landing just like SpaceX. Again other build the world's lightest thrust vector control model rocket (JM Space). 
+
+### Activity 1
+Watch one of the following three videos, so you get a sense of what advanced model rocketry means. 
 
 BPS Space - Falcon Heavy Flight 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QQt-9SSJ51c?si=4i4WCLzYsMDAbKZr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -56,72 +59,85 @@ JM Space - Lightest Thrust Vector Controlled Model Rocket
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VAYQdZdDQqg?si=aQCZFwezD-x88Zdt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Level 2 - Areas of Knowledge
+Now we know what advanced model rocketry is all about and that it opens up a whole new dimension of possibilities. 
 
+At the same time, it requires you to acquire a heap of knowledge and different skills to bring your visions to life. The set of skills required can be categorized into four different areas: physical, electronics, and software design, as well as rocket flight. 
 ### Physical Design
+The first skill you need is the ability to bring your concepts to life. 
+This is done by using a computer aided design software with which you can create a 3D model of your very own model rocket. 
+Inside a CAD design environment you create the aerodynamic shape of the vehicle and design and incorporate all the different mechanisms your rocket needs to succeed. 
+This 3D model can then be brought to life by either 3D printing the different parts or by creating a draft for conventional manufacturing of certain parts. 
+
+Here is the 3D model of our model rocket Buffalo L that is aimed at achieving a propulsive landing: 
+![](/assets/images/KS®4922013657.54.jpg)
+If you want to explore this skill further, then you can go down the physical design path of Rocketree, where you will learn everything you need to design your own mechanisms or rockets. 
 ### Electronics Design
+For a model rocket to be advanced, you certainly will need some sort of electronics system inside your rocket. 
+
+This electronics system will gather flight data and control the rocket's mechanisms.
+At its very basics you could use a Arduino based microcontroller and a breakout board to make your first flight computer. 
+
+However, when rocket models become more advanced, a printed circuit board (PCB) design is required. 
+And this will be another skill that you have to acquire. 
+
+To design your own PCB you will have to learn about 
+- the different electronics components
+- how to create your own circuits and schematics
+- the layout of your PCB
+- and the routing of PCB traces 
+
+The finished PCB design, can be ordered online at an affordable price point.
+
+To get an idea of what such a flight computer might look like we have provided a picture of Buffalo Rev. E - our flight computer that has successfully flown on our Buffalo L rocket:
+![](/assets/images/DSC_0014-2%201.jpg)
+In the electronics design path you will learn about the basic concepts of PCB design, and at the end you will be able to design your own extension board for the Rocketree flight computer. 
+
 ### Software Design 
-#### Control Theory
+Further, you need to give the hardware a set of instructions, so it can operate accordingly. 
+For that you will have to create code. 
+This is probably the most difficult aspect of advanced model rocketry, as there is no limit to what your rocket could be able to do.
 
+There are many different programming languages and environment with which you can give your hardware the instructions it needs.
 
-#### Sensor Theory
+If you want to create your own instructions, then the software design path is the route to choose. 
 
+At the beginning you will learn about the different programming environments with which you can program our devices, and then the path splits into sensor and control theory. 
+
+In the sensor theory path, you will learn about the function principles of the utilized sensors and how the information of them is gathered and processed. 
+
+In the control theory path, on the other hand, you will learn how to use this data that we acquire from our sensors to control our rocket according to our needs. You will learn about the basics, such as a state machine and PID control. 
+
+### Rocket Flight
+Finally, you will have to be aware of certain aerospace concepts when launching model rockets. 
+
+You will have to learn about the flight mechanics. So, you know which forces act on your vehicle and you want to know the difference between passive and active stabilization.
+
+When launching a rocket, you will also have to learn about safety procedures and flight preparations. 
+
+After you have launched a rocket, you want to know how you can analyze your flights. So, you can improve their performance for the better. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2pJX37a3xG8?si=lkFb2OVsGc7qsmWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+If you want to learn about flight dynamics, launch your a model rocket, and analyze your flight performance, then you should go down the rocket flight path. 
+ 
+### Activity 2
+So now that you know what areas of expertise in advanced model rocketry there are, you can select which area you want to learn more about. 
+
+With having completed Level 2 of "Introduction to Advanced Model Rocketry" you have now unlocked the next level in the tree. 
+
+Now, select the skill that sounds most interesting to you! 
+
+- Physical Design
+- Electronics Design
+- Software Design
+- Rocket Flight
 
 ## Level 3 - Getting to know the hardware
 ### Rocketree Stack
 ### Buffalo
+
 ### Rocketree Studio
 
-### Products
-
-
-Table 1:
-
-| Part                 | Price per Unit |
-| -------------------- | -------------- |
-| Rocketree CORE<br>   | 40 €           |
-| Rocketree FUSION     | 25 €           |
-| Rocketree OUT        | 10 €           |
-| Micro SD Card        | 4 €            |
-| Micro USB cable      | 5 €            |
-| STM32 ST-Link        | 9 €            |
-| LiPo battery <br>    | 20 €           |
-| LiPo battery charger | 30 €           |
-| Heating wire         | 6 €            |
-| Pyro extension cable | ?              |
-| Distance nuts M3     | ?              |
-| Total                | 149 €          |
-
-Table 2:
-
-| Part                                                           | Price per Unit |
-| -------------------------------------------------------------- | -------------- |
-| 3D printing filament                                           | 20 €           |
-| 2x MG90 servo                                                  | 6 €            |
-| M3x10 screws                                                   | ?              |
-| M3 nuts                                                        | ?              |
-| Servo screws                                                   | ?              |
-| Additional costs (current, <br>time to print, 3D printer wear) | 24 €           |
-| Total                                                          | 50 €           |
-
-Table 3:
-
-| Part                 | Price per Unit |
-| -------------------- | -------------- |
-| FrSky X9D Plus       | 236 €          |
-| FrSky Archer Plus RS | 24 €           |
-| Total                | 260 €          |
-
-| Product                                   | Description                 | Price to be sold at | Margin | Margin Percentage |
-| ----------------------------------------- | --------------------------- | ------------------- | ------ | ----------------- |
-| Rocketree OUT                             | Single board                | 19 €                | 9 €    | 47%               |
-| Rocketree FUSION                          | Single board                | 49 €                | 24 €   | 49%               |
-| Rocketree CORE                            | Single board                | 79 €                | 39 €   | 49%               |
-| Rocketree Rocket Pack                     | 3D printed model rocket     | 109 €               | 59 €   | 54%               |
-| **Rocketree Electronics & Software Pack** | Table 1                     | 249 €               | 100 €  | 40%               |
-| **Rocketree Starter Pack**                | Table 1 + Table 2           | 349 €               | 150 €  | 43%               |
-| Rocketree RC Extension                    | Table 3                     | 299 €               | 39 €   | 13%               |
-| Rocketree Ultimate Pack                   | Table 1 + Table 2 + Table 3 | 599 €               | 190 €  | 32%               |
-| Rocketree Classroom Pack                  | 3x Rocketree Starter Pack   | 999 €               | 402 €  | 40%               |
 
 
 
