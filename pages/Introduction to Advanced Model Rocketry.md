@@ -150,12 +150,12 @@ We provide you with
 As you will work with those products, a lot, we want to briefly introduce you to them.
 ### Rocketree Stack
 Rocketree Stack is our newest flight computer system. 
-A flight computer has to carry out many different tasks, and most often those are united on a single PCB. However, our design is highly modular and splits the tasks across three different boards.
+A flight computer has to carry out many different tasks, and most often those are united on a single PCB. However, our design is highly modular and splits the tasks across three or more different boards.
 
 Buffalo Stack: 
 ![](/assets/images/DSC00751-2.jpg)
 
-One module runs the main flight software and handles telemetry, another one  provides readily processed sensor data, and yet another one controls the outputs.
+One module runs the main flight software and handles telemetry, another one provides readily processed sensor data, and yet another controls the outputs.
 
 Resulting in
 - Rocketree CORE (upper module)
