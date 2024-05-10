@@ -164,7 +164,8 @@ Resulting in
 ### Rocketree CORE
 ![](/assets/images/Buffalo%20Stack%20-%20Core.81.jpg)Rocketree CORE is always required. It is powered by a LiPo battery and features the power management for the entire flight computer system. Further, it bears functionality to store flight data and embeds connectivity.
 ### Rocketree FUSION
-![](/assets/images/Buffalo%20Stack%20%20-%20Fusion.82.jpg)Then, there is Rocketree  FUSION. Its task is to perform reliable state estimation and provide accurate position, velocity and attitude estimates to the CORE board for flight decisions and TVC.
+![](/assets/images/Buffalo%20Stack%20%20-%20Fusion.82.jpg)
+Then, there is Rocketree  FUSION. Its task is to perform reliable state estimation and provide accurate position, velocity and attitude estimates to the CORE board for flight decisions and TVC.
 
 We achieve this by fusing IMU and barometer data in real-time using state-of-the-art sensor fusion algorithms. We also plan on incorporating GNSS signals into future versions of this board to facilitate longer flights with larger horizontal deviations from the launch site.
 
