@@ -162,16 +162,16 @@ Resulting in
 - Rocketree FUSION (middle module)
 - Rocketree OUT (lower module)
 ### Rocketree CORE
-Rocketree CORE is always required. It is powered by a LiPo battery and features the power management for the entire flight computer system. Further, it bears functionality to store flight data and embeds connectivity.
+![](/assets/images/Buffalo%20Stack%20-%20Core.81.jpg)Rocketree CORE is always required. It is powered by a LiPo battery and features the power management for the entire flight computer system. Further, it bears functionality to store flight data and embeds connectivity.
 ### Rocketree FUSION
-Then, there is Rocketree  FUSION. Its task is to perform reliable state estimation and provide accurate position, velocity and attitude estimates to the CORE board for flight decisions and TVC.
+![](/assets/images/Buffalo%20Stack%20%20-%20Fusion.82.jpg)Then, there is Rocketree  FUSION. Its task is to perform reliable state estimation and provide accurate position, velocity and attitude estimates to the CORE board for flight decisions and TVC.
 
 We achieve this by fusing IMU and barometer data in real-time using state-of-the-art sensor fusion algorithms. We also plan on incorporating GNSS signals into future versions of this board to facilitate longer flights with larger horizontal deviations from the launch site.
 
 The fusion module operates in different modes to fit the varying circumstances during different stages of the flight. E.g., in stationary mode, when the rocket sits still on the launch pad, the accelerometer is used to estimate the rocket’s attitude based on earth’s gravity since it is free of drift. However, during flight, gravity is not the only force acting on the rocket. So, attitude is primarily determined by integrating gyroscope readings. To mitigate the effects of drift and to define a reference altitude, all sensors are calibrated before flight.
 
 ### Rocketree OUT
-The third board is the Buffalo OUT. This one incorporates pyro channels to trigger heating wires and electric ignitors, as well as servo ports to control the thrust vector control system.
+![](/assets/images/Buffalo%20Stack%20-%20Out.83.jpg)The third board is the Buffalo OUT. This one incorporates pyro channels to trigger heating wires and electric ignitors, as well as servo ports to control the thrust vector control system.
 
 ### Rocketree CONNECT
 The boards interface with each other via this stackable header that we call Rocketree CONNECT.
