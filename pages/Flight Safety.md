@@ -4,21 +4,7 @@ title: Flight Safety
 permalink: safety
 ---
 Prerequisite: Level 3 - Flight Mechanics
-## Servus
+## Level 1 - General Safety Procedures
 
-Des is a ~~test~~ seitn
+## Level 2 - Country Specific Regulations
 
->Videos san a möglich
-
-<iframe style="width: 100%; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/e9AolB5W4UA?si=mCV5CpfVlKcIDPLX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-### Bilder
-
-![](/assets/images/Test.svg)
-
-### Tables
-
-| Z1S1  | Z1S2  | fasf   |
-| ----- | ----- | ------ |
-| Z2S1  | Z2S2  | sdfsaf |
-| sdfds | sfsdf | sadfs  |
