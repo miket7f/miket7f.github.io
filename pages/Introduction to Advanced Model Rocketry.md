@@ -120,7 +120,7 @@ After you have launched a rocket, you want to know how you can analyze your flig
 
 If you want to learn about flight dynamics, launch your a model rocket, and analyze your flight performance, then you should go down the rocket flight path. 
  
-### Activity 2
+### Activity 1
 So now that you know what areas of expertise in advanced model rocketry there are, you can select which area you want to learn more about. 
 
 With having completed Level 2 of "Introduction to Advanced Model Rocketry" you have now unlocked the next level in the tree. 
