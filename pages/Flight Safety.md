@@ -3,6 +3,7 @@ layout: page
 title: Flight Safety
 permalink: safety
 ---
+Prerequisite: Level 3 - Flight Mechanics
 ## Servus
 
 Des is a ~~test~~ seitn
