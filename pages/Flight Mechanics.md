@@ -195,6 +195,137 @@ Is this rocket configuration stable?
 If not determine the length of one side of the quadrat fin to create a stable configuration?
 - quadrat fins
 - four fins in total
+
 ## Level 3 - Active Stabilization
+In conventional model rocketry, flight stability is most often achieved by the means of passive stabilization.
+
+However, there a number of other ways with which an stable flight can be achieved. 
+
+For example, with active stabilization. 
+An actively stabilized rocket features a system that achieves stability with an effect other than the one described above. For a rocket stabilized with an active system, it is not necessarily required that the center of gravity is in front of the center of pressure. Most often rockets equipped with active stabilization, would be unstable without their stabilization system. 
+
+Active stabilization can take many forms, and most often adds control to the vehicle, such as the ability to control pitch and yaw vehicle.
 ### Thrust Vector Control
-### Other Systems
+One way to actively stabilize a rocket is thrust vector control. In this approach the engine is vectored to the rocket body. This is one of the most wide-used approaches of active stabilization in the industry. 
+
+
+![](/assets/images/7089805_orig.png)
+
+Normally, the rocket engine is perfectly inline with the symmetry axis of the rocket (second picture). Therefore, the rocket engine does not create a moment around the COG. 
+
+When the rocket's symmetry axis is out of sync with the direction of motion. The thrust vector control systems gimbals and moves the thrust force out of the symmetry axis of the rocket. 
+The normal component of the thrust force to the symmetry axis creates a moment around the COG. The effect of this moment is similar to the restoring moment described in the passive stabilization method. 
+
+Here is a video demonstrating how it works: 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mfP23FW-2pQ?si=wp2yYYCy7p2OurTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+And here is an article about it:
+https://en.wikipedia.org/wiki/Thrust_vectoring
+
+Compared to passive stabilization, thrust vectoring comes with a several benefits.
+
+First, it not only works at fast velocities, but also at very low TTWRs, as the created moment is dependent on the thrust force and not on the drag force. 
+
+Second, a resulting moment can also be created when the rocket flies perfectly stable. This way, the rocket's pitch and yaw orientation can be controlled. Precise pitch and yaw control, also allows for position and vertical velocity control. 
+
+Third, it works in space, as it does not require air resistance but only the force of the rocket engine. 
+
+However, thrust vectoring comes also with a disadvantage. It only works, as long as the rocket engine provides thrust. So, after engine burnout, this system stops working and other active stabilization systems must take over if control after engine burnout is crucial for the success of the mission. 
+### Prerequisites for TVC to work
+Another "disadvantage" is the complexity of a TVC system, as it requires the interplay of many different aspects for it to work.
+
+#### Determination of Orientation
+First, the rocket must utilize a flight computer to be able to evaluate the current orientation of the vehicle. If the rocket does not know how it is currently oriented, it will also not be able to determine how it must gimbal its engine to create the appropriate restoring moment. 
+
+#### Control Algorithm 
+Second, the rocket's operating system must incorporate some kind of control algorithm. As soon as the flight computer determines an offset in the desired orientation, this algorithm must come up with the ideal gimbal angle of the engine to restore the rocket to the desirable orientation. 
+
+If it would gimbal too much, the rocket orientation would overshoot, and if it gimbaled too little, the rocket would not reach the desired orientation. 
+
+#### TVC system
+Third, now the flight computer knows what orientation it has, what orientation it wants to have, and what the angle of the engine shall be. 
+
+However, it also needs a system that can vector the engine appropriately. This system must come with little to no play, with fast actuating speeds, and with enough structural rigidity to withstand the engine force. 
+
+#### Conclusion 
+Only if all three aspects
+- orientation evaluation 
+- control algorithm
+- and TVC system 
+
+work together seamlessly, active stabilization with thrust vectoring can be achieved. 
+As soon as one of them fails, the rocket will lose stability. 
+
+## Level 4 - Other Stabilization Methods 
+Of course there are more ways to stabilize a rocket. 
+In this level, you will learn about three more ways in which you could do so. 
+### Gyroscopic Effect 
+A second way to passively stabilize a rocket is by using the gyroscopic effect. 
+
+The gyroscopic effect describes the tendency of a spinning body to maintain a steady direction in the axis of its rotation:
+https://www.mechnflow.com/post/gyroscope-and-it-s-effect#:~:text=Gyroscopic%20effect%20is%20ability%20
+
+This effect can be utilized, by implementing a flywheel inside the rocket that spins around the roll axis. As long as this fly wheel spins, the roll axis has the tendency of wanting to remain steady, which means that during flight the rocket wants to remain upright. 
+### Reaction Control System
+The second way of actively stabilizing a rocket is by using thrusters on the rear and front end of the vehicle. 
+
+These thrusters are able to release gas. Depending on the system this gas can either be a hot or cold gas. The gas-release, repels the vehicle in the opposing direction, and depending on the gas impulse length and strength the orientation of the vehicle can be controlled.
+
+https://en.wikipedia.org/wiki/Reaction_control_system
+
+This system consists of a 
+- pressurized gas tank filled with, for example, CO2 or nitrogen 
+- several valves 
+- pressure wiring 
+- and nozzles.
+
+Especially, the gas tank and the valves make this system upmost difficult to realize in a miniature scale rocket. Small valves are very rare and if one manages to acquire some, they are either heavy, bad quality, or medical grade expensive. 
+
+Still, it is a cool concept to learn about and to keep in mind. 
+
+Here is a video about this concept from BPS space:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/10Pdl0Omet8?si=_YGA20P6WS4RcP0g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Moveable Fins
+The third way to actively stabilize a rocket is by using steerable fins. 
+
+This is a way of combining passive stabilization with active control. However, it comes with similar disadvantages as passive fin stabilization, as it only works in the atmosphere, won't work in space, and best works at high TTWR ratios. 
+
+In essence it works by tilting the fins at the rear end of the rocket. 
+By tilting the fins, the area of the fin in the direction of motion increases, which simultaneously increases the amount of drag. If we are looking at the front view of the rocket, the center of pressure wanders outside the center of the rocket body, which creates a moment about the pitch or yaw axis. 
+
+Usually, a four fin design is chosen. 
+By tilting two opposing fins in a way so they both face in the same direction, the pitch or the yaw axis can be controlled.  Additionally, by tilting all fins by the same amount, the roll axis of the vehicle can be controlled. 
+
+If roll, pitch, and yaw shall be controlled at the same time, it is very difficult to do as the interplay between those three motions is hard to grasp. Further, the amount of tilt required to control the rocket depends on the flying speed. So, the vehicle must accurately determine its speed in real time, and then adjust the fin tilt amount by the correct value. To get this kind of active stabilization right, an enormous amount of simulation work must be done beforehand. 
+
+Here is an example of a someone that achieved stabilization with fin control: 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/man5ag8Jl6s?si=aTpGdq9E9EB-LSCz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+### Activity 4
+Now that you learned about the different methods of stabilization, you will be able to solve this exercise:
+
+Name the appropriate stabilization method according to the given characteristics:
+
+Method 1:
+- active control possible
+- still stable without engine thrust 
+- simulation intensive
+
+Method 2:
+- functional in vacuum
+- usable without engine thrust 
+
+Method 3:
+- feasible in atmosphere
+- no active control 
+
+Method 4: 
+- COG must not be largely in front of COP
+- no active control
+
+Method 5: 
+- only works while rocket engine provides thrust
+
