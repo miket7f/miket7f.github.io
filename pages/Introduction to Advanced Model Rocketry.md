@@ -147,10 +147,10 @@ We provide you with
 - our post-flight analysis tool **Rocketree Studio**
 - and our rocket **Buffalo**
 
-Because you will work with those products, a lot, we want to briefly introduce you to them.
+Because you will work with those products a lot, we want to briefly introduce you to them.
 ### Rocketree Stack
 Rocketree Stack is our newest flight computer system. 
-A flight computer has to carry out many different tasks, and most often those are united on a single PCB. However, our design is highly modular and splits the tasks across three or more different boards.
+A flight computer has to carry out many different tasks and most often those are united on a single PCB. However, our design is highly modular and splits the tasks across three or more different boards.
 
 Buffalo Stack: 
 ![](/assets/images/DSC00751-2.jpg)
@@ -165,27 +165,17 @@ Resulting in
 ![](/assets/images/Buffalo%20Stack%20-%20Core.81.jpg)Rocketree CORE is always required. It is powered by a LiPo battery and features the power management for the entire flight computer system. Further, it bears functionality to store flight data and embeds connectivity.
 #### Rocketree FUSION
 ![](/assets/images/Buffalo%20Stack%20%20-%20Fusion.82.jpg)
-Then, there is Rocketree  FUSION. Its task is to perform reliable state estimation and provide accurate position, velocity and attitude estimates to the CORE board for flight decisions and TVC.
-
-We achieve this by fusing IMU and barometer data in real-time using state-of-the-art sensor fusion algorithms. We also plan on incorporating GNSS signals into future versions of this board to facilitate longer flights with larger horizontal deviations from the launch site.
-
-The fusion module operates in different modes to fit the varying circumstances during different stages of the flight. E.g., in stationary mode, when the rocket sits still on the launch pad, the accelerometer is used to estimate the rocket’s attitude based on earth’s gravity since it is free of drift. However, during flight, gravity is not the only force acting on the rocket. So, attitude is primarily determined by integrating gyroscope readings. To mitigate the effects of drift and to define a reference altitude, all sensors are calibrated before flight.
-
+Then, there is Rocketree  FUSION. Its task is to perform reliable state estimation and provide accurate position, velocity and attitude estimates to the CORE board for flight decisions and the control of active stabilization systems.
 #### Rocketree OUT
 ![](/assets/images/Buffalo%20Stack%20-%20Out.83.jpg)The third board is the Buffalo OUT. This one incorporates pyro channels to trigger heating wires and electric ignitors, as well as servo ports to control the thrust vector control system.
 
 #### Rocketree CONNECT
-The boards interface with each other via this stackable header that we call Rocketree CONNECT.
+The boards interface with each other via a stackable header that we call Rocketree CONNECT.
 Rocketree CONNECT, supplies battery voltage, regulated 5V, and regulated 3.3V from the CORE board to all the other sub-boards.
 
-Further this connector incorporates the communication interface “the I2C bus” where the CORE board is the MASTER.
-
-A total of 255 FUSION and OUT boards could be added to one CORE board, which makes its use cases almost endless.
-
-Regarding microcontrollers, the CORE board features the ESP32 to allow for Bluetooth and WiFi capabilities.
-
+Through this connector, a total of 255 FUSION and OUT boards could be added to one CORE board, which makes its use cases almost endless.
 ### Rocketree OS
-On Rocketree Stack runs our fully functional operating system that was improved over several flight tests and years. 
+Rocketree OS is our fully functional operating system that was improved over several flight tests and years. 
 
 When launching a rocket, it will do the work for you, and when you decide to program Rocketree Stack yourself you can base your work upon parts of our operating system. 
 This way you don't have to program everything, enabling you to focus on one aspect of the software or on one board at a time.
@@ -194,11 +184,11 @@ This way you don't have to program everything, enabling you to focus on one aspe
 
 Rocketree Studio is our post flight analysis tool. 
 
-It allows you to reconstruct a flight with the flight data your flight computer recorded. Rocketree Studio visually represents all relevant information in a visually appealing and convenient way. Some of its representation are even adjustable; so, you can adjust them to fit your needs. 
+It allows you to reconstruct a flight with the flight data your flight computer recorded. Rocketree Studio visually represents all relevant information in a visually appealing and convenient way. Some of its representation are even adjustable; so, you can tweak them to fit your needs. 
 
 This tool is invaluable if you want to analyze your flights, find potential error sources, and improve your rocket's performance. 
 ### Buffalo
-![](/assets/images/Buffalo%20L%20Block%202%20-%20First%20Asm.84.jpg)The Buffalo rocket comes with a parachute deployment system, Rocketree Stack flight computer integration, and a thrust vector control system (TVC). The TVC comes in three to five engine variants, which allows you to choose whatever suits you best.  
+![](/assets/images/Buffalo%20L%20Block%202%20-%20First%20Asm.84.jpg)The Buffalo rocket comes with a parachute deployment system, the flight computer integration, and a thrust vector control system (TVC). The TVC comes in three to five engine variants, which allows you to choose whatever suits you best.  
 
 Buffalo is a highly modular rocket that you can adjust to your needs. If for example, you choose to design your own TVC you can easily implement it on this rocket. Further, you can easily insert extension between two existing modules if you wish. 
 
