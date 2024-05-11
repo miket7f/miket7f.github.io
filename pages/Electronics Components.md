@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Electronics Basics
-permalink: elec-design
+title: Electronics Components
+permalink: elec-comp
 ---
 
 ## Level 1 - Resistor

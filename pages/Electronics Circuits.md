@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Electronics Basics
-permalink: elec-design
+title: Electronics Circuits
+permalink: elec-circuits
 ---
 
 ## Level 1 - Power Management  

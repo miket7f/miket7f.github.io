@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Electronics Design
-permalink: elec-design
+title: PCB Design
+permalink: pcb-design
 ---
 
 ## Level 1 - PCB Design Software
