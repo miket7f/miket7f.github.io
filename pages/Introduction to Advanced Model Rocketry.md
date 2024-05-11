@@ -147,7 +147,7 @@ We provide you with
 - our post-flight analysis tool **Rocketree Studio**
 - and our rocket **Buffalo**
 
-As you will work with those products, a lot, we want to briefly introduce you to them.
+Because you will work with those products, a lot, we want to briefly introduce you to them.
 ### Rocketree Stack
 Rocketree Stack is our newest flight computer system. 
 A flight computer has to carry out many different tasks, and most often those are united on a single PCB. However, our design is highly modular and splits the tasks across three or more different boards.
@@ -187,15 +187,22 @@ Regarding microcontrollers, the CORE board features the ESP32 to allow for Bluet
 ### Rocketree OS
 On Rocketree Stack runs our fully functional operating system that was improved over several flight tests and years. 
 
-When launching a rocket, it will do the work for you, and when you decide to program Rocketree Stack yourself you can base your work upon parts of our operating system. So, you don't have to program everything yourself and so you can focus on one aspect of the software or on one board at a time.
+When launching a rocket, it will do the work for you, and when you decide to program Rocketree Stack yourself you can base your work upon parts of our operating system. 
+This way you don't have to program everything, enabling you to focus on one aspect of the software or on one board at a time.
 ### Rocketree Studio
 ![](/assets/images/Visualization%20GUI%20-%20JM%20Eagle%20Control%20-%20angles.jpg)
 
+Rocketree Studio is our post flight analysis tool. 
 
+It allows you to reconstruct a flight with the flight data your flight computer recorded. Rocketree Studio visually represents all relevant information in a visually appealing and convenient way. Some of its representation are even adjustable; so, you can adjust them to fit your needs. 
 
+This tool is invaluable if you want to analyze your flights, find potential error sources, and improve your rocket's performance. 
 ### Buffalo
+![](/assets/images/Buffalo%20L%20Block%202%20-%20First%20Asm.84.jpg)The Buffalo rocket comes with a parachute deployment system, Rocketree Stack flight computer integration, and a thrust vector control system (TVC). The TVC comes in three to five engine variants, which allows you to choose whatever suits you best.  
 
+Buffalo is a highly modular rocket that you can adjust to your needs. If for example, you choose to design your own TVC you can easily implement it on this rocket. Further, you can easily insert extension between two existing modules if you wish. 
 
+ If you are not much into CAD design at all then you can use Buffalo to test your flight software and to conduct flights. 
 
 
 
