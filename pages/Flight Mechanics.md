@@ -6,7 +6,116 @@ permalink: flight-mec
 Before we can launch a rocket we must understand 
 - the forces that occur in-flight
 - and ways in which flight stability can be achieved
-## Level 1 - Flight Forces 
+
+## Level 1 - Force and Moment 
+If you have already learned about the concept of velocity, acceleration, force, and moment or torque in your physics or mechanics classes in school, then you can jump right to level 2. 
+
+However, if you are uncertain about them and want to refresh your knowledge on them, you can do so in this level.
+### Basics
+The velocity is the change in distance per second. 
+If we can assume that the velocity is constant then it can be calculated in the following way:
+
+$v = \dfrac{s}{t}$
+$s$ ... covered distance
+$t$ ... elapsed time
+
+Velocity is given in $\dfrac{meters}{second}$
+
+
+Now if we assume, that the velocity is not constant, but changes by a constant factor, 
+then we now that an acceleration is present. 
+
+$a = \dfrac{v}{t}$
+$v$ ... average velocity
+$t$ ... elapsed time
+
+Acceleration is given in $\dfrac{meters}{second^2}$
+
+Here is an easy to understand video about the topic:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4dCrkp8qgLU?si=TneuJfGOhoBAi2G9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Force
+A force is an influence that can cause an object to change its velocity. 
+
+It is calculated by:
+$F=m*a$
+$m$ ... mass 
+$a$ ... acceleration 
+
+You can think about it this way:
+If you want to accelerate a certain body of mass m in vacuum with a certain acceleration a, then you will need to apply a certain force F. The larger the mass, the larger the force that you have to apply must be. Further, the faster you want to accelerate the body, the more force you must apply. 
+
+The force is given in $\dfrac{kg*m}{second^2}$ or in $Newton$, as the concept of the force was first discovered by the physicist Isaac Newton. 
+
+Here is an easy to understand video about the topic:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B6mi1-YoRT4?si=4PyvLzHd2Q-kBMTT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Moment
+A moment is the rotational analog of the force. 
+It is calculated by:
+$M=F*d$
+$F$ ... force
+$d$ ... distance
+
+And given in $N*m$  ($Newton*meters$).
+
+![](/assets/images/2-141.png)
+When calculating the moment, it is always around some kind of pivot point. 
+
+This concept can be perfectly illustrated by looking at the seesaw in the picture. The pivot point is in the joint of the seesaw, and as you can see the further away the force is from the pivot point the larger the distance d. If you look at our formular, we can see that this means that if the force remained constant, that the moment increased in amount. 
+
+So if a child sits on the seesaw, the moment it creates around the pivot point increases the further away from it it sits. This is why a kid with less weight than another kid can still pivot down the seesaw, if it sits further away from the pivot point. 
+
+Here is an easy to understand video about the topic:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p7QS4cz-Avs?si=IRZvMUpfHwzSMcgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Balance of Forces and Moments
+In the mechanics chapter statics that is concerned with bodies that are not moving, there is something called the balance of forces and moments. 
+
+For a body to not move, there must be no resulting force acting on it. This means, that if there is a force acting on the body, that there must always be a counterforce for the body to not move. 
+
+For example, when we take a apple sitting on a table, we might assume that there is a resulting force aiming towards Earth's center, the so called gravitational force. However, if this would be the case, the apple would accelerate downwards toward the center. This is certainly the case if the apple falls from a tree, but as soon as it hits a surface, it will remain stationary. 
+
+This can be explained, as there is actually an invisible force that the table creates on the apple that is exactly counter directional to the gravitational force. This means that the total force is zero. 
+If we take this concept further, this also must mean that all bodies that are stationary, must have a total force of zero. This means that, if we know the size and direction of a certain force and do not know the size and direction of another force, that we can calculate them based on this principle. 
+
+Here is an easy to understand video about the topic:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C8N4REG8ISE?si=e9rUrNxp6bz-Y8VG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+A similar principle applies to a body that is not rotating. Only this time, the total moment on the body must be zero. 
+
+Let's take the seesaw example again and assume that there are two children sitting on it with one being slightly heavier than the other. The lighter kid sights slightly further away from the pivot point. Further, lets assume that the seesaw is perfectly balanced, and does not tilt. 
+
+This means that the total moment on the seesaw most be zero, which means that the moment created by the lighter child is the same as the moment created by the slightly heavier child. 
+If there is no tilting on the seesaw, the moments must be in balance! 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p7QS4cz-Avs?si=hQjmQ-6iFrbt1kBv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Activity 1
+A man runs at a constant speed and needs 5s to cover a distance of 30m.
+What is the speed of the man?
+
+Now, we assume that the man starts at a velocity of 0m/s and accelerates constantly over the entire distance. He still needs 5s to cover the 30m. 
+How fast is the man accelerating? 
+
+Further, we know that the man has 75kg. 
+What is the force the man must apply to achieve the acceleration calculated above?
+
+### Activity 2
+There is a seesaw with a child siting 2m away from the pivot point. The child has a mass of 25kg. Assume that the gravitational acceleration is approximately 10m/s^2. 
+What is the moment on the seesaw? 
+
+### Activity 3
+An concrete block with a mass of 175kg sits still on a lawn.  
+What must be the invisible force the lawn applies to the concrete block? 
+
+### Activity 4
+Two children sit on a seesaw across each other.
+Child 1 has a mass of 25kg an sits 2m away from the pivot point
+Child 2 has a mass of 20kg.
+At what distance must child 2 sit in order for the pivot point to be balanced and to not experience a total moment? 
+
+## Level 2 - Flight Forces 
 The reached altitude is largely dependent on the following three aspects: the engine, the weight, and the aerodynamic shape of the vehicle. These aspects must be matched to each other for a rocket flight to be successful. 
 
 ### Weight
@@ -109,7 +218,7 @@ Select the class of the solid rocket engine that would be required for the lunar
 | N            | 10,240 - 20,480    |
 | O            | 20,480 - 40,960    |
 | P            | 40,960 - 81920     |
-## Level 2 - Flight Stability
+## Level 3 - Flight Stability
 After the first level, we are aware of the most essential forces acting on our vehicle during flight: weight, drag, and thrust. Further, we learned about engine classification and TTWR. 
 
 Now, let's assume the following scenario:
@@ -183,7 +292,7 @@ For passive stabilization this is highly beneficial, as a higher velocity also m
 
 $F_D = C_d*A*\dfrac{\rho * v^2}{2}$
 
-### Activity 3
+### Activity 1
 Is this rocket configuration stable?
 ![](/assets/images/Pasted%20image%2020240511082924.png)
 - 15cm nose cone
@@ -196,7 +305,7 @@ If not determine the length of one side of the quadrat fin to create a stable co
 - quadrat fins
 - four fins in total
 
-## Level 3 - Active Stabilization
+## Level 4 - Active Stabilization
 In conventional model rocketry, flight stability is most often achieved by the means of passive stabilization.
 
 However, there a number of other ways with which an stable flight can be achieved. 
@@ -256,7 +365,7 @@ Only if all three aspects
 work together seamlessly, active stabilization with thrust vectoring can be achieved. 
 As soon as one of them fails, the rocket will lose stability. 
 
-## Level 4 - Other Stabilization Methods 
+## Level 5 - Other Stabilization Methods 
 Of course there are more ways to stabilize a rocket. 
 In this level, you will learn about three more ways in which you could do so. 
 ### Gyroscopic Effect 
@@ -302,9 +411,7 @@ If roll, pitch, and yaw shall be controlled at the same time, it is very difficu
 Here is an example of a someone that achieved stabilization with fin control: 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/man5ag8Jl6s?si=aTpGdq9E9EB-LSCz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
-
-### Activity 4
+### Activity 1
 Now that you learned about the different methods of stabilization, you will be able to solve this exercise:
 
 Name the appropriate stabilization method according to the given characteristics:
