@@ -3,12 +3,11 @@ layout: page
 title: Flight Mechanics
 permalink: flight-mec
 ---
+Before we can launch a rocket we must understand 
+- the forces that occur in-flight
+- and ways in which flight stability can be achieved
 ## Level 1 - Flight Forces 
-People all over the world are building and launching model rockets. 
-
-In conventional model rocketry, the success of a model rocket launch is usually determined by the altitude that is reached. 
-
-The reached altitude is largely dependent on the following three aspects: the engine, the weight, and the aerodynamic shape of the vehicle. These aspects must be matched to each other for a conventional model rocket flight to be successful. 
+The reached altitude is largely dependent on the following three aspects: the engine, the weight, and the aerodynamic shape of the vehicle. These aspects must be matched to each other for a rocket flight to be successful. 
 
 ### Weight
 As you probably know there is a force that is acting on every object on Earth that is called the gravitational force. 
@@ -110,14 +109,92 @@ Select the class of the solid rocket engine that would be required for the lunar
 | N            | 10,240 - 20,480    |
 | O            | 20,480 - 40,960    |
 | P            | 40,960 - 81920     |
-## Level 2 - Flight Stability 
+## Level 2 - Flight Stability
+After the first level, we are aware of the most essential forces acting on our vehicle during flight: weight, drag, and thrust. Further, we learned about engine classification and TTWR. 
+
+Now, let's assume the following scenario:
+We have selected the right engine, have a vehicle that is light weight enough to lift-off and have created a low air-resistance aerodynamic shape. 
+You might think that this rocket will reach the expected altitude in a picture perfect manner. 
+However, this is not necessarily the case, as we did not yet take rocket stability into the equation. All the aspects we just mentioned could be on point, but if our rocket won't fly stable it also wont reach its expected altitude and might even be seriously damaged. 
+
+Here is an example of a unstable model rocket launch: 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vI4dGQMHmaY?si=6JsOmFrG44YRkeIM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+For us to understand flight stability, we must first discuss two important concepts: 
+- Center of gravity (COG)
+- and center of pressure (COP)
 ### Center of gravity
+![](/assets/images/Pasted%20image%2020240511071551.png)
+As we discussed earlier, every mass on Earth experiences a gravitational force.
+If we know the mass, we also know the force.
+But where does the force apply?
+
+In the center of gravity!
+For the rocket illustrated above there is exactly one point (blue) in which the resulting gravitational force of the entire vehicle applies. 
+
+The rocket is perfectly balanced around this point. If you would hold it in the COG, the rocket would neither tip forward nor backward. 
+
+The center of gravity, sometimes also called center of mass, is also the point around which the rocket will rotate during flight. 
+
+https://en.wikipedia.org/wiki/Center_of_mass#Center_of_gravity
 ### Center of pressure
+Before you can know whether your rocket will be stable, you have to determine the center of pressure (COP).
+
+COP is the point at which the resulting drag force of your vehicle will apply. 
+
+This point can be approximated by calculating the centroid of each area. 
+In the illustration above, we would calculate the centroid of the ellipsoid shape of the nose cone, the rectangle of the rocket body, and the two ellipsoid shapes of the rear end. 
+Then, we would add them together to get the centroid of the total area, which is approximately where the drag force would apply. 
+
+https://en.wikipedia.org/wiki/Center_of_pressure_(fluid_mechanics)
+
 ### Passive stability
+![](/assets/images/rocket-stability-diagram.png)
+
+With the interplay between the gravitational force, the drag force, and the two points at which they apply (COG/COM and COP), we can determine the rocket stability.
+
+In the first picture the rocket flies perfectly stable, as it is moving along its axis of symmetry. In this case the drag force is perfectly inline with the gravitational force. Both point perfectly downward and are in the symmetry axis of the rocket. Therefore, no torque will be created around the center of gravity - remember this is the point around which the rocket rotates!. 
+
+In the second and third picture, the rocket is no longer moving along its axis of symmetry and is offset by a displacement angle. This time, the drag force does not align with the gravitational force. Therefore, the to the symmetry axis normal part of the drag force will create a moment around the center of gravity. 
+
+In the third picture, where the center of gravity is behind the center of pressure, the moment turns the rocket's symmetry axis further away from its direction of motion.
+
+In the second picture, the center of gravity is in front of the center of pressure. Here, the moment causes the rocket to turn inwards so the symmetry axis aligns more closely with the direction of motion. 
+
+In the third picture the moment would cause the rocket to become unstable, while in the second picture the same moment would cause the rocket to passively stabilize itself. 
+
+Here is a short video to get a better understanding of this concept: 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/H0uI2ab52DE?si=BxVhyr2O4vzXRvdw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Fins
+The center of pressure shall be behind the center of gravity for a stable ascent, and the further apart these two are the more stable the configuration will be. 
+But how can we achieve this? 
 
+The most obvious solution, would be to bring the center of gravity as much forward as possible. However, this is alone will be difficult to do. The heaviest part of the model rocket is the engine, sitting at the rear end of the rocket. So, naturally the center of gravity is further behind than the center of pressure. To counteract, we could use a heavy parachute system, or add weights to the nose cone. But, as you can image this is something that we, as aerospace engineers clearly would not like to do.
+
+Another solution, would be to bring the center of pressure as much backward as possible. This can be done by adding surfaces to the rear end of the rocket through which the centroid of the entire area shifts backward. These rear end surfaces are called **fins**.
+
+There are many different sizes and shapes of fins. In general, the larger the fin area the further the center of pressure will move backwards. 
+#### Speed
+A final aspect we must take into the equation of passive stabilization is velocity. 
+
+The higher the TTWR ratio, the higher the velocity in any flight phase will be. 
+For passive stabilization this is highly beneficial, as a higher velocity also means a higher drag force. A higher drag force, in turn means a higher restoring moment on the vehicle. An as you might remember the drag force is dependent of the square of the velocity. So, marginal increases in TTWR can significantly influence the stability of your rocket. 
+
+$F_D = C_d*A*\dfrac{\rho * v^2}{2}$
+
+### Activity 3
+Is this rocket configuration stable?
+![](/assets/images/Pasted%20image%2020240511082924.png)
+- 15cm nose cone
+- 50cm tube length 
+- 10cm diameter 
+- 15cm from the left is the COG
+
+![](/assets/images/Pasted%20image%2020240511083349.png)
+If not determine the length of one side of the quadrat fin to create a stable configuration?
+- quadrat fins
+- four fins in total
 ## Level 3 - Active Stabilization
 ### Thrust Vector Control
 ### Other Systems
