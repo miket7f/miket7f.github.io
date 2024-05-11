@@ -3,11 +3,14 @@ layout: page
 title: Flight Mechanics
 permalink: flight-mec
 ---
+Prerequisite: Level 2 - Introduction to Advanced Model Rocketry 
+
 Before we can launch a rocket we must understand 
 - the forces that occur in-flight
 - and ways in which flight stability can be achieved
-
 ## Level 1 - Force and Moment 
+Estimated time: 0 - 10h
+
 If you have already learned about the concept of velocity, acceleration, force, and moment or torque in your physics or mechanics classes in school, then you can jump right to level 2. 
 
 However, if you are uncertain about them and want to refresh your knowledge on them, you can do so in this level.
@@ -116,6 +119,8 @@ Child 2 has a mass of 20kg.
 At what distance must child 2 sit in order for the pivot point to be balanced and to not experience a total moment? 
 
 ## Level 2 - Flight Forces 
+Estimated time: 2h
+
 The reached altitude is largely dependent on the following three aspects: the engine, the weight, and the aerodynamic shape of the vehicle. These aspects must be matched to each other for a rocket flight to be successful. 
 
 ### Weight
@@ -219,6 +224,7 @@ Select the class of the solid rocket engine that would be required for the lunar
 | O            | 20,480 - 40,960    |
 | P            | 40,960 - 81920     |
 ## Level 3 - Flight Stability
+Estimated time: 2h
 After the first level, we are aware of the most essential forces acting on our vehicle during flight: weight, drag, and thrust. Further, we learned about engine classification and TTWR. 
 
 Now, let's assume the following scenario:
@@ -306,6 +312,8 @@ If not determine the length of one side of the quadrat fin to create a stable co
 - four fins in total
 
 ## Level 4 - Active Stabilization
+Estimated time: 2h
+
 In conventional model rocketry, flight stability is most often achieved by the means of passive stabilization.
 
 However, there a number of other ways with which an stable flight can be achieved. 
@@ -366,6 +374,8 @@ work together seamlessly, active stabilization with thrust vectoring can be achi
 As soon as one of them fails, the rocket will lose stability. 
 
 ## Level 5 - Other Stabilization Methods 
+Estimated time: 1h
+
 Of course there are more ways to stabilize a rocket. 
 In this level, you will learn about three more ways in which you could do so. 
 ### Gyroscopic Effect 
