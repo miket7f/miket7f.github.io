@@ -225,12 +225,121 @@ Further, they come with color bands that can tell us what the resistor value is.
 They come in the following format: X.XX * 10^X
 The first three rings represent three digits of the resistor value, while the fourth ring provides the multiplier. 
 The fifth and final ring provides the variation in resistance value, which is usually either +- 5 or +- 10% of the resistor value. 
-## Level 6 - Kirchhoff's Laws
+## Level 6 - Schematics and Resistor Circuits
+### Video Transcript
+#### First Look at a Schematic 
+In order to represent how different components are connected with each other to form a functional electric circuit, we use something that is called a schematic. 
+
+Every component has its own dedicated symbol. A resistor for example is represented in this way. Actually, there are two different symbols for a resistor one that is used in Europe and one that is used in the US. We will use the European symbols for the rest of this course. 
+
+Something that we will need in every schematic is the voltage source. Usually a standard battery is represented by this symbol, where the longer line represents the plus pole. 
+To connect different components with each other we just draw simple lines. 
+
+Just like that, we set up our first schematic of a resistor powered by a battery. 
+We will supply a voltage of 9V by our lab bench power supply and for the resistor we will use one with 1k Ohms. 
+
+If we want to know how much current is flowing in our circuit, we have to reformulate Ohm's law to output the current:
+
+$I = \dfrac{U}{R} = 9mA$
+
+This results in a current of 9 mA. 
+
+Now let's test the same circuit in reality. 
+As you can see, we plugged the resistor into a breadboard and used jumper cables to connect the resistor to the crocodile clamps of the lab bench power supply. 
+Our lab bench power supply has the beneficial feature that we can adjust the voltage that we want to have according to our needs. Further, it incorporates an ammeter which measures the current flowing in the circuit. 
+
+If we calculated correctly, we should now see our lab bench power supply supplies around 9mA of current. 
+
+So, it is relatively easy to calculate the flowing current when using just one resistor. But, how can we calculate the current that flows in a circuit if we use more than one resistor?
+
+#### Resistor in Series
+In our example with a single resistor the 9V of the battery drop across the resistor.
+If we now add a second resistor in series, the total voltage drop across both resistors must still can't be more than 9V, because remember this electric potential difference is provided by the our voltage source the battery. At the same time, this means that the voltage across the individual resistors must be less, so that together they have 9V. 
+
+If we now wanted to know the flowing current, we have to calculate an equivalent resistance. 
+
+For serial resistors this is done by adding their resistances together
+$R_t = R_1 + R_2 + R_3 ...$
+
+If we add a second resistor with another 2k Ohms, we get a total resistance of 3k Ohms, which means that the current would have to be 3mA. If we test this in our real circuit, we can see that it still holds true. 
+
+In our water pipeline analogy the resistance is the diameter of the tube. If we add a second resistor in series to our first in our circuit, we increase the resistance and decreases the current. 
+Decreasing the diameter in our analogy would do the same and also decrease the flow-rate.  
+
+#### Resistor in Parallel 
+There is a second way in which we could add a resistor, which is called in parallel. In this example a total of 9V would drop across each resistor. 
+
+If we now wanted to calculate the equivalent resistance, we have to add their inverses:
+$\dfrac{1}{R_t} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \dfrac{1}{R_3} ...$
+
+If we this time we would have to 1k resistors, and get an equivalent resistance of 500 Ohms, which means that the current actually increased compared to the first example. 
+We would now get a flowing current of 18mA, which we again can see holds true with our lab bench power supply. 
+
+You could compare adding a second resistor to adding a second tube in our water pipeline. A second tube of the same diameter would also double the flow-rate. 
+
+To get a more vivid understand of what exactly happens in the circuit we also have to discuss Kirchhoff's laws. 
 
 
+#### Kirchhoff's Voltage Law
+One of Kirchhoff's laws states that in any closed loop, the sum of the directed voltages must be zero. 
 
+If we look at our example with the single resistor again, we see that the battery provides a voltage from the plus pole to the minus pole of 9V, while the resistor has a voltage drop in the opposing direction of also 9V. 
+If we take the direction into account we get:
+9V - 9V, which results in a sum voltage of the closed loop of zero. 
 
+If we look at our second example with the two resistors in series, we can see why the total voltage across them must again be zero, and why the individual voltage drop across each resistor must be less. 
 
+If we insert an equivalent resistance, the voltage drop must again be 9V, as the sum in a closed loop must always be zero, according to this law. 
+In reality each of the two resistors has its own voltage drop. The first 3V and second one also 6V. In total 9 - 6 - 3V again results in a net zero voltage. 
+We can calculate their specific voltage drops by using Ohm's law again, this time reformulated for the voltage:
+
+$U = R*I$
+
+Remember, we were only able to calculate the current, because we used an equivalent series resistance. So, before we are able to calculate the voltage drops across each individual resistors, we will always have to calculate the current. 
+
+We can see that our calculations are correct, if we measure the voltage with this device that is called a multimeter. A multimeter is a measurement instrument, with which you can measure many different electrical properties, such as voltage, resistance, conductivity, and more. 
+As you can see, across each single resistor we have a voltage drop of 4.5V and if we look at the voltage drop that occurs across both of them we have 9V. 
+
+#### Kirchhoff's Current Law
+The other Kirchhoff's law states that in a circuit the current splits in a junction. In any given node in a circuit the total amount of current must be zero. This means that the current that flows into a node must be the same as the current that flows out of node. If we think about the concept, it makes perfect sense, as otherwise energy would be mysteriously lost. 
+
+In our first and second resistor example, we do not have any junctions. So, let's immediately analyze circuit three. 
+
+We first can apply the role of net zero loops. So, we can immediately identify that the voltage drop across resistor one and resistor two both must be 9V. 
+If we know the voltage and the resistance we can calculate the currents for both paths. 
+Now, if we want to know the current that is flowing before the junction or that the battery provides, then, we have to apply the Kirchhoff's current law. The sum of currents must be zero in a node. Therefore, the input current must be the same as the sum of the two output currents. 
+
+#### Short Circuit
+To illustrate Kirchhoff's voltage law in a little more depth, let's consider the following scenario:
+Instead of connecting one pole of the battery to a resistor and then to the other pole of the battery, we could also connect one pole of the battery directly to the other pole of the battery. 
+
+The voltage would want to push the electrons from the minus pole to the plus pole. Remember, the number of electrons that can flow per second, depends on the resistance that is standing in the way of the electrons. 
+
+In this case, the only resistance standing in the way, is the resistance of the wire and the internal resistance of the battery. This is like a water tube that is almost infinitely large. This means that the flow-rate or current is astronomically high. 
+
+Still, the voltage drop across the wire and the internal resistance together will be zero, as the sum of net voltages is zero.
+
+The amount of current flowing, is way too much in this scenario. The electrons are moving at such a rapid speed, that they create an immense raise in temperature. Either the wire or our battery will fail mechanically only moments after the current begins to flow. Accidentally connecting the plus to the minus, is what we call in electronic terms a "short circuit".
+
+As electrical engineers, we to do our best to avoid short circuits at any costs, as they can destroy our circuits and components, initiate fire, or even harm somebody. 
+#### Summary
+To summarize: 
+A schematic is a method to visually represent the wiring of electric components. 
+We have specific symbols for each electric component. 
+This, for example, is the symbol for a battery. 
+And this is the European symbol of a resistor. 
+By connecting the different symbols with each other, we indicate how they should be wired when building the physical circuit. 
+
+We can calculate the current that flows in a standard battery resistor circuit, by using Ohm's law. 
+If we use multiple resistors, we have to use an equivalent series resistance to be able to calculate the current that is flowing in the circuit. 
+
+We differentiate between putting a resistor in series and in parallel:
+In series, we add the resistances of the single resistors together. This can be compared to decreasing the size of the diameter in the water tube. 
+
+When putting resistors in parallel, we add the reciprocals of the resistances together to receive the reciprocal of the equivalent resistor. Even though, we added a second resistor, we still increase the current. It is like adding a second tube to the water pipeline. Even if the added would be fairly small, it would still increase the overall flow-rate. 
+
+Further, we learned that the directional sum of the voltages in a closed loop must be zero, and that the sum of the currents in a node must be zero as well.
+We talked about a short circuit, in which the plus and minus pole of the power supply are connected accidentally, and talked about how this should be avoided at all times. 
 ## Level - The Capacitor
 #### Electric Fields
 An electric field is an imaginary area in which electric charges experience a force. 
@@ -250,4 +359,5 @@ $E = \dfrac{1}{4*\pi*e_0}*\dfrac{q_1}{r^2}$
 ## Level - Electric Induction
 ## Level - Inductor
 
+## Level - Oscillator 
 
