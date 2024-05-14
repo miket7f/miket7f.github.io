@@ -9,9 +9,9 @@ The material that we provide in the following levels is by now means complete bu
 ## Level 1 - Introduction to the Electronics Path
 
 ### Video Transcript 
-We know you are eager to develop your own flight computer right away. However, we have to get you set up with the fundamentals first. Trust me, I have been there, designing my first flight computer without caring about the fundamentals, and well I can tell you that my design didn't work out as planed. 
+We know you are eager to develop your own flight computer right away. However, we have to get you set up with the fundamentals first. Trust me, I have been there, designing my first flight computer without caring about the fundamentals, and well I can tell you that my first designs didn't work out as planed. 
 
-For you to get the best understanding of circuit design possible, we have to start all the way at the beginning. We will start within the atom and take a look on an even smaller unit - the electron. Then, we will zoom out and take a look on how multiple electrons interact with each other. We will learn about the force that acts between them, will describe what an electric field is, and look at the concept of electric charge. Further, we will learn about conductivity, electric potential and the concept of the electric current. 
+For you to get the best understanding of circuit design possible, we have to start all the way at the beginning. We will start within the atom and take a look on an even smaller unit - the electron. Then, we will zoom out and take a look on how atoms bond with each other. We will learn about the force that acts between them, will describe what an electric charge is, and look at the concept of electric fields. Further, we will learn about conductivity, electric current, electric potential and the concept of the electric current. 
 
 You may wonder why we would want to understand all these theoretical concept first? 
 Well, almost every electric circuit on Earth uses a combination of the following components, of which you might already have seen some. (Video of the components)
@@ -34,7 +34,18 @@ The protons are charged positively, the neutrons are neutral, and the electrons 
 An atom can be divided into a core and a shell. The core or nucleus consists of the neutrons and protons and makes up more than 99% of the weight. The shell on the other hand consists of the electrons, and makes up the majority of the volume. As the neutrons aren't charged and the protons are charged positively, the net charge of the core is positive. 
 
 You might know that similar charges repel each other, while opposing charges attract each other. 
-This is why the electrons are attracted to the nucleus. The force that acts between them is called the electrostatic force. 
+This is why the electrons are attracted to the nucleus. The force that acts between them is called the coulomb force. 
+
+#### The Coulomb Force
+
+This force is calculated after the this formula: 
+
+$F_C = \dfrac{1}{4*\pi*e_0}*\dfrac{q_1*q_2}{r^2}$
+
+As we can see, the force decreases with increased space between them. Further, it increases with the charge of the elements. The larger the charge, the larger the force, and the greater the distance, the lower the force. 
+
+The factor in front, also features the vacuum permittivity constant that is given in farad per meter. 
+$ε_0 = 8.85*10^{12} \dfrac{F}{m}$
 
 However, you might wonder why the protons inside the nucleus do not repel each other? This is because there's another force present the so called nuclear force. This force is magnitudes higher than the electrostatic force, yet it only occurs at very small proximities like those found in the core.
 
@@ -55,26 +66,6 @@ This will be important for you to understand the concept of conductivity later o
 #### Ions
 In normal circumstances, each atom has as many electrons in the shell as protons in the core, which means that the net charge of the atom is neutral. However, if we add or remove an electron from the shell, we get a charged atom, a so called ion. An atom with added electron in the shell is net negatively charged, as the number of electrons is higher than the number of protons. This is called an anion. An atom with removed electrons, on the other hand, is positively charged. We call this a cation. 
 
-#### The Coulomb Force
-
-The force that is present between two charges is called Coulomb force. This force is calculated after the this formula: 
-
-$F_C = \dfrac{1}{4*\pi*e_0}*\dfrac{q_1*q_2}{r^2}$
-
-As we can see, the force decreases with increased space between them. Further, it increases with the charge of the elements. The larger the charge, the larger the force, and the greater the distance, the lower the force. 
-
-The factor in front, also features the vacuum permittivity constant that is given in farad per meter. 
-$ε_0 = 8.85*10^{12} \dfrac{F}{m}$
-
-#### Electric Fields
-An electric field is an imaginary area in which electric charges experience a force. 
-Every electric charge is surrounded by such an electric field.
-
-$E=\dfrac{F}{q}$  given in  $\dfrac{N}{m}$
-
-The force another charge experiences in the electric field is the coulomb force. Therefore, we can insert q_2, which cancels with the nominator. We, therefore, see that the electric field only depends on first charge and the radius to it. 
-
-$E = \dfrac{1}{4*\pi*e_0}*\dfrac{q_1}{r^2}$
 #### Summary
 So, our world consists of atoms, and these atoms consist of a core and a shell. The shell is filled with electrons, while the core is filled with protons and neutrons. The electrons are held in the shell by the attracting electrostatic force that occurs because of the opposing chargers of electrons and protons. The protons are held together by an even stronger force, the so called nuclear force. 
 
@@ -93,7 +84,7 @@ Further, there are ions, which result in through an imbalance between electrons 
 ### Video Transcript 
 
 #### Atom Bonding
-To make up the materials that we know from our day to day life, atoms bond with each other to form something bigger. The can bond with each other through different forms. Metals, for example, bond with other non-metals through a ionic bond. Non-metals bond with each other through covalent bonds. And metals bond to each other through a metallic bond. 
+The materials that we know from our day to day life, result from atoms bonding with each other to form something bigger. They can bond with each other through different forms. Metals, for example, bond with other non-metals through a ionic bond. Non-metals bond with each other through covalent bonds. And metals bond to each other through a metallic bond. 
 
 Now, for us to understand electric current we first have to understand the metallic bond. 
 As you previously heard, every element wants to have a full outer shell layer. This means that non-metals usually want to receive electrons to fill up their outer layer, because their outer layer is already quite full. Metals on the other hand normally want to give up electrons, as there outer layer is quite empty and filling it up would be more difficult to do. 
@@ -123,19 +114,26 @@ If we look at a basic circuit with a battery, a lamp, and two metal conductors, 
 Electrons move from the minus to the plus pole. However, electrical engineers always label the flowing direction of the current to be from the plus to the minus pole. This representation called the "conventional representation" arose, because early scientists did not know whether the protons or the electrons are moving, and made the wrong guess. Because all formulars of that are used today build upon the wrong flow direction of the current, we still have to use the conventional representation. 
 
 #### Summary
+So, atoms can bond with each other to form a bigger structure. 
+Metals bond with metals through a metallic bond. 
+Every metal element gives up its valence electrons to have a full outer layer. 
+Through that they become positively charged. 
+These cations would usually repel each other, however the electrons that were given up form an electron gas that is between the cations and holds them together in a regular structure. 
 
+Current is the same in electricity as the flow rate in a water pipe. It is basically, the movement of electrons in a conductor. The electrons push each other forward and through that can transport energy from one source to another. It is measured in Ampere and tells us how much charge is transported through a conductor in one second.
 
-## Level 5 - Voltage
+A conductor is a material that allows current to flow. Metals, are always good conductors, as the delocalized electrons can move freely. 
+## Level 4 - Voltage
 ### Video Transcript
-Now we know that electrons can flow inside a metal, and the flow-rate is electric current. However, you may ask why this movement occurs?
+Now we know that electrons can flow inside a metal, and that the flow-rate is called electric current. However, you may ask yourself why this movement occurs.
 
-The invisible force that pushes the electrons from of the battery into the other is called the voltage. The higher the voltage, the more electrons will flow from one end of the battery to the other. 
+The invisible force that pushes the electrons from one battery pole into the other is called the voltage. The higher the voltage, the more electrons will flow from one end of the battery to the other. 
 
 This is quite simplistic and describes what the voltage does, but not how it is defined. 
-The voltage is defined as the difference in electric potential energy between two points. 
 
-Now this might sound terrifyingly complex to some of you. 
-So let's break it down. 
+The voltage is defined as the difference in **electric potential energy** between two points. 
+
+This sentence is probably quite confusing to you. So let's break it. 
 
 What is an electric potential? 
 #### Electric Potential
@@ -159,34 +157,91 @@ $r_1*r_2$
 
 $W = \dfrac{1}{4*\pi*e_0}*\dfrac{q_1*q_2}{r_1*r_2}*({r_1-r_2}) = \dfrac{1}{4*\pi*e_0}*q_1*q_2*(\dfrac{1}{r_1}-\dfrac{1}{r_2})$
 
-The electric potential is defined as moving a charge of q = 1C from infinity to radius r_2. 
+Now, we know the work that is needed to move a charged particle q_2 to q_1 from the distance r_2 to r_1. However, remember that the electric potential is defined as moving a charge of q = 1C from infinity to radius r_2. 
 This means that we have to divide the work by the charge q_1 and insert infinity for r_1 to get the electric potential. 
 
 $U = \dfrac{W}{q}$
 
 $U = -\dfrac{q_2}{4*\pi*e_0}*\dfrac{1}{r_2}$   with the unit by $\dfrac{J}{C}$ Joule per Coulomb or $V$ Volts 
 
+#### Water Pipeline
+When we again take a water pipeline to explain the functioning of electricity, then we could say that the altitude at which the water level is corresponds to the electric potential energy. The higher the altitude of the water level the higher is the potential energy of it. 
+
+Let's image we have two pools at different altitudes and connect them through a water pipe. Pool 1 is at an higher water level than pool 2. Now, we know at which altitude the water level of pool 1 is. However, this alone will not tell us how fast the water will flow from pool 1 to pool 2. To know that, we also have to know at which altitude the water level of pool 2 is. 
+
+If the water level of pool 2 is almost at the same altitude, almost no water will flow from pool 1 to pool 2. However, if there is an altitude difference of several hundreds of meters, water will flow pretty damn fast. 
+
+So, to figure out the flow rate of the water, it actually doesn't matter at which altitude either of the two pools are, but only what the altitude difference between them is. 
+
 #### Voltage
-We first learned about the force that is present between charged particles the Coulomb force in order to be able to describe the electric field, which is an imaginary area in which a force is acting on another charged particle. The further away the second charge the lower the force. The lower the single chargers, the again the lower the force. 
+We can take this concept and apply it to electricity one on one. The electric potential energy of one point alone, won't tell us how much current will flow. In fact, if we only have one point no current will flow at all. 
 
-Now, we can do an experiment were we move a charge from a point 1 to a closer point 2. We know that the force at the closer point 2 must be larger as the force in point 1. Further, we also covered a distance of (r_1 - r_2) while moving from point 1 to point 2. So we have an occurring force F and moved a certain distance s, which means that our charge conducted work. 
+Only if we have a second point with a different electric potential energy that we connect to the first through a conductor we have an electric current. And this electric current solely depends on the difference in electric potential energy and not in the electric potential energy per say. 
 
-This work can be calculated and we arrived at the above described formula. Electric potential is the work that is required to move a point charge q to a certain point 2, but not from a point 1 but from infinity. Further, when describing the electric potential, one of the two point charges is assumed to have exactly one Coulomb. 
+This difference in electric potential energy is what we call the voltage, and it is always a relative measurement. So if we say we have AAA battery with a voltage of 1.5V then what we actually mean that the electric potential energy difference between the plus and minus pole is equivalent to 1.5V. 
 
-We learned about all those concepts, only to be able to describe the term voltage, which you definitely already heard about. The voltage is the electric potential difference between two points.
+#### Power Supply
+For a electric circuit to function we have to provide this pushing force, or this difference in electric potential energy in some way. 
 
+This is done through a power supply.
 
-Conventional vs actual flowing direction. 
+A battery creates this electric potential difference between its two poles by converting chemical energy into electrical energy. The battery basically attains a state in which the minus pole acquires an excess in electrons, while the plus pole lacks electrons. Through this imbalance the electrons are pushed from the minus pole to the plus pole if they are connected through a conductor. If they are not connected nothing happens, as electrons can't travel through air.
 
-Volts push currents in an electric circuit
-Behaves like a pushing force
-A chemical reaction that creates a voltage
+The pushing force can also be created by using a lab bench power supply that is connected to the power grid. 
 
+#### Summary
+So, the electric potential energy can be compared to the altitude of the water level in a pipeline system. If we only have one unconnected pool, no water will flow. If we then connect pool 1 to another, water will flow. How fast it will flow does only depend in the difference in altitude of the water levels. 
+
+This same principle applies to the electric potential energy. It alone only won't tell us how much current will flow in a circuit and if we have only one pole with a certain potential energy not connected to anything, no current will flow at all. 
+
+It is actually, the difference in electric potential energy that causes electrons to move from one potential to another if they are connected through a conductor. 
+
+This electric potential difference is created by using a battery, a lab bench power supply, or any other voltage source. 
 ## Level - Resistance
+### Video Transcript
+Through our deep dive in atom theory, we learned that the flow of electrons or charged matter in general is called electric current, while the pushing force behind it is called the voltage. 
 
+The current I and the voltage U are linked with each other through something called the resistance. 
+
+The resistance can be though of the diameter of the water pipe. As we established previously, the flow rate will be higher the higher the water level difference is. However, there's a  second constraint, which is the diameter of the pipe. The smaller the diameter the less water will flow. 
+
+In electricity the water pipe diameter analog would be the resistance of the conductor. 
+#### Ohms Law
+The current and the voltage are linked through Ohms law: 
+
+$R = \dfrac{U}{I}$  given in $\ohm$
+
+#### Resistor 
+Almost every component, even conductors, such as wires, have some sort of resistance. A wire without a resistance would be analogues to a tube with an infinity diameter, and we know that something like that does not exist. Often, the resistance is so small that it can be neglected.
+
+Nevertheless, in some cases we want to limit the flowing current of a circuit intentionally. 
+This is where the first component a resistor comes into play. 
+
+A resistor provides an specific value of resistance. 
+
+It is often made out of a carbon composition that is partially conductive and remains relatively constant in resistance over temperature change. The carbon composition is covered in plastics for isolation and two leads are added for easy implementation in a circuit. 
+
+Further, they come with color bands that can tell us what the resistor value is. 
+They come in the following format: X.XX * 10^X
+The first three rings represent three digits of the resistor value, while the fourth ring provides the multiplier. 
+The fifth and final ring provides the variation in resistance value, which is usually either +- 5 or +- 10% of the resistor value. 
 ## Level - Kirchhoff's Laws
 
+
+
+
+
 ## Level - The Capacitor
+#### Electric Fields
+An electric field is an imaginary area in which electric charges experience a force. 
+Every electric charge is surrounded by such an electric field.
+
+$E=\dfrac{F}{q}$  given in  $\dfrac{N}{m}$
+
+The force another charge experiences in the electric field is the coulomb force. Therefore, we can insert q_2, which cancels with the nominator. We, therefore, see that the electric field only depends on first charge and the radius to it. 
+
+$E = \dfrac{1}{4*\pi*e_0}*\dfrac{q_1}{r^2}$
+
 
 ## Level - P-N Junction
 ## Level - The Diode
