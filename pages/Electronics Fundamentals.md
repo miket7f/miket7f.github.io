@@ -197,7 +197,7 @@ This same principle applies to the electric potential energy. It alone only won'
 It is actually, the difference in electric potential energy that causes electrons to move from one potential to another if they are connected through a conductor. 
 
 This electric potential difference is created by using a battery, a lab bench power supply, or any other voltage source. 
-## Level - Resistance
+## Level 5 - Resistance
 ### Video Transcript
 Through our deep dive in atom theory, we learned that the flow of electrons or charged matter in general is called electric current, while the pushing force behind it is called the voltage. 
 
@@ -225,7 +225,7 @@ Further, they come with color bands that can tell us what the resistor value is.
 They come in the following format: X.XX * 10^X
 The first three rings represent three digits of the resistor value, while the fourth ring provides the multiplier. 
 The fifth and final ring provides the variation in resistance value, which is usually either +- 5 or +- 10% of the resistor value. 
-## Level - Kirchhoff's Laws
+## Level 6 - Kirchhoff's Laws
 
 
 
