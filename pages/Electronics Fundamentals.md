@@ -340,17 +340,44 @@ When putting resistors in parallel, we add the reciprocals of the resistances to
 
 Further, we learned that the directional sum of the voltages in a closed loop must be zero, and that the sum of the currents in a node must be zero as well.
 We talked about a short circuit, in which the plus and minus pole of the power supply are connected accidentally, and talked about how this should be avoided at all times. 
-## Level - The Capacitor
+## Level 7 - Capacitance
+### Video Transcript
+#### Capacitance
+For us to understand the term capacitance we have to first recall charge and voltage. Charge is the total amount of electrons a conductor can take up, while voltage is the electric potential difference that causes the electrons to move. 
+
+Remember: in a conductive materials such as metals, the electrons are pushing each other forward when they experience a voltage. If there would be no freely moving electrons, there would be no movement and the material wouldn't allow current, which means that the material wouldn't be a conductor. 
+
+Every conductor takes up a charge. In the metal the charge are the electrons. 
+Scientists found out that the amount of charge a conductor takes up rises proportionally with the voltage. 
+
+The proportionality between the charge and the voltage is what we call the capacitance. 
+
+$C = \dfrac{Q}{U}$  given in $\dfrac{A*s}{V}$  or $F$ Farads
+
+If we look at a charge over voltage diagram we can see that the charge raises linearly with the voltage. Further, we see that for different values of capacitance the slopes are steeper or gentler. 
+
+Again, almost every component has some kind of capacitance. However, there are cases in which we want to have a lot of capacitance intentionally. Then, we will need a capacitor. However, before we can explain how capacitor works, we have to first understand the electric field. 
 #### Electric Fields
 An electric field is an imaginary area in which electric charges experience a force. 
 Every electric charge is surrounded by such an electric field.
 
 $E=\dfrac{F}{q}$  given in  $\dfrac{N}{m}$
 
-The force another charge experiences in the electric field is the coulomb force. Therefore, we can insert q_2, which cancels with the nominator. We, therefore, see that the electric field only depends on first charge and the radius to it. 
+The force another charge experiences in the electric field is the coulomb force. We can insert q_1, which cancels with the nominator, and, therefore, see that the electric field only depends on the second charge and its radius to the first point charge. 
 
-$E = \dfrac{1}{4*\pi*e_0}*\dfrac{q_1}{r^2}$
+$E = \dfrac{1}{4*\pi*e_0}*\dfrac{q_2}{r^2}$
 
+For a point charge, we the electric field strength decreases with an increased distance.
+
+#### Homogenous Field
+Let's imagine two plates with a certain distance to each other to which a voltage is applied. The voltage want to push them from the negative pole to the plus pole. Therefore, the electrons move from the minus pole to the attached plate and distribute equally, as equal charges repel each other. The first plate is charged negatively. 
+
+On the opposing plate, the delocalized electrons are pushed from the plate to the plus pole of the battery. This means that the second plate is charged positively. 
+
+We said that every electric charge has a electric field around it. This means that those two electrically charged plates also have such a field. If we were to overlap every single electric field of the electrons and cations that are sitting on each plate, we get something like a wave front. Even though the field lines of a single electric charge are circular, we get resulting field lines that are parallel with each other. 
+
+This means that at any point between those two plates a electric charge would experience the same force. Let's imagine, we insert a negative charge between the plates. The positively charged plates want to attract the charge, while the negative plate wants to repel it. Because we assume that the two plates have almost an infinite length, the sum of forces would be the same at any point in the plate. This is we call a homogenous electric field. 
+#### Electric Flux
 
 ## Level - P-N Junction
 ## Level - The Diode
@@ -360,4 +387,8 @@ $E = \dfrac{1}{4*\pi*e_0}*\dfrac{q_1}{r^2}$
 ## Level - Inductor
 
 ## Level - Oscillator 
+
+## Level - 1st Look at Stack
+
+
 
