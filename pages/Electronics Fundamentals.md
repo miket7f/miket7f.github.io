@@ -343,12 +343,13 @@ We talked about a short circuit, in which the plus and minus pole of the power s
 ## Level 7 - Capacitance
 ### Video Transcript
 #### Capacitance
-For us to understand the term capacitance we have to first recall charge and voltage. Charge is the total amount of electrons a conductor can take up, while voltage is the electric potential difference that causes the electrons to move. 
+For us to understand the term capacitance we have to first recall charge and voltage.
+A charge is the total amount of electrons a conductor can take up, while voltage is the electric potential difference that causes the electrons to move. 
 
 Remember: in a conductive materials such as metals, the electrons are pushing each other forward when they experience a voltage. If there would be no freely moving electrons, there would be no movement and the material wouldn't allow current, which means that the material wouldn't be a conductor. 
 
-Every conductor takes up a charge. In the metal the charge are the electrons. 
-Scientists found out that the amount of charge a conductor takes up rises proportionally with the voltage. 
+Every conductor takes up a charge. In a metal the charges are the electrons. 
+Scientists found out that the amount of a charge a conductor takes up rises proportionally with the voltage. 
 
 The proportionality between the charge and the voltage is what we call the capacitance. 
 
@@ -356,90 +357,108 @@ $C = \dfrac{Q}{U}$  given in $\dfrac{A*s}{V}$  or $F$ Farads
 
 If we look at a charge over voltage diagram we can see that the charge raises linearly with the voltage. Further, we see that for different values of capacitance the slopes are steeper or gentler. 
 
-Again, almost every component has some kind of capacitance. However, there are cases in which we want to have a lot of capacitance intentionally. Then, we will need a capacitor. However, before we can explain how a capacitor works, we have to first understand the electric field. 
+In reality, every component has some kind of capacitance. However, there are cases in which we want to have a lot of capacitance intentionally. Then, we will need a capacitor. 
 
-Symbol
-Polarized non polarized 
-Types
+This is the symbol of the capacitor. There different symbols for different types of capacitors. One for example can be used unidirectional while another can only be implement in a circuit in one direction only without damage. 
 
-#### Electric Field
+#### Homogenous Electric Field
+The symbol represents its physical structure quite well, as every capacitor consists of two plates with a certain distance to each other. 
+
+When a voltage is applied, it wants to push electrons from the negative pole to the plus pole. The electrons from the minus pole move to their attached plate and distribute equally, as equal charges repel each other. This means that the first plate is charged negatively. 
+
+The plus pole of the voltage wants to receive electrons. Therefore, the delocalized electrons of the second plate are pushed into the plus pole. This means that the second plate is charged positively.
+
+Every electric charge is surrounded by an electric field. 
 An electric field is an imaginary area in which electric charges experience a force. 
-Every electric charge is surrounded by such an electric field.
 
 $E=\dfrac{F}{q}$  given in  $\dfrac{N}{m}$
 
 The force another charge experiences in the electric field is the coulomb force. We can insert q_1, which cancels with the nominator, and, therefore, see that the electric field only depends on the second charge and its radius to the first point charge. 
 
-$E = \dfrac{1}{4*\pi*e_0}*\dfrac{q_2}{r^2}$
-
-For a point charge, we the electric field strength decreases with an increased distance.
-
-#### Homogenous Electric Field
-Let's imagine two plates with a certain distance to each other to which a voltage is applied. The voltage want to push them from the negative pole to the plus pole. Therefore, the electrons move from the minus pole to the attached plate and distribute equally, as equal charges repel each other. The first plate is charged negatively. 
-
-On the opposing plate, the delocalized electrons are pushed from the plate to the plus pole of the battery. This means that the second plate is charged positively. 
-
-We said that every electric charge has a electric field around it. This means that those two electrically charged plates also have such a field. If we were to overlap every single electric field of the electrons and cations that are sitting on each plate, we get something like a wave front. Even though the field lines of a single electric charge are circular, we get resulting field lines that are parallel with each other. 
+Two electrically charged plates also have such a field. If we were to overlap every single electric field of the electrons and cations that are sitting on each plate, we get something like a wave front. Even though the field lines of a single electric charge are circular, we get resulting field lines that are parallel with each other. 
 
 This means that at any point between those two plates a electric charge would experience the same force. Let's imagine, we insert a negative charge between the plates. The positively charged plates want to attract the charge, while the negative plate wants to repel it. Because we assume that the two plates have almost an infinite length, the sum of forces would be the same at any point in the plate. This is what we call a homogenous electric field. 
 
-#### Electric Flux
-If we now were to draw a surface inside this electric field, we could determine something that is called the electric flux. The electric flux basically represents the amount of field lines that pass through a given surface: 
+Between the two capacitor plates we have a homogenous electric field. 
+#### Usage
+The plates are loaded with electric charge. However, the electrons will not move from the negative to the positive pole.
 
-$\phi_E = E*A$ ... Electric flux in $\dfrac{N*m^2}{C}$
-$A$ ... Surface through, which the electric field lines pass
-$E$ ... Electric field 
+By loading the plates, energy is stored within the capacitor. 
+$W = \dfrac{U*Q}{2} = \dfrac{C*U^2}{2}$
 
-When we know the electric flux, we can determine the charge Q by applying the first Maxwell law. 
-$Q = \epsilon_0*\phi_E$
+The higher the applied voltage and the higher the capacitance of the capacitor, the more energy will be stored within the capacitor. 
+
+Although the amount of energy that is stored is pretty limited, it can be released very very fast. We can think about a capacitor to be similar to a battery. It stores less energy, but it can release its energy way faster. 
+
+We use the capacitor in our circuits, for example, to act as an buffer in a unsteady voltage supply.
+Let's image a circuit with a lamp that is powered by a battery. If we disrupt the conductor the lamp will immediately go out. However, if we were to place a capacitor in parallel to the lamp. The capacitor would be charged while the conductor is intact. When the conductor is disrupted. The electrons are no longer pushed into the capacitor plates. So, the electrons can move from the negative plate to the positive plate, and in turn provide the lamp with electrical energy. This means that the lamp will continue to be on for a short amount of time until the capacitor plates are unloaded. With a large enough capacitor, we can buffer the time in which the conductor is 
+disrupted by powering the lamp through the capacitor. 
+
+In our water analogy, the capacitor would be a water tank between two pipes. If we were to interrupt the flow of the first pipe without a water tank, the second pipe would immediately be without water. However, if we placed a water tank between the two pipes, the water would continue to flow even after we turned of the first pipe, as long as there is water in the tank. If the tank is empty, then the second pipe would also come to a stand. In this way, the water tank also acts as a buffer in our water pipeline. 
+
+If we know recreate this circuit in reality, we have to use push button to create these conductor disruptions. This button basically connects the two conductors by a mechanic mechanisms. If we press it, we release this mechanic connection, and no current can flow any longer. 
+If we powered the lamp only by a steady voltage supply and place a push button in-between one of its conductors, we can see that the lamp immediately goes out as soon as we press the button. If we now insert a capacitor after the switch, the capacitor will be charged as long as the switch is closed. If we now press the switch very briefly, the capacitor continues to supply the lamp with voltage, and it doesn't go out. 
+
+#### Capacitor Formula
+Now, you may wonder how the capacitance of a capacitor depends on the physical layout of it.
+For that, the capacitor formula comes into play:
+
+$C = \dfrac{\epsilon_r*\epsilon_0*A}{d}$  
+
+As you can see, the capacitance increases with an increased area of the plate. The larger the area the more electrons ore cations will fit onto the plate. 
+On the other hand the capacitance increases by decreasing the distance between the two plates. This makes also perfect sense, as the electrons on the negatively charged plate are attracted to the cations on the positive plate. The closer the plates the larger the attraction, which means that more charges will want to occupy the plates. 
+
+The material between the two plates will also modify the electric field strength between them. 
+The epsilon zero in the formula represents the assumption that we have a vacuum between the two plates. 
 $ε_0 = 8.85*10^{12} \dfrac{F}{m}$ ... Vacuum permittivity 
 
-#### Capacitor Derivation
-Armed with all that knowledge, we can now mathematically derive the functional principle of a capacitor. 
+However, most of the time we have a dielectric between the two plates. 
+A dielectric decreases the strength of the magnetic field by a certain factor, which enables the plates to receive a higher charge per voltage. 
 
-We know that the capacitance is defined as:
-$C = \dfrac{Q}{U}$  
+The effect the dielectric has on the capacitance is represented by the relative permittivity.
+$\epsilon_r$ ... relative permittivity 
 
-Further, we know that the electric potential difference is work divided by the charge: 
-$U = \dfrac{W}{Q}$
+Now, the question again arises of what will happen if we put a second capacitor in our circuit. 
+We also want to calculate an equivalent capacitance. Only this time, the formulas are exactly the opposite to the formulas that we used for the resistors. 
+#### Capacitor in Parallel 
+If we add a second capacitor in parallel. Both capacitors will experience the same voltage, as the net voltage in a loop must be zero. Both capacitors have their capacitances, so we know that both will have their charges according to the capacitance formula. 
+This means that the total charge of the capacitors is the sum of the charge of the first and the second capacitor. 
 
-We can reformulate this to get the work out of a charge and a potential:
-$W = U*Q$
-In our case the electrons want to move from the negative plate to the positive. 
-This willingness to move from the negative to the positive plate, basically represents a stored energy in the capacitor plates. 
+$Q = Q_1 + Q_2$
 
-On the other hand, we have a distance d, between the two capacitor plates that must be overcome. 
-Work is also defined as:
-$W = F*d$
-d ... Distance
+So for the total charge we can insert the sum of the two separate charges.
 
-We also know that a particle experiences a force in the electric field:
-$F = E*Q$
+$C = \dfrac{Q}{U}$
 
-and we know that the electric field between two capacitor plates is constant. 
-$W = E*Q*d$
+As the voltage is the same, we can simply add the capacitances to acquire an equivalent capacitance:
 
-Now, we can say that the stored energy of the capacitor must be the same as the energy that must be overcome to travel from one plate to the other. 
-$W = U*Q= E*Q*d$
+$C = \dfrac{Q_1+Q_2}{U} = \dfrac{Q_1}{U} +\dfrac{Q_2}{U} = C_1 + C_2$
 
-By crossing out the charge, we acquire that the voltage between the two plates only depends on the electric field and the distance between the two plates. 
-$U= E*d$
+#### Capacitor in Series 
+If we add a second capacitor in series. Both capacitors will have the same amount of charge, but will have a different voltage drop across them. That all plates must be charged equally is due to the fact that similar charges want to repel each other and that they want to acquire as much distance to each other as possible. This can be best achieved if they spread across all four plates equally. 
 
-For a charge Q we can insert $Q = \epsilon_0*E*A$. 
-So, we get:
+Depending on the capacitances of the two capacitors, the voltage across the two capacitors will not be different.
 
-$C = \dfrac{Q}{U} = \dfrac{\epsilon_0*E*A}{E*d}=\dfrac{\epsilon_0*A}{d}$  
+$Q = Q_1 = Q_2$
 
-So, the capacitance of a capacitor only depends on the area of the plate, and on the distance of the two plates to each other. 
+$U= U_1 + U_2 = \dfrac{Q_1}{C_1}+ \dfrac{Q_2}{C_2}$
 
-The capacitance of a capacitor can be significantly increased by putting a dielectric between the two plates. A dielectric decreases the strength of the magnetic field by a certain factor, which enables the plates the receive a higher charge per voltage. 
+$\dfrac{Q}{C} = \dfrac{Q_1}{C_1}+ \dfrac{Q_2}{C_2}$
 
-For a capacitor with a dielectric we add the relative dielectric number:
-$C = \dfrac{\epsilon_r*\epsilon_0*A}{d}$  
-$\epsilon_r$ ... relative dielectric number 
+As the charge of the an equivalent capacitor would be the same as the charge of any one of the single capacitors, we can cancel the charges and get the formula for capacitors in series. 
 
+$\dfrac{1}{C} = \dfrac{1}{C_1}+ \dfrac{1}{C_2}$
 
+Adding capacitors in series, reduces their overall capacitance. 
 
+#### Summary
+Every conductor is able to store charge. The more voltage that is applied the more charge can be stored. The relationship between the charge and the voltage is proportional and called capacitance. It is given in Farad, which in practice is a quite large unit. 
+
+A capacitor can either be unidirectional or directional, and basically consists of two plates. When applying a voltage one plate is negatively charged while the other is positively charged. The larger the area, the more charge can be stored, and the closer the distance of the plates the higher the attraction, the more charges will load the area. To increase the capacitance further, a dielectric is used. 
+
+By loading the plates a capacitor stores energy. This energy can be released to buffer an unsteady signal. So, capacitor works similarly to a battery. Compared to a battery it stores way less energy, but it can release the energy way faster. These characteristics make a capacitor used on almost every circuit. 
+
+If we add multiple capacitors, we also have to determine the equivalent capacitance. In series, the capacitors experience the same voltage and the charges of the single capacitors add up, which means that the capacitances of the single capacitors can be added. In parallel the charges of the single capacitors are the same, as the charges want to spread equally across all plates. The voltages across the single, capacitors however are not the same. To get the parallel equivalent capacitance, we add the reciprocals of the single capacitances and receive the reciprocal of the equivalent of the capacitance. 
 ## Level - P-N Junction
 ## Level - The Diode
 ## Level - The Transistor
