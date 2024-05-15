@@ -341,6 +341,8 @@ When putting resistors in parallel, we add the reciprocals of the resistances to
 Further, we learned that the directional sum of the voltages in a closed loop must be zero, and that the sum of the currents in a node must be zero as well.
 We talked about a short circuit, in which the plus and minus pole of the power supply are connected accidentally, and talked about how this should be avoided at all times. 
 ## Level 7 - Capacitance
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GBu29s-65q4?si=KBHga9H893E6qcI8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Video Transcript
 #### Capacitance
 For us to understand the term capacitance we have to first recall charge and voltage.
