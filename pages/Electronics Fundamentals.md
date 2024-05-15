@@ -356,8 +356,13 @@ $C = \dfrac{Q}{U}$  given in $\dfrac{A*s}{V}$  or $F$ Farads
 
 If we look at a charge over voltage diagram we can see that the charge raises linearly with the voltage. Further, we see that for different values of capacitance the slopes are steeper or gentler. 
 
-Again, almost every component has some kind of capacitance. However, there are cases in which we want to have a lot of capacitance intentionally. Then, we will need a capacitor. However, before we can explain how capacitor works, we have to first understand the electric field. 
-#### Electric Fields
+Again, almost every component has some kind of capacitance. However, there are cases in which we want to have a lot of capacitance intentionally. Then, we will need a capacitor. However, before we can explain how a capacitor works, we have to first understand the electric field. 
+
+Symbol
+Polarized non polarized 
+Types
+
+#### Electric Field
 An electric field is an imaginary area in which electric charges experience a force. 
 Every electric charge is surrounded by such an electric field.
 
@@ -369,15 +374,71 @@ $E = \dfrac{1}{4*\pi*e_0}*\dfrac{q_2}{r^2}$
 
 For a point charge, we the electric field strength decreases with an increased distance.
 
-#### Homogenous Field
+#### Homogenous Electric Field
 Let's imagine two plates with a certain distance to each other to which a voltage is applied. The voltage want to push them from the negative pole to the plus pole. Therefore, the electrons move from the minus pole to the attached plate and distribute equally, as equal charges repel each other. The first plate is charged negatively. 
 
 On the opposing plate, the delocalized electrons are pushed from the plate to the plus pole of the battery. This means that the second plate is charged positively. 
 
 We said that every electric charge has a electric field around it. This means that those two electrically charged plates also have such a field. If we were to overlap every single electric field of the electrons and cations that are sitting on each plate, we get something like a wave front. Even though the field lines of a single electric charge are circular, we get resulting field lines that are parallel with each other. 
 
-This means that at any point between those two plates a electric charge would experience the same force. Let's imagine, we insert a negative charge between the plates. The positively charged plates want to attract the charge, while the negative plate wants to repel it. Because we assume that the two plates have almost an infinite length, the sum of forces would be the same at any point in the plate. This is we call a homogenous electric field. 
+This means that at any point between those two plates a electric charge would experience the same force. Let's imagine, we insert a negative charge between the plates. The positively charged plates want to attract the charge, while the negative plate wants to repel it. Because we assume that the two plates have almost an infinite length, the sum of forces would be the same at any point in the plate. This is what we call a homogenous electric field. 
+
 #### Electric Flux
+If we now were to draw a surface inside this electric field, we could determine something that is called the electric flux. The electric flux basically represents the amount of field lines that pass through a given surface: 
+
+$\phi_E = E*A$ ... Electric flux in $\dfrac{N*m^2}{C}$
+$A$ ... Surface through, which the electric field lines pass
+$E$ ... Electric field 
+
+When we know the electric flux, we can determine the charge Q by applying the first Maxwell law. 
+$Q = \epsilon_0*\phi_E$
+$ε_0 = 8.85*10^{12} \dfrac{F}{m}$ ... Vacuum permittivity 
+
+#### Capacitor Derivation
+Armed with all that knowledge, we can now mathematically derive the functional principle of a capacitor. 
+
+We know that the capacitance is defined as:
+$C = \dfrac{Q}{U}$  
+
+Further, we know that the electric potential difference is work divided by the charge: 
+$U = \dfrac{W}{Q}$
+
+We can reformulate this to get the work out of a charge and a potential:
+$W = U*Q$
+In our case the electrons want to move from the negative plate to the positive. 
+This willingness to move from the negative to the positive plate, basically represents a stored energy in the capacitor plates. 
+
+On the other hand, we have a distance d, between the two capacitor plates that must be overcome. 
+Work is also defined as:
+$W = F*d$
+d ... Distance
+
+We also know that a particle experiences a force in the electric field:
+$F = E*Q$
+
+and we know that the electric field between two capacitor plates is constant. 
+$W = E*Q*d$
+
+Now, we can say that the stored energy of the capacitor must be the same as the energy that must be overcome to travel from one plate to the other. 
+$W = U*Q= E*Q*d$
+
+By crossing out the charge, we acquire that the voltage between the two plates only depends on the electric field and the distance between the two plates. 
+$U= E*d$
+
+For a charge Q we can insert $Q = \epsilon_0*E*A$. 
+So, we get:
+
+$C = \dfrac{Q}{U} = \dfrac{\epsilon_0*E*A}{E*d}=\dfrac{\epsilon_0*A}{d}$  
+
+So, the capacitance of a capacitor only depends on the area of the plate, and on the distance of the two plates to each other. 
+
+The capacitance of a capacitor can be significantly increased by putting a dielectric between the two plates. A dielectric decreases the strength of the magnetic field by a certain factor, which enables the plates the receive a higher charge per voltage. 
+
+For a capacitor with a dielectric we add the relative dielectric number:
+$C = \dfrac{\epsilon_r*\epsilon_0*A}{d}$  
+$\epsilon_r$ ... relative dielectric number 
+
+
 
 ## Level - P-N Junction
 ## Level - The Diode
