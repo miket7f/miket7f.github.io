@@ -461,8 +461,60 @@ A capacitor can either be unidirectional or directional, and basically consists 
 By loading the plates a capacitor stores energy. This energy can be released to buffer an unsteady signal. So, capacitor works similarly to a battery. Compared to a battery it stores way less energy, but it can release the energy way faster. These characteristics make a capacitor used on almost every circuit. 
 
 If we add multiple capacitors, we also have to determine the equivalent capacitance. In series, the capacitors experience the same voltage and the charges of the single capacitors add up, which means that the capacitances of the single capacitors can be added. In parallel the charges of the single capacitors are the same, as the charges want to spread equally across all plates. The voltages across the single, capacitors however are not the same. To get the parallel equivalent capacitance, we add the reciprocals of the single capacitances and receive the reciprocal of the equivalent of the capacitance. 
-## Level - P-N Junction
-## Level - The Diode
+## Level 8 - Semiconductor and Diode
+### Video Transcript 
+#### Covalent Bonding
+At the very beginning we explained that atoms bond with each other to form a different structure. We also said that the elements in the periodic table can be split into metals and non-metals, and that metals bond with each other through metallic bonding, and that non-metals bond with non-metals through covalent bonding.
+
+To describe a semiconductor, we have to be aware of the concept of covalent bonding.
+Remember: every atom wants to have a full outer layer of electrons. For non-metals the outer layer is almost full. So, they might only lack one-three electrons. For them it is easier to acquire the additional electrons than to give up all their electrons. In covalent bonding two elements that lack electrons unite and share some one to three electrons with each other. Through that, both elements reach the desired state and have an equivalent of a full valence layer. 
+
+The electron of the first element is then also attracted to the nucleus of the second element and the electron of the second element is also attracted to the nucleus of the first element.
+
+#### Semiconductor
+A conductor is a material that allow charged matter to move freely. 
+An insulator on the other hand is a material that has no freely moving electrons and, therefore, which makes it impossible for current to occur. 
+Then there are semiconductor. These have a full outer layer and also no freely moving electrons. However, if a large enough potential is applied to them the electrons are able to move and the material becomes conductive. 
+
+The most used semiconductor material is silicon. Pure silicon is a structure, consists of many silicon atoms, each bonding with four other silicon atoms covalently. Most electrons are bond in this structure. However, there are a few electrons that can escape their bonds by getting enough energy, and this is what makes silicon partly conductive. 
+ 
+#### Doping
+But what really makes silicon ultra useful is doping. 
+When doping, elements are inserted into the silicon structure that are foreign.
+
+If phosphorus with five outer electrons is inserted, the structure has suddenly an excess electron. This is called an n-type semiconductor. 
+
+If on the other hand aluminum with three valence electrons is inserted, the structure lacks an electron, which creates a place where there should be an electron in the structure but there isn't - a so called hole. This also increases the conductivity, as the electrons move inside the structure to fill up the hole, which again creates a new hole. However, we like to think that the holes are moving, and as holes lack electrons, we think about them as moving positive charges. 
+This is what we call a p-type semiconductor. 
+
+Even though their names are negative and positive type semiconductor. They are not charged negatively or positively, because they have the same number of protons and electrons inside them. It actually only refers to the sign of charge that can move.
+
+#### P-N Junction
+These properties become only really useful if we add these two doped semiconductor together. 
+If we put a n-type next to a p-type semiconductor, we get what is called a p-n junction. 
+
+In the border between the two regions, electrons move from the n-region to the p-region to fill the electron holes. This creates what is called a depletion region, in which there are no freely moving electrons or holes. A slim region of the p-side becomes negatively charged, while a slim region of the n-side becomes positively  charged. This creates an electric field, which prevents more electrons from moving from the n to the p-side. The depletion region acts like a barrier. 
+
+When we now connect a voltage source to the p-n junction, with the positive pole connected to the p-side and the negative pole connected to the n-side. We push the electrons to move from the n-side to the p-side. This is what we call forward bias. However, for the movement to occur the pushing force - the voltage - must be high enough to overcome the barrier. If the voltage is higher than 0.7V, the barrier is overcome and the p-n junction becomes conductive.
+
+If we reverse the polarity of the battery, and we connect the positive pole to the n-side and the negative pole to the p-side. Something entirely different happens. The electrons on the n side are attracted to the plus pole, while the holes on the p-side are attracted to the minus pole. Therefore, the depletion region or barrier expands an no current can flow. 
+
+#### Diode
+What we just creates is a diode. A diode is an electrical component that allow current to flow in one direction, while it prevents current from flowing in the other direction. 
+
+A diode can be very useful, to protect our circuit from reverse voltage. It can also be used to convert alternating current to direct current. There are also special forms of diodes, such as LEDs (light emitting diodes) that emit light when voltage is applied in forward bias, or Zener diodes that have a breakthrough voltage after which they also become conductive in the reverse bias. Zener diodes can be used to protect our input channels from over voltage. 
+
+#### Summary
+When atoms bond covalently, they share their outer electrons to reach a full valence layer. 
+There are conductors, isolators, and something in between that is called a semiconductor. 
+The widest used material is silicon, which is a crystal like structure. 
+The silicon structure can be doped by adding phosphor with an extra electron to create an n-type semiconductor, or by adding aluminum with a lack of an electron to create a p-type semiconductor. 
+In the n-type semiconductor, electrons can move freely, while in the p-type semiconductor electron holes move freely. 
+When placing an n-type semiconductor next to a p-type semiconductor, we get something that is called a p-n junction. Some of the electrons move to the p-side to fill up the holes, which creates an electric field that prevents further movement. 
+If we apply voltage in forward bias this barrier can be overcome, and the material becomes conductive. 
+If we apply voltage in reverse bias, the holes move to the negative side, while the electrons move to the plus pole of the battery, which makes the barrier even bigger, and allows no current to flow. 
+Through that, we have created a component which allows current to flow in only one direction, which we call a diode. 
+A diode can be used to protect our circuits against reverse voltage, or to rectify alternating current to direct current. There a special diodes, such as LEDs, which light up in forward bias and Zener diodes, which allow us to protect our devices from overvoltage. 
 ## Level - The Transistor
 
 ## Level - Electric Induction
