@@ -43,18 +43,18 @@ Table 3:
 
 ## Product Pricing
 
-| Product                                   | Description                 | Price to be sold at | Margin | Margin Percentage |
-| ----------------------------------------- | --------------------------- | ------------------- | ------ | ----------------- |
-| Rocketree OUT                             | Single board                | 19 €                | 9 €    | 47%               |
-| Rocketree FUSION                          | Single board                | 49 €                | 24 €   | 49%               |
-| Rocketree CORE                            | Single board                | 79 €                | 39 €   | 49%               |
-| Rocketree Studio                          | Visualization Software      | 49 €                | 49 €   | 100%              |
-| Rocketree Rocket Pack                     | 3D printed model rocket     | 109 €               | 59 €   | 54%               |
-| **Rocketree Electronics & Software Pack** | Table 1                     | 249 €               | 100 €  | 40%               |
-| **Rocketree Starter Pack**                | Table 1 + Table 2           | 349 €               | 150 €  | 43%               |
-| Rocketree RC Extension                    | Table 3                     | 299 €               | 39 €   | 13%               |
-| Rocketree Ultimate Pack                   | Table 1 + Table 2 + Table 3 | 599 €               | 190 €  | 32%               |
-| Rocketree Classroom Pack                  | 3x Rocketree Starter Pack   | 999 €               | 402 €  | 40%               |
+| Product                                   | Description                 | Price to be sold at | Margin | Margin Percentage |     |
+| ----------------------------------------- | --------------------------- | ------------------- | ------ | ----------------- | --- |
+| Rocketree OUT                             | Single board                | 19 €                | 9 €    | 47%               |     |
+| Rocketree FUSION                          | Single board                | 49 €                | 24 €   | 49%               |     |
+| Rocketree CORE                            | Single board                | 79 €                | 39 €   | 49%               |     |
+| Rocketree Studio                          | Visualization Software      | 49 €                | 49 €   | 100%              |     |
+| Rocketree Rocket Pack                     | 3D printed model rocket     | 109 €               | 59 €   | 54%               |     |
+| **Rocketree Electronics & Software Pack** | Table 1                     | 249 €               | 100 €  | 40%               |     |
+| **Rocketree Starter Pack**                | Table 1 + Table 2           | 349 €               | 150 €  | 43%               |     |
+| Rocketree RC Extension                    | Table 3                     | 299 €               | 39 €   | 13%               |     |
+| Rocketree Ultimate Pack                   | Table 1 + Table 2 + Table 3 | 599 €               | 190 €  | 32%               |     |
+| Rocketree Classroom Pack                  | 3x Rocketree Starter Pack   | 999 €               | 402 €  | 40%               |     |
 
 
 

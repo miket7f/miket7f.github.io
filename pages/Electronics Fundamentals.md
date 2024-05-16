@@ -462,12 +462,13 @@ By loading the plates a capacitor stores energy. This energy can be released to 
 
 If we add multiple capacitors, we also have to determine the equivalent capacitance. In series, the capacitors experience the same voltage and the charges of the single capacitors add up, which means that the capacitances of the single capacitors can be added. In parallel the charges of the single capacitors are the same, as the charges want to spread equally across all plates. The voltages across the single, capacitors however are not the same. To get the parallel equivalent capacitance, we add the reciprocals of the single capacitances and receive the reciprocal of the equivalent of the capacitance. 
 ## Level 8 - Semiconductor and Diode
+<iframe width="560" height="315" src="https://www.youtube.com/embed/guyFDPdGvFk?si=PI0bmzEbSoIIVaQd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Video Transcript 
 #### Covalent Bonding
 At the very beginning we explained that atoms bond with each other to form a different structure. We also said that the elements in the periodic table can be split into metals and non-metals, and that metals bond with each other through metallic bonding, and that non-metals bond with non-metals through covalent bonding.
 
 To describe a semiconductor, we have to be aware of the concept of covalent bonding.
-Remember: every atom wants to have a full outer layer of electrons. For non-metals the outer layer is almost full. So, they might only lack one-three electrons. For them it is easier to acquire the additional electrons than to give up all their electrons. In covalent bonding two elements that lack electrons unite and share some one to three electrons with each other. Through that, both elements reach the desired state and have an equivalent of a full valence layer. 
+Remember: every atom wants to have a full outer layer of electrons. For non-metals the outer layer is almost full. So, they might only lack one-three electrons. For them it is easier to acquire the additional electrons than to give up all their electrons. In covalent bonding two elements that lack electrons unite and share one to three electrons with each other. Through that, both elements reach the desired state and have an equivalent of a full valence layer. 
 
 The electron of the first element is then also attracted to the nucleus of the second element and the electron of the second element is also attracted to the nucleus of the first element.
 
@@ -476,7 +477,7 @@ A conductor is a material that allow charged matter to move freely.
 An insulator on the other hand is a material that has no freely moving electrons and, therefore, which makes it impossible for current to occur. 
 Then there are semiconductor. These have a full outer layer and also no freely moving electrons. However, if a large enough potential is applied to them the electrons are able to move and the material becomes conductive. 
 
-The most used semiconductor material is silicon. Pure silicon is a structure, consists of many silicon atoms, each bonding with four other silicon atoms covalently. Most electrons are bond in this structure. However, there are a few electrons that can escape their bonds by getting enough energy, and this is what makes silicon partly conductive. 
+The most used semiconductor material is silicon. Pure silicon is a structure that consists of many silicon atoms, each bonding with four other silicon atoms covalently. Most electrons are bond in this structure. However, there are a few electrons that can escape their bonds by getting enough energy, and this is what makes silicon partly conductive. 
  
 #### Doping
 But what really makes silicon ultra useful is doping. 
