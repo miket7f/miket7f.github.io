@@ -516,7 +516,74 @@ If we apply voltage in forward bias this barrier can be overcome, and the materi
 If we apply voltage in reverse bias, the holes move to the negative side, while the electrons move to the plus pole of the battery, which makes the barrier even bigger, and allows no current to flow. 
 Through that, we have created a component which allows current to flow in only one direction, which we call a diode. 
 A diode can be used to protect our circuits against reverse voltage, or to rectify alternating current to direct current. There a special diodes, such as LEDs, which light up in forward bias and Zener diodes, which allow us to protect our devices from overvoltage. 
-## Level - The Transistor
+## Level 9 - The Transistor
+### Video Transcript
+There is one more component that is used in practically every electronics device today, and makes all our technologies possible. It is another application of semiconductor technology and you certainly heard about it at some point - the transistor.
+
+#### P-N Junction
+Remember the P-N junction that is within every diode. 
+A p-doped semiconductor is next to a n-doped semiconductors. In the border region, electrons move from the n-side to p-side to fill up some electron holes. 
+Through that, a slim region on the n-side becomes slightly positively charged, while a slim region on the p-side becomes slightly negatively charged. 
+There's an electric field that goes from the n to the p side, which makes it hard for more electrons to move from the n to the p side. 
+If we now apply forward bias voltage of more than 0.7V, the depletion region shrinks and the material becomes conductive. 
+In reverse bias the electrons are the depletion area increases and no current can flow. 
+
+#### BJT
+The easiest form of a transistor is the BJT (Bipolar Junction Transistor). It works by adding another n or p-doped semiconductor to a P-N Junction. 
+If we add a N region, we get an NPN.
+And if we add a P region, we get a PNP transistor. 
+
+##### NPN
+Let's first analyze the NPN type transistor. 
+The transistor consists of three ports. 
+One is connected to the first N region, which is called the emitter.
+Another is connected to the second N region, and is called the collector.
+Then there is the gate that is connected to the P region. 
+We can also think about a transistor, as consisting of two opposing diodes.
+If we apply a voltage from emitter to collector, one of them is always in reverse bias and won't allow current to flow. 
+Now if we apply a positive voltage to the P region, electrons from the reverse biased n region are attracted to the base. Through that, the depletion area decreases and electron holes of the P type are filled. 
+Because there is no depletion region anymore, the electrons from the first N region are attracted to the plus pole of the battery connected from emitter to collector, and current can flow between emitter and collector. 
+
+The higher the current on the base the less the depletion region becomes, the less the resistance between emitter and collector, and the higher the current flow between emitter and collector. 
+
+$I_{CE}=I_B*H_{fe}$
+The collector-emitter current is magnitudes higher than the base current and in fact is proportional by the proportionality constant Hfe that can be found in data sheets of transistors. 
+
+#### MOSFET
+A more advanced transistor version is the MOSFET, which is used in almost every integrated circuit today. Your laptop and phone contains billions of them, and with increasing years their sizes shrink drastically. Today the smallest are only 7-10nm small. A silicon atom is 0.2nm tall, which clarifies how small these transistors already are today.
+
+MOSFET stands for 
+Metal Oxide Semiconductor Field Effect Transistor 
+
+There are many different types of MOSFETs. 
+Firstly, the can be separated into enhancement and depletion type MOSFETs, which again can be sub-divided as N-channel and P-channel MOSFETs. 
+
+##### N-Channel Enhancement Type
+Let's look at the N-channel enhancement type MOSFET. 
+It again consist of three regions, two N-regions, and one P-region again.
+This type of transistor consists of four pins. 
+The emitter equivalent is called source and is connected to the first N-region, 
+the collector equivalent is called drain and is connected to the second N-region, 
+and the base equivalent is called gate and connected to the P-region. However, there is a insulator or dielectric in-between the gate connection and the P-region. 
+There is a fourth pin across the gate and connected to the source. 
+
+If we were to connect a battery between source and drain, there would be no current flow, as one of the P-N junction again is in reverse bias. 
+However, if we additionally apply a voltage to the gate pin, a electric field is created between the substrate pole and the dielectric. Electrons move from the N-junction to the dielectric and fill up some of the electron holes in the P-region. The more voltage we apply at the gate, the more electrons are attracted. This plate works similar to a capacitor. 
+At some point there are freely moving electrons in the upper part of the P-region, which creates a tunnel between the two N-regions in which electrons can move. 
+
+This explains the first major difference between a BJT and a MOSFET. As you can see, no current is flowing through the gate, which means that the MOSFET is controlled by the voltage and not the current. However, keep in mind that there is a short current burst required to charge the capacitance of the plate on the gate. 
+
+When increasing the drain source voltage VDS, the drain source current IDS increases linearly at the beginning. However, the second N-region removes electrons from its border that travel to the plus pole of the battery, while holes on the other side are moved to the substrate body. This means that the depletion region o the second N-region increases. Through that, with increased drain source voltage, the tunnel becomes narrower again, and at some point the current does not increase linearly anymore but reaches a saturation, which we call saturation current. 
+
+When we, however, again increase the gate voltage, the tunnel becomes wider, which means that we can increase the drain source voltage further before we reach this saturation voltage. 
+This means that, we can entirely control the drain source current by the voltage that is applied on the gate. This makes the MOSFET ultra useful, and gives it another name, a so called voltage controlling device. 
+##### N-Channel Depletion Type
+We won't dive into how P-channel MOSFETs work.
+However, we will briefly discuss in what ways an N-channel depletion type MOSFET would be different.
+
+In the depletion type MOSFET, we already have a pre-existing tunnel manufactured into the MOSFET, which means that without the gate being turned on, current can already flow from the source to the drain. By applying a negative gate voltage to the depletion type MOSFET, the depletion region to the P-region substrate increases and the tunnel becomes narrower to the point of being able to turning the MOSFET of by applying a negative voltage to the gate. 
+#### Summary
+
 
 ## Level - Electric Induction
 ## Level - Inductor
