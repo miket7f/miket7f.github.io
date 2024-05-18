@@ -518,7 +518,7 @@ Through that, we have created a component which allows current to flow in only o
 A diode can be used to protect our circuits against reverse voltage, or to rectify alternating current to direct current. There a special diodes, such as LEDs, which light up in forward bias and Zener diodes, which allow us to protect our devices from overvoltage. 
 ## Level 9 - The Transistor
 ### Video Transcript
-There is one more component that is used in practically every electronics device today, and makes all our technologies possible. It is another application of semiconductor technology and you certainly heard about it at some point - the transistor.
+There is one more component that is used in practically every electronics device today, and makes all our technologies possible. It is another application of semiconductor technology and you certainly heard about it at some point - the transistor. The transistor is like a switch that can turn on and off current flow. However, it does so without needing any mechanical components. 
 
 #### P-N Junction
 Remember the P-N junction that is within every diode. 
@@ -577,18 +577,74 @@ When increasing the drain source voltage VDS, the drain source current IDS incre
 
 When we, however, again increase the gate voltage, the tunnel becomes wider, which means that we can increase the drain source voltage further before we reach this saturation voltage. 
 This means that, we can entirely control the drain source current by the voltage that is applied on the gate. This makes the MOSFET ultra useful, and gives it another name, a so called voltage controlling device. 
+
 ##### N-Channel Depletion Type
 We won't dive into how P-channel MOSFETs work.
 However, we will briefly discuss in what ways an N-channel depletion type MOSFET would be different.
 
-In the depletion type MOSFET, we already have a pre-existing tunnel manufactured into the MOSFET, which means that without the gate being turned on, current can already flow from the source to the drain. By applying a negative gate voltage to the depletion type MOSFET, the depletion region to the P-region substrate increases and the tunnel becomes narrower to the point of being able to turning the MOSFET of by applying a negative voltage to the gate. 
+In the depletion type MOSFET, we already have a pre-existing tunnel manufactured into the MOSFET, which means that without the gate being turned on, current can already flow from the source to the drain. By applying a negative gate voltage to the depletion type MOSFET, the depletion region to the P-region substrate increases and the tunnel becomes narrower to the point of being able to turning the MOSFET completely of by applying a negative voltage to the gate. 
+
+#### Summary
+A transistor is another semiconductor, which can be used as a switch or as a voltage controlling device in a circuit. 
+One of its simplest forms the BJT is created by adding a N or a P region to a PN junction. 
+
+For a NPN type BJT, we get three connections called the emitter (connected to the first N-region), the collector (connected to the second N-region), and the base (connected to the P-region).
+The two PN junctions function as two opposite facing diodes. If we apply a voltage from emitter to collector, one of them is reverse-bias, which means that no current can flow. 
+However, if we apply a positive voltage to the base, electrons are attracted from the N-region and fill up some of the electron holes of the P-region. If enough voltage is applied, there are freely moving electrons in the upper part of the P-region, which makes it conductive. Through that, current can flow from emitter to collector and the transistor is turned on. 
+The higher the flowing base emitter current, the more freely moving electrons, the higher the emitter collector current. The two currents are linked by the proportionality Hfe. 
+
+Another form is the MOSFET (metal oxide semiconductor field effect transistor). A N-channel enhancement type MOSFET, consist of four ports: source, gate, drain, and substrate body. The substrate port is internally connected to the source pin. Source is connected to the first N region, Drain to the second, and Gate is connected to the P-region. However, between the gate and the P-region there is a dielectric, which allows no current to flow and opposite of the gate is the substrate body plate. When we now apply voltage between the gate and the source, a electric field between the gate and the substrate body is created. This electric field draws electrons from the N-region to the plate, which again fills up electron holes, and if enough voltage is applied the plate becomes negatively charged just as in a capacitor. This creates a tunnel between the two N-regions is, which makes current flow possible.
+
+By increasing the drain source voltage, the current rises linearly in the ohmic region of the transistor. The higher the drain source voltage gets, the larger the depletion region on the drain N-region becomes because it is in reverse bias. This enlargement in depletion area, creates a limit to the drain source current, which we call the saturation current. The saturation current changes with the applied voltage to the gate, as the gate voltage can enlarge the tunnel. 
+
+And finally, in the N-channel depletion type. There is already a tunnel present, and by applying a negative voltage to the gate the tunnel can be closed. 
+## Level 10 - Induction 
+### Video Transcript
+#### Magnets
+An electric field is created by an electric charge, and is an imaginator area in which another electric charge would experience a force - the coulomb force. There are positive and negative electric charges, and each of them can consist on their own.
+
+Now, on the other hand there are magnets. If we look at a bar magnet, we can see that each magnet has a magnetic North and magnetic South pole. If we now wanted to have only a magnetic South pole, one would think that by cutting a bar magnet in have we would get exactly that. However, it turns that if we cut a bar magnet it half, we get two bar magnetic with each having a magnetic South and North pole. In fact, there is no way of creating just a magnetic South or a magnetic North pole, they always exist together. 
+
+A bar magnet is created out of a metal. Some metals like iron are what we call ferromagnetic. When iron is created it forms grain boundaries. We think of each grain as having a permanent magnet inside that faces in a random direction. As every grain's magnet faces in an entirely different direction, there is no net magnetic field. 
+
+However, if we apply a large magnetic field to the ferromagnetic material, the grain's magnets align with the magnetic field, and if this outside magnetic field was strong enough, the grain's magnets will stay in that alignment after the field was applied. Now this ferromagnetic material, became a magnet on its own. 
+
+Its magnetic properties can be destroyed by heating up the magnet which randomizes the inner bar magnets again.
+#### Electromagnetism
+Now, there is something else that also creates a magnetic field. 
+If current flows through a wire, we get a magnetic field around the wire. 
+
+On the other hand: if there is a magnetic field, and we have a wire that we move inside the magnetic field, current is induced in the wire. 
+
+Finally, if the magnetic field changes, current is again induced in the wire, and if the current flow changes we get an induced voltage as well. 
+If we allow current to flow through a wire, we create a magnetic field. 
+This magnetic field wants to remain steady. 
+If we suddenly turned off our power supply, the magnetic field would decrease. This magnetic field decrease leads to an induced current in the wire, and the current change leads to an induced voltage.
+
+Remember: magnetic field change leads to induced current. The induction keeps the current flowing for a while and induces a voltage, even though are supply is already turned off. 
+
+On the contrary, if we were to turn on the current again, the full current wouldn't immediately occur, because the magnetic field first needs to build up and creates an induced current and voltage in the opposite direction.
+
+The wire stores energy in the form of magnetism. 
+
+The parameter that describes the wire's characteristics of that energy is called inductance L given in Henry. 
+
+The induced voltage can be calculated by multiplying the inductance with the change in current. 
+$V = L*\dfrac{dI}{dt}$ ... Voltage
+
+#### Inductors
+By creating many turns of wire, we can increase the magnetic field that is created, and thus increase the effect the magnetic field has. 
+This forms the basis of our next component:
+The inductor. 
+Often the inductor additionally features a metal core, which increases the inductance. 
+
+
+
 #### Summary
 
-
-## Level - Electric Induction
-## Level - Inductor
-
 ## Level - Oscillator 
+
+
 
 ## Level - 1st Look at Stack
 
