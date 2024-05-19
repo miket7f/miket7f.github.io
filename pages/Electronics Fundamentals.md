@@ -113,6 +113,11 @@ If we look at a basic circuit with a battery, a lamp, and two metal conductors, 
 
 Electrons move from the minus to the plus pole. However, electrical engineers always label the flowing direction of the current to be from the plus to the minus pole. This representation called the "conventional representation" arose, because early scientists did not know whether the protons or the electrons are moving, and made the wrong guess. Because all formulars of that are used today build upon the wrong flow direction of the current, we still have to use the conventional representation. 
 
+#### Direct Current vs. Alternating Current
+The current that we described here is also called direct current (DC). In DC, current is flowing in one-direction only. When designing our own flight computer, we will almost always be using DC current. 
+
+However, there is another form that you should have heard of an understand, which is called alternating current. The current coming from the power grid is AC. In fact, almost all of your consumer devices will be powered by AC. As the name suggests, the current changes periodically in direction and amplitude in the form of a sine wave. 
+The frequency with which this change happens is called the AC power supply frequency. You probably already have heard that in most of Europe it is 50Hz (50 times per second), while in the US it is 60Hz (60 times per second). This is also why Europe consumer devices are not necessarily compatible with the devices in the US. 
 #### Summary
 So, atoms can bond with each other to form a bigger structure. 
 Metals bond with metals through a metallic bond. 
@@ -123,6 +128,10 @@ These cations would usually repel each other, however the electrons that were gi
 Current is the same in electricity as the flow rate in a water pipe. It is basically, the movement of electrons in a conductor. The electrons push each other forward and through that can transport energy from one source to another. It is measured in Ampere and tells us how much charge is transported through a conductor in one second.
 
 A conductor is a material that allows current to flow. Metals, are always good conductors, as the delocalized electrons can move freely. 
+
+The conventional direction of current flow is from the plus to the minus pole, which is used by electrical engineers in all sorts of formulas. It is also what you should use when drawing the direction of the current. However, keep in mind that in reality the electrons move from the minus to the plus pole. 
+
+Finally, current can be split into DC and AC current. While DC current is a flow in one direction only, while the alternating current changes periodically in direction and amplitude. 
 ## Level 4 - Voltage
 ### Video Transcript
 Now we know that electrons can flow inside a metal, and that the flow-rate is called electric current. However, you may ask yourself why this movement occurs.
@@ -188,7 +197,6 @@ This is done through a power supply.
 A battery creates this electric potential difference between its two poles by converting chemical energy into electrical energy. The battery basically attains a state in which the minus pole acquires an excess in electrons, while the plus pole lacks electrons. Through this imbalance the electrons are pushed from the minus pole to the plus pole if they are connected through a conductor. If they are not connected nothing happens, as electrons can't travel through air.
 
 The pushing force can also be created by using a lab bench power supply that is connected to the power grid. 
-
 #### Summary
 So, the electric potential energy can be compared to the altitude of the water level in a pipeline system. If we only have one unconnected pool, no water will flow. If we then connect pool 1 to another, water will flow. How fast it will flow does only depend in the difference in altitude of the water levels. 
 
@@ -603,7 +611,9 @@ And finally, in the N-channel depletion type. There is already a tunnel present,
 #### Magnets
 An electric field is created by an electric charge, and is an imaginator area in which another electric charge would experience a force - the coulomb force. There are positive and negative electric charges, and each of them can consist on their own.
 
-Now, on the other hand there are magnets. If we look at a bar magnet, we can see that each magnet has a magnetic North and magnetic South pole. If we now wanted to have only a magnetic South pole, one would think that by cutting a bar magnet in have we would get exactly that. However, it turns that if we cut a bar magnet it half, we get two bar magnetic with each having a magnetic South and North pole. In fact, there is no way of creating just a magnetic South or a magnetic North pole, they always exist together. 
+Now, on the other hand there are magnets. If we look at a bar magnet, we can see that each magnet has a magnetic North and magnetic South pole. Magnetic field lines always travel from the magnetic north to the magnetic south pole.
+
+If we now wanted to have only a magnetic South pole, one would think that by cutting a bar magnet in half we would get exactly that. However, it turns out that if we cut a bar magnet it half, we get two bar magnetic with each having a magnetic South and North pole. In fact, there is no way of creating just a magnetic South or a magnetic North pole, they always exist together. 
 
 A bar magnet is created out of a metal. Some metals like iron are what we call ferromagnetic. When iron is created it forms grain boundaries. We think of each grain as having a permanent magnet inside that faces in a random direction. As every grain's magnet faces in an entirely different direction, there is no net magnetic field. 
 
@@ -612,19 +622,20 @@ However, if we apply a large magnetic field to the ferromagnetic material, the g
 Its magnetic properties can be destroyed by heating up the magnet which randomizes the inner bar magnets again.
 
 #### Electromagnetism
-Now, there is something else that also creates a magnetic field. 
-If current flows through a wire, we get a magnetic field around the wire. 
+Now, there is electromagnetism. The connection between magnetic fields and electric current. 
 
-On the other hand: if there is a magnetic field, and we have a wire that we move inside the magnetic field, current is induced in the wire. 
+Electrically charged particles that move create a magnetic field. This means that in a wire where there is current, a magnetic field is created. In a wire the magnetic field is in concentric circles around the wire. 
+The direction of such a field can be determined by used the right hand rule, which states that by gripping the wire and aligning the thumb in the direction of the conventional current flow, the other fingers will show the direction of the magnetic field. 
+The strength of the field decreases with increases distance to the wire. 
+
+The reverse of this law states that if there is a magnetic field and we move a wire inside the magnetic field, current is induced in the wire. 
 
 Finally, if the magnetic field changes, current is again induced in the wire, and if the current flow changes we get an induced voltage as well. 
-If we allow current to flow through a wire, we create a magnetic field. 
-This magnetic field wants to remain steady. 
-If we suddenly turned off our power supply, the magnetic field would decrease. This magnetic field decrease leads to an induced current in the wire, and the current change leads to an induced voltage.
 
-Remember: magnetic field change leads to induced current. The induction keeps the current flowing for a while and induces a voltage, even though are supply is already turned off. 
+Okay, let's look at the example with the wire creating a magnetic field again. 
+If current is present, electrons move through the wire, which creates a concentrical magnetic field around the wire. One of the fundamental properties of a magnetic field is that it wants to remain steady. If we suddenly turned off our power supply, the magnetic field won't immediately be gone, as it wants to resist the change. Instead, it will slowly decrease. However, keep in mind that a magnetic field change leads to an induced current and voltage. The induction keeps the current flowing for a while and induces a voltage, even though the supply is already turned off. 
 
-On the contrary, if we were to turn on the current again, the full current wouldn't immediately occur, because the magnetic field first needs to build up and creates an induced current and voltage in the opposite direction.
+On the contrary, if we were to turn on the current again, the full current wouldn't immediately occur, because the magnetic field first needs to build up. In this case an induced current and voltage in the opposite direction would be present before the magnetic field was built up completely.
 
 The wire stores energy in the form of magnetism. 
 
@@ -634,21 +645,45 @@ The induced voltage can be calculated by multiplying the inductance with the cha
 $V = L*\dfrac{dI}{dt}$ ... Voltage
 
 #### Inductors
-By creating many turns of wire, we can increase the magnetic field that is created, and thus increase the effect the magnetic field has. 
+By creating many turns of wire and creating a coil, we can increase the magnetic field that is created, and thus increase the inductive effect the magnetic field has. 
 This forms the basis of our next component:
 The inductor. 
 Often the inductor additionally features a metal core, which increases the inductance. 
 
+Here is the symbol of the inductor. 
+
+So, what are the use cases of the inductor that result out of its properties?
+A capacitor wants to keep the voltage steadily, while an inductor wants a steady current flow.  
+If we were to turn off a flowing current, the inductor would continue to push electrons in the direction of the flow for a while. If we were to turn on current, the inductor would hinder the electrons at first before the magnetic field would be fully established. So, the inductor creates a lag in current changes, while a capacitor creates a lag in voltage changes. A inductor hinders instantaneous changes in current. 
+
+And that's exactly for what it's used. 
+For a steady current supplies a inductor is used, just as capacitors are used for steady voltage supplies. 
+Another use case would be to store energy in the form of magnetic fields. In for example, switching power supplies. 
+And yet another use example would be to use an inductor in conjunction with a capacitor to create a LC circuit for removing ripple from switched-mode power supplies. Ripple is a periodic variation in direct voltage. It occurs if DC current/voltage is derived from alternating current/voltage. 
+#### Downsides
+Inductors are relatively big.
+They create a magnetic field which can influence near by signal lines or integrated circuits, which must be accounted for when designing the layout of a printed circuit board (PCB).
+Finally, inductors themselves, can be influenced by applying a magnetic field to them. 
 #### Summary
+Magnetic fields always have to be closed in themselves, which is why there can't be a North or a South pole on its own. 
 
+There's a interplay between electric charges and magnetic fields that is called electromagnetism. 
+If electric charges are moving they create a magnetic field. For example, current flowing in a wire creates a concentrical electric field around the wire. 
+Reversely, if there's a magnetic field and we move a wire inside the field, current is induced in the wire. 
+Further if the magnetic field changes, current is again induced in the wire. 
 
+A magnetic field always wants to remain steady and stores energy.
+If we turn on the voltage source so current can flow through a wire, the magnetic field induces a current and voltage in the opposing direction until the magnetic field is built up completely.
+If we turn off the voltage source, the magnetic field also wants to maintain its current state, and induces a current so it can continue to flow for a while. Through that, a lag in current change is created. 
 
+If we were to create multiple turns of wire, we can increase this effect and create something that is called an inductor. Inductance is measured in Henry.
+Often, inductor feature a ferromagnetic metal core to increase the inductance even further. 
+Ferromagnets, are metals that can be made magnetic by applying an strong outside magnetic field to them. 
+
+Inductors are used to store energy, to smooth a current supply, or in company with a capacitor to create a stable DC current from a switch mode power supply. When creating the layout, their placement must be considered. So, that their magnetic field does not influence signal lines or integrated circuits, and so it isn't influenced by a magnetic field itself. 
 
 ## Level - Oscillator 
 
 
 
 ## Level - 1st Look at Stack
-
-
-
