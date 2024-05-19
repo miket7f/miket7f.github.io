@@ -610,6 +610,7 @@ A bar magnet is created out of a metal. Some metals like iron are what we call f
 However, if we apply a large magnetic field to the ferromagnetic material, the grain's magnets align with the magnetic field, and if this outside magnetic field was strong enough, the grain's magnets will stay in that alignment after the field was applied. Now this ferromagnetic material, became a magnet on its own. 
 
 Its magnetic properties can be destroyed by heating up the magnet which randomizes the inner bar magnets again.
+
 #### Electromagnetism
 Now, there is something else that also creates a magnetic field. 
 If current flows through a wire, we get a magnetic field around the wire. 
@@ -638,9 +639,10 @@ This forms the basis of our next component:
 The inductor. 
 Often the inductor additionally features a metal core, which increases the inductance. 
 
-
-
 #### Summary
+
+
+
 
 ## Level - Oscillator 
 
