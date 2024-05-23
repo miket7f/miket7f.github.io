@@ -7,8 +7,7 @@ permalink: elec-design
 The material that we provide in the following levels is by now means complete but it might help you to learn about the subject yourself, while we are working on providing content for you! 
 
 ## Level 1 - Introduction to the Electronics Path
-
-### Video Transcript 
+### Lecture 
 We know you are eager to develop your own flight computer right away. However, we have to get you set up with the fundamentals first. Trust me, I have been there, designing my first flight computer without caring about the fundamentals, and well I can tell you that my first designs didn't work out as planed. 
 
 For you to get the best understanding of circuit design possible, we have to start all the way at the beginning. We will start within the atom and take a look on an even smaller unit - the electron. Then, we will zoom out and take a look on how atoms bond with each other. We will learn about the force that acts between them, will describe what an electric charge is, and look at the concept of electric fields. Further, we will learn about conductivity, electric current, electric potential and the concept of the electric current. 
@@ -24,7 +23,7 @@ Finally, to understand a diode and a transistor we will have to understand how p
 All may sound terrifying to you at the beginning. Yet, stick with us and you will see that those concepts are way easier than as they sound. 
 ## Level 2 - The Electron
 
-### Video Transcript 
+### Lecture 
 #### The Atom
 Our world, everything you see, consists of extremely tiny building blocks - the so called Atoms. Their name comes from the ancient Greek word Atomos, which stands for "uncuttable". Previously, they were thought to be undividable, but science has found out that they, in fact, consist of even smaller units. 
 
@@ -73,15 +72,16 @@ Depending on the number of protons you get different elements. There's the Bohr 
 
 Further, there are ions, which result in through an imbalance between electrons and protons in a element. The atom can either be charged positively - cations,  negatively - anions, or it can be neutral. 
 
-#### Activity
+### Activity
 - labeling the atom 
 - naming element by periodic table 
 - Bohr model and valence electrons
 - metals non-metals?
 - anion vs cation?
+
 ## Level 3 - Current
 
-### Video Transcript 
+### Lecture 
 
 #### Atom Bonding
 The materials that we know from our day to day life, result from atoms bonding with each other to form something bigger. They can bond with each other through different forms. Metals, for example, bond with other non-metals through a ionic bond. Non-metals bond with each other through covalent bonds. And metals bond to each other through a metallic bond. 
@@ -133,7 +133,7 @@ The conventional direction of current flow is from the plus to the minus pole, w
 
 Finally, current can be split into DC and AC current. While DC current is a flow in one direction only, while the alternating current changes periodically in direction and amplitude. 
 ## Level 4 - Voltage
-### Video Transcript
+### Lecture
 Now we know that electrons can flow inside a metal, and that the flow-rate is called electric current. However, you may ask yourself why this movement occurs.
 
 The invisible force that pushes the electrons from one battery pole into the other is called the voltage. The higher the voltage, the more electrons will flow from one end of the battery to the other. 
@@ -206,7 +206,7 @@ It is actually, the difference in electric potential energy that causes electron
 
 This electric potential difference is created by using a battery, a lab bench power supply, or any other voltage source. 
 ## Level 5 - Resistance
-### Video Transcript
+### Lecture
 Through our deep dive in atom theory, we learned that the flow of electrons or charged matter in general is called electric current, while the pushing force behind it is called the voltage. 
 
 The current I and the voltage U are linked with each other through something called the resistance. 
@@ -234,7 +234,7 @@ They come in the following format: X.XX * 10^X
 The first three rings represent three digits of the resistor value, while the fourth ring provides the multiplier. 
 The fifth and final ring provides the variation in resistance value, which is usually either +- 5 or +- 10% of the resistor value. 
 ## Level 6 - Schematics and Resistor Circuits
-### Video Transcript
+### Lecture
 #### First Look at a Schematic 
 In order to represent how different components are connected with each other to form a functional electric circuit, we use something that is called a schematic. 
 
@@ -351,7 +351,7 @@ We talked about a short circuit, in which the plus and minus pole of the power s
 ## Level 7 - Capacitance
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GBu29s-65q4?si=KBHga9H893E6qcI8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Video Transcript
+### Lecture
 #### Capacitance
 For us to understand the term capacitance we have to first recall charge and voltage.
 A charge is the total amount of electrons a conductor can take up, while voltage is the electric potential difference that causes the electrons to move. 
@@ -471,7 +471,8 @@ By loading the plates a capacitor stores energy. This energy can be released to 
 If we add multiple capacitors, we also have to determine the equivalent capacitance. In series, the capacitors experience the same voltage and the charges of the single capacitors add up, which means that the capacitances of the single capacitors can be added. In parallel the charges of the single capacitors are the same, as the charges want to spread equally across all plates. The voltages across the single, capacitors however are not the same. To get the parallel equivalent capacitance, we add the reciprocals of the single capacitances and receive the reciprocal of the equivalent of the capacitance. 
 ## Level 8 - Semiconductor and Diode
 <iframe width="560" height="315" src="https://www.youtube.com/embed/guyFDPdGvFk?si=PI0bmzEbSoIIVaQd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-### Video Transcript 
+
+### Lecture
 #### Covalent Bonding
 At the very beginning we explained that atoms bond with each other to form a different structure. We also said that the elements in the periodic table can be split into metals and non-metals, and that metals bond with each other through metallic bonding, and that non-metals bond with non-metals through covalent bonding.
 
@@ -525,7 +526,7 @@ If we apply voltage in reverse bias, the holes move to the negative side, while 
 Through that, we have created a component which allows current to flow in only one direction, which we call a diode. 
 A diode can be used to protect our circuits against reverse voltage, or to rectify alternating current to direct current. There a special diodes, such as LEDs, which light up in forward bias and Zener diodes, which allow us to protect our devices from overvoltage. 
 ## Level 9 - The Transistor
-### Video Transcript
+### Lecture
 There is one more component that is used in practically every electronics device today, and makes all our technologies possible. It is another application of semiconductor technology and you certainly heard about it at some point - the transistor. The transistor is like a switch that can turn on and off current flow. However, it does so without needing any mechanical components. 
 
 #### P-N Junction
@@ -607,7 +608,7 @@ By increasing the drain source voltage, the current rises linearly in the ohmic 
 
 And finally, in the N-channel depletion type. There is already a tunnel present, and by applying a negative voltage to the gate the tunnel can be closed. 
 ## Level 10 - Induction 
-### Video Transcript
+### Lecture
 #### Magnets
 An electric field is created by an electric charge, and is an imaginator area in which another electric charge would experience a force - the coulomb force. There are positive and negative electric charges, and each of them can consist on their own.
 
@@ -682,8 +683,94 @@ Ferromagnets, are metals that can be made magnetic by applying an strong outside
 
 Inductors are used to store energy, to smooth a current supply, or in company with a capacitor to create a stable DC current from a switch mode power supply. When creating the layout, their placement must be considered. So, that their magnetic field does not influence signal lines or integrated circuits, and so it isn't influenced by a magnetic field itself. 
 
-## Level - Oscillator 
+## Level 11 - Crystal Oscillator 
+### Lecture
+Before we can take our first look at a model rocket flight computer and its circuits we have to discuss one final fundamental technology. Have you ever wondered how a clock keeps time? 
+Since its origin it uses some sort of oscillator that marks the elapsing of one second by which it turns its pointers. The oscillator itself changed many times over the creation of the clock. At first it used a pendulum. Then something similar to a tuning fork, an LC circuit, to finally using a piezoelectric crystal. 
 
+Similarly to a watch, our integrated circuit also need some kind of impulse generator. If we want to control servos, read out sensor data, or transmit information through the air, we always need accurate control signals. And those need timing. 
 
+#### LC circuit 
+The first way to create timing is by using an LC circuit. 
+Let's consider connecting a charged capacitor to a resistor. 
+As soon as the resistor is connected, the current would jump to be maximum and then slowly decrease until there is no charge left in the capacitor.
 
-## Level - 1st Look at Stack
+Now, let's consider what happens if we replaced the resistor by an inductor. 
+The capacitor has maximum voltage at the beginning and wants to create maximum current at the beginning as well. However, the inductor resists change in magnetic field, which creates a induced voltage in the opposite direction. This means that the current only slowly rises. The current rises and the inductor builds up its electric field until the current reaches its maximum. Then, it  decreases as the capacitor empties. However, this time the inductor resists the current decrease, and induces a voltage and current that wants to keep the flow going. This pushes current into the capacitor and charges it again but in reverse polarity. This means that the current flow would be in the reverse direction for the next half. The cycle begins again, and the current of an LC circuit takes the shape of a sine wave. 
+
+In an ideal world, this oscillation would go on forever. However, in reality there is some kind of resistance in the circuit. So, it actually is a RLC circuit. The resistance gradually decays the amplitude until no oscillation is left. 
+
+$V = L*\dfrac{dI}{dt}$ 
+
+$I = C*\dfrac{dV}{dt}$ 
+
+#### Piezoelectricity 
+Now, there is a better way of creating such an oscillator. 
+It is done by using the piezoelectric effect! 
+
+The piezoelectric effect states that a quartz crystal creates a voltage if it is deformed. So, if you were to hit a crystal you it would create a certain voltage. On the contrary, if you applied a voltage across a quartz crystal it would elastically deform. If the voltage is turned off again the crystal would create a voltage as it elastically goes back to its original shape. 
+The crystal oscillator circuit works by using a voltage signal from the quartz crystal, amplifying it, and feeding it back to the crystal. 
+
+The result is that the crystal functions like an RLC circuit with a precise resonance frequency (the rate in expansion and contraction of the crystal). It comes with the advantage of loosing way less energy per cycle compared to an RLC circuit.
+If we look at quartz crystal as a component. The symbol looks like this and it comes with two pins. 
+
+#### Summary
+To create proper timing for our communication protocols and our integrated circuits, we use a crystal. 
+A crystal contracts by applying a voltage and releases a voltage as soon as it is allowed to go back to its original state. By feeding the voltage output of the crystal, amplifying it and feeding it back into the quartz, an oscillation is achieved. This oscillation is more power efficient, as it loses less energy per turn.
+## Level 12 - Glimpse at Stack
+### Lecture
+We learned about atom theory, electric charges, electric potential, voltage, Kirchhoff's laws, magnetic fields, and inductance to derive the function principle of the most used electrical components:
+resistors, capacitors, inductors, semiconductors, including diodes and transistors, and oscillators. 
+
+The concepts build the foundation upon which we will now be able to learn how to interconnect them to form circuits that we can use in our flight computers. 
+
+For you to grasp how often we use these components in a flight computer, let's take a look at Stack. 
+
+As you learned before Stack consists of three boards that function together: 
+Stack CORE, Stack FUSION, and Stack OUT.
+
+#### CORE
+![](/assets/images/a6700-0328%20-%20frame%20at%200m12s-2.jpg)
+- 13 Resistors
+- 9 Capacitors
+- 1 Inductor
+- 3 Transistors 
+- 5 Diodes
+- 3 Switches 
+#### FUSION
+
+![](/assets/images/a6700-0327%20-%20frame%20at%200m3s%20-%202.jpg)
+- 4 Resistors 
+- 19 Capacitors
+- 3 Diodes
+- 2 Switches
+- 1 Oscillator 
+#### OUT
+![](/assets/images/a6700-0330%20-%20frame%20at%200m5s%20-%202.jpg)
+
+- 18 Resistors
+- 4 Capacitors
+- 5 Transistors 
+- 8 Diodes
+- 1 Switch
+- 1 Oscillator
+
+All of these modules also have a lot of other components that are called integrated circuits. 
+These circuits also mostly consist of basic components themselves. 
+
+CORE
+- ESP32 Microcontroller
+- CH340 USB to UART driver
+- LM2596 Buck Converter
+
+FUSION
+- STM32F7 Microcontroller
+- BMI088 Gyroscope and Accelerometer
+- BMP388 Barometer
+- ESD Protection
+
+OUT
+- STM32G0 Microcontroller
+- ESD Protection 
+
+In the next topic you just unlocked - **Electronics Circuits** - you will learn about how to arrange the basic components according to your needs to form functional units that we can use for our flight computers. Further, you will learn about the most essential integrated circuits (ICs) which we will use often in our designs. 
