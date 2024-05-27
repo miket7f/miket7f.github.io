@@ -389,7 +389,7 @@ Shunt Regulator
 L7805
 LM2596
 
-## Level - Microcontroller Basics
+## Level 5 - Microcontroller Basics
 ### Lecture
 As mentioned before, we can think of a microcontroller to be a mini computer. Compared to a real-computer, it comprises all the relevant parts in a single package, such as the processing cores, the program memory, and the input/output peripherals. 
 
@@ -555,8 +555,17 @@ Temperature Measuring Device with Button - with Interrupt
 
 ## Level - Specific Microcontrollers
 ### Lecture
-#### Breakout vs on-PCB design
-Another aspect that 
+Now, with all the microcontroller basics out of the way, let's look at three specific microcontroller examples. But before we do so, let's talk about breakout boards and on-PCB design.
+#### Breakout vs Embedded Microcontroller
+We can implement a microcontroller into our flight computer in one of three ways. 
+
+The first way would be to use a third-party breakout board. Breakout boards are ready to use microcontrollers, where all the necessary components are already pre installed. The breakout board most often features a voltage regulator which provides the exact 3.3V needed, has an integrated crystal oscillator which provides the microcontroller with accurate timing, and incorporates a chip (a USB to UART bridge) for proper communication between the PC and microcontroller. Further, it features a pin header for easy access of the microcontroller pins and has the bootloader pre-installed. 
+This implementation is easiest, as those breakout boards can be used out of the box. An Arduino Uno, an ESP32 Dev Module, or a Teensy, would all be examples of such breakout boards. The processor that they incorporate are from different companies. An Arduino Uno, for example, features an ATMEGA16 microcontroller. The disadvantage is the increased weight, as we have an additional PCB, and pin rows. Further, it is not as reliable as the connection between the pins could be error prone. However, it is very beginner friendly, and if we came to just damage the microcontroller it could be replaced more easily. 
+
+The second way would be by using a so called module. A famous example is the ESP32-Wroom module, which we will look at. This module can be directly implemented on our own PCB and spares as a few steps compared with a full microcontroller implementation. Such a module internally features a crystal for timing, has a pre-installed bootloader, has extra FLASH memory, and a Bluetooth antenna. In this case we only have to be concerned with the USB to UART bridge, for programming, and the power management of the microcontroller. 
+
+The final way would be an into the PCB embedded microcontroller. In this case we have to do all the implementation ourselves. We have to select a proper crystal, have to establish the USB to UART bridge, provide proper power management, and sometimes have to install the Bootloader. Additional functionalities like Bluetooth and WIFI, must also be implemented by us, which requires antenna design and RF matching. We will look at this implementation by using an STM32 microcontroller. This method allows us to adjust our design to our needs to the maximum degree, and results in the most lightweight PCBs, as we can decide which features we want to incorporate and which we want to exclude. 
+
 #### Teensy 4.1
 
 
