@@ -140,7 +140,7 @@ Zinc is in the zinc sulfate solution and copper in a copper sulfate solution. Th
 How much voltage a cell can create, depends on the standard potential which is given in the galvanic series. A zinc/copper cell creates around 1.11V. This voltage will reduce gradually until no electron movement is left. This is what we call a discharged battery.
 
 A zinc/copper cell is usually not rechargeable. However, for rechargeable batteries, we connect a higher voltage to the two poles of the battery that pressure the materials to undo the previous reaction. 
-## Level 2 - Battery Selection
+## Level 3 - Battery Selection
 ### Lecture
 #### Battery Types
 So, now that we know the basic functioning of a voltaic cells we can discuss a few different battery types that are suitable for model rocketry: 
@@ -243,19 +243,205 @@ Then, there is the C-rating which states how much charge discharge current a bat
 
 And finally, there are different battery connectors, such as the T-plug, EC3, and the XT plugs. Batteries most often feature the female plug, while we have to incorporate the male plug on our boards. 
 
-## Level 2 - Voltage Regulation 
-#### Linear Voltage Regulator
+## Level 4 - Voltage Regulation 
+### Lecture 
+Our power supply is primarily based on batteries. It's important to note that a battery's voltage varies across its charging state; for example, a LiPo battery's voltage ranges from 12.6V when fully charged to 11.1V when discharged. Additionally, many integrated circuits require a specific voltage, such as 3.3V, and other components, like servos, are uniformly controllable using 5V.
+
+The job of a voltage regulator is to provide these exact voltages. Mostly, they convert an input voltage to a lower output voltage, and in some cases, they can even perform the inverse. We mainly categorize voltage regulators into linear regulators (LDOs) and switching regulators. However, there is an even simpler form known as the "Shunt Regulator."
+#### Zener Diode 
+To understand the simplest form of a voltage regulator, we must first recall the functional principle of a diode. A diode allows current to flow in one direction if a forward voltage, typically around 0.7V for a silicon diode, is applied. This forward voltage overcomes the depletion region. In the reverse direction, the diode normally blocks current flow, as the reverse voltage enlarges the depletion region of the diode.
+
+However, we haven't yet discussed a special property of all diodes known as the breakdown voltage. While it's generally true that no current flows in reverse bias, this isn't entirely correct. Every diode can become conductive in its reverse direction if the applied reverse voltage exceeds a certain threshold, called the breakdown voltage. For standard diodes, the breakdown voltage is quite high, and reaching it causes immense currents to flow, which can permanently damage the diode.
+
+There is, however, a special type of diode known as the Zener diode, which is designed to have a low and well-defined breakdown voltage, called the Zener voltage. When the Zener diode reaches this voltage in reverse bias, it becomes conductive without being permanently damaged. This unique property allows Zener diodes to be used effectively in voltage regulation applications.
+#### Shunt Regulator 
+We can use the Zener diode to create the simplest form of voltage regulators - the Shunt Regulator. To do so, we place a resistor in front of a Zener diode that is set in reverse-bias. On the left side, we have the input voltage. On the right side, we have a parallel load and the output voltage. The output voltage is determined by the Zener voltage.
+
+Keep in mind that the Zener diode becomes conductive in reverse-bias if the applied voltage exceeds the Zener voltage. If only the Zener diode was present, an almost infinite current would flow. To prevent this from happening, we include a series resistor. The flowing current creates a voltage drop across the resistor, according to Ohm's law (𝑉=𝐼𝑅V=IR). The higher the current, the higher the voltage drop. If the current were too high, the voltage drop across the resistor would become excessive, and the voltage across the Zener diode would fall below the Zener voltage. Consequently, the flowing current reaches a balance with the voltage drop across the resistor, so the voltage across the Zener diode remains approximately at the Zener voltage. If the input voltage increases, the current flow increases, and the voltage drop across the series resistor increases as well. The Zener diode essentially clamps the output voltage to its Zener voltage.
+
+The disadvantages of this regulator become apparent when examining the circuit:
+
+- The resistor must be selected properly. It must be large enough to limit the current flow to prevent burning out the Zener diode, and it must be small enough to avoid causing too much voltage drop.
+- If the output device draws high currents, the voltage drop across the resistor increases, which could result in too little voltage across the Zener diode, rendering it unable to clamp the voltage effectively.
+- If no current is drawn by the load, current must still flow through the diode, making this type of regulator inefficient.
+
+Consequently, the shunt regulator is best suited for applications with steady, small current flows. High currents could cause the regulator to provide insufficient voltage. In any case, this type of regulator is inefficient as it regulates the voltage by dissipating excess voltage as heat over the series resistor.
+
+#### Linear Regulator
+A more advanced form of a voltage regulator is the linear regulator. 
+There are different forms of this regulator, however in its simplest form it regulates the voltage by controlling the resistance of a transistor based on the input voltage and the current draw. 
+
+It its most basic form it consists of a NPN bipolar junction transistor (BJT). Its collector is connected to the input voltage and its emitter is collected the the output voltage. At the base we have Zener diode that is connected to the input side by a series resistor. This again creates a stable reference voltage at the base of the BJT. Additionally, the voltage drop from the base to the emitter is also always constant with around 0.7V. Therefore, the output voltage, is the Zener voltage minus the voltage drop across the base emitter. 
+
+This voltage regulator design is beneficial, as the current does not have to flow over the series resistor but instead can flow through the transistor to the load. Through that it is more efficient, as we are not losing as much energy through heat. For the transistor to be able to limit the current flow, it has to operate in the active region, where the resistance across emitter collector varies with the current that is flowing through the base into the emitter. 
+
+Linear regulators, require the input voltage to be higher than the output voltage. The input voltage has to at least higher than the output voltage by the dropout voltage. 
+A special form of linear regulators, are the low dropout voltage regulators, so called LDOs. That compel by very low dropout voltages. 
+
+A standard series of LDO's is the 78XX series. 
+Such an LDO, integrate a circuit like this into single component. 
+A component that houses many elements inside is called an integrated circuit. 
+
+These kind of regulators take things a step further than the example that we discussed. 
+- They incorporate thermal protection. 
+- An internal voltage reference that is accurate over a large input voltage range and output current range. 
+- They achieve very stable outputs. 
+- And as mentioned earlier have a low drop out voltage. 
+
+They can be bought in various forms, while the last two letters suggest the output voltage.
+A 7805, for example, would create an output voltage of 5Vs. 
+There, are also special forms that can create adjustable outputs, based on a resistor divider that is fed into the LDO. 
+
+Linear regulators are commonly favored for their affordability, simplicity, and reliability, making them a popular choice for many applications. However, in scenarios requiring high currents and optimal efficiency, a superior alternative emerges: the switching regulator.
+
 #### Switching Regulator
-### Charging 
+The switching regulator too steps down the voltage, but it also increases the current. Therefore, the output power is approximately equal to the input power. The converter achieves this internally by a circuit featuring a transistor, a capacitor, and an inductor. The transistor switches the input on and off repetitively. According to the current needed on the output of the converter the duration in which the transistor is turned on increases or decreases. A capacitor smoothens the voltage, while a inductor smoothens the current. As a result, the switch converter has a way higher power efficiency than a linear voltage regulator, often going above 90 percent.
+
+Switching Regulators are divide into three sub-categories. 
+The buck converters, the boost converters, and the buck-boost converters. 
+A buck converter is a switching regulator take steps down the voltage and increases the current. So, it converts a high input voltage to a lower output voltage, as the one I described previously. 
+The boost converter is exactly the opposite, it steps up the voltage while reducing the current. Through that a lower input voltage is converted to a higher output voltage. 
+The final form is a buck-boost converter, which is an adjustable voltage regulator and able to do both. 
+
+There are many switching regulators from numerous manufacturers. All of them come with different advantages and disadvantages. Let's look at just one of them. The buck-converter LM2596S-5.0. The “-5.0” represents the fixed voltage that the regulator outputs. 
+
+##### Passive Components
+As most switching regulator ICs, this one also includes all active components that are needed to create a buck converter. However, we have to provide the passive components on the outside, as they are too large to be incorporated into the IC. These components are: capacitors on the input and output, an inductor, and a diode. 
+
+##### Switching Frequency
+If we look at its datasheet we find something that is called the switching frequency. It determines the speed at which the voltage is switched on and off. For this one it is 150kHz which is faster than the 52kHz of the LM2576. The faster switching frequency, the smaller the passive components can be. Remember, that the inductor wants to maintain steady current while the capacitor wants to maintain steady voltage. Those change resistances are time dependent, which means that if the time is very fast even smaller components can achieve the smoothing. 
+
+##### ESR
+For the capacitor selection of a switching regulator, we have to look at the ESR (equivalent series resistance) of the capacitor. Ideally capacitors have no resistance, which would mean that an infinite current could flow when connecting a fully discharged capacitor to a voltage source. However, in reality every component has a series resistance, which we call the ESR.
+
+If you recall the three main capacitor types, they feature very different typical resistance values: 
+- MLCCs: <0.015Ω
+- Aluminum Electrolytic Capacitors: 1 - 30Ω
+- Tantalum Capacitors: 1 - 3Ω
+
+##### RMS
+Further there is the RMS (root mean square) current rating. The RMS current is the current flowing through the ESR (equal series resistance) of a capacitor causing a temperature rise of +10°C. It indicates the maximum continuous current that the capacitor can handle without exceeding its temperature limits. It's crucial for ensuring that the capacitor can withstand the current demands of the application without overheating. We should select capacitors with RMS current ratings that exceed the expected current levels to ensure reliability and longevity.
 
 
-## Level 3 - Microcontroller Implementation
-### Breakout vs on-PCB design
-### ESP32
-### STM32
+#### LM2596 Circuit Design
+Now, back to the LM2596:
+Let's set up a voltage regulation circuit that converts a LiPo battery voltage down to 5V. 
+To do that we have to follow the “Application and Implementation” guide of the Texas Instruments LM2596 data sheet. 
+
+We have the select the input capacitor, output capacitor, inductor, and diode accordingly. 
+
+##### Input Capacitor
+First, we have to determine a suitable input capacitor. The input capacitor provides the LM2596 with instantaneous current each time it is switched on. 
+For its selection the RMS (root mean square) current rating, and the voltage rating are most significant. As we can read from the datasheet, the RMS rating should at least be ½ of the DC load current (3A), following a minimum RMS current of 1.5A. The input voltage for an aluminum electrolytic capacitor should be 1.5 times higher than the maximum supply voltage, in our case 12.6V. So, it should have a voltage rating of 18.9V. 
+
+##### Output Capacitor
+Secondly, it's crucial to evaluate the output capacitor in switching regulator circuits. The output capacitor serves two main purposes: filtering the output voltage and maintaining stability in the regulator loop. Its most critical design factor is its Equivalent Series Resistance (ESR). This parameter should ideally be kept as low as possible to minimize output ripple. However, it's important to strike a balance, ensuring that the ESR isn't too low, which could potentially destabilize the feedback loop.
+
+In switching regulator circuits, where capacitors are commonly employed for filtering, the output ripple typically stems from the regulator's switching action, and is basically a slight periodic change in the output voltage. 
+
+As a capacitor type we will select an electrolytic capacitor, as the assumed temperatures of this flight computer’s applications will be above -25°C. Below this temperature a tantalum
+type capacitor would be preferable, as it is stated in the data sheet.
+
+##### Inductor
+Third, the inductor was selected. Following the guide in the TI data sheet, the
+inductance needed is around 47μH. It also is stated that it is important to look
+out for a proper core material of the inductor, as cheap core materials can cause
+EMI (electromagnetic interference) in nearby PCB traces. Through a diagram in
+the datasheet, the approximate inductor ripple current can be evaluated. This data
+sheet is based on an input voltage range from 10 – 16V, and can, therefore, be
+used in this case. The maximum inductor ripple current is equal to around
+900mA at full load. And by using a formula included in the datasheet, the
+maximum output voltage ripple can be calculated.
+
+![](/assets/images/Pasted%20image%2020240526110222.png)
+
+$Δ𝑈_{𝑂𝑈𝑇 }= Δ𝐼_{𝐼𝑁𝐷} ∗ 𝐸𝑆𝑅_{𝐶𝑜𝑢𝑡}$
+$Δ𝑈_{𝑂𝑈𝑇}$ … Output ripple voltage [V]
+$Δ𝐼_{𝐼𝑁𝐷}$ … Inductor ripple current [A]
+$𝐸𝑆𝑅_{𝐶𝑜𝑢𝑡}$ … Equal serial resistance of the output capacitor [Ω]
+
+This results in a voltage ripple of 0.9A* 0.094Ω = 84.6mV, which is acceptable.
+
+##### Diode
+The fourth component we have to lay out is the catch diode. This diode is needed to
+provide the current with a way to flow back if the internal switch of the regulator
+is turned off. This ensures that the energy stored in the inductor during the on phase of the regulator's switching cycle is safely discharged and utilized by the load. Essentially, the catch diode allows the circuit to maintain continuity of current flow and prevent any abrupt changes or disruptions in the power delivery process. This diode has to work extremely fast and should have a minimal voltage drop. The ideal type of this diode is, therefore, a Schottky diode. Schottky diodes are known for their low amount of voltage that must be applied in forward bias to make them conductive. The diode chosen must also withstand the maximum current of 3A.
+
+##### On/Off Functionality
+The flight computer features a designated on/off pin. Normally a switch would be interposed in one of the connections to the battery. This would mean that the switch itself must withstand a current as high as 3A, making the PCB heavier and more expensive. By using this on/off pin, only very little current is needed to turn/off and on the entire flight computer. Therefore, the currents the switch must withstand shrink massively. 
+
+Additionally, a red LED is added to visualize the power state of the 5V line. This results in the final schematic for the 5V power regulation.
+
+#### Summary
+So there are many ways in which we can convert an input voltage, such as a LiPo battery voltage to a defined output voltage. 
+
+The easiest way would be by using a Zener diode and a resistor, which we call a Shunt Regulator. Conversely, this type can only be used in continuous current applications with low currents, as the current always has to flow over the series resistor, which dissipates the excess voltage as heat. This process is extremely inefficient. 
+
+Another way would be by using a linear regulator, which uses a transistor in its active region to restrict current flow. Here, larger currents can flow as the current doesn't have to flow over a series resistor. Further, variable current draws can also be conveniently managed with this type of regulator. However, the transistor itself provides some resistance, and due to that energy loss through heat, which also makes this type of regulator limited to a current supply of several amps and to moderate efficiencies.
+
+Finally, there are switching regulators that while changing the voltage also change the current. Through that the net power the regulator delivers remains constant. This is achieved by turning on and off the input power supply, and then smoothing the signal with a capacitor and an inductor to provide a stable output voltage. There are three forms. The buck converters that step down voltage, the boost converters that step up voltage, and the buck-boost converters that can do both. 
+
+When designing a switching regulator circuit, we have to provide the passive components as they do not fit into a integrated circuit. When selecting the capacitors we have to watch out for their ESR, their RMS ratings, and the voltages they can withstand. For the inductor and diode we have to consider their allowed currents. 
+
+### Examples
+Zener Diode
+Shunt Regulator 
+L7805
+LM2596
+
+## Level - Microcontroller Implementation
+### Lecture
+#### Microcontroller 1x1s 
+As mentioned before, we can think of a microcontroller to be a mini computer. Compared to a real-computer, it comprises all the relevant parts in a single package, such as the processing cores, the program memory, and the input/output peripherals. 
+
+##### Power
+For a microcontroller to function, it has to be provided with power. Most microcontrollers use a 3.3V input voltage, and feature several pins to which we will have to provide power to. 
+
+##### GPIO Pins
+The first term we have to coin is GPIO, which stands for "General Purpose Input Output" pins. Every microcontroller has some of these pins. We can set them to either function as an input or an output pin. We use input pins to, for example, read out a temperature sensor or the state of a button. On the other hand, we use output pins to control motors, lights, speakers, and much more.
+
+A GPIO pin is a digital pin, which means that it can either be in a high (1) or low (2) state. The state of the GPIO pin refers to the voltage that is present at the pin. For microcontrollers that are powered with 3.3V, most microcontrollers would define a low-state below a voltage of 1.2V, while they would define a high-state above a voltage of 1.8V. In-between those two values, the state of the pin couldn't be clearly identified, and is in some sort of gray zone. Every input pin has also an upper threshold, above which it would be permanently damaged. A standard upper threshold would be around 5V. 
+
+##### Pull Ups / Pull Downs 
+With a GPIO input pin, we could easily read out a button by attaching 3.3V to the button on one side and the input pin on the other side. The microcontroller measures the voltage at the pin, just as we do with the multimeter. If the button is pressed 3.3V are present. However, if it is not pressed the pin is not connected to any voltage level, which means the voltage level is undefined. We call this condition a floating pin. 
+
+Floating pins are tricky, as their high/low state is not clearly defined. The slightest induction at the pin could change the voltage at the pin, and create a false high state. This could, for instance, happen if someone accidentally touches the pin. Therefore, we have to avoid pins is this state as much as possible. We have to define the off-state of the button, as low. Ideally the pin should measure a voltage of 0V or GND, while being off. 
+To do so, we connect the pin to ground via a resistor. This is called a pull-down resistor, as it pulls down the voltage level of the input pin to ground. Now, the pin clearly measures 0V when turned on. 
+
+But what happens when the pin is pressed? Well, now the 3.3V are connected to GND via the pull-down resistor. We can think of the button as having a very small resistance that is almost zero. The pull up resistor, on the other hand, has typical values from a few hundred Ohms all the way up to thousands Ohm. If we now calculate the equivalent resistance, it is approximately the same as the pull-down resistor. And if we divide the voltage of 3.3V by the pull-down resistor, we get the flowing current. Multiplying the flowing current with the two resistors results, in a voltage drop across the button of around 0V and across the pull-down resistor of around 3.3V. This means that the measured voltage at the pin is 3.3V. Through that, we have defined the pressed and unpressed state of the button effectively. 
+
+We could create a similar logic by connecting the button to ground, and using a pull up resistor with which we would connect the input pin to 3.3V. The pull up resistor pulls up the voltage. If we now pressed the button the input logic level would be low. The equivalent resistance is again approximately the same as the pull up resistor, which results in a voltage drop of 3.3V across the pull-up and around zero across the button. Consequently, the input pin would measure a voltage of around 0V.  
+
+##### Analog Input
+Okay, so we are able to read out a button. But what if we wanted to determine the temperature in a room? 
+
+For that we could use a temperature dependent resistor, which consists of a material that changes its resistance based on its temperature. By creating a voltage divider, that consists of one temperature dependent resistor, and one non dependent resistor, and connecting them to 3.3V, we can measure a changing voltage based on the temperature of the room. 
+
+However, the a GPIO input only determines high and low states at it is a digital pin. 
+
+##### Interrupt
+
+##### PWM
+##### I2C
+##### SPI
 
 
-## Level 4 - Sensors
+##### Timers
+
+##### Clock Frequency
+
+##### Breakout vs on-PCB design
+##### Programming
+
+
+#### ESP32
+
+
+#### STM32
+
+
+
+## Level - Sensors
 ### Breakout vs on-PCB design
 ### How to read a datasheet
 ### Gyroscope and Accelerometer
@@ -263,12 +449,14 @@ And finally, there are different battery connectors, such as the T-plug, EC3, an
 ### Voltmeter
 
 
-## Level 5 - Outputs
+## Level - Outputs
 
 ### RGB LED
 ### Buzzer
 ### Pyro Channels
 ### PWM for servo control
+#### Example
+Oscilloscope for PWM analysis 
 
 
 

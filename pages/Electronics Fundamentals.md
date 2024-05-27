@@ -461,14 +461,42 @@ $\dfrac{1}{C} = \dfrac{1}{C_1}+ \dfrac{1}{C_2}$
 
 Adding capacitors in series, reduces their overall capacitance. 
 
+#### Capacitor Types
+There are many ways in which this intentional capacitance is achieved. Therefore, there are also many different capacitor types. You will now learn about the three most notable ones: the electrolytic capacitor, ceramic capacitor, and the tantalum capacitor. 
+
+##### Aluminum Electrolytic Capacitor
+The aluminum electrolytic capacitors - also called Elko - consist of two plates made out of aluminum. One of the plates has an oxidation layer, which occurs when aluminum is in contact with air and is a form of corrosion. This layer prevents further corrosion and acts as a dielectric layer in the Elko. Remember that the dielectric changes the 𝜖𝑟 (relative permittivity) and increases the capacitance. The aluminum electrolytic capacitors also consist of an electrolyte, which is a substance in which there are charged particles (ions) that can move freely within. In the case of this capacitor, the electrolyte allows ions to move, which helps maintain the capacitor's functionality. However, the capacitor itself does not become conductive through the electrolyte because there is also the dielectric layer that insulates the two plates from direct electrical conduction.
+
+Since only one of the aluminum electrodes has the oxidation layer, the capacitor can only be used in one direction, and is not feasible for alternating currents and limited to DC applications. 
+
+Aluminum electrolytic capacitors have high capacitances between several µF and mF in a relatively small volume. They are low-cost and available for high voltage applications. The electrolyte degrades over time, which results in a limited lifespan. 
+
+##### Tantalum Electrolytic Capacitor
+The tantalum electrolytic capacitors are often simply referred to as tantalum capacitors. Instead of aluminum they use a tantalum metal for the plates. Other than that they also features an oxide layer as the dielectric, too have an electrolyte, and are also polar. 
+
+They provide stable capacitances over a wide range of temperatures and frequencies. Their capacitance values are typically lower than their Elko counterparts, but they excel in stability and reliability. They have a long lifespan, but are more expensive, and sensitive to sudden voltage spikes. 
+
+##### Ceramic Capacitor
+The ceramic capacitors use a ceramic as a dielectric. The most common type of them are the MLCCs, which consist of multiple layers of ceramic and metal stacked together. 
+
+They are non-polarized, which means that they can be used unidirectionally. They come at wide ranges of capacitance value from pF to µF, and are used in both low and high voltage applications.
+They excel in high frequency, making them suitable for high-frequency applications, and are available in very small sizes, ideal for consumer electronics. 
+
+Their capacitance can vary with temperature change and applied voltage. Higher precision and stabler types can be quite expensive. 
+
 #### Summary
-Every conductor is able to store charge. The more voltage that is applied the more charge can be stored. The relationship between the charge and the voltage is proportional and called capacitance. It is given in Farad, which in practice is a quite large unit. 
+Every conductor is able to store charge. The more voltage that is applied the more charge can be stored. The relationship between the charge and the voltage is proportional and called capacitance. It is given in Farad, which in practice is a quite large unit.
 
-A capacitor can either be unidirectional or directional, and basically consists of two plates. When applying a voltage one plate is negatively charged while the other is positively charged. The larger the area, the more charge can be stored, and the closer the distance of the plates the higher the attraction, the more charges will load the area. To increase the capacitance further, a dielectric is used. 
+A capacitor can either be unidirectional or directional, and basically consists of two plates. When applying a voltage one plate is negatively charged while the other is positively charged. The larger the area, the more charge can be stored, and the closer the distance of the plates the higher the attraction, the more charges will load the area. To increase the capacitance further, a dielectric is used.
 
-By loading the plates a capacitor stores energy. This energy can be released to buffer an unsteady signal. So, capacitor works similarly to a battery. Compared to a battery it stores way less energy, but it can release the energy way faster. These characteristics make a capacitor used on almost every circuit. 
+By loading the plates a capacitor stores energy. This energy can be released to buffer an unsteady signal. So, capacitor works similarly to a battery. Compared to a battery it stores way less energy, but it can release the energy way faster. These characteristics make a capacitor used on almost every circuit.
 
-If we add multiple capacitors, we also have to determine the equivalent capacitance. In series, the capacitors experience the same voltage and the charges of the single capacitors add up, which means that the capacitances of the single capacitors can be added. In parallel the charges of the single capacitors are the same, as the charges want to spread equally across all plates. The voltages across the single, capacitors however are not the same. To get the parallel equivalent capacitance, we add the reciprocals of the single capacitances and receive the reciprocal of the equivalent of the capacitance. 
+If we add multiple capacitors, we also have to determine the equivalent capacitance. In series, the capacitors experience the same voltage and the charges of the single capacitors add up, which means that the capacitances of the single capacitors can be added. In parallel the charges of the single capacitors are the same, as the charges want to spread equally across all plates. The voltages across the single, capacitors however are not the same. To get the parallel equivalent capacitance, we add the reciprocals of the single capacitances and receive the reciprocal of the equivalent of the capacitance.
+
+Finally, there are many different capacitor types.
+The aluminum electrolytic capacitors that feature high capacitances, are cheap, but are polar, and have a limited lifespan. 
+The tantalum capacitors, which have slightly lower capacitances at the same volume, but are very stable of temperature and voltage changes. However, they are more expensive, sensitive to voltage spikes, and still polarized.
+The ceramic capacitors, especially the MLCCs, which are non-polarized, available in very small form factors, and excel in high frequency applications. However, their capacitance can vary with voltage and temperature, and they have lower capacitance values. 
 ## Level 8 - Semiconductor and Diode
 <iframe width="560" height="315" src="https://www.youtube.com/embed/guyFDPdGvFk?si=PI0bmzEbSoIIVaQd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
