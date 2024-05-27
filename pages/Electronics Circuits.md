@@ -389,20 +389,19 @@ Shunt Regulator
 L7805
 LM2596
 
-## Level - Microcontroller Implementation
+## Level - Microcontroller Basics
 ### Lecture
-#### Microcontroller 1x1s 
 As mentioned before, we can think of a microcontroller to be a mini computer. Compared to a real-computer, it comprises all the relevant parts in a single package, such as the processing cores, the program memory, and the input/output peripherals. 
 
-##### Power
+#### Power
 For a microcontroller to function, it has to be provided with power. Most microcontrollers use a 3.3V input voltage, and feature several pins to which we will have to provide power to. 
 
-##### GPIO Pins
+#### GPIO Pins
 The first term we have to coin is GPIO, which stands for "General Purpose Input Output" pins. Every microcontroller has some of these pins. We can set them to either function as an input or an output pin. We use input pins to, for example, read out a temperature sensor or the state of a button. On the other hand, we use output pins to control motors, lights, speakers, and much more.
 
 A GPIO pin is a digital pin, which means that it can either be in a high (1) or low (2) state. The state of the GPIO pin refers to the voltage that is present at the pin. For microcontrollers that are powered with 3.3V, most microcontrollers would define a low-state below a voltage of 1.2V, while they would define a high-state above a voltage of 1.8V. In-between those two values, the state of the pin couldn't be clearly identified, and is in some sort of gray zone. Every input pin has also an upper threshold, above which it would be permanently damaged. A standard upper threshold would be around 5V. 
 
-##### Pull Ups / Pull Downs 
+#### Pull Ups / Pull Downs 
 With a GPIO input pin, we could easily read out a button by attaching 3.3V to the button on one side and the input pin on the other side. The microcontroller measures the voltage at the pin, just as we do with the multimeter. If the button is pressed 3.3V are present. However, if it is not pressed the pin is not connected to any voltage level, which means the voltage level is undefined. We call this condition a floating pin. 
 
 Floating pins are tricky, as their high/low state is not clearly defined. The slightest induction at the pin could change the voltage at the pin, and create a false high state. This could, for instance, happen if someone accidentally touches the pin. Therefore, we have to avoid pins is this state as much as possible. We have to define the off-state of the button, as low. Ideally the pin should measure a voltage of 0V or GND, while being off. 
@@ -412,32 +411,162 @@ But what happens when the pin is pressed? Well, now the 3.3V are connected to GN
 
 We could create a similar logic by connecting the button to ground, and using a pull up resistor with which we would connect the input pin to 3.3V. The pull up resistor pulls up the voltage. If we now pressed the button the input logic level would be low. The equivalent resistance is again approximately the same as the pull up resistor, which results in a voltage drop of 3.3V across the pull-up and around zero across the button. Consequently, the input pin would measure a voltage of around 0V.  
 
-##### Analog Input
+#### Analog Input
 Okay, so we are able to read out a button. But what if we wanted to determine the temperature in a room? 
 
-For that we could use a temperature dependent resistor, which consists of a material that changes its resistance based on its temperature. By creating a voltage divider, that consists of one temperature dependent resistor, and one non dependent resistor, and connecting them to 3.3V, we can measure a changing voltage based on the temperature of the room. 
+For that we could use a temperature dependent resistor, which consists of a material that changes its resistance based on its temperature. First we have to create a voltage divider, that consists of one temperature dependent resistor, and one non dependent resistor. Then, we connect the divider to 3.3V and 0V. Through that, we can measure a changing voltage based on the temperature of the room. 
 
-However, the a GPIO input only determines high and low states at it is a digital pin. 
+However, the GPIO input only determines if the voltage corresponds to a high and low states. So in our case the input pin would be low at certain temperatures, and high at other temperatures. If we wanted to know the exact temperature, we have to use another pin form - the analog input. 
 
-##### Interrupt
+This one uses an ADC (analog to digital converter), which measures the voltage at the pin. Analog signals have no discrete states and can take any values. They are not just Zero (Low) and 1 (High), but instead can be anything in-between. However, our microcontroller cannot do much with an analog signal as it based on a digital architecture. To make up for that, we have to use the ADC, which converts the analog signal to discrete states again. If we look at this input voltage chart at the analog pin, we can see that the temperature change is continuous. The ADC now assigns a numeric value to each voltage. An ADC comes also with a bit-rating, which tells us in how many steps a 3.3V voltage scale is divided. An ADC with a 12-bit resolution, would divide a 3.3V scale to a total of 2^12 steps (4096). So our microcontroller would interpret a voltage of 3.3V as 4095, and a a voltage of 0V as 0. If we now look at the converted chart, we can see that it isn't continuous anymore but jumps from one value to another. 
 
-##### PWM
-##### I2C
-##### SPI
+#### PWM
+By putting a GPIO pin that is in the output state into a high state, we can easily turn on an LED. An LED is basically a diode that transmits light in the forward bias. The higher the voltage across it the more light will be emitted. This means that by varying the voltage, we could dim the LED. 
+So, how would we do that we a microcontroller?
 
+You could probably imagine that there is the inverse of a ADC - a DAC (digital to analog converter), and you are correct there is. However, most of the time microcontrollers do not use a DAC, but instead use a principle that is called pulse-width modulation (PWM).
 
-##### Timers
+It works similarly to our switching regulator that we discussed before. The microcontroller basically turns on and off the output pin at a high frequency. Again, a capacitor is used to smoothen, the square wave signal. And by varying the ratio of the on and off times, we can create a voltage that is between high and low. For example a one to one ratio would create a voltage of around 1.65V. This ratio is also called a duty cycle.
 
-##### Clock Frequency
+$D = \dfrac{PW}{T}$
+PW ... active pulse time
+T ... total pulse time 
 
-##### Breakout vs on-PCB design
-##### Programming
+A duty cycle of 100% would correspond to a voltage of 3.3V, while a duty cycle of 0% would correspond to 0V, and a duty cycle of 50% would correspond to a voltage of 1.65V. 
+
+#### Clock Generator (Timer)
+Remember the crystal oscillator? 
+This is what creates the proper timing for most microcontrollers. 
+The timing is necessary to create, for example, a proper PWM signal. The oscillator creates a constant sine wine that is translated into pulse signals for each cycle. For a PWM signal, a clock increments a number per cycle. The number of the clock is compared with a pre-defined number above which the output is high and below which the output is low. The clock counts further until it reaches its maximum number and then counts from zero again. By changing that pre-defined number, we can change the duty cycle of the PWM signal. 
+
+However, this entire process only works, if each cycle takes a fixed amount of time. If the cycle duration were to change, we would not be able to achieve an accurate PWM signal. Similarly, we need a accurate timing for bus protocols with which we can communicate with other integrated circuits, and we couldn't time events (such as when to turn on a GPIO) properly. 
+
+Most microcontrollers feature an internal clock. Further, they allow for adding an external oscillator for higher precision if needed. 
+
+#### Clock Speed
+A direct result of the chosen oscillator, is the clock speed. The clock speed is measured in Hertz, and gives the number of operations per second. Usually a microcontroller is equipped with a CPU multipliers which take the input of a crystal oscillator and multiples its signal by a certain factor to increase the number of operations per second. 
+
+A high clock speed results in a high processing speed, as many operations can be held within one second. Most of today's microcontrollers have clock speeds of several MHz. However, the clock speed does only provide a rough idea of the performance of the microcontroller. If we compared the clock speed of two microcontrollers with different architectures, it could actually be that the one with the lower clock speed has a better performance. 
+
+Often the same microcontroller can run at different clock speeds. A higher clock speed, would usually require more power, produce more heat, and bear a better performance. A lower clock speed, would be more power efficient, but slower. 
+
+#### Interrupt and Sleep Modes
+Let's assume we create a device with which we can measure the current temperature by pressing a button. We would probably read out the state of the button continuously. If it were pressed, we would read out the temperature through the ADC. 
+
+Now, imagine we would make this device battery powered and hang it onto a wall as some form of thermostat. We probably only press the button once a day. However, the microcontroller would read out the state of the button several thousand times per second. This would take a lot of energy, and our device's power would probably only last a day or so. 
+
+If we wanted to improve the power efficiency, the next two concepts can come in pretty handy - the interrupt and sleep states. 
+
+We can put a microcontroller in a sleep modes, were it only draws nA compared to mA. Often, there are regular sleep states, and deep sleep modes. It sleep modes most of the microcontrollers functions are deactivated to save as much power as possible. 
+
+To wake up the microcontroller we can use an interrupt. Typically a GPIO pin can be assigned to be an interrupt. If a certain logic level is present at the interrupt, the microcontroller stops whatever it is doing right now and conducts a so called ISR (interrupt service routine). In our case we would attach the button to the interrupt pin, and the interrupt service routine would be the reading of the temperature sensor and the wake up of the microcontroller. 
+
+This means the microcontroller would be in deep-sleep until the button is pressed and triggers the interrupt. The interrupt wakes up the microcontroller, and reads out the temperature sensor. After that, the microcontroller would go back to sleep. 
+
+Such a procedure would save tremendous power, and our device's power could suddenly last for months. 
+
+#### I2C
+Microcontrollers communicate with another microcontroller, sensor, or laptop through bus systems and communication protocols. One of them is the inter-integrated circuit I2C bus. 
+This bus system is used for integrated circuits to communicate with each other on the same PCB. 
+
+Its a simple serial bus protocol that is easy to use, but doesn't allow for long distances or ultra high speeds. However, it is sufficient for most applications and many sensor come with this communication protocol built in. 
+
+First, let's differentiate between a series bus protocol and a parallel bus protocol. In a series protocol, one information is transmitted at a time. You can think of it as the conveyer belt in a super marked. One product roles to the receiver at at time. A parallel bus protocol would be the same but with multiple conveyer belts operating at the same time. 
+Therefore, a series bus system does not require many signal lines, while a parallel bus system does require many. At the same time, the parallel bus system is faster. 
+
+I2C only consists of two wires: the SDA and the SCL line. 
+SCL stands for serial clock line, while the SDA line stands for serial data line. 
+Both lines are pulled up by a resistor to prevent the floating states described early. 
+
+In this protocol there is always one master and one or more slaves. 
+The master produces the serial clock line, and initiates the communication. 
+The slaves listen to the serial data line, and receive the clock line.
+The clock line is there to synchronize the timing of the different microcontrollers, as they might vary slightly per used crystals. 
+
+Let's say we have a microcontroller to which two sensors are connected through I2C. Every component has its own 7bit I2C address. Now, let's look at what such a communication would look like.
+
+The master continuously produces the timing on the serial clock line. Its frequency determines the speed of the transmission and there are different modes of operation. 100 kbits/s would correspond the standard I2C mode, while 400 kbit/s would correspond to the fast mode. There are even faster modes, but remember the faster the frequency the easier it is to smoothen the data curve. At very high frequency even a very small capacitor can do this, and if we have a smoothed signal no communication can occur. At fast enough frequencies even the capacitance of the wire itself can be enough to disrupt the communication. 
+
+The master initiates the communication by sending a start bit and then writing the slave address with which it wants to communicate. All the slaves listen to the information the master provides. If they identify their own address they continue listing. Then the master sends another bit, which tells the slave if it wants to read or transmit information. If the master wants to read information, the slave then begins to transmit. On the other hand if the master indicated to transmit information, the slave will keep listening. 
+
+This means that the master can only communicate with one sensor at the time. Because there are multiple addresses, we can add lots of sensors to the bus. 
+
+#### SPI
+The second bus that you will encounter often on microcontrollers is the serial peripheral interface (SPI) bus. This one is quite different from the I2C but is still a serial bus with a master and slaves. 
+
+It consists of four wires: 
+CS, SCK, MOSI, and MISO
+CS stands for chip select 
+SCK is the same as the SCL line and provides the slaves with the timing
+MOSI stands for master out slave in
+and MISO stands for master in slave out 
+
+Every component is selected to the three lines SCK, MISO, and MOSI. Further, every sensor is connected to its own chip select pin. 
+
+If the master wants to talk to a slave, it simply pulls down its CS line. Through that the master does not have to send addresses and the slaves do not have to listen for addresses. 
+Another specialty of this protocol, is that the slave and the master can talk at the same time. The master provides information to the slave through the master out slave in line, while the slave provides the master with information through the master in slave out line. This is called fully-duplex mode which means that communication can held in both directions simultaneously.
+All of these changes result in a more time efficient protocol. Additionally, its frequency can be in the several MHz spectrum.
+
+All in all, the SPI bus requires four instead of just two connections from the master to the slave. However, this bus protocol is significantly more efficient and can transmit information way faster. 
+For model rocket projects this speed is most often not required. However, it is sometimes still handy to use. 
+
+#### UART
+Finally, you will briefly learn about UART (universal asynchronous receiver transmitter).
+This protocol is the standard for communication between microcontrollers and PCs. We use this protocol to program the microcontroller and to transmit live-information of the microcontroller to the PC. 
+
+It also only consists of two lines - RX (receive) and TX (transmit). 
+The RX line of the first device goes into the TX pin of the second device, and vice-versa. 
+Unlike I2C and SPI, UART is designed for communication between only two devices.
+
+UART does not use a clock line to synchronize the data transmission. Instead, both devices must agree on a common speed, known as the baud rate. Common baud rates include 9600, 115200, and others. Both devices must be configured to use the same baud rate for successful communication.
+
+Obviously, there would be more information to add to describe UART, but for designing your own this rough understanding will be enough. 
+#### Programming
+Programming a microcontroller typically involves a bootloader, which is a small program pre-installed in the microcontroller's memory. When the microcontroller is powered on, it first runs the bootloader. During this limited time, the bootloader waits for communication from the PC. The PC can signal to the bootloader that it wants to upload new code, a process often done via UART. 
+
+If the PC sends a request to upload code, the bootloader receives the new program data and writes it to the appropriate memory location in the microcontroller. The bootloader ensures that the new program is correctly received and stored. 
+
+If no new code is uploaded during the bootloader period, the microcontroller proceeds to execute the previously stored program. This fallback mechanism means that if the bootloader does not receive a communication signal from the PC within the specified time window, it defaults to running the existing program in memory.
+
+During a limited time after power-up, the bootloader waits for communication from the PC. If new code is uploaded, it replaces the existing program; otherwise, the microcontroller executes the current program in memory. This process allows for easy updates and reprogramming of the microcontroller.
+#### Summary
+A microcontroller is a mini-computer that integrates all necessary components, such as memory, a processor, and peripherals, into a single package, typically powered by 3.3V. It features GPIO (general-purpose input and output) pins. When set as input, they read the voltage to determine whether it corresponds to a digital high (>1.8V) or a digital low (<1.2V). When set as output, they can either be high (3.3V) or low (0V).
+
+To read a value between high and low, an analog input pin is used. This pin measures the voltage like a multimeter and translates the value into a numeric number via an ADC (analog-to-digital converter).
+
+For outputting a voltage between high and low, pulse width modulation (PWM) is used. In PWM, the output pin is turned on and off repetitively. The ratio between the on-time and the total time is called the duty cycle. A capacitor can be used to smooth out the resulting voltage.
+
+Every microcontroller has an internal or external clock that times all operations, such as PWM signals, timing, and communication protocols. The speed at which the oscillator runs, combined with the CPU multiplier, determines the microcontroller's clock speed, which gives a rough idea of its performance.
+
+Input pins can also be used as interrupts. Interrupts disrupt the microcontroller's current program execution to run an interrupt service routine (ISR). They are useful for waking up a microcontroller from low-power sleep modes.
+
+Microcontrollers communicate with other devices through various protocols. I2C (Inter-Integrated Circuit) uses two wires: SCL (serial clock line) and SDA (serial data line). It features a master and one or more slaves. The master addresses the slave it wants to communicate with and provides the clock signal. I2C is a relatively slow but easy-to-use protocol, often implemented in sensors.
+
+SPI (Serial Peripheral Interface) requires four wires: SCK (serial clock), CS (chip select), MOSI (master out slave in), and MISO (master in slave out). SPI allows full-duplex communication, enabling both the master and the slave to communicate simultaneously without the need for address transmission.
+
+UART (Universal Asynchronous Receiver Transmitter) is another communication protocol used for serial communication between two devices, typically a microcontroller and a PC. It uses two lines: RX (receive) and TX (transmit), and operates at a predefined baud rate. UART is straightforward but limited to point-to-point communication without a master-slave hierarchy.
+
+PCs upload code to the microcontroller via the UART protocol. Upon power-up, the bootloader waits for a limited time for communication from the PC. The bootloader mechanism ensures that new code can be uploaded to the microcontroller efficiently and reliably. If new code is uploaded, it replaces the existing program; otherwise, the microcontroller runs the current program in memory.
+#### Examples
+Input - Button + Pull-down 
+Input - Temperature measurement + ADC
+Output - LED + diming LED (oscilloscope)
+Temperature Measuring Device with Button - with Interrupt 
+
+## Level - Specific Microcontrollers
+### Lecture
+#### Breakout vs on-PCB design
+Another aspect that 
+#### Teensy 4.1
 
 
 #### ESP32
 
 
+
 #### STM32
+
+
 
 
 
@@ -458,5 +587,5 @@ However, the a GPIO input only determines high and low states at it is a digital
 #### Example
 Oscilloscope for PWM analysis 
 
-
+## Level - Stack Analysis
 
