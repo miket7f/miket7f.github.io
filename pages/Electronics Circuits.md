@@ -426,7 +426,7 @@ So, how would we do that we a microcontroller?
 
 You could probably imagine that there is the inverse of a ADC - a DAC (digital to analog converter), and you are correct there is. However, most of the time microcontrollers do not use a DAC, but instead use a principle that is called pulse-width modulation (PWM).
 
-It works similarly to our switching regulator that we discussed before. The microcontroller basically turns on and off the output pin at a high frequency. Again, a capacitor is used to smoothen, the square wave signal. And by varying the ratio of the on and off times, we can create a voltage that is between high and low. For example a one to one ratio would create a voltage of around 1.65V. This ratio is also called a duty cycle.
+It works similarly to our switching regulator that we discussed before. The microcontroller basically turns on and off the output pin at a high frequency. Again, a capacitor is used to smoothen, the square wave signal. And by varying the ratio of the on and off times, we can create a voltage that is between high and low. For example a one to one ratio would create a voltage of around 1.65V. The ratio between the active pulse time and the total time is called the duty cycle.
 
 $D = \dfrac{PW}{T}$
 PW ... active pulse time
