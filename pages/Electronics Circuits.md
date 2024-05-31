@@ -845,6 +845,9 @@ By knowing both characteristics of the air, it is possible to determine an appro
 
 In reality these measurements, are additionally influenced by air humidity (as humidity changes air density), diurnal pressure variations, as well as high and low pressure zones that occur because of weather conditions. The absolute altitude readings are therefore only within a few tens of meters. However, if the environmental conditions remain relatively the same during test operations, a relative accuracy, which is more important to determine altitude reached, can be as accurate as +-0.5m. 
 
+These changes in environmental conditions and the resulting inaccuracies can't be changed by highest precision barometric pressure sensor. 
+
+
 #### BMP388 Implementation
 
 #### Voltmeter

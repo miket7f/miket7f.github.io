@@ -48,3 +48,6 @@ while we are working on providing content for you!
 - Infrared camera?
 - Sound sensor (microphone)
 - With image processor?
+
+## Ultra Sound Eco Location
+The ultrasound ground station emits ultrasonic pulses towards the rocket, and the rocket's onboard module measures the time taken for the echoes to return. This ToF measurement provides accurate distance information between the ground station and the rocket.
