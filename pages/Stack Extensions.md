@@ -15,7 +15,7 @@ while we are working on providing content for you!
 - Air quality sensor
 - Sound sensor 
 - Gas sensor (CO2, CO, N, and VOCs)
-- Radiation sensor (Geiger Counter), for gauging exposure for flight computers safety
+- Radiation sensor (Geiger Counter), for gauging radiation exposure for flight computers to ensure safe operation
 
 ## Obstacle Avoidance Module
 - Ultrasound sensors around the rocket to avoid obstacles in flight. 

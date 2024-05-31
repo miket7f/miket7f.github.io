@@ -702,11 +702,157 @@ The last option, is to implement bare-bone microcontrollers. This option is for 
 
 We will look at how we implement any of those three designs after we learned about the PCB design environment. 
 ## Level - Sensors
-### Gyroscope and Accelerometer
+### Lecture
+Sensors are our sensory organs of our flight computer. With the help of them we can determine our rocket's orientation, its acceleration, velocity, and position, as well as its altitude. 
+Based on the input of our sensors, our rocket can make informed decisions about steering the engines, deployment mechanisms, or aborting the flight. Further, they help us to analyze our rocket flights by storing their data. 
 
-### Barometer
+We will discuss the four most vital ones for model rocketry: 
+the gyroscope, the accelerometer, the barometer, and the voltmeter. 
+At the end we will briefly talk about other sensors that could be beneficial for your projects. 
+#### Gyroscope
+The first and most important sensor for advanced model rockets is the gyroscope. It is the main sensor with which we are able to determine the orientation of our vehicle. 
 
-### Voltmeter
+##### Function Principle
+The gyroscope determines the angular rate based on the Coriolis effect. The Coriolis effect dictates that when a mass is set in motion within a rotating reference frame that a force arises perpendicular to both the mass's direction of motion and the rotation axis of the frame. This force, known as the Coriolis force, induces a distinct displacement or deflection in the moving mass. 
+
+The gyroscope has an oscillating mass inside that moves along a predefined axis. Now if this component is rotated, we have a rotating frame of reference, which results in a displacement of the mass that is caused by the Coriolis force. This displacement changes the capacitance between two plates and this capacitance change is measured and then translated into a rotation change - the angular rate. 
+
+##### Determining Orientation
+For determining the rocket's orientation we need a total of three gyroscopes each along a different axis in the coordinate system. One that measures angular rate around the pitch, one 
+around the yaw, and one around the roll axis. 
+
+To now determine the orientation of the vehicle, we take this orientation change multiply it by the elapsed time and add it to the previous orientation value. We basically integrate the angular rate to get an absolute orientation. However this works only if we rotated the rocket about one axis. As we have three-dimensional orientations we have to use a 3D rotation representation, such as Euler angles, or Quaternions. These concepts are further discussed in the software path.
+
+##### Parameters
+Here we will focus more on the gyroscope itself. 
+When looking at the datasheet, the following properties are mostly given. You should understand in order to be able to select the gyroscope that fits your project best. 
+
+First, the operating range gives the maximum angular rate the gyroscope can measure. An operating range from +-2000°/s would mean that it can't record any faster rotations than that. 
+
+A second property of the gyroscope, is its resolution given in bits. A 16-bit gyroscope would divide the entire angular rate range into 2^16 values. 
+
+Resolution shall not be confused with accuracy. A higher resolution does not necessarily mean more accuracy. It simply means that we are given more digits to work with. But, whether or not the value is correct is only dependent on the accuracy. 
+
+Accuracy ratings are mostly not given directly in a gyroscope datasheet, as they are dependent on multiple factors. Rather, the data sheet provides several parameters that indirectly represent the gyroscopes accuracy. 
+
+One of the factors affecting the accuracy of a gyroscope is the temperature coefficient of offset (TCO), which describes how the measured angular rate changes with temperature. A TCO of ±0.015 °/s/K means that for each degree Kelvin (or Celsius) increase in temperature, the gyroscope's measured angular rate can become inaccurate by ±0.015 °/s. This means that as the temperature changes, the bias or zero-rate output of the gyroscope can drift, leading to inaccuracies in the angular rate measurement.
+
+The second factor is the zero-rate offset, which describes the static error a gyroscope has when it is not rotating. Most gyroscopes come with an offset in angular rate from the factory. An offset of ±1°/s means that the gyroscope's reading can be off by 1°/s from the actual angular rate even when it is stationary. This offset is constant and can be calibrated out or compensated for when determining orientation.
+
+This is a measure of the random noise in the gyroscope's output. The smaller the noise density, the smaller the angular rates we will be able to detect. A value of 0.014 °/s/√Hz means that the gyroscope has a noise level of 0.014 °/s for each square root of the bandwidth in Hertz. This low noise density allows for more precise detection of small angular rate changes, improving the overall accuracy of the measurements.
+
+So, the gyroscope's accuracy is largely determined by the Zero-offset, the TCO, and the noise density. 
+
+To read the data from a gyroscope using a microcontroller, gyroscopes often come with bus connections like SPI or I2C. Additionally, they frequently feature interrupt pins that indicate to the microcontroller when new data is ready. An interrupt for new readings of the angular rate is especially important because the microcontroller needs to integrate the new data as soon as possible.
+
+Remember, the microcontroller calculates the change in orientation by multiplying the angular rate change by the elapsed time. If the elapsed time is not correct, the determined angle would become inaccurate over time. Therefore, timely data integration is crucial for maintaining accurate orientation tracking.
+
+Another property of a gyroscope is its ODR output data rate. It often can be selected and gives the number of data sets that the sensor outputs per second in Hz. 
+
+A major disadvantage of the orientation determined by the gyroscope is that it isn't a direct measurement but the integral of the angular rate. This means that a slight error in the angular rate results in an offset in the orientation. If the slight error in angular rate is single-sided, the orientation result drifts from the real orientation over time. 
+
+##### Calibration
+A zero-offset and the TCO alone would, therefore, cause the orientation readings to become inaccurate in no time. This is why gyroscopes are calibrated before use. Basically, the gyroscope is sitting still and the angular rates are measured and averaged. In ideal circumstances the angular rate should be zero if the gyroscope is static. The measured average is subtracted from the angular rate. If the test is conducted again, the gyroscope's angular rate reading in a static condition will be approximately zero. Unfortunately, it is not possible to completely eliminate drift. Depending on the gyroscope's characteristics, there is a certain limit to how far we can go with calibration. With good calibration, a good orientation accuracy of several minutes can be achieved reasonably. 
+
+#### Accelerometer
+Another way though for rockets not as important way to determine orientation is by the means of an accelerometer. It measures the total acceleration acting on the sensors internal mass.
+
+##### Function Principle
+Every mass has a moment of inertia. If a mass is moving its moment of inertia resists change in speed, similarly to how a capacitor resists change in voltage or an inductor resists change in current. If a mass is accelerated or decelerated, the mass experiences a force in the opposite direction - the inertia force. An accelerometer takes advantage of this principle. Within the component there is a mass that can freely move along one axis. In case of accelerations, its moment of inertia resists change and the inertia force displaces the mass from the center. Again, the displacement is measured by the capacitance, and then the displacement is converted to an acceleration. 
+
+##### Determining Orientation
+For determining the orientation of the vehicle, we have to use an 3-axis accelerometer. Now if the rocket sits at the launchpad, the only acceleration that is present is Earth's gravitational acceleration. If the rocket would be perfectly upright, the entire gravitational acceleration would be measurable in one axis only. However, if it is not we would get parts of the total gravitational acceleration in two axis of the sensor. Simply put, by knowing the ratios between those parts, we can determine the orientation of the rocket. 
+
+The problem with accelerometer arises while powered ascent. The rocket engine provides thrust that is higher than the gravitational acceleration in order to accelerate the vehicle and to make it lift off. The gravitational acceleration always points downwards to Earth's center from the rocket's COG. The acceleration by the engine's thrust, on the other hand is in-line with rocket engine that sits inside the thrust vector control mount. Consequently, the resulting acceleration of the two becomes highly unpredictable, as it depends on the orientation of the vehicle, on the thrust of the engine, and the angle of the thrust vector control system. As the total orientation isn't pointing to the Earth's center anymore, we have no way of determining the orientation based on these measurements in flight. Further, even if we could the accelerations are also caused by vibrations that are also present during rocket flight. 
+
+You may wonder why drones are able to used an accelerometer for determining orientation. But that is simple. When drones are hovering, they experience almost no acceleration, and when they are moving, their accelerations are still comparably low. This makes it easy for drones to use accelerometers. 
+
+
+##### Parameters
+Accelerometer's datasheets feature the exact same kinds of parameters 
+There's the operating range, which is this time given in g. A rating of +-3g would mean that it could measure an acceleration of approximately 3 times of Earth's gravitational acceleration -around 3x9.81m/s^2. The resolution is also given in bits, and splits the operating range into values. 
+
+The accuracy also heavily depends, on the zero-offset given in mg/K, the TCO given in mg/°/K, and the noise density in μg/√Hz.
+
+Accelerometer are also interfaced by common protocol such as I2C and SPI, and too feature interrupt pins. Even their output data rates are comparable. 
+
+#### BMI088 Implementation
+Both ways of determining orientation come with their own sacrifice. 
+Gyroscopes tend to drift over time due to their indirect nature, while accelerometers are prone to vibrations and are difficult to use while powered ascent. 
+
+Drones are able to use accelerometers to determine orientation as they do not have those high accelerations that are present in rocket flight. However, they still use both types of sensors and fuse them in order to get the most accurate results. They use the accelerometer data to correct the gyroscope drift, while filtering out the noise from the accelerometers. The two sensors perfectly complement each other for drone applications. 
+
+Therefore, gyroscopes and accelerometers are often sold within a single package. 
+Now, let's look at such a sensor packet or IMU (inertial measurement unit) the BMI088 from Bosch. 
+
+##### The Sensor
+The BMI088 is a 6DOF sensor, which stands for six degrees of freedom. The term DOF refers to the number of measured axis. It features a tri-axial gyroscope, and a tri-axial accelerometer. 
+
+Both have a digital resolution of 16-bit. The accelerometer is able to output data in steps of  0.09mg, while the gyroscope gives its readings in steps of 0.004°/s. 
+
+For this sensor the operating ranges for both the accelerometer and the gyroscope can be selected. The accelerometer's setting range from +-3g all the way up to +-24g. For model rocketry, we will rather chose a lower g setting, as we do not expect that high accelerations. 
+The gyroscope's setting range from +-125°/s to +-2000°/s. 
+
+The zero-offset for the accelerometer is +-20mg, and for the gyroscope +-1°/s.
+The TCO is +-20mg for the accelerometer, and +-0.015°/s/K for the gyroscope.
+The noise density is 175 μg/√Hz for the accelerometer and 0.014 °/s/√Hz for the gyroscope. 
+We can also adjust the output data rate of the BMI088 and select anything between 12.5Hz to 2kHz. 
+
+The BMI088 allows for SPI and I2C interface and features a total of four interrupt pins. 
+
+Its high resolution, low noise, wide operating range, and flexibility in output data rate make it capable of providing precise and reliable motion data for accurate control algorithms.
+##### Datasheet
+To implement the BMI088 into our flight computer we have to turn to its datasheet. Don't be overwhelmed by the amount of information provided in such as document. To integrate this sensor we do not have to understand the entire 62 pages. Often the maximum ratings, and the pin-out and configuration diagram are enough to be able to implement the sensors. 
+
+If we turn to page 52, we can see which functions are taken on by which pins. Pin one, for example, is the second interrupt pin of the accelerometer. Pin 3, is one the supply voltage pins, and so on. On page 53, we see typical connection diagrams for their sensors. As you can see, we can either connect the BMI088 by SPI or I2C. I usually like to connect sensors by SPI, due to the faster communication speeds. 
+##### Power Supply
+To hook up the BMI088, we have to connect +3.3V to all VDD and the VDDIO pin. Further, we have to connect the GND and GNDIO to 0V or GND.
+The PS pin (protocol select pin) is needed to indicate via which bus protocol our microcontroller wants to communicate with the sensor. By pulling it low, SPI is selected, and by pulling it high I2C is selected. 
+
+As recommended in the datasheet the NC should also be connected to ground to omit floating pins. To provide stable input voltage for the IC, we should add two 100nF capacitors as close as possible to the VDD pins of the BMI088. 
+
+For my designs, I like to add another two bigger 10uF capacitors, to counteract the ripple voltage of our power supply. 
+##### SPI Connection
+Because you understand the SPI protocol it is straight forward how to connect the interface:
+- SCK to SCK, 
+- MOSI to sensor data in (SDI)
+
+Even though, both the accelerometer and the gyroscope sit in a combined housing, we could use both of them on their own. This is why there are even two distinct sensor data out pins (SDO1 and SDO2) on the sensor. As only one of them can communicate at at time it is perfectly reasonable to connect both of them to the same MISO. 
+
+To tell the sensor whether the accelerometer or the gyroscope is currently addressed, we have two different chip select pins which we have to add. 
+##### Interrupts
+Regarding interrupts there are different modes in which this sensor can operate. 
+Both the accelerometer and the gyroscope feature two interrupt pins each. 
+For each, one can be selected to be a new data ready interrupt, which means that the sensor would indicate that new data can be read out by changing the voltage on this pin. 
+This results in one interrupt for the accelerometer and one interrupt for the gyroscope. In this case, the accelerometer and gyroscope data would not be outputted at the same time, but on their own speeds and timings. 
+
+However, there is a way of synchronizing the data of the gyroscope and the accelerometer. In that case one interrupt pin would be sufficient, which fires as soon as both the gyroscope and the accelerometer are ready to provide new data. 
+
+Another operating mode, is the FIFO (first in first out) mode. In this mode the IMU stores the gyroscope and accelerometer values into a Buffer with timestamps, which allows the microcontroller to still receive time-correct data, while not disrupting the microcontroller continuously. In this case one of the interrupts each, could be configurated to indicate a full or almost full buffer. Further INT1 and INT3 could be used as inputs. When applying a high to these pins, the sensor would tag those specific data sets. 
+
+We usually, just use the first method with two new-data interrupts, as we depend on the real-time data of the gyroscope. For us the main advantage of having access to four interrupt pins is that we can chose either one of the two for both sensors that suits are wiring best. 
+
+#### Barometer
+When launching a rocket, we also want to know the altitude that we reached. To do so, there are different ways, but most commonly the altitude of a model rocket flight is determined by a barometer. This is also the common way in which drones determine their height. 
+
+A barometer measures the air pressure, as well as the air temperature.
+
+As altitude increases, the atmospheric pressure decreases. This relationship is due to the weight of the air above a given point in the atmosphere. The higher you go in altitude, the less air there is above you, resulting in lower atmospheric pressure. This is why barometric pressure is often used as an indirect measure of altitude.
+
+In most cases, an increase in temperature results in an increase in atmospheric pressure, assuming all other factors remain constant. This relationship is primarily due to the fact that warmer air molecules have higher kinetic energy, causing them to move more vigorously and exert more force per unit area on surfaces, including the walls of a barometer.
+
+By knowing both characteristics of the air, it is possible to determine an approximate altitude by the barometric pressure equation. 
+
+In reality these measurements, are additionally influenced by air humidity (as humidity changes air density), diurnal pressure variations, as well as high and low pressure zones that occur because of weather conditions. The absolute altitude readings are therefore only within a few tens of meters. However, if the environmental conditions remain relatively the same during test operations, a relative accuracy, which is more important to determine altitude reached, can be as accurate as +-0.5m. 
+
+#### BMP388 Implementation
+
+#### Voltmeter
+
+
+#### Other Sensors
+Magnetometer
+
 
 
 ## Level - Outputs
