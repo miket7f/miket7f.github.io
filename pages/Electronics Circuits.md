@@ -614,6 +614,11 @@ PSRAM. Is a pseudo-static RAM. We can use an additional chip like this to outsou
 
 The Teensy 4.1 is an outstanding option if you are looking for a microcontroller with outstanding processing speed, countless GPIO pins, and an easy project integration. 
 
+##### Implementation
+To implement a breakout board microcontroller in your project not much is required. The only thing you have to provide is the power supply. Often, like in the case of the Teensy 4.1, these boards even feature their own voltage regulator on board. In the case of the microcontroller we could provide input voltage from 3.3 - 5V. So, by simply connecting VIN to 5V and GND ports to GND, the microcontroller can be up and running. 
+
+Now, the only task left to do, is to connect our sensors and outputs to the appropriate pins of the microcontroller. Here, a pin out can be highly useful, which indicates what can be used for which purposes. Let's look at it pinout, then we can see that we can use pin 1 for PWM control, as well as the transmitter for the UART protocol, indicated by TX1. Pin 12, could be used to as one of the SPI pins (the MISO pin) or again as a PWM pin. All pins in this pinout can be used as regular GPIO pins. 
+
 #### ESP32
 An example of microcontroller modules are the ESP32-WROOM line of modules. Specifically, we will be looking at the ESP32-WROOM32E-N8. 
 
@@ -631,7 +636,7 @@ The ESP32 WROOM modules, are perfect for projects in which we require easy conne
 
 To use ESP32 WROOM modules, we have to provide them with power, and we have to establish the connection between the microcontroller and our programming device. 
 
-#### USB to UART bridge
+##### USB to UART bridge
 Now we have ask how a computer communicate can communicate with our microcontroller. 
 You are for sure familiar with USB, and you might think of it as solely being the connector. 
 However, USB actually stands for "Universal Serial Bus", which clarifies that USB is also the communication protocol with which our laptops and PCs communicate with their devices, such as keyboards, mouses, and much more. 
@@ -649,6 +654,22 @@ Two famous ones are the CP2102 and the CH340.
 The CP2102 is the more expensive one. It emulates a USB device, which is immediately recognized by the PC as soon as we connect to it. To upload code through this bridge, we do not have to install any drivers or what so ever, and it simply works out of the box. 
 
 A CH340, on the other hand, is cheaper, but needs a driver in order for the PC to recognize the device. 
+
+##### Implementation 
+Implementing a microcontroller module like the ESP32 is a little trickier than implementing a breakout board. Yet, it is still relatively easy to do. 
+
+We have to again provide power to the VDD pins. However, this time we have to provide a regulated voltage of 3.3V. 
+
+We also have to provide the RESET and BOOT functionalities manually. The RESET pin is needed to be able to restart the program, while the microcontroller is stilled provided with power. If the RESET (Enable) pin is pulled high, the microcontroller is in normal operation, while if it is pulled low the microcontroller is resetting. We connect this reset pin to 3.3V by a pull-up resistor and to a button that can connect the EN pin to ground when needed. As buttons tend to bounce when pressed, which is an unintended oscillation of a button's electrical contacts. Consequently, we also add a capacitor in parallel that filters these spikes that are inconvenient for the microcontroller. 
+
+The ESP32 will enter the serial bootloader when GPIO0 is held low on reset. Remember the bootloader is the part of the program the microcontroller can enter after start up, which allows us to connect to the microcontroller in order to program it. Therefore, we also connect a button the BOOT pin to ground, and add a capacitor to prevent button bouncing. If the button is not pressed the microcontroller will simply run the program that is currently on the flash, and if it is pressed we have a small time window in which we can program the device.
+
+Further, we have to implement a USB to UART bridge, which we connect to the TXD0 and RXD0 pins of the microcontroller. 
+
+Here, we used the CH340, which is a little bit more straightforward to implement than the CP2102. For both we have to first look at their datasheet, and their connection diagrams. We connect the UART pins of the microcontroller to one side of the IC, while we connect the data pins of the USB port to other pins of the IC. We also have to provide the IC with regulated 3.3V power, and some filtering capacitors as indicated in the datasheet. We also connect the USB port to VUSB, as we can take the 5V of the USB line to power the board when connected.
+
+There are two more pins the RTS and DTR which we connected to the USB-TO-UART bridge. 
+These are essential to indicate to the microcontroller that we automatically want to reset and boot the microcontroller to upload code. The PC basically communicates to the USB-TO-UART bridge that we want to upload code now, and by a special transistor circuit these two signals trigger the RESET and the BOOT pins accordingly. The transistor schematic behind it takes to much time to understand in this lecture's context. Just remember that this circuit exists and that you should implement it as soon as you want auto-programming functionality for your flight computer by just one click in your programming environment. 
 
 #### STM32
 The final type of microcontroller implementation is that of plain microcontrollers. Two famous lines of microcontroller are the ATMEGA and the STM32 lines. The ATMEGA microcontrollers are commonly implemented in Arduino boards, while the STM32 microcontrollers are heavily used in the industry. Here we will describe the STM32 line of microcontrollers. 
@@ -684,6 +705,7 @@ JTAG has a total pins, while SWD uses only four. As we want to minimize weight a
 - and GND. 
 
 SWD supports full debugging capabilities, including setting breakpoints, stepping through code, inspecting variables, and modifying memory. It also allows for programming the Flash memory of the microcontroller.
+
 ##### STM32 CubeIDE MX
 To set up and program the STM32, we don't use the Arduino IDE, but instead use their provided software STM32 CubeIDE. Within this tool, we can write our code, upload the code to our microcontroller by connecting it through a ST-Link, and are able to debug our code live. 
 
@@ -693,6 +715,7 @@ There is a CubeIDE MX tool inside the environment that allows us to set up the p
 As mentioned before, we have to provide a clock source for the microcontroller to run. This clock source must fall between a certain frequency range in order for the microcontroller to function. For the F7xx we must select an crystal with a resonance frequency between 4-26MHz, as indicated in the data sheet. To make a proper oscillator, we also have to attach two capacitors, which are called load capacitors. Load capacitors are capacitors connected to the terminals of a crystal oscillator. They form part of the resonant circuit that determines the oscillator’s frequency. The correct selection of load capacitors is essential for stable and accurate frequency operation.
 
 So, as you have seen the STM32 line of microcontrollers is very different to the ones we discussed before. They have to be implemented in a very different way, are programed in a different environment, and can be debugged. There is variants for almost any application and they are very robust.  
+
 #### Summary
 If you strive for the fastest processing speed, countless GPIO pins, bus functionalities, and easy implementation, as well as an onboard SD card, a good starting point for your design would be the Teensy 4.1. The option is a good start for any beginner and is definitely sufficient for a great flight computer design.
 
@@ -701,7 +724,7 @@ If you want to make a more advanced PCB design, you can implement a microcontrol
 The last option, is to implement bare-bone microcontrollers. This option is for the advanced of you that want to familiarize themselves to microcontrollers that are used in the industry. The STM32 line offers and option for almost any application, provides fast processing speeds, countless GPIO pins, and many bus protocols. They are programmed in their own environment, upload code through their own ST-Link programmers, and allow for real-time debugging. For making them work, we have to design the oscillator circuit ourselves and have to incorporate the programming interface. 
 
 We will look at how we implement any of those three designs after we learned about the PCB design environment. 
-## Level - Sensors
+## Level 7 - Sensors
 ### Lecture
 Sensors are our sensory organs of our flight computer. With the help of them we can determine our rocket's orientation, its acceleration, velocity, and position, as well as its altitude. 
 Based on the input of our sensors, our rocket can make informed decisions about steering the engines, deployment mechanisms, or aborting the flight. Further, they help us to analyze our rocket flights by storing their data. 
@@ -839,24 +862,169 @@ A barometer measures the air pressure, as well as the air temperature.
 
 As altitude increases, the atmospheric pressure decreases. This relationship is due to the weight of the air above a given point in the atmosphere. The higher you go in altitude, the less air there is above you, resulting in lower atmospheric pressure. This is why barometric pressure is often used as an indirect measure of altitude.
 
-In most cases, an increase in temperature results in an increase in atmospheric pressure, assuming all other factors remain constant. This relationship is primarily due to the fact that warmer air molecules have higher kinetic energy, causing them to move more vigorously and exert more force per unit area on surfaces, including the walls of a barometer.
+In most cases, an increase in temperature results in an increase in atmospheric pressure, assuming all other factors remain constant. This relationship is primarily due to the fact that warmer air molecules have higher kinetic energy, causing them to move more vigorously and exert more force per unit area on surfaces.
 
 By knowing both characteristics of the air, it is possible to determine an approximate altitude by the barometric pressure equation. 
 
-In reality these measurements, are additionally influenced by air humidity (as humidity changes air density), diurnal pressure variations, as well as high and low pressure zones that occur because of weather conditions. The absolute altitude readings are therefore only within a few tens of meters. However, if the environmental conditions remain relatively the same during test operations, a relative accuracy, which is more important to determine altitude reached, can be as accurate as +-0.5m. 
+The barometer measures the air pressure, by a membrane inside the IC that deforms under applied pressure. Through the deformation of the membrane, the resistance of the membrane changes. The single resistances of the single strain gauges are connected in a diamond-shaped configuration, which is in balance without deformation. As soon, as the membrane is deformed, the resistance imbalance creates a electrically measurable derivation. This derivation is then used to be converted into pressure readings. It's important for the barometer IC to have direct access to the surrounding air, hence it is typically placed near an air inlet of the rocket for accurate pressure measurements.
+
+In reality these measurements, are additionally influenced by air humidity (as humidity changes air density), diurnal pressure variations, as well as high and low pressure zones that occur because of weather conditions. The absolute altitude readings are therefore only within a few tens of meters. However, if the environmental conditions remain relatively constant during test operations, a relative accuracy, which is more important to determine the reached altitude, can be as accurate as +-0.5m. 
 
 These changes in environmental conditions and the resulting inaccuracies can't be changed by highest precision barometric pressure sensor. 
 
+Typical parameters that will be given when selecting a barometer are:
+- the operation range which gives you the pressure range in hPa your barometer will be able to measure. Air pressure ranges from 1013 hPa at seal level to 56hPa at 65km altitude. 
+- the absolute pressure accuracy, gives the pressure derivation from the actual pressure at a certain sea level. It is most important if we would want to determine the absolute altitude of any point. 
+- the relative pressure accuracy, outlines the inaccuracy for applications in which we want to determine the pressure change. It is most important to determine altitude during model rocket flight. 
+- the noise in pressure, gives the amplitude of random fluctuations in our measurement. 
+- the temperature coefficient offset (TCO), clarifies the change in measured pressure based on increased or decreased heat of the sensor. 
+- the long term stability (12 months), indicates the change in measured pressure over an extensive time period. We can think of this measurement to be a long term drift. 
+- sampling rate, is the same as the output data rate on the IMUs. 
 
+Now, let's look at a specific example of a barometer the BMP388 from Bosch. 
 #### BMP388 Implementation
+##### Properties
+The BMP388 incorporates both a pressure and a temperature sensor, as is common for barometers. When looking at its datasheet again we are able to evaluate the sensor's properties. 
+
+It has a operation range that ranges from 300 to 1250 hPa, which is more than enough to cover our altitude range. Its absolute pressure accuracy is +-0.5hPa, which we could translates to a meters above sea level measurement with an accuracy of +-4m. The relative pressure accuracy is +-0.08hPa, which translates to an altitude measurement relative to a setpoint with an accuracy of +-0.66m. The setpoint will in our case almost always be at the level of the launchpad. This makes the relative accuracy most important to determine the altitude, or change in elevation. 
+
+The BMP388 has a noise in pressure at lowest bandwidth and highest resolution of only 0.03Pa. 
+Its TCO is +-0.75Pa/K and its long-term values over a 12 month period are still within +-0.33hPa. 
+All of that with a maximum sampling rate of 200 Hz. 
+
+The BMP388 allows for the classic 4-wire SPI, and a special SPI interface that only needs three wires. Further, it features an I2C interface and an interrupt pin. 
+##### Oversampling and IIR
+The BMP388 is able to run different oversampling modes (from none to 32 times oversampling) and can apply an IIR (infinite impulse response) filter (ranging again from none to 32).   
+Oversampling improves the accuracy and resolution of measurements by sampling the input signal more frequently and then averaging these samples. The oversampling rate is adjustable and can be set to different. The higher the oversampling rate, the higher the resolution, the higher the power consumption and the higher the resolution. However, as more samples are combined in a single measurement, the output data rate decreases with increasing oversampling. 
+
+The IIR filter helps in smoothing the output data by reducing short-term fluctuations and noise, providing a more stable reading. The filter coefficient can also be set from zero to 32 and determines the strength of the filtering, with higher coefficients providing more smoothing. Stronger IIR filtering provides smoother data but may introduce a slight lag in response to rapid changes in pressure or temperature.
+
+We can set both the oversampling and the IIR individually for both the pressure and the temperature sensor. 
+
+##### Power Supply
+The sensor is supplied with regulated 3.3V and is equipped with bypass capacitors on the power inputs to make the power supply more stable. Their capacitance is recommended to be 100nF, and the type should be of a SMD ceramic capacitor. 
+
+##### SPI Connection and Interrupt 
+The BMP388 will be implemented using the four-wire SPI interface, similar to the BMI088:
+- **SCK to SCK**
+- **MOSI to SDI**
+- **MISO to SDO**
+- **GPIO to CS**
+Additionally, another GPIO pin will be connected to the interrupt pin to indicate when new data is ready.
 
 #### Voltmeter
+Another very useful sensor for model rocketry is the voltmeter. The voltmeter is intended to measure the battery's voltage level to ensure a sufficient power supply.
 
+There are many way in which we can measure a the voltage of our LiPo battery.
+There are dedicated battery monitoring ICs available that provide protection against overvoltage, undervoltage, overcurrent, short-circuits, and even overtemperature. 
+There are even battery fuel gauge ICs that do not only determine the battery's voltage but also its stored capacity. 
+However, there is a simpler way of roughly determining the battery's voltage level, which is done  by using a voltage divider in combination with an ADC. 
+
+#### Voltage Divider with ADC
+All of the three microcontrollers we previously discussed, have their own analog input pins. Most often they work by an integrated analog to digital converter. However, the analog input pins of our microcontrollers only function in a range of 0 to 3.3V. If we were to apply a higher voltage to the pins, they would undergo permanent damage. Our 3 celled LiPo battery has a voltage range of 11.1V to 12.6V, which is magnitudes to high for the ADC to measure. 
+
+However, there is a way to indirectly measure the battery's voltage level without damaging the ADC. This is done by a voltage divider. A voltage divider is basically a resistor circuit that consists of two resistors put in series. To this divider the battery voltage is applied. Now we can calculate the equivalent serial resistance, and divide the entire voltage by this value. What we get is the flowing current. By multiplying the current with the resistances, we get the voltage drop across the two resistors. The voltage drop across the resistors varies with the current, which again varies with the applied voltage. By selecting the correct resistor value, we can create a voltage of 0 to 3.3V for the input range of 0 to 12.6V across the bottom resistor to which we connect the ADC. 
+
+##### Implementation of ADC Voltmeter
+So, let's device our first ADC voltmeter.
+First, we have to determine the input voltage range which we want to be able to measure. 
+Ideally, we would use a larger range, in our case we could go with 0-13.3V. 
+Then, we have to think about the lower voltage range that should be present at our ADC. 
+In this case of our microcontrollers our ADCs withstand around 3.3V. So, let's go with a lower voltage range of 0-1.88V. So, the battery voltage of 13.3V corresponds to the at the ADC measured voltage of 1.88V. 
+
+The next step is to select one resistor, based on which we then can calculate the second resistor. 
+It is important to know that the higher the resistance value we chose, the lower the continuous current consumption will be. A good value for the upper resistor could be 20kOhms for example. 
+
+We can calculate the voltage across the second resistor by determining the current times the second resistor. 
+$V_{ADC}=\dfrac{V_{BAT}*R_2}{R_1 + R_2}$
+
+Then, we can insert our maximum values, which are 13.3V for Vbat and 1.88V for the VADC, and the value for our first resistor. 
+$1.88V*20000Ω = 13.3V*R_2 - 1.88V*R_2$
+
+After that we only have to extract R2 to one side, and evaluate its resistance. 
+$R_2 =\dfrac{1.88V*20000Ω}{13.3V-1.88V}=3292Ω$
+
+Now we have an ideal resistor value, with which we can now select an appropriate one. The next closest available is a 3.3kΩ resistor. 
+By calculating the network again with this resistor we come to the conclusion that 13.3V correspond to 1.8836V. 
+As you know the value of the measured voltage range is given in a number. For a 12-bit ADC, a value of 4095 would correspond to the voltage level 3.3V.
+
+What battery voltage would correspond to 3.3V at the ADC? 
+Let's determine the current by 3.3V/3300Ω=0.001A 
+Then multiplied by the equivalent resistance we would 23.3kΩ * 0.001A = 23.3V. 
+So, 3.3V at the ADC correspond to a battery voltage of 23.3V.
+
+Therefore, we can calculate the battery voltage by dividing the numeric number x by the maximum number 4095. We know that the maximum number corresponds to 23.3V and that the relationship between X and the maximum number is linear. 
+
+$V_{BAT} = \dfrac{n_{ADC}}{4095}*23.3V$
+
+However, keep in mind that both resistors are not ideal and do have a slight offset of their ideal resistance. Consequently, we have to calibrate our resistor divider before the first use. 
+To do so, we measure the battery voltage of the LiPo and compare the measured voltage by the voltage our voltmeter estimated.
+
+$f_{COR} = \dfrac{V_{ACTUAL}}{V_{VOLTMETER}}$
+
+We can calculate the deviation of the two values and receive a factor, with which we will simply multiple our results in the software. 
+
+$V_{BAT} = \dfrac{n_{ADC}}{4095}*23.3V*f_{COR}$
 
 #### Other Sensors
-Magnetometer
+While we discussed the four most vital sensors that most every advanced model rocket will need (the gyroscope, accelerometer, barometer, and voltmeter) there are many more that you may require on your won project or flight computer. 
 
+Three sensors that can be especially useful are the magnetometer, which is another of determining the rocket's orientation, the GNSS receiver - a GPS module to determine the rocket's position in 3D space, and ultrasonics sensors for close distance monitoring. 
 
+##### Magnetometer
+A magnetometer is the third way in which we can determine the rocket's orientation. A magnetometer measures the magnetic field that is present in its environment. As you know, Earth has a very strong magnetic field that is measurable around the world. We can think of the Earth as big bar magnet with magnetic field lines that range from the magnetic North to the magnetic South pole. The magnetometer can measure these magnetic field lines and their direction. Based on these measurements, it can estimate its own orientation. You can think of a magnetometer to be a compass. 
+
+For a 3DOF (Degrees of Freedom) magnetometer that is used to determine orientation, we can think of it as having three compasses around three different axis. Through that we know exactly where the magnetic field is coming from. As the magnetic poles do not suddenly change, we can determine the orientation of the vehicle based on these measurements. 
+
+However, the problem with a magnetometer is that other magnetic fields that are present in the real world can render the magnetometer's measurements useless, just as the accelerometer becomes useless when thrust is present. The biggest concern why we haven't yet incorporated a magnetometer to our designs, is the fact that our voltage regulation circuit features an inductor. This inductor creates a strong magnetic field which would partly impede the magnetometer. 
+
+Yet, if careful consideration is taken into account when designing your PCB your project might benefit of adding this type of sensor! 
+
+##### GNSS Receiver 
+Another very important sensor is the GNSS receiver. 
+GNSS stands for Global Navigation Satellite System. 
+As the name suggests this systems allows users on Earth to determine their position in 3D dimensional space on Earth. This is done by a satellite constellation that usually sits in GEO (geo-stationary orbit). The GEO orbit is special as the satellites in this orbit are in sync with the Earth's rotation, which means that they always cover the same regions. 
+
+In order for it to work, the device that wants to determine its position has to connect to at least four satellites. The satellites know their location, and feature exact timing. These satellites can now send their location data and their time data to the device that wants to determine its location. The device also knows the current time and can calculate the time that elapsed from the time the data was sent to the time it was received. Based on this time it can calculate the distance it has to the satellite, as the device knows the speed at which the information travels. Now one distance alone does not determine the position in 3D space. Only if this procedure is repeated with two more satellites, the device can determine where it sits in 3D space. We can image a sphere around each of the satellites that has the radius of the measured distance. Where the three or spheres intersect, is then the position of the device. We might think that three satellites are enough to determine the position. However, in order for the system to work we actually need a fourth one. The fourth satellite provides the device with accurate real-time data that is essential for calculating accurate distances. GNSS satellites all feature nuclear clocks with tremendous accuracy, which is why the device itself must be provided with accurate timing data. With an even larger number in satellites, it can increase the accuracy further. With this system accuracies of half a meter can be achieved in 3D space. 
+
+When we want to integrate this system into our flight computer we have to select the receiver that does communicate with these satellites and calculate its position. 
+
+One aspect we must consider when selecting such a receiver, is what satellite constellations it can receive. There many GNSS constellations including United States’ GPS (Global Positioning System), Europe’s Galileo, China’s Beidou, Russia’s GLONASS, India’s IRNSS, and Japan’s QZSS. Each position system has better coverage in one area and worse in another. If we were to launch in the U.S. the GPS system might be superior, while if we were to launch in Europe we probably would want to receive Galileo. The good thing is that there are GNSS receivers that can receive multiple constellations. 
+
+If you want to integrate GNSS into your own project, you might want to look at the GNSS receivers from UBLOX such as the NEO-M9N. For implementing them, Sparkfun's breakout boards schematics might help you to do so on your own. 
+
+##### More Sensors
+There are so many sensors that could be useful for model rocketry applications that we will not be able to discuss them all in this course. 
+
+Still, for you to get an idea of which sensors there are, I want to briefly list a few that might be interesting for your projects. 
+- Ultrasonic sensors that determine distance based on the elapsed time that an ultrasonic sound wave needs to travel. Similarly to the echolocation bats use. This might be helpful to determining relative altitude to the ground or for obstacle avoidance. 
+- Humidity, temperature, and air quality sensors to determine the state of the atmosphere. 
+- Ultraviolet sensors for determining UV radiation, which you could use to assess Ozon layer depletion or levels of radiation to protect human from sun burns. 
+- Radiation sensor (Geiger Counter), for gauging the exposure of radiation the flight computer experiences. 
+- A weight cell for measuring the rocket's thrust in real-time to adjust the stabilization algorithm.
+- Photoresistor to monitor the trigger of heating wires as well as engine ignition.  
+- Strain gauges positioned on the rocket to gauge mechanical stress.
+- Or seismometer to evaluate vibrations during flight. 
+- And much much more! 
+
+Most of the sensors come with SPI or I2C or are even analog devices, which you can simply read out by hooking them up to on of the ADC channels. 
+
+The implementation principle is the same for all of them. 
+You determine which property you want measure, source a part that can do exactly what you need, and implement it on your PCB according to its datasheet. 
+#### Summary
+The three most vital sensors that most every rocket will need are the gyroscope, the accelerometer, and the barometer. 
+
+The gyroscope measures the angular rate, which we can then translate into the rocket's orientation by integrating and feeding it into a orientation representation model like Euler angels or Quaternions. Its measurements are very accurate over a short amount of time and aren't influenced by variations or other outside circumstances. However, they tend to drift over time. We calibrate them in order to minimize the drift. Yet, after some time every gyroscope will be off to a certain degree.
+
+The accelerometer unfortunately cannot be used during model rocket flights, as the total thrust does not point to the Earth's center but is hard to predict. Remember it depends on the Earths gravitational acceleration, the the thrust curve and the engine's resulting acceleration, as well as the angle the TVC mount is currently in. However, it can be perfectly used to provide the gyroscope with a setpoint while sitting stationary at the launchpad. In that case only the gravitational acceleration is present, and orientation can be measured easily and without drift. The accelerometer's data can also be used after burnout of the rocket engine. During flight, accelerometers are also heavily influenced by vibrations. 
+
+The third essential sensor is the barometer, which measures pressure and temperature to determine the altitude based on the barometric pressure equation. With increasing altitude the pressure decreases and with increasing temperature the pressure increases as well. It's relative accuracy can be quite high, however its absolute accuracy depends on a few more factors, such as humidity, diurnal fluctuations in pressure, as well as low and high pressures zones based on weather situations. 
+
+Another sensor that can be useful is a voltmeter, which can be most easily implemented by using a resistor divider and one of the ADC channels on the microcontroller. With it we can determine the battery voltage, and notify the user if not enough voltage is present. 
+
+There are still more sensors that might be highly useful, such as a magnetometer to determine the orientation of the rocket based on Earth's magnetic field, a GNSS receiver to evaluate the vehicle's position by using the positioning satellite systems, and many many more. 
+
+Most sensors are connected by a SPI or I2C protocol, and some can be read out in an analog way. Many also feature interrupt pins by which they can indicate to the microcontroller that new data is ready. The sensor's datasheet is always the most important document to look at when implementing a sensor. It states the sensor's characteristics, and often provides a diagram with how to properly implement the sensor. 
 
 ## Level - Outputs
 
