@@ -8,48 +8,54 @@ The material that we provide in the following levels is by now means complete bu
 
 ## Level 1 - Introduction to the Electronics Path
 ### Lecture 
-We know you are eager to develop your own flight computer right away. However, we have to get you set up with the fundamentals first. Trust me, I have been there, designing my first flight computer without caring about the fundamentals, and well I can tell you that my first designs didn't work out as planed. 
+We know you are eager to develop your flight computer right away. However, we have to get you set up with the fundamentals first. Trust me, I have been there, designing my first flight computer without caring about the fundamentals, and well I can tell you that my first designs didn't work out as planned. 
 
-For you to get the best understanding of circuit design possible, we have to start all the way at the beginning. We will start within the atom and take a look on an even smaller unit - the electron. Then, we will zoom out and take a look on how atoms bond with each other. We will learn about the force that acts between them, will describe what an electric charge is, and look at the concept of electric fields. Further, we will learn about conductivity, electric current, electric potential and the concept of the electric current. 
+For you to get the best understanding of circuit design possible, we have to start at the beginning. 
+We will start within the atom and take a look at an even smaller unit - the electron. Then, we will zoom out and take a look at how atoms bond with each other. We will learn about the force that acts between them, describe what an electric charge is, and look at the concept of electric fields. Further, we will learn about conductivity, electric current, and electric potential difference or voltage.
 
-You may wonder why we would want to understand all these theoretical concept first? 
-Well, almost every electric circuit on Earth uses a combination of the following components, of which you might already have seen some. (Video of the components)
+You may wonder why we would want to understand all these theoretical concepts first. 
+Well, almost every circuit uses a combination of the following components, of which you might already have seen some. (Video of the components)
 To understand any one of them, you have to be familiar with their underlying concepts. 
 This one, for example, is called a resistor. To understand it, you have to know about electric current, voltage, and ohms law. 
 If you use a set of multiple resistors, you will have to learn about Kirchhoff's laws. 
 Then here we have a capacitor. To understand it you additionally will need to know about electric charge. 
 Finally, to understand a diode and a transistor we will have to understand how p-n junctions function. 
 
+Within the first section of this electronics course, we will cover the theoretical fundamentals as well as the basic electronics components. In the second section, we will learn how to arrange those components to create functional circuits of which we can devise our flight computer. In the third section, we will dive into PCB design using the PCB design software Easy Eda. At the end, you will create your extension module for the Stack flight computer, and you will be able to self-develop flight computers.
+
 All may sound terrifying to you at the beginning. Yet, stick with us and you will see that those concepts are way easier than as they sound. 
 ## Level 2 - The Electron
 
 ### Lecture 
+In this lecture, we will dive into the world of the electrons. We will learn about the coulomb force, and how elements are categorized through the periodic table. We will look at the Bohr-Rutherford atom model, and we will learn about what Ions are. Although those things don't really sound like they belong in an electronics course, you will understand why we have to learn about them at the subsequent level. 
 #### The Atom
-Our world, everything you see, consists of extremely tiny building blocks - the so called Atoms. Their name comes from the ancient Greek word Atomos, which stands for "uncuttable". Previously, they were thought to be undividable, but science has found out that they, in fact, consist of even smaller units. 
+Our world, everything you see, consists of extremely tiny building blocks - the so-called Atoms. Their name comes from the ancient Greek word Atomos, which stands for "uncuttable". Previously, they were thought to be undividable, but science has found out that they consist of even smaller units. 
 
 These units are called - protons, neutrons, and electrons. 
 The protons are charged positively, the neutrons are neutral, and the electrons are charged negatively.
 
-An atom can be divided into a core and a shell. The core or nucleus consists of the neutrons and protons and makes up more than 99% of the weight. The shell on the other hand consists of the electrons, and makes up the majority of the volume. As the neutrons aren't charged and the protons are charged positively, the net charge of the core is positive. 
+An atom can be divided into a core and a shell. The core or nucleus consists of neutrons and protons and makes up more than 99% of the weight. The shell, on the other hand, consists of electrons and makes up the majority of the volume. As the neutrons aren't charged and the protons are charged positively, the net charge of the core is positive. 
 
-You might know that similar charges repel each other, while opposing charges attract each other. 
+You might know that similar charges repel each other while opposing charges attract each other. 
 This is why the electrons are attracted to the nucleus. The force that acts between them is called the coulomb force. 
 
 #### The Coulomb Force
 
-This force is calculated after the this formula: 
+This force is calculated after this formula: 
 
-$F_C = \dfrac{1}{4*\pi*e_0}*\dfrac{q_1*q_2}{r^2}$
+$F_C = \dfrac{1}{4*\pi*ε_0}*\dfrac{q_1*q_2}{r^2}$
+
+$r$ ... Distance between q1 and q2
 
 As we can see, the force decreases with increased space between them. Further, it increases with the charge of the elements. The larger the charge, the larger the force, and the greater the distance, the lower the force. 
 
-The factor in front, also features the vacuum permittivity constant that is given in farad per meter. 
+The factor in front also features the vacuum permittivity constant that is given in farad per meter. 
 $ε_0 = 8.85*10^{12} \dfrac{F}{m}$
 
-However, you might wonder why the protons inside the nucleus do not repel each other? This is because there's another force present the so called nuclear force. This force is magnitudes higher than the electrostatic force, yet it only occurs at very small proximities like those found in the core.
+However, you might wonder why the protons inside the nucleus do not repel each other. This is because there's another force present the so-called nuclear force. This force is magnitudes higher than the electrostatic force, yet it only occurs at very small proximities like those found in the core.
 
 #### Periodic Table
-Each atom consists of at least one proton in the core. The number of protons in the core significantly changes the properties of the element. This is why humanity came up with a way of classifying those elements with the so called periodic table. An atom with one proton, for example, is referred to as hydrogen. An atom with two protons, on the other hand, is called helium. One with three protons, is lithium, and one with four is called beryllium. The number you can see in the upper left of the periodic table elements is the atomic number, which is equivalent to the number of protons in the core. 
+Each atom consists of at least one proton in the core. The number of protons in the core significantly changes the properties of the element. This is why humanity came up with a way of classifying those elements with the so-called periodic table. An atom with one proton, for example, is referred to as hydrogen. An atom with two protons, on the other hand, is called helium. One with three protons is lithium, and one with four is called beryllium. The number you can see in the upper left of the periodic table elements is the atomic number, which is equivalent to the number of protons in the core. 
 
 #### Bohr's Model 
 There are different models with which the layout of the atom can be described. One of the first and simplest description is the one of Rutherford and Bohr. 
@@ -63,14 +69,14 @@ The elements in the periodic table are also separated into different groups. In 
 This will be important for you to understand the concept of conductivity later on! 
 
 #### Ions
-In normal circumstances, each atom has as many electrons in the shell as protons in the core, which means that the net charge of the atom is neutral. However, if we add or remove an electron from the shell, we get a charged atom, a so called ion. An atom with added electron in the shell is net negatively charged, as the number of electrons is higher than the number of protons. This is called an anion. An atom with removed electrons, on the other hand, is positively charged. We call this a cation. 
+In normal circumstances, each atom has as many electrons in the shell as protons in the core, which means that the net charge of the atom is neutral. However, if we add or remove an electron from the shell, we get a charged atom, a so-called ion. An atom with added electrons in the shell is net negatively charged, as the number of electrons is higher than the number of protons. This is called an anion. An atom with removed electrons, on the other hand, is positively charged. We call this a cation. 
 
 #### Summary
-So, our world consists of atoms, and these atoms consist of a core and a shell. The shell is filled with electrons, while the core is filled with protons and neutrons. The electrons are held in the shell by the attracting electrostatic force that occurs because of the opposing chargers of electrons and protons. The protons are held together by an even stronger force, the so called nuclear force. 
+So, our world consists of atoms, and these atoms consist of a core and a shell. The shell is filled with electrons, while the core is filled with protons and neutrons. The electrons are held in the shell by the attracting electrostatic force that occurs because of the opposing charges of electrons and protons. The protons are held together by an even stronger force, the so-called nuclear force. 
 
 Depending on the number of protons you get different elements. There's the Bohr model which describes the shell of the atom to consist of layers, while the electrons that sit in the outer layer are called valence electrons. 
 
-Further, there are ions, which result in through an imbalance between electrons and protons in a element. The atom can either be charged positively - cations,  negatively - anions, or it can be neutral. 
+Further, there are ions, which result in an imbalance between electrons and protons in an element. The atom can either be charged positively - cations,  negatively - anions, or it can be neutral. 
 
 ### Activity
 - labeling the atom 
@@ -84,7 +90,7 @@ Further, there are ions, which result in through an imbalance between electrons 
 ### Lecture 
 
 #### Atom Bonding
-The materials that we know from our day to day life, result from atoms bonding with each other to form something bigger. They can bond with each other through different forms. Metals, for example, bond with other non-metals through a ionic bond. Non-metals bond with each other through covalent bonds. And metals bond to each other through a metallic bond. 
+The materials that we know from our day to day life, result from atoms bonding with each other to form something bigger. They can bond with each other through different forms. Metals, for example, bond with other non-metals through an ionic bond. Non-metals bond with each other through covalent bonds. And metals bond to each other through a metallic bond. 
 
 Now, for us to understand electric current we first have to understand the metallic bond. 
 As you previously heard, every element wants to have a full outer shell layer. This means that non-metals usually want to receive electrons to fill up their outer layer, because their outer layer is already quite full. Metals on the other hand normally want to give up electrons, as there outer layer is quite empty and filling it up would be more difficult to do. 
@@ -95,12 +101,12 @@ Metals can achieve this state by bonding with each other through a metallic bond
 Because of this regularity, the metals receive their typical characteristics. Because of their bonding strength they are rigid bodies at room temperatures and have high boiling points. Further, they can be modified relatively easily through bending, forging, and so on. Each layer of cations in the rigid structure can be moved without destroying the bonds between them. 
 
 #### Electric Current
-So that we understand a metallic bond, we can ask ourselves what electric current is?
-In simple terms, electric current is the flow of charged matter - in most cases electrons - through a material. In the case of a metal structure, this movement can occur easily as there are already delocalized electrons available. The freely moveable electrons inside the metal push each other forward and through that the electrons can flow from one end of the material to another. 
+Based on our understanding of the metallic bond, we can explain what electric current is. 
+In simple terms, electric current is the flow of electrons (sometimes ions) through a material. In the case of a metal structure, this movement can occur easily as there are already delocalized electrons available. The freely moveable electrons inside the metal push each other forward and through that the electrons can flow from one end of the material to another. 
 
 A material that allows for electric current flow is called an conductor, and the property of how well a material supports electric flow is called conductivity. 
 
-You can also compare electric current with the flow rate of water in a pipe. And while the flow rate in a water pipe is given by liters per second, we give the flow rate in a electric circuit the "electric current" in Ampere. It represents the charge that passes through a conductor in one second. 
+We can compare electric current with the flow rate of water in a pipe. The flow rate in a water pipe gives the volume of water that passes through a water pipe per second and is given in liters per second. Similarly, electric current gives the number of charges that passes through a conductor in one second. The electric current is given in the unit Ampere. 
 
 We already learned about the fact that electrons are charged negatively and that protons are charged positively. Both an electron and a proton have the same amount of charge. Their charge is called the elementary charge e zero and is given with $e_0 = 1.602*10^{-19} A*s$. The unit of a charge is given in Ampere times seconds which is the same as a Coulomb. 
 

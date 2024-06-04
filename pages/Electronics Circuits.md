@@ -1060,7 +1060,7 @@ There are still more sensors that might be highly useful, such as a magnetometer
 
 Most sensors are connected by a SPI or I2C protocol, and some can be read out in an analog way. Many also feature interrupt pins by which they can indicate to the microcontroller that new data is ready. The sensor's datasheet is always the most important document to look at when implementing a sensor. It states the sensor's characteristics, and often provides a diagram with how to properly implement the sensor. 
 
-## Level - Outputs
+## Level 8 - Outputs
 ### Lecture
 Now, the microcontroller and its sensors are implemented and we basically have created a data logger. In essence, our flight computer is now able to interpret its environment. However, it can not yet intervene in its environment. The flight computer might notice that it unstable by 30° in the yaw axis. However, it has no way of changing those circumstances yet. This is where the flight computer's outputs come into play. 
 #### RGB LED
@@ -1181,4 +1181,44 @@ Servos are electric motors that feature a potentiometer for closed-loop angle co
 Finally, an SD card is flash storage that we can interface by SPI to store flight data. There are two types one that secures the SD card by a click (spring-loaded), and ones that secure the SD card by friction. 
 
 ## Level - Stack Analysis
+### Lecture
+With having covered all the main circuits for now, we can once again look at Stack, and learn about the circuits that we have used there.
+#### CORE
+![](/assets/images/a6700-0328%20-%20frame%20at%200m12s-2.jpg)
+- Stack Core is concerned with the management of the entire flight computer system. 
+- As you can see, it features an XT60 connecter for a battery.
+- The battery that we choose to power the flight computer is a three celled LiPo battery with a capacity of 500mAh and a C-rating of 25. 
+- Further, the PCB incorporates the LM2596 voltage regulator. Remember the LM2596 has a pin with which it can be activated. To that pin, we connected the switch. The input capacitor, the inductor, and the diode, as well as the output capacitor. Note that the inductor is as far away from control signals as possible. 
+- The regulated 5V of the buck regulator are fed into a 3.3V linear regular the ASM1117-3.3 with two tantalum capacitors. 
+- The main microcontroller of the flight computer system is this ESP32-WROOM-32E, which allows for easy programming via the Arduino IDE and easy WiFi and Bluetooth capabilities. 
+- The ESP32 is programmable via the Micro USB port and the CH340 with the auto-reset circuit next to it. We added two buttons for manual reset and boot control. 
+- Further, it features an RGB LED, a Buzzer, and a voltmeter. 
+- And finally, the connector through which Vbat, 5V, 3.3V, GND, and an I2C bus are transmitted between the different boards. 
+-
+#### FUSION
 
+![](/assets/images/a6700-0327%20-%20frame%20at%200m3s%20-%202.jpg)
+- The second board features the STM32F7RET6 microcontroller. There are a lot of capacitors for the VDD, and here we have the VDDA filtering circuit. 
+- Two buttons for boot and reset control. 
+- The serial wire debug interface, as our main programming interface through an ST-Link V2. 
+- A micro USB port as a backup. 
+- Then, we have the crystal oscillator with its two capacitors. 
+- The gyroscope and accelerometer (the BMI088) with its capacitors. 
+- The barometer (the BMP388) also with capacitors. 
+- An RGB LED. 
+- Several backup pins to be able to connect the sensors with outside microcontrollers.
+- And solder places for pull up resistors for the utilized SPI protocol. 
+- Finally, this board features ESD protection. ESD stands for electrostatic discharge.
+- You might recognize that we sometimes get electrically charged, for example when rubbing a balloon on your head, causing your hair to stand up. Sometimes you might even experience a slight electric shock when touching a metal object afterwards. 
+- These electric shocks are in the thousands of volts. If we were to touch our PCBs in that state, they would obviously become permanently damaged. This is why we added ESD protection to all main connectors on the FUSION board. 
+#### OUT
+![](/assets/images/a6700-0330%20-%20frame%20at%200m5s%20-%202.jpg)
+- The final board Stack Out features the STM32G030K8T6 microcontroller. 
+- This microcontroller does not have to pins for the oscillator circuit, which makes the use of a crystal as an oscillator not feasible. However, this board requires accurate timing, as it shall control the servos of our flight computer. 
+- There is only one pin to which the timing signal shall be inputted. Here we used an highspeed external oscillator. An oscillator is basically a component that only requires a voltage and then outputs a steady oscillation signal on its output pin. 
+- Further, this version also has the serial wire debug connector, and one reset button. 
+- Due to the small STM32 package there was also no pin for the boot control.
+- We have five servo connections with 1x3 right-angled male pin headers. 
+- An RGB LED, and
+- Five high current MOSFET pyro channels, with indicator LEDs. As connectors, we used pluggable systems terminal blocks. This allows for easy connect and disconnect, as well as access when inserting heating wires and electric ignitors. 
+- And again, ESD protection. 
