@@ -25,7 +25,7 @@ Within the first section of this electronics course, we will cover the theoretic
 
 All may sound terrifying to you at the beginning. Yet, stick with us and you will see that those concepts are way easier than as they sound. 
 ## Level 2 - The Electron
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/58GRvLRFcb4?si=NeR_7JKmpwnh5kvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture 
 This lecture will immerse us in the world of the basic building blocks that make up everything - atoms and their even smaller components. We will learn about the Coulomb force and how the elements are categorized in the periodic table. We will look at the Bohr-Rutherford atomic model and learn what ions are. Even though you might think that these things don't really belong in an electronics course, you'll understand why we need to learn them at the next level. 
 #### The Atom
@@ -86,7 +86,7 @@ Further, there are ions, which result of an imbalance between electrons and prot
 - anion vs cation?
 
 ## Level 3 - Current
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7nQuIP_uvTM?si=9LSt_SmRO6_Hzwvl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture 
 In this lecture, we will learn about how atoms bond with each other. Specifically, we will take a look at the bonding mechanisms between metals. After that, we will be able to understand electric current. We will discuss the direction of the current flow. Finally, we will differentiate between direct and alternating current.  
 
@@ -135,6 +135,7 @@ The conventional direction of current flow is from the plus to the minus pole, w
 
 Finally, we can divide the current into DC and AC. DC current flows in one direction only, while the alternating current changes periodically in direction and amplitude. 
 ## Level 4 - Voltage
+
 ### Lecture
 Now we know that electrons can flow inside a metal and that the flow rate is called electric current. However, you may ask yourself why this movement occurs.
 
@@ -148,6 +149,7 @@ This concept might seem confusing at first. After this lecture, you'll understan
 
 Let's break it down. 
 First, what is an electric potential? 
+
 #### Electric Potential
 Electric potential is the work needed to move a charged particle of 1 coulomb from infinity to a certain distance from another charged particle. 
 
