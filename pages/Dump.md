@@ -71,3 +71,31 @@ $C = \dfrac{\epsilon_r*\epsilon_0*A}{d}$
 
 $ε_0 = 8.85*10^{12} \dfrac{F}{m}$ ... Vacuum permittivity 
 $\epsilon_r$ ... relative dielectric number 
+
+Electric potential is the work needed to move a charged particle of 1 coulomb from infinity to a certain distance from another charged particle. 
+
+You might recall that work defined in classical physics is:
+$W = F*s$
+The force times the distance. 
+
+We can apply this formula to calculate the required work to move a charged particle from one point to another. We know that the Coulomb force between them increases with closer proximity.  
+
+At point 1, the force will be: 
+$\dfrac{1}{4*\pi*e_0}*\dfrac{q_1*q_2}{r_1^2}$
+
+While at point 2, the force will be: 
+$\dfrac{1}{4*\pi*e_0}*\dfrac{q_1*q_2}{r_2^2}$
+
+We also know the distance over which we move our charge, which is r_2 - r_1.
+
+The force will gradually change over the entire distance. Therefore, we have to use the geometric average to calculate the force. 
+
+$W = \dfrac{1}{4*\pi*e_0}*\dfrac{q_1*q_2}{r_1*r_2}*({r_1-r_2}) = \dfrac{1}{4*\pi*e_0}*q_1*q_2*(\dfrac{1}{r_1}-\dfrac{1}{r_2})$
+
+Now, we know the work needed to move a charged particle q_2 to q_1 from the distance r_2 to r_1. However, remember that the electric potential is defined as moving a charge of q = 1C from infinity to radius r_2. 
+This means that we have to divide the work by the charge q_1 and insert infinity for r_1 to get the electric potential. 
+
+This results in the electric potential:
+$U = \dfrac{W}{q}$
+
+$U = -\dfrac{q_2}{4*\pi*e_0}*\dfrac{1}{r_2}$   with the unit by $\dfrac{J}{C}$ Joule per Coulomb or $V$ Volts 
