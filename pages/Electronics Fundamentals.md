@@ -229,6 +229,8 @@ It is often made out of a carbon composition that is partially conductive and re
 
 Further, they come with color rings that represent the resistor's value. They have a total of four to five rings, while one ring is slightly spaced further apart than the rest. We always read the rings from the left, so that the further spaced ring is on the very right. The first two to three rings represent the digits of the resistor value, while the fourth ring provides the multiplier. The fifth and final ring provides the tolerance, usually either ±5% or ±10% of the resistor value. The final format is X.X...X * 10^Y ± Z%.
 
+![](/assets/images/Resistor_color_code.png)
+
 #### First Look at a Schematic 
 To represent how different components are connected to form a functional electric circuit, we use something that is called a schematic. 
 
