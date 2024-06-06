@@ -192,6 +192,15 @@ So, the electric potential resembles the altitude of the water level in a pipeli
 In an electric circuit, the electric potential alone won't tell us how much current will flow in a circuit. If we have one pole with a potential energy not connected to anything, no current will flow. 
 
 Only the difference in electric potential causes electrons to move from one potential to another if connected through a conductor. We can create this electric potential difference or push force through a battery, a lab bench power supply, or any other voltage source. 
+
+
+
+
+
+
+
+
+
 ## Level 5 - Resistance and Schematic
 ### Lecture
 Through our deep dive into atom theory, we learned that the flow of electrons or charged matter, in general, is called an electric current, while the pushing force behind it is called voltage. 
@@ -230,12 +239,8 @@ We connect different components by drawing lines between them.
 
 Just like that, we set up our first schematic of a resistor powered by a battery. 
 
-Let's hook up this circuit. 
-We will supply a voltage of 9V by our lab bench power supply, and for the resistor, we will use this one right here. 
-
-Now, first, we have to determine its resistance value. Let's first orient the resistor so that the ring with the larger spacing is on the right. Then, we have brown, black, and red on the left and gold on the right. Brown stands for a 1, black for a 0, and red for a multiplier of 10^2. So, we have 10*10^2 = 10* * 100 = 1000 Ohm. The gold ring represents the deviation, which is +-5%. So, we expect the resistance value to be within 950 to 1050 Ohm. 
-
-Let's measure that with our multimeter. A multimeter is a measurement instrument, with which you can measure many different electrical properties, such as voltage, resistance, conductivity, and more. A multimeter is highly recommendable tool for electronic enthusiasts, as it highly helps to trouble shoot your projects and is cheap to access. 
+Let's calculate the current in a circuit. 
+Let's say we supply a voltage of 9V by a battery, and for the resistor we chose one that has four rings. A brown, black, and red one on the left and a gold on the right. Brown stands for a 1, black for a 0, and red for a multiplier of 10^2. So, we have 10*10^2 = 10* * 100 = 1000 Ohm. The gold ring represents the deviation, which is +-5%. So, we expect the resistance value to be within 950 to 1050 Ohm. 
 
 If we want to know how much current is flowing in our circuit, we have to reformulate Ohm's law to output the current:
 
@@ -243,17 +248,27 @@ $I = \dfrac{U}{R} = 9mA$
 
 So, a voltage of 9V over a resistor of 1000 Ohm results in a current of 9 mA. 
 
-Let's test if this applies on our test as well. As you can see, we plugged the resistor into a breadboard and used jumper cables to connect the resistor to the crocodile clamps of the lab bench power supply. 
+Now, let's create a test circuit. 
+This time we supply a voltage of 9V with a lab bench power supply and use this resistor with five rings right here.  Now, first, we have to determine the resistor's value. Let's first orient the resistor so that the ring with the larger spacing is on the right. Then, we have a brown ring, three black rings, and another brown ring. 
+The first three rings are the digits, in this case 1 0 0, while the four ring is the multiplier. In this case 10^0. So, we get a resistance value of 100 Ohm with an accuracy of +-1% as defined by the last brown ring. 
+
+Let's measure that with our multimeter. A multimeter is a measurement instrument, with which you can measure many different electrical properties, such as voltage, resistance, conductivity, and more. A multimeter is highly recommendable tool for electronic enthusiasts, as it highly helps to trouble shoot your projects and is cheap to access. 
+
+We can again calculate the current and get: 
+$I = \dfrac{U}{R} = 90mA$
+
+Let's test if the calculated values apply in reality as well. As you can see, we plugged the resistor into a breadboard and used jumper cables to connect the resistor to the crocodile clamps of the lab bench power supply. 
 Our lab bench power supply has the beneficial feature that we can adjust the voltage according to our needs. Further, it incorporates an ammeter to measures the current flowing in the circuit. 
+As you can see the lab bench power supply indicates a flowing current of 0.09A, which is exactly the current of 90mA we expected. 
 
 #### Summary
 So, the proportionality constant of voltage and current is called the resistance and is given in Ohm. We can compare the resistance to the diameter of a water pipe, which in combination with the height difference of the two pools, determines the flow rate of the water. 
 
-Ohm's law states the relationship between voltage, current, and resistance. 
+Ohm's law states that the relationship between the voltage and the current is the resistance. 
 
 Every component, even a wire, has some resistance, and sometimes, we even want to introduce resistance intentionally, which is when we have to use a resistor. 
 
-Resistors indicate their values by their color rings. The first two to three rings represent the digits of the resistor value, while the second-last ring provides the multiplier, and the final ring provides the tolerance. 
+Resistors indicate their resistances by their color rings. The first two to three rings represent the digits of the resistor value, while the second-last ring provides the multiplier, and the final ring provides the tolerance. 
 
 We can illustrate the wiring of our components by a schematic with the specific symbols each component has. A battery is indicated by a symbol with a longer and shorter line, where the longer line represents the positive terminal and the shorter line represents the negative terminal. A resistor is represented by a rectangle with two leads extending from either end.
 
@@ -277,9 +292,16 @@ Let's add a second resistor with this color code (red, black, red, gold). The re
 So, we have a resistance value of 2k Ohm with -5%. 
 
 If we add R_2 to R_1, we get a total resistance of  3k Ohms. 
-By recalculating the current with this equivalent resistor, we get a current of 3mA. If we add the resistor to our test circuit, we can see that we indeed get 3mA of current. 
+By recalculating the current with this equivalent resistor, we get a current of 3mA. 
 
 In our water pipeline analogy, the resistance is analogous to the diameter of the tube. If we add a second resistor in series to the first in our circuit, we increase the total resistance and, as a result, decrease the current. Similarly, decreasing the diameter of the pipe in our analogy would increase resistance to water flow, just as adding a second resistor increases the resistance in an electric circuit.
+
+Let's create a similar test circuit again: 
+We use the 100 Ohm resistor from before again, and now add a 220 Ohm resistor, indicated by red, red, black, brown, brown. 
+This results in a total resistance of 320 Ohm. 
+We supply 9V again, which results in a current of 28.125mA.
+
+And as we can see the lab bench power supply indicates 0.002A. You have to be aware that our lab bench measures currents only with an accuracy in the range of mA. So, the 20mA we got here, indicate that are calculation was again correct! 
 
 #### Resistor in Parallel 
 There is a second way to add a resistor, called in parallel. In this example, a total of 9V would drop across each resistor. 
@@ -291,12 +313,12 @@ If we do this in our example, we have to add 1/1k + 1/2k  to get 1/ESR.
 Resulting in an equivalent resistance of  666.66 Ohms, which means that the current increased compared to the first example. 
 We would now get a flowing current of 13.5mA.
 
-Let's arrange the test circuit to match the parallel arangement, and we  can see that the calculation still holds. 
-
 You could compare adding a second resistor in parallel to adding a second tube in our water pipeline. A second tube would allow more water to flow through, effectively increasing the total flow rate, just as adding a second resistor in parallel decreases the total resistance and increases the current flow.
 
-To get a more vivid understanding of what exactly happens in the circuit, we also need to discuss Kirchhoff's laws. Kirchhoff's laws are fundamental in circuit analysis and consist of two main principles.
+Let's arrange a similar test circuit again. 
+We use the two resistor (the 100Ohm, and 220 Ohm) from before again and hook them up in a parallel arrangement. The equivalent resistance is 68.75 Ohm, which results in a current of 130.9mA. As you can see, our calculation was correct again! 
 
+To get a more vivid understanding of what exactly happens in the circuit, we also need to discuss Kirchhoff's laws. Kirchhoff's laws are fundamental in circuit analysis and consist of two main principles.
 
 #### Kirchhoff's Voltage Law
 One of Kirchhoff's laws states that in a closed loop, the sum of the directed voltages must be zero. 
@@ -316,14 +338,18 @@ $U = R*I$
 
 Remember, we were only able to calculate the current because we used an equivalent series resistance. So, before we can calculate the voltage drops across each resistor, we will always have to calculate the current. 
 
-We can see that our calculations are correct if we measure the voltage with a multimeter. As calculated, we have a voltage drop of 6V across the first resistor and a voltage drop of 3V across the second. If we look at the total voltage drop we have 9V. 
+The same applies to our series test circuit, with the 100 Ohm and 220 Ohm resistors. We know that the flowing current should be 2.8125 mA. So, if we multiply this current with the resistances, we get: 
+
+2.8125V and 6.1875V, which together is exactly 9V. 
+
+We can see that our calculations are correct if we measure the voltage with a multimeter. As calculated, we have a voltage drop of 2.8125V across the first resistor and a voltage drop of 6.1875V across the second. If we look at the total voltage drop we have 9V. 
 
 #### Kirchhoff's Current Law
 The other Kirchhoff's law states that in a circuit the current splits in a junction. In any given node in a circuit, the total amount of current must be zero. The current that flows into a node must be the same as the current that flows out of the node. If we think about the concept, it makes perfect sense, as otherwise energy would be lost. 
 
 In our first and second resistor circuit examples, we do not have any junctions. So, let's immediately analyze Circuit Three. 
 
-We first can apply the role of net zero loops. So, we can immediately identify that the voltage drop across resistor one and resistor two both must be 9V. 
+We first can apply the rule of net zero loops. So, we can immediately identify that the voltage drop across resistor one and resistor two both must be 9V. 
 
 We can calculate the currents for both paths. 
 I1 = 9/1000 = 9mA
@@ -333,7 +359,7 @@ If we want to know the current flowing before the junction or the current that t
 
 I3 = I1 + I2 = 13.5mA
 
-In addition, it's important to note that according to Kirchhoff's Current Law, the current remains constant along a single line or branch of the circuit. This principle is logical, as the electrons that move into one side of the circuit must move out of the other side, much like how water that enters a tube must eventually leave the tube.
+In addition, it's important to note that according to Kirchhoff's Current Law, the current remains constant along a single line or branch of the circuit. This principle is logical, as the electrons that move into one side of the conductor must move out of the other side, much like how water that enters a tube must eventually leave the tube.
 
 #### Short Circuit
 To illustrate Kirchhoff's voltage law in a little more depth, let's consider the following scenario:
