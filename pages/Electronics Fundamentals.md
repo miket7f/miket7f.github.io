@@ -202,6 +202,7 @@ Only the difference in electric potential causes electrons to move from one pote
 
 
 ## Level 5 - Resistance and Schematic
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3aD4S-XhU-E?si=Ygy74rekQYtbScmX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Through our deep dive into atom theory, we learned that the flow of electrons or charged matter, in general, is called an electric current, while the pushing force behind it is called voltage. 
 
@@ -277,6 +278,7 @@ We can illustrate the wiring of our components by a schematic with the specific 
 By connecting the different symbols, we indicate how they should be wired when building the physical circuit. We can calculate the current that flows in a standard battery resistor circuit, by using Ohm's law. 
 
 ## Level 6 - Resistor Circuits
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NmUKCjEVO2w?si=7Y2wy-ncY_WXqpZU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 As we have seen in the last lecture, it is relatively easy to calculate the flowing current when using just one resistor. But how can we calculate the current that flows in a circuit, if we use more than one?
 
