@@ -395,8 +395,7 @@ Further, we learned that the directional sum of the voltages in a closed loop mu
 We talked about a short circuit, which occurs when the positive and negative poles of the power supply are connected directly, either accidentally or due to a fault in the circuit. This creates a path of very low resistance, allowing a large amount of current to flow through the circuit. This can cause significant damage to components, generate excessive heat, and potentially lead to fires or other hazards. Therefore, it is crucial to avoid short circuits at all times.
 
 ## Level 7 - Capacitance
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GBu29s-65q4?si=KBHga9H893E6qcI8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/T2ymzSzFjs4?si=h5uu17BzT8yNW8xm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 In this lecture, we're moving on to our next electronic component: the capacitor. 
 We'll start by exploring the concept of capacitance, then move on to understand the structure of capacitors, their various applications, capacitor circuits, and the different types of capacitors encountered in flight computer development.
@@ -513,6 +512,8 @@ The aluminum electrolytic capacitors feature high capacitances, are cheap, polar
 The tantalum capacitors have slightly lower capacitances at the same volume but are very stable in temperature and voltage changes. However, they are more expensive, sensitive to voltage spikes, and still polarized.
 The ceramic capacitors, especially the MLCCs, are non-polarized, available in tiny form factors, and excel in high-frequency applications. However, their capacitance can vary with voltage and temperature. They have lower capacitance values. 
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/28Kisy15diA?si=o6WfG9l2kKMFwGad" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Example
 #### Transcript 
 Now, let's demonstrate this concept hands-on.
