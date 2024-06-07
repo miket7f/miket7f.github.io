@@ -398,195 +398,213 @@ We talked about a short circuit, which occurs when the positive and negative pol
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GBu29s-65q4?si=KBHga9H893E6qcI8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Lecture
+In this lecture, we're moving on to our next electronic component: the capacitor. 
+We'll start by exploring the concept of capacitance, then move on to understand the structure of capacitors, their various applications, capacitor circuits, and the different types of capacitors encountered in flight computer development.
+
+In the realm of flight computer design, capacitors are essential components, playing a crucial role in voltage regulation circuits, microcontroller implementations, and sensor integrations. Be sure to pay close attention during this lecture, as capacitors play a vital role in flight computer design!
+
+#### Structure
+First, let's examine the schematic symbol of the capacitor. There are primarily two different symbols used. One indicates a capacitor that can be used bidirectionally, while the other signifies a polarized capacitor, which can only be used in one direction.
+
+The symbol represents its physical structure well, as every capacitor consists of two plates with a certain distance from each other. 
+
+When we apply a voltage to the two plates, the electrons want to move from the negative pole to the plus pole. Yet, the electrons can't move from the negative to the positive pole, as they are not connected through a conductor. 
+
+The voltage still pushes the electrons from the minus pole to their attached plate. On there, they distribute equally, as equal charges repel each other. Conversely, some electrons from the plate connected to the positive pole of the source are attracted towards that pole.
+
+The electron excess on the plate connected to the negative battery pole, makes it negatively charged, while the electron void on the plate connected to the positive battery pole, makes it positively charged.
+
 #### Capacitance
-For us to understand the term capacitance we have to first recall charge and voltage.
-A charge is the total amount of electrons a conductor can take up, while voltage is the electric potential difference that causes the electrons to move. 
-
-Remember: in a conductive materials such as metals, the electrons are pushing each other forward when they experience a voltage. If there would be no freely moving electrons, there would be no movement and the material wouldn't allow current, which means that the material wouldn't be a conductor. 
-
-Every conductor takes up a charge. In a metal the charges are the electrons. 
-Scientists found out that the amount of a charge a conductor takes up rises proportionally with the voltage. 
-
-The proportionality between the charge and the voltage is what we call the capacitance. 
+The amount of charges that fit onto the plates depends on the pushing force (the voltage) that is applied to the plates. The proportionality between the charge and the voltage is the capacitance. 
 
 $C = \dfrac{Q}{U}$  given in $\dfrac{A*s}{V}$  or $F$ Farads
 
-If we look at a charge over voltage diagram we can see that the charge raises linearly with the voltage. Further, we see that for different values of capacitance the slopes are steeper or gentler. 
+If we look at a charge over voltage diagram, we can see that the charge raises linearly with the voltage. Further, we see that for different capacitance values, the slopes are steeper or gentler. 
 
-In reality, every component has some kind of capacitance. However, there are cases in which we want to have a lot of capacitance intentionally. Then, we will need a capacitor. 
+In reality, every component has some capacitance. However, there are cases in which we want to have a lot of capacitance intentionally. Then, we will need a capacitor. 
 
-This is the symbol of the capacitor. There different symbols for different types of capacitors. One for example can be used unidirectional while another can only be implement in a circuit in one direction only without damage. 
+The capacitance of a capacitor or the ability of the capacitor to hold electric charges, mainly depends on three factors: 
+$C = \dfrac{\epsilon_r*\epsilon_0*A}{d}$  
 
-#### Homogenous Electric Field
-The symbol represents its physical structure quite well, as every capacitor consists of two plates with a certain distance to each other. 
+The first is the plate area. The larger the plates, the more electrons or cations will fit onto the plate. 
+The electrons on the negatively charged plate are attracted to the cations on the positive plate. Consequently, the closer the plates, the larger the attraction, which means that more charges will occupy the plates. 
+Finally, the material between the two plates will also modify the electric field's strength. By decreasing the field strength, more charges will fit onto the plates. 
 
-When a voltage is applied, it wants to push electrons from the negative pole to the plus pole. The electrons from the minus pole move to their attached plate and distribute equally, as equal charges repel each other. This means that the first plate is charged negatively. 
-
-The plus pole of the voltage wants to receive electrons. Therefore, the delocalized electrons of the second plate are pushed into the plus pole. This means that the second plate is charged positively.
-
-Every electric charge is surrounded by an electric field. 
-An electric field is an imaginary area in which electric charges experience a force. 
-
-$E=\dfrac{F}{q}$  given in  $\dfrac{N}{m}$
-
-The force another charge experiences in the electric field is the coulomb force. We can insert q_1, which cancels with the nominator, and, therefore, see that the electric field only depends on the second charge and its radius to the first point charge. 
-
-Two electrically charged plates also have such a field. If we were to overlap every single electric field of the electrons and cations that are sitting on each plate, we get something like a wave front. Even though the field lines of a single electric charge are circular, we get resulting field lines that are parallel with each other. 
-
-This means that at any point between those two plates a electric charge would experience the same force. Let's imagine, we insert a negative charge between the plates. The positively charged plates want to attract the charge, while the negative plate wants to repel it. Because we assume that the two plates have almost an infinite length, the sum of forces would be the same at any point in the plate. This is what we call a homogenous electric field. 
-
-Between the two capacitor plates we have a homogenous electric field. 
 #### Usage
-The plates are loaded with electric charge. However, the electrons will not move from the negative to the positive pole.
-
 By loading the plates, energy is stored within the capacitor. 
 $W = \dfrac{U*Q}{2} = \dfrac{C*U^2}{2}$
 
-The higher the applied voltage and the higher the capacitance of the capacitor, the more energy will be stored within the capacitor. 
+The higher the applied voltage and the higher the capacitance of the capacitor, the more energy will be stored within the capacitor. We can think about a capacitor to be similar to a battery. It stores less energy, but it can release its energy way faster. 
 
-Although the amount of energy that is stored is pretty limited, it can be released very very fast. We can think about a capacitor to be similar to a battery. It stores less energy, but it can release its energy way faster. 
+A common use case for a capacitor is the filtering of fluctuations or noise in an unsteady voltage supply. 
 
-We use the capacitor in our circuits, for example, to act as an buffer in a unsteady voltage supply.
-Let's image a circuit with a lamp that is powered by a battery. If we disrupt the conductor the lamp will immediately go out. However, if we were to place a capacitor in parallel to the lamp. The capacitor would be charged while the conductor is intact. When the conductor is disrupted. The electrons are no longer pushed into the capacitor plates. So, the electrons can move from the negative plate to the positive plate, and in turn provide the lamp with electrical energy. This means that the lamp will continue to be on for a short amount of time until the capacitor plates are unloaded. With a large enough capacitor, we can buffer the time in which the conductor is 
-disrupted by powering the lamp through the capacitor. 
+Let's imagine a circuit with a lamp powered by a battery. If we disrupt the conductor, the lamp will immediately turn off. However, if we place a capacitor parallel to the lamp, the capacitor will be charged while the battery is connected. When we disrupt the connection to the battery, the voltage no longer pushes the electrons into the capacitor plates. So, the electrons can move from the negative plate to the positive plate and provide the lamp with electrical energy. The lamp will continue to light up until the capacitor plates are unloaded. 
 
-In our water analogy, the capacitor would be a water tank between two pipes. If we were to interrupt the flow of the first pipe without a water tank, the second pipe would immediately be without water. However, if we placed a water tank between the two pipes, the water would continue to flow even after we turned of the first pipe, as long as there is water in the tank. If the tank is empty, then the second pipe would also come to a stand. In this way, the water tank also acts as a buffer in our water pipeline. 
+#### Water Analogy
+In the water analogy, the capacitor is a water tank between two pipes. If we were to interrupt the flow of the first pipe without a water tank, the second pipe would immediately be without water. However, if we placed a water tank between the two pipes, the water would continue to flow even after we turned off the first pipe, as long as there was water in the tank. If the tank is empty, then the second pipe would also come to a stand. The water tank also acts as a buffer in our water pipeline. 
 
-If we know recreate this circuit in reality, we have to use push button to create these conductor disruptions. This button basically connects the two conductors by a mechanic mechanisms. If we press it, we release this mechanic connection, and no current can flow any longer. 
-If we powered the lamp only by a steady voltage supply and place a push button in-between one of its conductors, we can see that the lamp immediately goes out as soon as we press the button. If we now insert a capacitor after the switch, the capacitor will be charged as long as the switch is closed. If we now press the switch very briefly, the capacitor continues to supply the lamp with voltage, and it doesn't go out. 
+#### Practical Example
+Now, let's demonstrate this concept hands-on.
 
-#### Capacitor Formula
-Now, you may wonder how the capacitance of a capacitor depends on the physical layout of it.
-For that, the capacitor formula comes into play:
+To begin, we need a power source, a breadboard, a capacitor, a push button switch, an LED, and a jumper wire. 
 
-$C = \dfrac{\epsilon_r*\epsilon_0*A}{d}$  
+Let's set up the circuit:
+- Start by placing the LED onto the breadboard and connect the longer lead to the positive rail of the breadboard and the shorter one to a resistor. 
+- We connect the other end of the resistor to the negative terminal. 
+- Further, we connect a capacitor from the positive terminal to the negative terminal in parallel to the LED. This capacitor should later provide voltage when the circuit is disconnected from the power supply. 
+- We disrupt the negative power rail by a push button to which we connect the negative pole of the voltage source. 
+- Finally, we connect the positive rail of the breadboard to the positive pole of the power supply. 
 
-As you can see, the capacitance increases with an increased area of the plate. The larger the area the more electrons ore cations will fit onto the plate. 
-On the other hand the capacitance increases by decreasing the distance between the two plates. This makes also perfect sense, as the electrons on the negatively charged plate are attracted to the cations on the positive plate. The closer the plates the larger the attraction, which means that more charges will want to occupy the plates. 
+As soon as voltage is applied to the circuit, the capacitor charges. If we now press the switch very briefly, the capacitor continues to supply the LED with voltage, bridging the time the battery is disconnected. 
 
-The material between the two plates will also modify the electric field strength between them. 
-The epsilon zero in the formula represents the assumption that we have a vacuum between the two plates. 
-$ε_0 = 8.85*10^{12} \dfrac{F}{m}$ ... Vacuum permittivity 
+In the context of flight computer design, we often utilize multiple capacitors to ensure stable and reliable operation. Let's explore how incorporating a second capacitor can impact the functionality of our circuitry.
 
-However, most of the time we have a dielectric between the two plates. 
-A dielectric decreases the strength of the magnetic field by a certain factor, which enables the plates to receive a higher charge per voltage. 
-
-The effect the dielectric has on the capacitance is represented by the relative permittivity.
-$\epsilon_r$ ... relative permittivity 
-
-Now, the question again arises of what will happen if we put a second capacitor in our circuit. 
-We also want to calculate an equivalent capacitance. Only this time, the formulas are exactly the opposite to the formulas that we used for the resistors. 
 #### Capacitor in Parallel 
-If we add a second capacitor in parallel. Both capacitors will experience the same voltage, as the net voltage in a loop must be zero. Both capacitors have their capacitances, so we know that both will have their charges according to the capacitance formula. 
-This means that the total charge of the capacitors is the sum of the charge of the first and the second capacitor. 
+We also want to calculate an equivalent capacitance. Only this time, the formulas are exactly the opposite of the formulas we used for the resistors. 
+
+If we add a second capacitor in parallel, both capacitors will experience the same voltage, as the net voltage in a loop must be zero. Both capacitors have their capacitances, so we know that both will have their charges according to the capacitance formula. Consequently, the total charge of the capacitors is the sum of the charge of the first and the second capacitors. 
 
 $Q = Q_1 + Q_2$
 
-So for the total charge we can insert the sum of the two separate charges.
+To receive the total charge, we can calculate the sum of the two individual charges.
 
 $C = \dfrac{Q}{U}$
 
-As the voltage is the same, we can simply add the capacitances to acquire an equivalent capacitance:
-
 $C = \dfrac{Q_1+Q_2}{U} = \dfrac{Q_1}{U} +\dfrac{Q_2}{U} = C_1 + C_2$
 
-#### Capacitor in Series 
-If we add a second capacitor in series. Both capacitors will have the same amount of charge, but will have a different voltage drop across them. That all plates must be charged equally is due to the fact that similar charges want to repel each other and that they want to acquire as much distance to each other as possible. This can be best achieved if they spread across all four plates equally. 
+As the voltage is the same for both, we can add the capacitances to acquire an equivalent capacitance. The formula is the same as the one for resistors in series. 
 
-Depending on the capacitances of the two capacitors, the voltage across the two capacitors will not be different.
+#### Capacitor in Series 
+If we add a second capacitor in series to the first, the electrons will distribute equally across all four plates. Consequently, every plate and every individual capacitor will have the same charge. However, each individual capacitor will have a different voltage drop.
+
+The equally charged plates are due to the fact that similar charges want to repel each other. The charges acquire as much distance from each other as possible, which is why they spread across all four plates.
 
 $Q = Q_1 = Q_2$
+The charge is the same for both capacitors. 
 
 $U= U_1 + U_2 = \dfrac{Q_1}{C_1}+ \dfrac{Q_2}{C_2}$
+The total voltage drop across the two capacitors must still be the battery voltage. 
 
 $\dfrac{Q}{C} = \dfrac{Q_1}{C_1}+ \dfrac{Q_2}{C_2}$
 
-As the charge of the an equivalent capacitor would be the same as the charge of any one of the single capacitors, we can cancel the charges and get the formula for capacitors in series. 
+As the charge of the equivalent capacitor would be the same as the charge of any one of the single capacitors, we can cancel the charges and get the formula for capacitors in series. 
 
 $\dfrac{1}{C} = \dfrac{1}{C_1}+ \dfrac{1}{C_2}$
 
-Adding capacitors in series, reduces their overall capacitance. 
+Adding capacitors in series reduces their overall capacitance, similar to the resistance of resistors in parallel. 
 
 #### Capacitor Types
-There are many ways in which this intentional capacitance is achieved. Therefore, there are also many different capacitor types. You will now learn about the three most notable ones: the electrolytic capacitor, ceramic capacitor, and the tantalum capacitor. 
+In the realm of flight computer design, we often encounter three primary types of capacitors: electrolytic, ceramic, and tantalum capacitors. Understanding their differences and applications can be crucial when designing electronic systems for your model rockets. Let's take a closer look at each one and how they might fit into your flight computer designs.
 
 ##### Aluminum Electrolytic Capacitor
-The aluminum electrolytic capacitors - also called Elko - consist of two plates made out of aluminum. One of the plates has an oxidation layer, which occurs when aluminum is in contact with air and is a form of corrosion. This layer prevents further corrosion and acts as a dielectric layer in the Elko. Remember that the dielectric changes the 𝜖𝑟 (relative permittivity) and increases the capacitance. The aluminum electrolytic capacitors also consist of an electrolyte, which is a substance in which there are charged particles (ions) that can move freely within. In the case of this capacitor, the electrolyte allows ions to move, which helps maintain the capacitor's functionality. However, the capacitor itself does not become conductive through the electrolyte because there is also the dielectric layer that insulates the two plates from direct electrical conduction.
+Aluminum electrolytic capacitors, known as Elko, feature two aluminum plates, with one plate possessing an oxidation layer formed when exposed to air, acting as a dielectric. They also contain an electrolyte, allowing ions to move freely. 
 
-Since only one of the aluminum electrodes has the oxidation layer, the capacitor can only be used in one direction, and is not feasible for alternating currents and limited to DC applications. 
-
-Aluminum electrolytic capacitors have high capacitances between several µF and mF in a relatively small volume. They are low-cost and available for high voltage applications. The electrolyte degrades over time, which results in a limited lifespan. 
+Notably, Elko capacitors are polarized due to the presence of the oxidation layer on one electrode. The polarization makes them only usable in DC voltages. They offer high capacitances, ranging from several µF to mF, in a compact form. Despite being cost-effective and suitable for high-voltage applications, they have a limited lifespan due to electrolyte degradation over time.
 
 ##### Tantalum Electrolytic Capacitor
-The tantalum electrolytic capacitors are often simply referred to as tantalum capacitors. Instead of aluminum they use a tantalum metal for the plates. Other than that they also features an oxide layer as the dielectric, too have an electrolyte, and are also polar. 
+The tantalum electrolytic capacitors are often referred to as tantalum capacitors. Instead of aluminum, they use a tantalum metal for the plates. Further, they also feature an oxide layer as the dielectric, have an electrolyte, and are also polar. 
 
-They provide stable capacitances over a wide range of temperatures and frequencies. Their capacitance values are typically lower than their Elko counterparts, but they excel in stability and reliability. They have a long lifespan, but are more expensive, and sensitive to sudden voltage spikes. 
+They provide stable capacitances over a wide range of temperatures and frequencies. Their capacitance values are typically lower than their Elko counterparts, but they excel in stability and reliability. They have a long lifespan but are more expensive, and sensitive to sudden voltage spikes. 
 
 ##### Ceramic Capacitor
-The ceramic capacitors use a ceramic as a dielectric. The most common type of them are the MLCCs, which consist of multiple layers of ceramic and metal stacked together. 
+Ceramic capacitors utilize ceramic as a dielectric, with the most common type being multilayer ceramic capacitors (MLCCs).
 
-They are non-polarized, which means that they can be used unidirectionally. They come at wide ranges of capacitance value from pF to µF, and are used in both low and high voltage applications.
-They excel in high frequency, making them suitable for high-frequency applications, and are available in very small sizes, ideal for consumer electronics. 
-
+They are non-polarized, which means that they are useable unidirectionally. They come at wide ranges of capacitance values from pF to µF. They are used in both low and high-voltage applications.
+They excel in high frequency, making them suitable for high-frequency applications, and are available in small sizes, ideal for space-constraint designs like those found on flight computers. 
 Their capacitance can vary with temperature change and applied voltage. Higher precision and stabler types can be quite expensive. 
 
 #### Summary
-Every conductor is able to store charge. The more voltage that is applied the more charge can be stored. The relationship between the charge and the voltage is proportional and called capacitance. It is given in Farad, which in practice is a quite large unit.
+Every conductor can store charge. The more voltage that we apply, the more charge it can store. The relationship between the charge and the voltage is proportional and called capacitance. We give capacitance in Farad, which is an enormous unit.
 
-A capacitor can either be unidirectional or directional, and basically consists of two plates. When applying a voltage one plate is negatively charged while the other is positively charged. The larger the area, the more charge can be stored, and the closer the distance of the plates the higher the attraction, the more charges will load the area. To increase the capacitance further, a dielectric is used.
+A capacitor can either be unidirectional or directional and consists of two plates. When applying a voltage, we charge one plate positively and one negatively. The larger the area, the more charges it can store. The closer the distance of the plates, the higher the attraction and the more charges will load the area. For further increased capacitance, capacitors use a dielectric.
 
-By loading the plates a capacitor stores energy. This energy can be released to buffer an unsteady signal. So, capacitor works similarly to a battery. Compared to a battery it stores way less energy, but it can release the energy way faster. These characteristics make a capacitor used on almost every circuit.
+By loading the plates, a capacitor stores energy. We can use this energy to buffer an unsteady signal. So, a capacitor works similarly to a battery. Compared to a battery, it stores way less energy. However, it can release energy quickly. These characteristics make a capacitor used on almost every circuit.
 
-If we add multiple capacitors, we also have to determine the equivalent capacitance. In series, the capacitors experience the same voltage and the charges of the single capacitors add up, which means that the capacitances of the single capacitors can be added. In parallel the charges of the single capacitors are the same, as the charges want to spread equally across all plates. The voltages across the single, capacitors however are not the same. To get the parallel equivalent capacitance, we add the reciprocals of the single capacitances and receive the reciprocal of the equivalent of the capacitance.
+If we add multiple capacitors, we have to determine the equivalent capacitance. In series, the capacitors experience the same voltage. In this case, the charges of the single capacitors add up. Therefore, the capacitances of the single capacitors add up as well. In parallel, the charges of the single capacitors are the same, as the charges want to spread equally across all plates. However, the voltages across the capacitors are not the same. To get the equivalent capacitance, we add the reciprocals of the single capacitances and receive the reciprocal of the equivalent capacitance.
 
 Finally, there are many different capacitor types.
-The aluminum electrolytic capacitors that feature high capacitances, are cheap, but are polar, and have a limited lifespan. 
-The tantalum capacitors, which have slightly lower capacitances at the same volume, but are very stable of temperature and voltage changes. However, they are more expensive, sensitive to voltage spikes, and still polarized.
-The ceramic capacitors, especially the MLCCs, which are non-polarized, available in very small form factors, and excel in high frequency applications. However, their capacitance can vary with voltage and temperature, and they have lower capacitance values. 
+The aluminum electrolytic capacitors feature high capacitances, are cheap, polar, and have a limited lifespan. 
+The tantalum capacitors have slightly lower capacitances at the same volume but are very stable in temperature and voltage changes. However, they are more expensive, sensitive to voltage spikes, and still polarized.
+The ceramic capacitors, especially the MLCCs, are non-polarized, available in tiny form factors, and excel in high-frequency applications. However, their capacitance can vary with voltage and temperature. They have lower capacitance values. 
+
 ## Level 8 - Semiconductor and Diode
 <iframe width="560" height="315" src="https://www.youtube.com/embed/guyFDPdGvFk?si=PI0bmzEbSoIIVaQd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Lecture
+In this lecture, you'll get to know yet another component: the diode. 
+We'll kick things off by exploring the concept of covalent bonding, setting the stage for our understanding of semiconductor materials. From there, we'll learn about semiconductors and the concept of doping. We'll then dissect the p-n junction for you to understand the workings of a diode. 
+
+Diodes are indispensable in-flight computer design, serving various critical functions such as reverse current protection, voltage limitation, and indicating user flight states. 
+
+
 #### Covalent Bonding
-At the very beginning we explained that atoms bond with each other to form a different structure. We also said that the elements in the periodic table can be split into metals and non-metals, and that metals bond with each other through metallic bonding, and that non-metals bond with non-metals through covalent bonding.
+At the very beginning, we explained that atoms bond with each other to form a different structure. We also said that we can separate the elements in the periodic table into metals and non-metals. Further, we mentioned that metals bond with metals through metallic bonding, while non-metals bond with non-metals through covalent bonding.
 
 To describe a semiconductor, we have to be aware of the concept of covalent bonding.
-Remember: every atom wants to have a full outer layer of electrons. For non-metals the outer layer is almost full. So, they might only lack one-three electrons. For them it is easier to acquire the additional electrons than to give up all their electrons. In covalent bonding two elements that lack electrons unite and share one to three electrons with each other. Through that, both elements reach the desired state and have an equivalent of a full valence layer. 
+
+Remember: every atom wants to have a full outer layer of electrons. The outer layer of non-metals is almost complete. So, they might only lack one or three electrons. For them, it is easier to acquire the additional electrons than to give up all their electrons. In covalent bonding, two elements that lack electrons unite and share one to three electrons with each other. Through that, both elements reach the desired state and have an equivalent of a full valence layer. 
 
 The electron of the first element is then also attracted to the nucleus of the second element and the electron of the second element is also attracted to the nucleus of the first element.
 
 #### Semiconductor
-A conductor is a material that allow charged matter to move freely. 
-An insulator on the other hand is a material that has no freely moving electrons and, therefore, which makes it impossible for current to occur. 
-Then there are semiconductor. These have a full outer layer and also no freely moving electrons. However, if a large enough potential is applied to them the electrons are able to move and the material becomes conductive. 
+A conductor is a material that allows charged matter to move freely. 
+An insulator on the other hand is a material that has no freely moving electrons, making current impossible to occur. 
+Then there are semiconductors. These have a full outer layer and also no freely moving electrons. However, if a large enough potential is applied,  the electrons can move and the material becomes conductive. 
 
-The most used semiconductor material is silicon. Pure silicon is a structure that consists of many silicon atoms, each bonding with four other silicon atoms covalently. Most electrons are bond in this structure. However, there are a few electrons that can escape their bonds by getting enough energy, and this is what makes silicon partly conductive. 
+The most used semiconductor material is silicon. Pure silicon is a structure that consists of many silicon atoms, each bonding with four other silicon atoms covalently. Most electrons are bonded in this structure. However, there are a few electrons that can escape their bonds by getting enough energy, and this is what makes silicon partly conductive. 
  
 #### Doping
-But what really makes silicon ultra useful is doping. 
+But what makes silicon ultra useful is doping. 
 When doping, elements are inserted into the silicon structure that are foreign.
 
 If phosphorus with five outer electrons is inserted, the structure has suddenly an excess electron. This is called an n-type semiconductor. 
 
-If on the other hand aluminum with three valence electrons is inserted, the structure lacks an electron, which creates a place where there should be an electron in the structure but there isn't - a so called hole. This also increases the conductivity, as the electrons move inside the structure to fill up the hole, which again creates a new hole. However, we like to think that the holes are moving, and as holes lack electrons, we think about them as moving positive charges. 
-This is what we call a p-type semiconductor. 
+If on the other hand aluminum with three valence electrons is inserted, the structure lacks an electron, which creates a place where there should be an electron in the structure but where there isn't - a so-called hole. This process also increases the conductivity, as the electrons move inside the structure to fill up the hole, which again creates a new hole. However, we like to think that the holes are moving, and as holes lack electrons, we think about them as moving positive charges. We call this structure a p-type semiconductor. 
 
-Even though their names are negative and positive type semiconductor. They are not charged negatively or positively, because they have the same number of protons and electrons inside them. It actually only refers to the sign of charge that can move.
+Even though their names are negative and positive-type semiconductors, they are not charged negatively or positively. They have the same number of protons and electrons inside them. The terms n- and p-type semiconductor only refer to the sign of charge that can move.
 
 #### P-N Junction
-These properties become only really useful if we add these two doped semiconductor together. 
+These properties become only useful if we add these two doped semiconductors together. 
 If we put a n-type next to a p-type semiconductor, we get what is called a p-n junction. 
 
-In the border between the two regions, electrons move from the n-region to the p-region to fill the electron holes. This creates what is called a depletion region, in which there are no freely moving electrons or holes. A slim region of the p-side becomes negatively charged, while a slim region of the n-side becomes positively  charged. This creates an electric field, which prevents more electrons from moving from the n to the p-side. The depletion region acts like a barrier. 
+In the border between the two regions, electrons move from the n-region to the p-region to fill the electron holes. This creates what is called a depletion region, in which there are no freely moving electrons or holes. A slim region of the p-side becomes negatively charged, while a slim region of the n-side becomes positively charged. This creates an electric field, which prevents more electrons from moving from the n to the p-side. The depletion region acts like a barrier. 
 
-When we now connect a voltage source to the p-n junction, with the positive pole connected to the p-side and the negative pole connected to the n-side. We push the electrons to move from the n-side to the p-side. This is what we call forward bias. However, for the movement to occur the pushing force - the voltage - must be high enough to overcome the barrier. If the voltage is higher than 0.7V, the barrier is overcome and the p-n junction becomes conductive.
+When we now connect a voltage source to the p-n junction, with the positive pole connected to the p-side and the negative pole connected to the n-side. We push the electrons to move from the n-side to the p-side. This is what we call forward bias. However, for the movement to occur, the pushing force - the voltage - must be high enough to overcome the barrier. If the voltage is higher than 0.7V, the barrier is overcome and the p-n junction becomes conductive.
 
-If we reverse the polarity of the battery, and we connect the positive pole to the n-side and the negative pole to the p-side. Something entirely different happens. The electrons on the n side are attracted to the plus pole, while the holes on the p-side are attracted to the minus pole. Therefore, the depletion region or barrier expands an no current can flow. 
+If we reverse the polarity of the battery, we connect the positive pole to the n-side and the negative pole to the p-side. Something entirely different happens. The electrons on the n-side are attracted to the plus pole, while the holes on the p-side are attracted to the minus pole. Therefore, the depletion region or barrier expands and no current can flow. 
 
 #### Diode
-What we just creates is a diode. A diode is an electrical component that allow current to flow in one direction, while it prevents current from flowing in the other direction. 
+What we just create is a diode. A diode is an electrical component that uses a PN junction to only allow current to flow in one direction.
 
-A diode can be very useful, to protect our circuit from reverse voltage. It can also be used to convert alternating current to direct current. There are also special forms of diodes, such as LEDs (light emitting diodes) that emit light when voltage is applied in forward bias, or Zener diodes that have a breakthrough voltage after which they also become conductive in the reverse bias. Zener diodes can be used to protect our input channels from over voltage. 
+The symbol of a diode consists of a triangle with a vertical line and a horizontal line. The side of the triangle with the horizontal line represents the cathode, while the opposite side represents the anode. Forward bias occurs when the diode's anode is connected to the positive pole and the cathode to the negative pole. This configuration allows current to flow through the diode in the direction of the arrowhead of the symbol.
+
+We can use a standard diode on our flight computers to protect them from reverse voltage or to rectify alternating current to direct current by a full-wave rectifier. 
+
+However, there are also other forms of diodes.
+The ones most notable for flight computer design, are the Schottky diode, the light emitting diode, and the Zener diode. 
+
+##### Schottky Diode
+The Schottky diode uses a metal-semiconductor junction instead of a PN junction. By utilizing this junction, Schottky diodes can achieve faster switching speeds and exhibit lower forward voltage drops compared to their P-N junction counterparts.
+
+Due to their ability to operate in fast switching speeds and their low dropout voltage, we often use them on switching voltage regulation circuits. 
+
+##### LED
+Light emitting diodes, emit light when current flows through them. They find widespread use in flight computers for status indicators, such as power indicators, system alerts, and communication status lights. LEDs are available in various colors, making them ideal for visual feedback in electronic systems. However, they require the use of a current limiting resistor, as they otherwise could become permanently damaged. 
+
+##### Zener Diode
+Unlike standard diodes, which conduct current in one direction only, Zener diodes can also conduct in the reverse direction when the voltage exceeds a specific threshold called the Zener voltage. Zener diodes can be used to protect our flight computer input channels from overvoltage.
+
+#### Practical Example
+Now, let's put theory into practice with a hands-on demonstration.
+
+- Grab a power supply, a breadboard, a standard silicon diode (such as a 1N4001), a resistor, and some jumper wires.
+- Start by connecting the positive terminal of the lab bench power supply to one end of the breadboard, and the negative terminal to the other. 
+- Now, place the standard silicon diode into the breadboard, ensuring that its cathode, marked with a stripe, is connected to the positive rail.
+- Next, connect one end of the resistor to the anode of the silicon diode, and the other end to the positive rail. This creates the path for our current to flow.
+- If we now turn on the lab bench power supply, we can see that the current is flowing just as expected.
+- However, if we change the polarity, the current stops flowing, as the diode is in reverse bias!
+- If we use an LED instead of this standard diode, it will even light up when in forward bias. 
+- Again, in reverse-bias, no current is flowing. 
 
 #### Summary
 When atoms bond covalently, they share their outer electrons to reach a full valence layer. 

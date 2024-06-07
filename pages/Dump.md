@@ -99,3 +99,34 @@ This results in the electric potential:
 $U = \dfrac{W}{q}$
 
 $U = -\dfrac{q_2}{4*\pi*e_0}*\dfrac{1}{r_2}$   with the unit by $\dfrac{J}{C}$ Joule per Coulomb or $V$ Volts 
+
+#### Capacitor Formula
+Now, you may wonder how the capacitance is correlated to its physical layout. For that, the capacitor formula comes into play:
+
+$C = \dfrac{\epsilon_r*\epsilon_0*A}{d}$  
+
+As you can see, the capacitance increases with increased plate area. The larger the plates, the more electrons or cations will fit onto the plate. 
+
+On the other hand, the capacitance increases by decreasing the distance between the two plates. The electrons on the negatively charged plate are attracted to the cations on the positive plate. The closer the plates, the larger the attraction, which means that more charges will occupy the plates. 
+
+The material between the two plates will also modify the electric field's strength. The epsilon zero in the formula represents the assumption that we have a vacuum between the two plates. 
+$ε_0 = 8.85*10^{12} \dfrac{F}{m}$ ... Vacuum permittivity 
+
+However, in most cases, we have a dielectric between the two plates. 
+A dielectric decreases the strength of the magnetic field by a factor, which enables the plates to receive a higher charge per voltage. 
+
+The dielectric's effect is represented by the relative permittivity.
+$\epsilon_r$ ... relative permittivity 
+
+#### Homogenous Electric Field
+Something we did not discuss yet, is the electric field. An electric field is the area around an electric charge, in which other electric charge experiences a force. 
+
+The electric field of a point charge is essentially the Coulomb force experienced by another charge, divided by the magnitude of that charge. As the distance from the point charge increases, the strength of the electric field decreases.
+
+$E=\dfrac{F}{q}$  and it is given in  $\dfrac{N}{m}$
+
+where E is measured in Newtons per Coulomb (N/C), F is the force, and q is the charge.
+
+Our two capacitor plates are also electrically charged, which means that they too have an electric field. However, the circular field lines of the individual charges overlap and result in field lines that are parallel to each other. 
+
+At any point between those two plates, an electric charge would experience the same force. We call such an electric field a homogenous electric field. 
