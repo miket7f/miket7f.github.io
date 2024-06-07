@@ -443,20 +443,6 @@ Let's imagine a circuit with a lamp powered by a battery. If we disrupt the cond
 #### Water Analogy
 In the water analogy, the capacitor is a water tank between two pipes. If we were to interrupt the flow of the first pipe without a water tank, the second pipe would immediately be without water. However, if we placed a water tank between the two pipes, the water would continue to flow even after we turned off the first pipe, as long as there was water in the tank. If the tank is empty, then the second pipe would also come to a stand. The water tank also acts as a buffer in our water pipeline. 
 
-#### Practical Example
-Now, let's demonstrate this concept hands-on.
-
-To begin, we need a power source, a breadboard, a capacitor, a push button switch, an LED, and a jumper wire. 
-
-Let's set up the circuit:
-- Start by placing the LED onto the breadboard and connect the longer lead to the positive rail of the breadboard and the shorter one to a resistor. 
-- We connect the other end of the resistor to the negative terminal. 
-- Further, we connect a capacitor from the positive terminal to the negative terminal in parallel to the LED. This capacitor should later provide voltage when the circuit is disconnected from the power supply. 
-- We disrupt the negative power rail by a push button to which we connect the negative pole of the voltage source. 
-- Finally, we connect the positive rail of the breadboard to the positive pole of the power supply. 
-
-As soon as voltage is applied to the circuit, the capacitor charges. If we now press the switch very briefly, the capacitor continues to supply the LED with voltage, bridging the time the battery is disconnected. 
-
 In the context of flight computer design, we often utilize multiple capacitors to ensure stable and reliable operation. Let's explore how incorporating a second capacitor can impact the functionality of our circuitry.
 
 #### Capacitor in Parallel 
@@ -527,6 +513,20 @@ The aluminum electrolytic capacitors feature high capacitances, are cheap, polar
 The tantalum capacitors have slightly lower capacitances at the same volume but are very stable in temperature and voltage changes. However, they are more expensive, sensitive to voltage spikes, and still polarized.
 The ceramic capacitors, especially the MLCCs, are non-polarized, available in tiny form factors, and excel in high-frequency applications. However, their capacitance can vary with voltage and temperature. They have lower capacitance values. 
 
+### Example
+#### Transcript 
+Now, let's demonstrate this concept hands-on.
+
+To begin, we need a power source of 5V, a breadboard, a capacitor (ideally in the range of μF and able to withstand at least 5V), a 330 Ohm resistor, an LED (we used white), and a jumper wires. 
+
+Let's set up the circuit:
+- Start by placing the white LED onto the breadboard and connect the longer lead to the positive rail of the breadboard and the shorter one to a 330 Ohm resistor. 
+- We connect the other end of the resistor to the negative terminal. 
+- Further, we connect a capacitor from the positive terminal to the negative terminal in parallel to the LED. This capacitor should later provide voltage when the circuit is disconnected from the power supply. 
+- Finally, we connect the positive rail of the breadboard to the positive pole of the power supply and the negative rail to the negative pole of the power supply. 
+
+As soon as voltage is applied to the circuit, the capacitor charges. If we now disconnect the wire briefly, the capacitor continues to supply the LED with voltage, bridging the time the battery is disconnected. 
+
 ## Level 8 - Semiconductor and Diode
 <iframe width="560" height="315" src="https://www.youtube.com/embed/guyFDPdGvFk?si=PI0bmzEbSoIIVaQd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -594,18 +594,6 @@ Light emitting diodes, emit light when current flows through them. They find wid
 ##### Zener Diode
 Unlike standard diodes, which conduct current in one direction only, Zener diodes can also conduct in the reverse direction when the voltage exceeds a specific threshold called the Zener voltage. Zener diodes can be used to protect our flight computer input channels from overvoltage.
 
-#### Practical Example
-Now, let's put theory into practice with a hands-on demonstration.
-
-- Grab a power supply, a breadboard, a standard silicon diode (such as a 1N4001), a resistor, and some jumper wires.
-- Start by connecting the positive terminal of the lab bench power supply to one end of the breadboard, and the negative terminal to the other. 
-- Now, place the standard silicon diode into the breadboard, ensuring that its cathode, marked with a stripe, is connected to the positive rail.
-- Next, connect one end of the resistor to the anode of the silicon diode, and the other end to the positive rail. This creates the path for our current to flow.
-- If we now turn on the lab bench power supply, we can see that the current is flowing just as expected.
-- However, if we change the polarity, the current stops flowing, as the diode is in reverse bias!
-- If we use an LED instead of this standard diode, it will even light up when in forward bias. 
-- Again, in reverse-bias, no current is flowing. 
-
 #### Summary
 When atoms bond covalently, they share their outer electrons to reach a full valence layer. 
 There are conductors, isolators, and something in between that is called a semiconductor. 
@@ -616,7 +604,21 @@ When placing an n-type semiconductor next to a p-type semiconductor, we get some
 If we apply voltage in forward bias this barrier can be overcome, and the material becomes conductive. 
 If we apply voltage in reverse bias, the holes move to the negative side, while the electrons move to the plus pole of the battery, which makes the barrier even bigger, and allows no current to flow. 
 Through that, we have created a component which allows current to flow in only one direction, which we call a diode. 
-A diode can be used to protect our circuits against reverse voltage, or to rectify alternating current to direct current. There a special diodes, such as LEDs, which light up in forward bias and Zener diodes, which allow us to protect our devices from overvoltage. 
+A diode can be used to protect our circuits against reverse voltage, or to rectify alternating current to direct current. There a special diodes, such as LEDs, which light up in forward bias and Zener diodes, which allow us to protect our devices from overvoltage.
+
+### Example
+#### Transcript
+Now, let's put theory into practice with a hands-on demonstration.
+
+To begin, we need a power source of 5V, a breadboard, a standard 1N4007 diode, a 330 Ohm resistor, an LED (we used white), and a jumper wires. 
+
+- Start by connecting the positive terminal of the lab bench power supply to one end of the breadboard, and the negative terminal to the other. 
+- Now, place the standard silicon diode into the breadboard, ensuring that its cathode, marked with a stripe, is connected to the negative rail.
+- Next, connect one end of the resistor to the anode of the silicon diode, and the other end to the positive rail. This creates the path for our current to flow.
+- If we now turn on the lab bench power supply, we can see that the current is flowing just as expected.
+- However, if we change the polarity, the current stops flowing, as the diode is in reverse bias!
+- If we use an LED instead of this standard diode, it will even light up when in forward bias. 
+- Again, in reverse-bias, no current is flowing. 
 ## Level 9 - The Transistor
 ### Lecture
 There is one more component that is used in practically every electronics device today, and makes all our technologies possible. It is another application of semiconductor technology and you certainly heard about it at some point - the transistor. The transistor is like a switch that can turn on and off current flow. However, it does so without needing any mechanical components. 
