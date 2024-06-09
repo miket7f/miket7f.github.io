@@ -396,6 +396,10 @@ We talked about a short circuit, which occurs when the positive and negative pol
 
 ## Level 7 - Capacitance
 <iframe width="560" height="315" src="https://www.youtube.com/embed/T2ymzSzFjs4?si=h5uu17BzT8yNW8xm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/28Kisy15diA?si=o6WfG9l2kKMFwGad" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Lecture
 In this lecture, we're moving on to our next electronic component: the capacitor. 
 We'll start by exploring the concept of capacitance, then move on to understand the structure of capacitors, their various applications, capacitor circuits, and the different types of capacitors encountered in flight computer development.
@@ -511,9 +515,6 @@ Finally, there are many different capacitor types.
 The aluminum electrolytic capacitors feature high capacitances, are cheap, polar, and have a limited lifespan. 
 The tantalum capacitors have slightly lower capacitances at the same volume but are very stable in temperature and voltage changes. However, they are more expensive, sensitive to voltage spikes, and still polarized.
 The ceramic capacitors, especially the MLCCs, are non-polarized, available in tiny form factors, and excel in high-frequency applications. However, their capacitance can vary with voltage and temperature. They have lower capacitance values. 
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/28Kisy15diA?si=o6WfG9l2kKMFwGad" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Example
 #### Transcript 
 Now, let's demonstrate this concept hands-on.
@@ -529,8 +530,10 @@ Let's set up the circuit:
 As soon as voltage is applied to the circuit, the capacitor charges. If we now disconnect the wire briefly, the capacitor continues to supply the LED with voltage, bridging the time the battery is disconnected. 
 
 ## Level 8 - Semiconductor and Diode
-<iframe width="560" height="315" src="https://www.youtube.com/embed/guyFDPdGvFk?si=PI0bmzEbSoIIVaQd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qTu7wQJbnaY?si=ODHeszIma9d0nYk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F5tJNmRe5TY?si=KlugeGmqlySTQ8Qn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 In this lecture, you'll get to know yet another component: the diode. 
 We'll kick things off by exploring the concept of covalent bonding, setting the stage for our understanding of semiconductor materials. From there, we'll learn about semiconductors and the concept of doping. We'll then dissect the p-n junction for you to understand the workings of a diode. 
