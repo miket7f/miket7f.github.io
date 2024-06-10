@@ -628,6 +628,8 @@ To begin, we need a power source of 5V, a breadboard, a standard 1N4007 diode, a
 ### Lecture
 There is one more component that is used in practically every electronic device today and makes all our technologies possible. It is another application of semiconductor technology, and you certainly heard about it at some point - the transistor. The transistor is like a switch that can turn on and off current flow. However, it does so without needing any mechanical components.
 
+We will first revise the PN-junction and then discuss the first form of transistors - the BJTs; we will dive into MOSFETs and their different variations.; and finally, we will look at the schematic symbols of the various transistor types.
+
 #### P-N Junction
 Remember the P-N junction that is within every diode. 
 A p-doped semiconductor is next to a n-doped semiconductor. In the border region, electrons move from the n-side to the p-side to fill up some electron holes. 
@@ -660,7 +662,7 @@ $I_{CE}=I_B*H_{fe}$
 The collector-emitter current is magnitudes higher than the base current. In fact, the base current and the collector-emitter current are proportionally linked by the proportionality constant Hfe that we can find in data sheets of transistors. 
 
 #### MOSFET
-A more advanced transistor version is the MOSFET, which is used in almost every integrated circuit today. Your laptop and phone contain billions of them, and with each passing year, their sizes shrink drastically. Today, the smallest are only 7-10nm small. A silicon atom is 0.2nm tall, which clarfies how tiny these transistors are today.
+A more advanced transistor version is the MOSFET, which is used in almost every integrated circuit today. Your laptop and phone contain billions of them, and with each passing year, their sizes shrink drastically. Today, the smallest are only 7-10nm small. A silicon atom is 0.2nm tall, which clarifies how tiny these transistors are today.
 
 MOSFET stands for 
 Metal Oxide Semiconductor Field Effect Transistor 
@@ -694,17 +696,33 @@ With the channel formed, holes can move from the source to the drain when a volt
 A PNP BJT works in a similar way but is current-controlled rather than voltage-controlled. In a PNP transistor, when a small current is applied to the base (P-region), it allows a larger current to flow from the emitter (P-region) to the collector (N-region).
 
 ##### N-Channel Depletion Type
-However, we will briefly discuss in what ways an N-channel depletion type MOSFET would be different.
+We will also briefly discuss in what ways an N-channel depletion type MOSFET is different to the enhancement type. 
 
 In the depletion type MOSFET, we already have a pre-existing tunnel manufactured into the MOSFET, which means that without the gate turned on, current can flow from the source to the drain. By applying a negative gate voltage to the depletion type MOSFET, the depletion region to the P-region substrate increases, and the tunnel becomes narrower to the point of being able to turn the MOSFET completely off by applying a negative voltage to the gate. 
 
+#### Symbols
+Now let's take a look at the circuit symbols of the different transistor types. 
+
+Let's first look at the bipolar junction transistor symbols:
+In an NPN transistor, the arrow points outward from the base to the emitter, while in a PNP transistor, the arrow points outward from the emitter to the base. The letters E, B, and C represent the emitter, base, and collector terminals, respectively.
+
+Then, for the MOSFETs: 
+The N-channel MOSFET the arrow point from source inward to the gate. For the P-channel MOSFET the arrow point from the gate to the source. 
+
+In all cases, the third pin on the right side of the symbol represents the connection between the substrate and the source. For depletion-type MOSFETs, the three terminals on the right-hand side are connected, indicating the pre-manufactured terminal. The letters S, D, and G represent the source, drain, and gate terminals of the MOSFETs, respectively.
+
+BJTs operate as current-controlled devices, relying on a continuous base-emitter current to remain active. 
+
+In contrast, MOSFETs are voltage-driven, making them inherently more efficient. This voltage-driven characteristic grants MOSFETs several advantages: they boast lower power consumption, and superior switching efficiency compared to BJTs. 
+
+Additionally, MOSFETs typically offer faster switching speeds, making them ideal for high-frequency applications. Moreover, MOSFETs exhibit better thermal stability and can handle higher power densities than BJTs, contributing to their widespread use in modern electronics. Furthermore, MOSFETs are more scalable, allowing for easier integration into advanced semiconductor technologies.
 #### Summary
 A transistor is another semiconductor. We can use it as a switch or a voltage-controlling device in a circuit. One of its simplest forms is the BJT, which is created by adding an N or a P region to a PN junction. 
 
 For an NPN-type BJT, we get three connections called the emitter (connected to the first N-region), the collector (connected to the second N-region), and the base (attached to the P-region).
-The two PN junctions function as two opposite-facing diodes. If we apply a voltage from the emitter to the collector, one of them is reverse bias, which means that no current can flow. 
+The two PN junctions function as two opposite-facing diodes. If we apply a voltage from the emitter to the collector, one of them is in reverse bias, which means that no current can flow. 
 However, if we apply a positive voltage to the base, electrons are attracted from the N-region and fill up some of the electron holes of the P-region. If enough voltage is applied, there are freely moving electrons in the P-region, which makes it conductive. Consequently, current can flow from the emitter to the collector. 
-The higher the base-emitter current, the more freely moving electrons, and the higher the emitter-collector current. The two currents are dependent on the proportionality Hfe. 
+The higher the base-emitter current, the more freely moving electrons, and the higher the emitter-collector current. The two currents are linked through the proportionality Hfe. 
 
 Another form is the MOSFET (Metal Oxide Semiconductor Field Effect Transistor). A N-channel enhancement type MOSFET consists of four ports: source, gate, drain, and substrate body. The substrate port is internally attached to the source pin. The source is connected to the first N region, the Drain to the second, and the Gate is connected to the P-region. However, between the gate and the P-region, there is a dielectric, which allows no current to flow, and opposite the gate is the substrate body plate. 
 
@@ -712,20 +730,68 @@ When we apply a voltage between the gate and the source, an electric field betwe
 
 By increasing the drain-source voltage, the current rises linearly in the ohmic region of the transistor. The higher the drain-source voltage gets, the larger the depletion region on the drain N-region becomes because it is in reverse bias. This enlargement in the depletion area limits the drain-source current, which we call the saturation current. The saturation current changes with the applied voltage to the gate, as the gate voltage can enlarge the tunnel. 
 
-Finally, in the N-channel depletion type MOSFET, a conductive channel (or tunnel) is pre-manufactured into the device. By applying a negative voltage to the gate, the channel can be narrowed or closed, reducing or stopping the current flow.
-### Example
-#### Transcript
-Now, let's put theory into practice with a hands-on demonstration.
+For a P-channel MOSFET, the voltage must be applied with the source at a higher potential than the drain. To turn the P-channel MOSFET on, the gate voltage must be lower than the source voltage. This means that a negative voltage relative to the source needs to be applied to the gate to create the channel between the source and the drain.
 
-To begin, we need a power source of 5V, a breadboard, a standard 1N4007 diode, a 330 Ohm resistor, an LED (we used white), and a jumper wires. 
+Finally, in the N-channel depletion type MOSFET, a conductive channel (or tunnel) is pre-manufactured into the device. By applying a negative voltage to the gate, the channel can be narrowed or closed, reducing or stopping the current flow.
+
+MOSFETs have faster switching speeds, higher efficiency, and are more scalable, leading to their more frequent use compared to BJTs.
+### Example
+#### Transcript 1
+Now, let's put theory into practice with a hands-on demonstration.
+In the first example, we will switch an LED on and off in a low-side application by using a NPN transistor. In the second one, we will do the same in a high-side application by using a PNP transistor. 
+
+First, the NPN transistor circuit
+To begin, we need a power source of 5V, a breadboard, a standard BC547 transistor, a 102.60k Ohm resistor, a push button, an LED (we used white), and jumper wires. 
 
 - Start by connecting the positive terminal of the lab bench power supply to one end of the breadboard, and the negative terminal to the other. 
-- Now, place the standard silicon diode into the breadboard, ensuring that its cathode, marked with a stripe, is connected to the negative rail.
-- Next, connect one end of the resistor to the anode of the silicon diode, and the other end to the positive rail. This creates the path for our current to flow.
-- If we now turn on the lab bench power supply, we can see that the current is flowing just as expected.
-- However, if we change the polarity, the current stops flowing, as the diode is in reverse bias!
-- If we use an LED instead of this standard diode, it will even light up when in forward bias. 
-- Again, in reverse-bias, no current is flowing. 
+- Now, place the BC547 transistor into the breadboard, ensuring that its three pins are at three different breadboard lines. 
+- By looking at the datasheet, we can see that the left pin is the collector, while the right pin is the emitter. 
+- We connect the anode of the LED to the 3.3V line. 
+- Next, we connect the cathode of the LED to the collector, and the emitter to GND. 
+- We connect the 5k Ohm resistor to the base, and the other end of the resistor to the push button switch. 
+- Finally, we connect the push button switch to the 3.3V line again. 
+
+We know that the voltage drop from base to the emitter is approximately 700mV. 
+Further we apply 3.3V to the base over the 100k resistor. 
+If we subtract the 3.3V - 0.7V, we get a voltage that will drop across the resistor of 2.6V. 
+We can now divide those 2.6V by the 100k resistor, and get a flowing current IBE of 0.000026A. 
+By multiplying this current with the factor hfe (100-800), we get a flowing collector emitter current of 2.86mA to 20.8mA. By using the proportionality constant we were able to spare the current limiting resistor in front of the LED. 
+
+If we now push the button on our circuit, the IBE current is flowing, and the transistor becomes conductive between the collector and the emitter. Consequently, the LED lights up.  
+
+#### Transcript 2
+Now, let's do a similar example with the PNP transistor the BC557. 
+For the PNP transistor (BC557) circuit, we'll create a high-side switching application to control the LED. Here's how you can set it up:
+
+Needed Materials: 
+1. 3.3V power source (such as a battery or a bench power supply)
+2. Breadboard
+3. BC557 PNP transistor
+4. 10k Ohm resistor
+5. Push button
+6. LED (white)
+7. Jumper wires
+
+(Same materials before, but instead of the BC547 we use a PNP BC557 transistor)
+
+Hook up:
+1. Connect the positive terminal of the 3.3V power source to one end of the breadboard and the negative terminal to the other end.
+2. Place the BC557 PNP transistor onto the breadboard, ensuring that its three pins are at three different breadboard lines.
+3. Connect the emitter of the BC557 transistor to the positive rail of the breadboard.
+4. Connect the collector of the BC557 transistor to the anode of the LED.
+5. Connect the cathode of the LED to GND.
+7. Connect the base to the 100k resistor.
+8. Connect the other resistor end to the push button.
+9. Connect the other end of the push button to the positive rail of the breadboard.
+
+Demonstration: 
+1. With the setup completed, the LED should be off initially since the transistor is in cutoff mode (no base current).
+2. Press the push button to apply a positive voltage to the base of the BC557 transistor.
+3. When the base voltage is applied, the transistor turns on, allowing current to flow from the positive rail through the LED to the emitter, and then through the transistor to ground. The LED should light up.
+4. Release the push button to remove the base voltage, and the transistor will turn off, cutting off the current flow to the LED, causing it to turn off.
+
+This demonstration showcases the high-side switching capability of the PNP transistor, allowing you to control the power to the LED from the positive side of the circuit.
+
 ## Level 10 - Induction 
 ### Lecture
 #### Magnets
