@@ -634,7 +634,7 @@ A p-doped semiconductor is next to a n-doped semiconductor. In the border region
 Through that, a slim region on the n-side becomes slightly positively charged, while a slim region on the p-side becomes slightly negatively charged. 
 There's an electric field that goes from the n to the p side, which makes it hard for more electrons to move from the n to the p side. 
 If we apply a forward bias voltage of more than 0.7V, the depletion region shrinks, and the material becomes conductive. 
-In reverse bias, the electrons are the depletion area increases, and no current can flow. 
+In reverse bias, the electrons are attracted towards the plus pole, the depletion area increases, and no current can flow. 
 
 #### BJT
 The simplest form of a transistor is the BJT (Bipolar Junction Transistor). It works by adding another n or p-doped semiconductor to a P-N Junction. 
@@ -660,7 +660,7 @@ $I_{CE}=I_B*H_{fe}$
 The collector-emitter current is magnitudes higher than the base current. In fact, the base current and the collector-emitter current are proportionally linked by the proportionality constant Hfe that we can find in data sheets of transistors. 
 
 #### MOSFET
-A more advanced transistor version is the MOSFET, which is used in almost every integrated circuit today. Your laptop and phone contain billions of them, and with each passing year, their sizes shrink drastically. Today, the smallest are only 7-10nm small. A silicon atom is 0.2nm tall, which clarifies how tiny these transistors are today.
+A more advanced transistor version is the MOSFET, which is used in almost every integrated circuit today. Your laptop and phone contain billions of them, and with each passing year, their sizes shrink drastically. Today, the smallest are only 7-10nm small. A silicon atom is 0.2nm tall, which clarfies how tiny these transistors are today.
 
 MOSFET stands for 
 Metal Oxide Semiconductor Field Effect Transistor 
@@ -685,8 +685,15 @@ When we increase the drain-source voltage VDS, the drain-source current IDS incr
 
 However, by increasing the gate voltage, the tunnel becomes wider. We can increase the drain-source voltage further before we reach this saturation voltage. Consequently, we can entirely control the drain-source current by the voltage we apply to the gate. This characteristic makes the MOSFET ultra-useful and gives it another name, a so-called voltage-controlling device.  
 
+##### P-Channel Enhancement Type and PNP BJT
+The P-channel enhancement type MOSFET operates similarly to the N-channel but with reversed polarities. It consists of two P-regions and one N-region.
+
+To switch on the P-channel enhancement type MOSFET, we have to apply a negative voltage to the gate. The negative voltage creates an electric field that attracts holes from the P-regions into the N-region near the gate. These holes accumulate in the N-region, forming a conductive path or "channel" between the source (first P-region) and the drain (second P-region).
+With the channel formed, holes can move from the source to the drain when a voltage is applied between them, allowing current to flow through the MOSFET. Source and drain are also switched. The source is connected to the positive pole, while the drain is connected to the negative pole. 
+
+A PNP BJT works in a similar way but is current-controlled rather than voltage-controlled. In a PNP transistor, when a small current is applied to the base (P-region), it allows a larger current to flow from the emitter (P-region) to the collector (N-region).
+
 ##### N-Channel Depletion Type
-We won't dive into how P-channel MOSFETs work.
 However, we will briefly discuss in what ways an N-channel depletion type MOSFET would be different.
 
 In the depletion type MOSFET, we already have a pre-existing tunnel manufactured into the MOSFET, which means that without the gate turned on, current can flow from the source to the drain. By applying a negative gate voltage to the depletion type MOSFET, the depletion region to the P-region substrate increases, and the tunnel becomes narrower to the point of being able to turn the MOSFET completely off by applying a negative voltage to the gate. 
@@ -706,7 +713,19 @@ When we apply a voltage between the gate and the source, an electric field betwe
 By increasing the drain-source voltage, the current rises linearly in the ohmic region of the transistor. The higher the drain-source voltage gets, the larger the depletion region on the drain N-region becomes because it is in reverse bias. This enlargement in the depletion area limits the drain-source current, which we call the saturation current. The saturation current changes with the applied voltage to the gate, as the gate voltage can enlarge the tunnel. 
 
 Finally, in the N-channel depletion type MOSFET, a conductive channel (or tunnel) is pre-manufactured into the device. By applying a negative voltage to the gate, the channel can be narrowed or closed, reducing or stopping the current flow.
+### Example
+#### Transcript
+Now, let's put theory into practice with a hands-on demonstration.
 
+To begin, we need a power source of 5V, a breadboard, a standard 1N4007 diode, a 330 Ohm resistor, an LED (we used white), and a jumper wires. 
+
+- Start by connecting the positive terminal of the lab bench power supply to one end of the breadboard, and the negative terminal to the other. 
+- Now, place the standard silicon diode into the breadboard, ensuring that its cathode, marked with a stripe, is connected to the negative rail.
+- Next, connect one end of the resistor to the anode of the silicon diode, and the other end to the positive rail. This creates the path for our current to flow.
+- If we now turn on the lab bench power supply, we can see that the current is flowing just as expected.
+- However, if we change the polarity, the current stops flowing, as the diode is in reverse bias!
+- If we use an LED instead of this standard diode, it will even light up when in forward bias. 
+- Again, in reverse-bias, no current is flowing. 
 ## Level 10 - Induction 
 ### Lecture
 #### Magnets
