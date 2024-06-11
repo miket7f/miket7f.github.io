@@ -629,7 +629,7 @@ To begin, we need a power source of 5V, a breadboard, a standard 1N4007 diode, a
 There is one more component that is used in practically every electronic device today and makes all our technologies possible. It is another application of semiconductor technology, and you certainly heard about it at some point - the transistor. The transistor is like a switch that can turn on and off current flow. However, it does so without needing any mechanical components.
 
 We will first revise the PN-junction and then discuss the first form of transistors - the BJTs; we will dive into MOSFETs and their different variations.; and finally, we will look at the schematic symbols of the various transistor types.
-
+   
 #### P-N Junction
 Remember the P-N junction that is within every diode. 
 A p-doped semiconductor is next to a n-doped semiconductor. In the border region, electrons move from the n-side to the p-side to fill up some electron holes. 
@@ -652,11 +652,11 @@ The port connected to the P region is called the gate.
 
 We can think about a transistor as consisting of two diodes facing in opposing directions. If we apply a voltage from the emitter to the collector, one of them is always in reverse bias and won't allow current to flow. 
 
-However, if we apply a positive voltage to the P region, electrons from the reverse biased n region are attracted to the base. Through that, the depletion area decreases, and electron holes of the P-type fill up.
+However, if we apply a positive voltage to the P region, electrons from the n region are attracted to the base. Through that, the depletion area decreases, and the electron holes of the P region fill up.
 
-Because there is no depletion region anymore, the electrons from the first N region are attracted to the plus pole of the battery connected from the emitter to the collector and current can flow between the emitter and collector. 
+Because there is no depletion region anymore, the electrons from the first N region are attracted to the plus pole of the battery connected from the emitter to the collector and current can flow between the emitter and collector.   
 
-The higher the current on the base, the less the depletion region becomes, the less the resistance between emitter and collector, and the higher the current flow between emitter and collector. 
+The higher the current on the base, the less the depletion region, the less the resistance between emitter and collector, and the higher the current flow between emitter and collector. 
 
 $I_{CE}=I_B*H_{fe}$
 The collector-emitter current is magnitudes higher than the base current. In fact, the base current and the collector-emitter current are proportionally linked by the proportionality constant Hfe that we can find in data sheets of transistors. 
@@ -675,7 +675,7 @@ Let's look at the N-channel enhancement type MOSFET.
 It again consists of three regions, two N-regions, and one P-region.
 This type of transistor consists of four pins. 
 
-The emitter equivalent is called the source and is attached to the first N-region. The collector equivalent is called the drain and is connected to the second N-region. The base equivalent is called the gate and is connected to the P-region but with an insulator or dielectric between the gate and the P-region. The fourth pin connected across the gate to the dielectric internally connects to the source.
+The emitter equivalent is called the source and is attached to the first N-region. The collector equivalent is called the drain and is connected to the second N-region. The base equivalent is called the gate and is connected to the P-region but with an insulator or dielectric between the gate and the P-region. The fourth pin is connected across the gate and internally connects to the source.
 
 If we connect a battery between the source and drain, there would be no current flow, as one of the P-N junctions is in reverse bias. 
 However, if we additionally apply a voltage to the gate pin, an electric field is created between the substrate pole and the dielectric. Electrons move from the N-junction to the dielectric and fill up some electron holes in the P-region. The more voltage we apply at the gate, the more electrons are attracted. This plate works similar to a capacitor. 
@@ -693,21 +693,21 @@ The P-channel enhancement type MOSFET operates similarly to the N-channel but wi
 To switch on the P-channel enhancement type MOSFET, we have to apply a negative voltage to the gate. The negative voltage creates an electric field that attracts holes from the P-regions into the N-region near the gate. These holes accumulate in the N-region, forming a conductive path or "channel" between the source (first P-region) and the drain (second P-region).
 With the channel formed, holes can move from the source to the drain when a voltage is applied between them, allowing current to flow through the MOSFET. Source and drain are also switched. The source is connected to the positive pole, while the drain is connected to the negative pole. 
 
-A PNP BJT works in a similar way but is current-controlled rather than voltage-controlled. In a PNP transistor, when a small current is applied to the base (P-region), it allows a larger current to flow from the emitter (P-region) to the collector (N-region).
+A PNP BJT works in a similar way but is current-controlled rather than voltage-controlled. In a PNP transistor, when a small current is applied to the base, it allows a larger current to flow from the emitter to the collector. 
 
 ##### N-Channel Depletion Type
 We will also briefly discuss in what ways an N-channel depletion type MOSFET is different to the enhancement type. 
 
-In the depletion type MOSFET, we already have a pre-existing tunnel manufactured into the MOSFET, which means that without the gate turned on, current can flow from the source to the drain. By applying a negative gate voltage to the depletion type MOSFET, the depletion region to the P-region substrate increases, and the tunnel becomes narrower to the point of being able to turn the MOSFET completely off by applying a negative voltage to the gate. 
+In the depletion type MOSFET, we already have a pre-existing tunnel manufactured into the MOSFET, which means that without the gate turned on, current can flow from the source to the drain. By applying a negative gate voltage to the depletion type MOSFET, the depletion region decreases, and the tunnel becomes narrower to the point of being able to turn the MOSFET completely off by applying a negative voltage to the gate. 
 
 #### Symbols
 Now let's take a look at the circuit symbols of the different transistor types. 
 
 Let's first look at the bipolar junction transistor symbols:
-In an NPN transistor, the arrow points outward from the base to the emitter, while in a PNP transistor, the arrow points outward from the emitter to the base. The letters E, B, and C represent the emitter, base, and collector terminals, respectively.
+In NPN transistor symbol, the arrow points outward from the base to the emitter, while in a PNP transistor, the arrow points inward from the emitter to the base. The letters E, B, and C represent the emitter, base, and collector terminals, respectively.
 
-Then, for the MOSFETs: 
-The N-channel MOSFET the arrow point from source inward to the gate. For the P-channel MOSFET the arrow point from the gate to the source. 
+Next up, let's take a look at the MOSFET's symbols: 
+In the N-channel MOSFET symbol the arrow point from source inward to the gate. For the P-channel MOSFET the arrow point from the gate to the source. 
 
 In all cases, the third pin on the right side of the symbol represents the connection between the substrate and the source. For depletion-type MOSFETs, the three terminals on the right-hand side are connected, indicating the pre-manufactured terminal. The letters S, D, and G represent the source, drain, and gate terminals of the MOSFETs, respectively.
 
@@ -794,116 +794,126 @@ This demonstration showcases the high-side switching capability of the PNP trans
 
 ## Level 10 - Induction 
 ### Lecture
+As we continue our journey through electronic components, we now turn our attention to the inductor. 
+
+We will begin by describing the magnetic field a bar magnet creates, which will pave the way for us to grasp the concept of electromagnetism. Subsequently, we will be ready to understand inductance and our next component - the inductor - and its applications in circuit design.  
+
 #### Magnets
-An electric field is created by an electric charge, and is an imaginator area in which another electric charge would experience a force - the coulomb force. There are positive and negative electric charges, and each of them can consist on their own.
+An electric charge creates an electric field that is an imaginary area in which another electric charge experiences a force - the coulomb force. There are positive and negative electric charges which can exist on their own.
 
-Now, on the other hand there are magnets. If we look at a bar magnet, we can see that each magnet has a magnetic North and magnetic South pole. Magnetic field lines always travel from the magnetic north to the magnetic south pole.
+Now, on the other hand, there are magnets. If we look at a bar magnet, we can see that each magnet has a magnetic North and magnetic South pole. Magnetic field lines travel from the magnetic North to the magnetic South pole.
 
-If we now wanted to have only a magnetic South pole, one would think that by cutting a bar magnet in half we would get exactly that. However, it turns out that if we cut a bar magnet it half, we get two bar magnetic with each having a magnetic South and North pole. In fact, there is no way of creating just a magnetic South or a magnetic North pole, they always exist together. 
+If we now wanted to have only a magnetic South pole, one would think that by cutting a bar magnet in half, we would get exactly that. However, it turns out that if we cut a bar magnet in half, we get two bar magnets with magnetic South and North poles. We can't create a single magnetic South or a magnetic North pole. They always exist together. 
 
-A bar magnet is created out of a metal. Some metals like iron are what we call ferromagnetic. When iron is created it forms grain boundaries. We think of each grain as having a permanent magnet inside that faces in a random direction. As every grain's magnet faces in an entirely different direction, there is no net magnetic field. 
+There are also ferromagnetic materials, like iron, which can become magnetic. In iron, grain boundaries form during creation, with each grain acting like a tiny permanent magnet facing in a random direction. Due to this randomness, there's no net magnetic field.
 
-However, if we apply a large magnetic field to the ferromagnetic material, the grain's magnets align with the magnetic field, and if this outside magnetic field was strong enough, the grain's magnets will stay in that alignment after the field was applied. Now this ferromagnetic material, became a magnet on its own. 
+However, if we apply a large magnetic field to the ferromagnetic material, the grain's magnets align with the magnetic field. If the outside magnetic field is strong enough, the grain's magnets will be aligned even after we remove the external magnetic field. Now, the ferromagnetic material has become a magnet on its own. 
 
-Its magnetic properties can be destroyed by heating up the magnet which randomizes the inner bar magnets again.
+We can destroy its magnetic properties by heating the magnet, which randomizes the inner bar magnets again.
 
 #### Electromagnetism
-Now, there is electromagnetism. The connection between magnetic fields and electric current. 
+There's a connection between electricity and magnetic fields, which is called electromagnetism. 
 
-Electrically charged particles that move create a magnetic field. This means that in a wire where there is current, a magnetic field is created. In a wire the magnetic field is in concentric circles around the wire. 
-The direction of such a field can be determined by used the right hand rule, which states that by gripping the wire and aligning the thumb in the direction of the conventional current flow, the other fingers will show the direction of the magnetic field. 
-The strength of the field decreases with increases distance to the wire. 
+Electrically charged particles that move create a magnetic field. When there's a current flowing through a wire, a magnetic field is created, which forms concentric circles around the wire.
+We can determine the direction of such a field by using the right-hand rule, which states that by gripping the wire and aligning the thumb in the direction of the conventional current flow, the other fingers will show the direction of the magnetic field. 
 
-The reverse of this law states that if there is a magnetic field and we move a wire inside the magnetic field, current is induced in the wire. 
+The magnetic flux density given in the unit Tesla, gives us a rough idea of the strength of the magnetic field around a wire. 
+$B = \dfrac{\mu_0*I}{2*\pi*r}$ ... magnetic field strength A/m or T
+$\mu_0=4*\pi*10^{-7} \dfrac{H}{m}$  ... permeability of free space 
+ 
+The strength of the field decreases with increasing distance from the wire and increases with increased current flow.
 
-Finally, if the magnetic field changes, current is again induced in the wire, and if the current flow changes we get an induced voltage as well. 
+##### Electromagnetic Induction
+So, we have seen that current in a wire creates a concentric magnetic field around the wire.
+Conversely, a changing magnetic field can induce an electric current in a conductor. This process is known as electromagnetic induction.
 
-Okay, let's look at the example with the wire creating a magnetic field again. 
-If current is present, electrons move through the wire, which creates a concentrical magnetic field around the wire. One of the fundamental properties of a magnetic field is that it wants to remain steady. If we suddenly turned off our power supply, the magnetic field won't immediately be gone, as it wants to resist the change. Instead, it will slowly decrease. However, keep in mind that a magnetic field change leads to an induced current and voltage. The induction keeps the current flowing for a while and induces a voltage, even though the supply is already turned off. 
+One of the fundamental properties of a magnetic field is that it wants to remain steady. If we suddenly turn off our power supply, the magnetic field won't immediately be gone, as it wants to resist the change. Instead, it will slowly decrease. The magnetic field change leads to an induced current and voltage. The induction keeps the current flowing and induces a voltage, even though the supply is off.  
 
-On the contrary, if we were to turn on the current again, the full current wouldn't immediately occur, because the magnetic field first needs to build up. In this case an induced current and voltage in the opposite direction would be present before the magnetic field was built up completely.
+On the contrary, if we were to turn on the current again, the whole current wouldn't immediately occur because the magnetic field first needs to build up. In this case, an induced current and voltage in the opposite direction would be present before the magnetic field builds up entirely.
 
-The wire stores energy in the form of magnetism. 
+The wire stores energy in the form of magnetism. We characterize the ability of the wire (or any conductor) to store energy in the form of a magnetic field by a property called inductance, denoted as L and measured in Henrys (H).
 
-The parameter that describes the wire's characteristics of that energy is called inductance L given in Henry. 
+Inductance is a measure of how effectively a conductor can store magnetic energy for a given current. It depends on factors such as the shape of the conductor, the number of turns in a coil, and the presence of a magnetic core.
 
-The induced voltage can be calculated by multiplying the inductance with the change in current. 
+We can calculate the induced voltage by multiplying the inductance with the change in current. 
 $V = L*\dfrac{dI}{dt}$ ... Voltage
 
 #### Inductors
-By creating many turns of wire and creating a coil, we can increase the magnetic field that is created, and thus increase the inductive effect the magnetic field has. 
-This forms the basis of our next component:
+We can increase the magnetic field of a conductor by creating many turns of wire to create a coil. The turned wire increase the inductive effect the magnetic field has, which forms the basis of our next component:
 The inductor. 
-Often the inductor additionally features a metal core, which increases the inductance. 
 
-Here is the symbol of the inductor. 
+Often, the inductor features a metal core, which increases the inductance further. 
 
-So, what are the use cases of the inductor that result out of its properties?
-A capacitor wants to keep the voltage steadily, while an inductor wants a steady current flow.  
-If we were to turn off a flowing current, the inductor would continue to push electrons in the direction of the flow for a while. If we were to turn on current, the inductor would hinder the electrons at first before the magnetic field would be fully established. So, the inductor creates a lag in current changes, while a capacitor creates a lag in voltage changes. A inductor hinders instantaneous changes in current. 
+The symbol of an inductor in circuit diagrams is typically represented as a series of loops or coils, reflecting its physical structure and function.
 
-And that's exactly for what it's used. 
-For a steady current supplies a inductor is used, just as capacitors are used for steady voltage supplies. 
-Another use case would be to store energy in the form of magnetic fields. In for example, switching power supplies. 
-And yet another use example would be to use an inductor in conjunction with a capacitor to create a LC circuit for removing ripple from switched-mode power supplies. Ripple is a periodic variation in direct voltage. It occurs if DC current/voltage is derived from alternating current/voltage. 
+So, what are the use cases of the inductor that result from its properties?
+A capacitor wants to keep the voltage steady, while an inductor wants a persistent current flow.  
+If we turn off a flowing current, the inductor would continue to push electrons in the direction of the flow for a while. If we were to turn on the current, the inductor would hinder the electrons at first before the magnetic field is established. So, the inductor creates a lag in current changes, while a capacitor produces a lag in voltage changes. An inductor hinders instantaneous changes in current. 
 
-#### Downsides
-Inductors are relatively big.
-They create a magnetic field which can influence near by signal lines or integrated circuits, which must be accounted for when designing the layout of a printed circuit board (PCB).
-Finally, inductors themselves, can be influenced by applying a magnetic field to them. 
+And that's for what it's used. 
+They're essential for maintaining steady current supplies, leveraging their energy storage capability in applications such as switching mode power supplies. Moreover, they're often combined with capacitors to form LC circuits, effectively reducing ripple in switched-mode power supplies, where ripple signifies periodic variations in direct voltage, typically stemming from deriving DC voltage from alternating current.
+
+When implementing conductors in a circuit design, they have a few implications. 
+First of all, they are relatively spacious compared to capacitors. Further, the magnetic field they create can influence nearby signal lines or integrated circuits, which must be accounted for when designing the layout of a printed circuit board (PCB). Finally, inductors can be influenced by applying a magnetic field to them. 
 
 #### Summary
-Magnetic fields always have to be closed in themselves, which is why there can't be a North or a South pole on its own. 
+Magnetic field lines are always present in a closed loop. Therefore, there can't be a single magnetic North or a South pole. 
 
-There's a interplay between electric charges and magnetic fields that is called electromagnetism. 
-If electric charges are moving they create a magnetic field. For example, current flowing in a wire creates a concentrical electric field around the wire. 
-Reversely, if there's a magnetic field and we move a wire inside the field, current is induced in the wire. 
-Further if the magnetic field changes, current is again induced in the wire. 
+The interplay between electric charges and magnetic fields is called electromagnetism. 
+Moving electric charges create a magnetic field. For example, current flowing in a wire creates a concentrical electric field around the wire. 
+Further, if the magnetic field changes, current is induced in the wire. 
 
 A magnetic field always wants to remain steady and stores energy.
-If we turn on the voltage source so current can flow through a wire, the magnetic field induces a current and voltage in the opposing direction until the magnetic field is built up completely.
-If we turn off the voltage source, the magnetic field also wants to maintain its current state, and induces a current so it can continue to flow for a while. Through that, a lag in current change is created. 
+If we turn on the voltage source so current can flow through a wire, the magnetic field induces a current and voltage in the opposing direction until the magnetic field is built up.
+If we turn off the voltage source, the magnetic field also wants to maintain its current state and induces a current so it can continue to flow for a while. Consequently, an inductor creates a lag in current. 
 
-If we were to create multiple turns of wire, we can increase this effect and create something that is called an inductor. Inductance is measured in Henry.
-Often, inductor feature a ferromagnetic metal core to increase the inductance even further. 
-Ferromagnets, are metals that can be made magnetic by applying an strong outside magnetic field to them. 
+If we were to create multiple turns of wire, we could increase this effect and create something that is called an inductor. We measure inductance in Henry.
+Often, inductors feature a ferromagnetic metal core to increase the inductance even further. 
+Ferromagnets are metals that become magnetic by applying a strong external magnetic field. 
 
-Inductors are used to store energy, to smooth a current supply, or in company with a capacitor to create a stable DC current from a switch mode power supply. When creating the layout, their placement must be considered. So, that their magnetic field does not influence signal lines or integrated circuits, and so it isn't influenced by a magnetic field itself. 
+We use inductors to store energy, to smoothen a current supply, or in company with a capacitor to create a stable DC from a switch mode power supply. When creating the layout, we must carefully consider their placement so that their magnetic field does not influence signal lines or integrated circuits, and so it isn't influenced by a magnetic field itself. 
 
 ## Level 11 - Crystal Oscillator 
 ### Lecture
-Before we can take our first look at a model rocket flight computer and its circuits we have to discuss one final fundamental technology. Have you ever wondered how a clock keeps time? 
-Since its origin it uses some sort of oscillator that marks the elapsing of one second by which it turns its pointers. The oscillator itself changed many times over the creation of the clock. At first it used a pendulum. Then something similar to a tuning fork, an LC circuit, to finally using a piezoelectric crystal. 
+Before we delve into examining model rocket flight computer circuits, it's crucial to grasp one last foundational technology: the basics of a microcontroller's timekeeping, the crystal oscillator.
 
-Similarly to a watch, our integrated circuit also need some kind of impulse generator. If we want to control servos, read out sensor data, or transmit information through the air, we always need accurate control signals. And those need timing. 
+Have you ever wondered how a clock keeps time? 
+Since its origin, it has used some oscillator that marks the elapsing of one second by which it turns its pointers. The oscillator itself changed many times over the creation of the clock. At first, it used a pendulum. Then, something similar to a tuning fork, an LC circuit, and today, a piezoelectric crystal. 
+
+Similarly to a watch, our integrated circuit also needs some impulse generator to control servos, read out sensor data, or transmit information through the air. 
 
 #### LC circuit 
 The first way to create timing is by using an LC circuit. 
-Let's consider connecting a charged capacitor to a resistor. 
-As soon as the resistor is connected, the current would jump to be maximum and then slowly decrease until there is no charge left in the capacitor.
+Let's connect a charged capacitor to a resistor. 
+As soon as the resistor is connected, the current becomes maximum as the voltage is highest at the beginning. The current then slowly decreases until the capacitor is uncharged.
 
-Now, let's consider what happens if we replaced the resistor by an inductor. 
-The capacitor has maximum voltage at the beginning and wants to create maximum current at the beginning as well. However, the inductor resists change in magnetic field, which creates a induced voltage in the opposite direction. This means that the current only slowly rises. The current rises and the inductor builds up its electric field until the current reaches its maximum. Then, it  decreases as the capacitor empties. However, this time the inductor resists the current decrease, and induces a voltage and current that wants to keep the flow going. This pushes current into the capacitor and charges it again but in reverse polarity. This means that the current flow would be in the reverse direction for the next half. The cycle begins again, and the current of an LC circuit takes the shape of a sine wave. 
+Now, let's consider what happens if we replace the resistor with an inductor. 
+The capacitor has a maximum voltage at the beginning and wants to create a maximum current. However, the inductor resists changes in current and induces a voltage in the opposite direction. Therefore, the current only slowly rises. 
 
-In an ideal world, this oscillation would go on forever. However, in reality there is some kind of resistance in the circuit. So, it actually is a RLC circuit. The resistance gradually decays the amplitude until no oscillation is left. 
+The inductor builds up its magnetic field until the current reaches its maximum. Then, it decreases as the capacitor empties. However, this time, the inductor resists the current decrease and induces a voltage and current that wants to keep the flow going. The inductor pushes current into the capacitor and charges it again but in reverse polarity. Consequently, the current flow is in the reverse direction for the next half. The cycle begins again, and the current of an LC circuit takes the shape of a sine wave. This sine wave is the oscillator signal we have been looking for. 
+
+In an ideal world, this oscillation would go on forever. However, there is some resistance in the circuit. So, it is an RLC circuit. The resistance gradually decays the amplitude until no oscillation is left. 
 
 $V = L*\dfrac{dI}{dt}$ 
 
 $I = C*\dfrac{dV}{dt}$ 
 
 #### Piezoelectricity 
-Now, there is a better way of creating such an oscillator. 
-It is done by using the piezoelectric effect! 
+The piezoelectric effect is a phenomenon where a quartz crystal generates a voltage when subjected to mechanical stress. Conversely, if a voltage is applied across a quartz crystal, it undergoes elastic deformation. Upon removal of the voltage, the crystal returns to its original shape, generating a voltage in the process.
 
-The piezoelectric effect states that a quartz crystal creates a voltage if it is deformed. So, if you were to hit a crystal you it would create a certain voltage. On the contrary, if you applied a voltage across a quartz crystal it would elastically deform. If the voltage is turned off again the crystal would create a voltage as it elastically goes back to its original shape. 
-The crystal oscillator circuit works by using a voltage signal from the quartz crystal, amplifying it, and feeding it back to the crystal. 
+In a crystal oscillator circuit, this effect is harnessed by using the voltage signal generated by the quartz crystal. This signal is amplified and fed back to the crystal. The result is that the crystal oscillates at a precise resonance frequency, determined by the rate of expansion and contraction of the crystal. This resonance frequency enables the crystal to function akin to an RLC circuit but with significantly lower energy loss per cycle.
 
-The result is that the crystal functions like an RLC circuit with a precise resonance frequency (the rate in expansion and contraction of the crystal). It comes with the advantage of loosing way less energy per cycle compared to an RLC circuit.
-If we look at quartz crystal as a component. The symbol looks like this and it comes with two pins. 
+The symbol for a quartz crystal in circuit diagrams typically consists of a rectangle with two parallel vertical lines on each side. A horizontal line is connected to each of the lines, representing the pins. The rectangle itself symbolizes the quartz crystal element.
 
+When selecting a quartz crystal component for a circuit, we can typically choose the resonance frequency from a range of options. Common resonance frequency options include frequencies such as 4 MHz, 8 MHz, 16 MHz, and so forth, depending on the crystal's intended use and the system's clock requirements.
+
+When selecting quartz crystals, other factors to consider include frequency tolerance, temperature stability, and load capacitance. Load capacitors are often required in conjunction with the quartz crystal. These capacitors help stabilize the crystal's oscillation by providing the necessary capacitance for the circuit.
 #### Summary
-To create proper timing for our communication protocols and our integrated circuits, we use a crystal. 
-A crystal contracts by applying a voltage and releases a voltage as soon as it is allowed to go back to its original state. By feeding the voltage output of the crystal, amplifying it and feeding it back into the quartz, an oscillation is achieved. This oscillation is more power efficient, as it loses less energy per turn.
+To ensure precise timing for communication protocols and integrated circuits, we commonly utilize quartz crystals. 
+
+When a voltage is applied to a quartz crystal, it contracts and subsequently releases a voltage as it returns to its original state. By amplifying and feeding back this voltage output into the crystal, oscillation is achieved. This oscillation, characterized by the crystal's natural resonance frequency, is notably more power-efficient than other methods, as it minimizes energy loss per cycle.
+
+When selecting a quartz crystal, we must select the resonance frequency, frequency tolerance, temperature stability, and load capacitance. Load capacitors are needed to stabilize the crystal's oscillation. 
 ## Level 12 - Glimpse at Stack
 ### Lecture
 We learned about atom theory, electric charges, electric potential, voltage, Kirchhoff's laws, magnetic fields, and inductance to derive the function principle of the most used electrical components:
