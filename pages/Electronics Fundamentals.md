@@ -395,7 +395,7 @@ Further, we learned that the directional sum of the voltages in a closed loop mu
 We talked about a short circuit, which occurs when the positive and negative poles of the power supply are connected directly, either accidentally or due to a fault in the circuit. This creates a path of very low resistance, allowing a large amount of current to flow through the circuit. This can cause significant damage to components, generate excessive heat, and potentially lead to fires or other hazards. Therefore, it is crucial to avoid short circuits at all times.
 
 ## Level 7 - Capacitance
-<iframe width="560" height="315" src="https://www.youtube.com/embed/T2ymzSzFjs4?si=h5uu17BzT8yNW8xm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dza9M1-QLIA?si=1_TcqMY-V4sT9AzO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/28Kisy15diA?si=o6WfG9l2kKMFwGad" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -625,6 +625,8 @@ To begin, we need a power source of 5V, a breadboard, a standard 1N4007 diode, a
 - Again, in reverse-bias, no current is flowing. 
 
 ## Level 9 - The Transistor
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MAE1CgEn22M?si=tUNK5HpYq__EGK64" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Lecture
 There is one more component that is used in practically every electronic device today and makes all our technologies possible. It is another application of semiconductor technology, and you certainly heard about it at some point - the transistor. The transistor is like a switch that can turn on and off current flow. However, it does so without needing any mechanical components.
 
@@ -738,61 +740,65 @@ MOSFETs have faster switching speeds, higher efficiency, and are more scalable, 
 ### Example
 #### Transcript 1
 Now, let's put theory into practice with a hands-on demonstration.
-In the first example, we will switch an LED on and off in a low-side application by using a NPN transistor. In the second one, we will do the same in a high-side application by using a PNP transistor. 
+We will do a total of two examples. 
+In the first, we will switch an LED on and off in a low-side application by using a NPN transistor. 
+In the second one, we will do the same in a high-side application by using a PNP transistor. 
 
 First, the NPN transistor circuit
-To begin, we need a power source of 5V, a breadboard, a standard BC547 transistor, a 102.60k Ohm resistor, a push button, an LED (we used white), and jumper wires. 
+We need the following materials: 
+1. power source (such as a battery or a lab bench power supply) that provides 3.3V 
+3. BC557 PNP transistor
+4. White LED 
+5. 100k Ohm resistor
+7. Breadboard
+8. Jumper wires
 
-- Start by connecting the positive terminal of the lab bench power supply to one end of the breadboard, and the negative terminal to the other. 
-- Now, place the BC547 transistor into the breadboard, ensuring that its three pins are at three different breadboard lines. 
-- By looking at the datasheet, we can see that the left pin is the collector, while the right pin is the emitter. 
-- We connect the anode of the LED to the 3.3V line. 
-- Next, we connect the cathode of the LED to the collector, and the emitter to GND. 
-- We connect the 5k Ohm resistor to the base, and the other end of the resistor to the push button switch. 
-- Finally, we connect the push button switch to the 3.3V line again. 
+Hook up:
+1. Start by connecting the positive terminal of the lab bench power supply to one end of the breadboard, and the negative terminal to the other. 
+2. Now, place the BC547 transistor into the breadboard, ensuring that its three pins are at three different breadboard lines. 
+3. By looking at the datasheet, we can see that the left pin is the collector, while the right pin is the emitter. 
+4. We connect the anode of the LED to the 3.3V line. 
+5. Next, we connect the cathode of the LED to the collector of the transistor, and the emitter of the transistor to GND. 
+6. We connect the 100k Ohm resistor to the base. 
 
 We know that the voltage drop from base to the emitter is approximately 700mV. 
-Further we apply 3.3V to the base over the 100k resistor. 
+Further, we apply 3.3V to the base over the 100k resistor. 
 If we subtract the 3.3V - 0.7V, we get a voltage that will drop across the resistor of 2.6V. 
 We can now divide those 2.6V by the 100k resistor, and get a flowing current IBE of 0.000026A. 
-By multiplying this current with the factor hfe (100-800), we get a flowing collector emitter current of 2.86mA to 20.8mA. By using the proportionality constant we were able to spare the current limiting resistor in front of the LED. 
+By multiplying this current with the factor hfe (110-800), we get a flowing collector emitter current of 2.86mA to 20.8mA. By using the proportionality constant we were able to spare the current limiting resistor in front of the LED. 
 
-If we now push the button on our circuit, the IBE current is flowing, and the transistor becomes conductive between the collector and the emitter. Consequently, the LED lights up.  
+If we now connect a jumper from the 3.3V line to the resistor that is connected to the base, the IBE current is flowing, and the transistor becomes conductive between the collector and the emitter. Consequently, the LED lights up.  
 
 #### Transcript 2
 Now, let's do a similar example with the PNP transistor the BC557. 
 For the PNP transistor (BC557) circuit, we'll create a high-side switching application to control the LED. Here's how you can set it up:
 
 Needed Materials: 
-1. 3.3V power source (such as a battery or a bench power supply)
-2. Breadboard
-3. BC557 PNP transistor
-4. 10k Ohm resistor
-5. Push button
-6. LED (white)
+1. We use them same power supply source as before. 
+2. BC557 PNP transistor
+3. White LED
+4. 100k Ohm resistor
+5. Breadboard
 7. Jumper wires
-
-(Same materials before, but instead of the BC547 we use a PNP BC557 transistor)
 
 Hook up:
 1. Connect the positive terminal of the 3.3V power source to one end of the breadboard and the negative terminal to the other end.
 2. Place the BC557 PNP transistor onto the breadboard, ensuring that its three pins are at three different breadboard lines.
-3. Connect the emitter of the BC557 transistor to the positive rail of the breadboard.
-4. Connect the collector of the BC557 transistor to the anode of the LED.
-5. Connect the cathode of the LED to GND.
+3. Note that on this component the emitter and the collector are switched. 
+4. Connect the emitter (right pin) of the BC557 transistor to the positive rail of the breadboard.
+5. Connect the collector (left pin) of the BC557 transistor to the anode of the LED.
+6. Connect the cathode of the LED to GND.
 7. Connect the base to the 100k resistor.
-8. Connect the other resistor end to the push button.
-9. Connect the other end of the push button to the positive rail of the breadboard.
 
 Demonstration: 
-1. With the setup completed, the LED should be off initially since the transistor is in cutoff mode (no base current).
-2. Press the push button to apply a positive voltage to the base of the BC557 transistor.
-3. When the base voltage is applied, the transistor turns on, allowing current to flow from the positive rail through the LED to the emitter, and then through the transistor to ground. The LED should light up.
-4. Release the push button to remove the base voltage, and the transistor will turn off, cutting off the current flow to the LED, causing it to turn off.
+With the setup completed, the LED should be off initially since the transistor is in cutoff mode (no base current).
+
+If we now connect a jumper from the GND to the resistor that is connected to the base, the IBE current is flowing, and the transistor becomes conductive between the emitter and the collector. Consequently, the LED lights up.  
 
 This demonstration showcases the high-side switching capability of the PNP transistor, allowing you to control the power to the LED from the positive side of the circuit.
 
 ## Level 10 - Induction 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eVgZzYufxYM?si=QIsAzOJly8kkJ2WE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 As we continue our journey through electronic components, we now turn our attention to the inductor. 
 
@@ -905,6 +911,7 @@ Hook up:
 - The diode that we included in this example is an optional safety measure. Inductive loads can create large voltage spikes in the reverse direction when suddenly disconnected from a power supply. To ensure that these reverse voltage spikes do not damage the LED, the diode has been inserted. A diode used in this way is referred to as a flyback diode.
 
 ## Level 11 - Crystal Oscillator 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vzjQmU-GNv4?si=1X2JoFycHLcP04Q4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Before we delve into examining model rocket flight computer circuits, it's crucial to grasp one last foundational technology: the basics of a microcontroller's timekeeping, the crystal oscillator.
 
