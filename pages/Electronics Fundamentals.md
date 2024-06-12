@@ -873,6 +873,35 @@ Ferromagnets are metals that become magnetic by applying a strong external magne
 
 We use inductors to store energy, to smoothen a current supply, or in company with a capacitor to create a stable DC from a switch mode power supply. When creating the layout, we must carefully consider their placement so that their magnetic field does not influence signal lines or integrated circuits, and so it isn't influenced by a magnetic field itself. 
 
+### Example
+In this demonstration, we'll explore how an inductor can continue to provide power to an LED even after disconnecting the power supply, utilizing the energy stored in the inductor's magnetic field.
+
+To build this circuit, we need the following components:
+1. A power source (5V)
+2. A breadboard
+3. A standard inductor (10mH)
+4. An LED (any color)
+5. A diode (1N4007 or similar, to protect the LED from reverse voltage)
+6. A resistor (220Ω, to limit the current to the LED)
+7. A push button
+8. Jumper wires
+
+Hook up:
+1. Connect the positive terminal of the power supply (5V) to one end of the breadboard.
+2. Connect the negative terminal (GND) to the other end of the breadboard.
+3. Place the inductor (10mH) into the breadboard, ensuring one of its leads is connected to the positive rail
+4. Connect the anode (longer lead) of the LED to the other end of the inductor.
+5. Connect the cathode (shorter lead) of the LED to one end of the 220Ω resistor.
+6. Connect the other end of the resistor to the negative rail (GND).
+7. Place the diode in parallel to the inductor, LED, and resistor. 
+
+
+- When we first connect the circuit to the power supply, the inductor will resist the change in current, and the LED will only slowly start to light up, as the inductor builds up its magnetic field. 
+- After some time the magnetic field is at its maximum, and the LED lights fully. 
+- When we disconnect the circuit from the power supply, the inductor will try to maintain the current flow due to its stored energy.
+- This will cause the LED to remain lit for a short period of time as the inductor releases its stored energy.
+- The diode that we included in this example is an optional safety measure. Inductive loads can create large voltage spikes in the reverse direction when suddenly disconnected from a power supply. To ensure that these reverse voltage spikes do not damage the LED, the diode has been inserted. A diode used in this way is referred to as a flyback diode.
+
 ## Level 11 - Crystal Oscillator 
 ### Lecture
 Before we delve into examining model rocket flight computer circuits, it's crucial to grasp one last foundational technology: the basics of a microcontroller's timekeeping, the crystal oscillator.
