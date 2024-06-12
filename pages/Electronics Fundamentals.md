@@ -827,6 +827,8 @@ The strength of the field decreases with increasing distance from the wire and i
 So, we have seen that current in a wire creates a concentric magnetic field around the wire.
 Conversely, a changing magnetic field can induce an electric current in a conductor. This process is known as electromagnetic induction.
 
+Let's assume we have a closed circular wire and a bar magnet. The magnetic field is constant when the magnet is stationary. However, if we move the magnet, the magnetic field the wire experiences changes. When moving the magnet away from the wire, the magnetic field decreases. Consequently, a current is induced in the wire. 
+
 One of the fundamental properties of a magnetic field is that it wants to remain steady. If we suddenly turn off our power supply, the magnetic field won't immediately be gone, as it wants to resist the change. Instead, it will slowly decrease. The magnetic field change leads to an induced current and voltage. The induction keeps the current flowing and induces a voltage, even though the supply is off.  
 
 On the contrary, if we were to turn on the current again, the whole current wouldn't immediately occur because the magnetic field first needs to build up. In this case, an induced current and voltage in the opposite direction would be present before the magnetic field builds up entirely.
@@ -844,7 +846,7 @@ The inductor.
 
 Often, the inductor features a metal core, which increases the inductance further. 
 
-The symbol of an inductor in circuit diagrams is typically represented as a series of loops or coils, reflecting its physical structure and function.
+The symbol of an inductor in circuit diagrams is typically represented as a series of loops, reflecting its physical structure and function.
 
 So, what are the use cases of the inductor that result from its properties?
 A capacitor wants to keep the voltage steady, while an inductor wants a persistent current flow.  
@@ -860,7 +862,7 @@ First of all, they are relatively spacious compared to capacitors. Further, the 
 Magnetic field lines are always present in a closed loop. Therefore, there can't be a single magnetic North or a South pole. 
 
 The interplay between electric charges and magnetic fields is called electromagnetism. 
-Moving electric charges create a magnetic field. For example, current flowing in a wire creates a concentrical electric field around the wire. 
+Moving electric charges create a magnetic field. For example, current flowing in a wire creates a concentrical magnetic field around the wire. 
 Further, if the magnetic field changes, current is induced in the wire. 
 
 A magnetic field always wants to remain steady and stores energy.
