@@ -72,73 +72,76 @@ How much voltage a cell creates depends on the standard potential, which is give
 A zinc/copper cell is usually not rechargeable. However, for rechargeable batteries, we connect a higher voltage to the two poles of the battery that pressure the materials to undo the previous reaction. 
 ## Level 2 - Battery Selection
 ### Lecture
-#### Battery Types
 Now that we understand the basic functioning of voltaic cells, we can discuss a few different battery types that are suitable for model rocketry. We will focus on the three most relevant ones:
 
 1. Lithium-Ion (Li-Ion)
 2. Lithium-Polymer (Li-Po)
 3. Nickel-Metal Hydride (NiMH)
 
-##### Lithium-Ion (Li-ion)
+Once you've learned about these three types, we'll explore how to select the appropriate battery for your project. Following that, we'll delve into other essential properties to consider when choosing a battery, such as capacity, number of cells, C-rating, and battery connector.
+
+#### Lithium-Ion (Li-ion)
 Lithium Ion batteries use a liquid electrolyte that facilitates the movement of lithium ions between the anode and the cathode. Remember: the electrolyte in our zinc copper cell was the sulfate solution that neutralized the charges on both sides. 
 
 The cathode in the Li-ion is typically lithium cobalt oxide, while the anode is often graphite. 
-- Li-ion have a nominal cell voltage of around 3.6V, which is the voltage at which the battery shall be stored
+- Li-ion has a nominal cell voltage of around 3.6V, at which we should store it when not used. 
 - A fully charged voltage of 4.2V, above which the battery suffers severe damage.
 - And fully discharged voltage of 2.5-3V below which the battery again suffers permanent damage. 
 
-Li-ion batteries were used for a long time already, and are present in many consumer devices today, such as laptops, mobile phones, and cordless screwdriver.
+Li-ion batteries have been used for a long time and are present in many consumer devices today, such as laptops, mobile phones, and cordless screwdrivers.
 
-It comes with the advantage of having a very high energy density, which means that it is able to store a lot energy in little volume and at a low weights. The low weight factor makes it a perfect option for model rocketry. Further, they are able to output very high currents.
+They come with the advantage of having a very high energy density. They can store a lot of energy in little volume and at a low weight. The low weight factor makes it a perfect option for model rocketry. Further, they can output very high currents.
 
-On the contrary Li-ion come most of the time in a cylindrical form factor, which may be inconvenient to use in model rockets. Further, they are expensive, and can be dangerous. They must be handled with care, as short circuit or a too high charging process may lead to them taking fire. 
+On the contrary, Li-ion mostly come in a cylindrical form factor, which may be inconvenient to use in model rockets. Further, they are expensive and can be dangerous. We must handle them carefully, as a short circuit or a too-high current in the charging process may lead to them taking fire. 
 
-##### Lithium Polymer (LiPo)
-Lithium polymer batteries are very similar to the lithium ion batteries. However, they use a solid polymer electrolyte instead of a liquid electrolyte. The electrons consist of the same materials, lithium cobalt oxide and graphite. 
+#### Lithium Polymer (LiPo)
+Lithium polymer batteries are very similar to lithium-ion batteries. However, they use a solid polymer electrolyte instead of a liquid electrolyte. The electrons consist of the same materials - lithium cobalt oxide and graphite. 
 
 This results in the same nominal, fully charged, and fully discharged voltages of 3.6V, 4.2V, and 3V. 
-They also come with the same benefit of having a high energy density, although Li-ion battery's energy density is slightly higher. The advantage of the LiPo battery is that it comes in many form factors, which make them convenient to implement in model rockets. Further, they are able to output very high currents just like Li-Ion batteries, which is why they are often used in drones or RC cars. The battery also comes with the same disadvantages, as being quite dangerous to use and expensive. 
+They also come with the same benefit of having a high energy density, although the Li-ion battery's energy density is slightly higher. The advantage of the LiPo battery is that it comes in many form factors, which make it convenient to implement in model rockets. Further, they can output very high currents like Li-Ion batteries, which is why they are often used in drones or RC cars. The battery also comes with the same disadvantages, as being quite dangerous to use and expensive. 
 
-##### Nickel-Metal Hydride (NiMH)
-Nickel-Metal Hydride batteries use a potassium hydroxide electrolyte solution, a hydrogen-absorbing alloy for the anode and nickel oxyhydroxide for the cathode. 
+#### Nickel-Metal Hydride (NiMH)
+Nickel-metal hydride batteries use a potassium hydroxide electrolyte solution, a hydrogen-absorbing alloy for the anode, and nickel oxyhydroxide for the cathode. 
 
 They have:
 - a nominal voltage of: 1.2V
 - a fully charged voltage of: 1.4V
-- a fully discharged voltage of: 1V
+- a fully discharged voltage of 1V
  
-These batteries come at the advantage of being more robust and less likely to suffer catastrophic failures like LiPo or Li-ion. They can tolerate overcharging with greater extent and are slightly less expensive. 
+These batteries come with the advantage of being more robust and less likely to suffer catastrophic failures like LiPo or Li-ion. They can tolerate overcharging to a greater extent and are slightly less expensive. 
 
-However, they have a lower energy density, meaning they are heavier and bulkier for the same amount of stored energy. There current output is mostly not as high as those of the lithium alternatives, but high enough to power the devices that we use in model rockets. 
+However, they have a lower energy density, meaning they are heavier and bulkier for the same amount of stored energy. Their current output is mostly not as high as the current output of the lithium alternatives but high enough to power the devices we use in model rockets. 
 
-In model rocketry they are good to use when robustness and safety are the highest priority. For people that haven't yet used batteries often, they are recommendable to be use. 
+In model rocketry, they are good to use when robustness and safety are the highest priority. They are recommended for users who are less experienced with batteries, providing a safer and more forgiving option.
 
-##### Type Selection
-All three types of batteries are good to use in model rocketry, as all three of them have a relatively high energy density and good current output. 
+#### Type Selection
+All three types of batteries are feasible to use in model rocketry, as they all have a relatively high energy density and sufficient current output. 
 
-Li-Ion are the best regarding energy density but come at the disadvantage of their cylindrical form factor. LiPo batteries are a slightly worse in energy density, but are available in all different forms. They are the battery type that we have used for all of our flight computers up to this point. However, both of them are dangerous to handle. We, for example, once forgot to deactivate the charger, which caused the LiPo battery to inflate almost to the point of explosion. We were very lucky at that point that no severe damage was caused. 
+Li-Ions are the best regarding energy density but come at the disadvantage of their cylindrical form factor.
 
-A safer alternative would be the NiMH, which is mor robust, can handle overcharges better, and is even cheaper. It comes at the disadvantage of lower, but still good energy density. NiMH are recommendable for all that aren't yet experienced with batteries. 
+LiPo batteries are slightly worse in energy density but are available in all different forms. We used them for all of our flight computers up to this point. However, we must handle both Li-Ion and Li-Po batteries carefully. We, for example, once forgot to deactivate the charger, which caused the LiPo battery to inflate almost to the point of explosion. We were lucky that no severe damage was caused. 
+
+A safer alternative would be the NiMH, which is more robust, can handle overcharges better, and is even cheaper. It comes at the disadvantage of lower, but still good energy density. They are highly recommendable for users who are less experienced with batteries, prioritizing safety and reliability in applications such as model rocketry.
 
 #### Capacity
-A major characteristic of a battery is its energy rating. It gives us an information about how much energy can be stored in the battery and is given in Ampere times hours. 
+An integral characteristic of a battery is its energy rating, which tells us how much energy it can store. This rating is known as capacity and is measured in Ampere-hours (Ah).
 
 A battery with a rated energy of 1 Ah has enough energy stored to provide 1 A of current for 1 h. If we discharge only 0.5A, a battery of only 0.5Ah could also supply our flight computer for one hour. 
 
 $C=I*t$ ... Capacity in A*h
 
-However, we should keep in mind that this is only a theoretical value. It gives us the absolute maximum energy that can be stored. In reality, for example, we should never discharge more than 80% of the capacity of a Li-Ion, LiPo, or NiMH, as a deep discharge, creates permanent damage that can lead to safety concerns on the lithium types, or to long-term performance drops on all types. 
+However, we should keep in mind that this is only a theoretical value. It gives us the absolute maximum energy that a battery can store. In reality, for example, we should never discharge more than 80% of the capacity of a Li-Ion, LiPo, or NiMH, as a deep discharge creates permanent damage. Further, it can lead to safety concerns on the lithium types and to long-term performance drops on all types. 
 
 #### Number of Cells
-LiPo and Li-Ion batteries have a nominal cell voltage of 3.7V while NiMH batteries have a nominal voltage of 1.2V. 
+LiPo and Li-Ion batteries have a nominal cell voltage of 3.7V, while NiMH batteries have a nominal voltage of 1.2V. 
 
-Most flight computers will need a higher voltage, to be able to control servos and pyro channels effectively. The cells we previously described can also be put in parallel and series. If we put cells in parallel, their capacities add up, while the voltage remains the same. If we put the cells in series, the voltage of the cells adds up, while the capacity remains the same. 
+Most flight computers will need a higher voltage to control servos and pyro channels effectively. A concept we haven't discussed yet is the arrangement of battery cells in parallel and series. If we put cells in parallel, their capacities add up, and the voltage remains the same. If we put the cells in series, the voltage of the cells adds up, and the capacity remains the same. 
 
-Batteries often feature multiple cells inside to increase the capacity and voltage. How much the voltage of a battery is, is given by the cell number. 
-A three-celled LiPo battery, for example, consist of three LiPo cells put in series. The whole battery pack has, therefore, a nominal voltage of 11.1V, a fully discharged voltage of 9V, and a fully charged voltage of 12.6V. By adjusting the number of cells or by changing battery types, we can acquire many different voltage ranges. 
+Batteries often feature multiple cells inside to increase the capacity and voltage. How much the voltage of a battery is is given by the cell number. 
+A three-celled LiPo battery, for example, consists of three LiPo cells put in series. The battery pack has a nominal voltage of 11.1V, a fully discharged voltage of 9V, and a fully charged voltage of 12.6V. By adjusting the number of cells or by changing battery types, we can acquire many different voltage ranges. 
 
 #### C-Rating
-Another important characteristic of the used battery is its C Rating. It is the rating of current the battery can be charged or discharged at. A rating of 1C would imply that a battery with a rated energy of 1Ah could be charged and discharged with 1A of current. The same C rating with a rated energy of 0.5Ah could only be charged and discharged at 0.5A of current. In conclusion this means that the charge/discharge current can be calculated through the C rating and the rated energy of the battery, using the following formula:
+Another vital characteristic of the used battery is its C Rating. It is the rating of the current the battery can be charged or discharged at. A rating of 1C would imply that a battery with a rated energy of 1Ah could be charged and discharged with 1A of current. The same C rating with a capacity of 0.5Ah could only be charged and discharged at 0.5A of current. In conclusion, this means that we can calculate the charge/discharge current through the C rating and the rated energy of the battery by using the following formula:
 
 $𝐼=𝐶_𝑟∗𝐸_𝑟$
 
@@ -146,107 +149,118 @@ $𝐼=𝐶_𝑟∗𝐸_𝑟$
 𝐶𝑟 … C Rating 1/h
 𝐸𝑟 … Rated Energy Ah
 
-The C-rating is another factor that we can selected when buying a battery. 
+The C-rating is another factor that we can select when buying a battery. 
 
 #### Connector
-The last aspect of the batteries are the connector with which we can connect them to our board. All battery connectors are polar, which ensures that they are connected in the right polarity and adds reverse polarity protection. 
+All battery connectors are polarized to ensure correct polarity during connection. This polarity alignment adds a layer of reverse polarity protection.
 
-The three most common battery connectors are the:
+The three most common battery connectors are the
 - T-Plug
 - EC3
 - and the XT60, or XT30 plugs
 
 The T-Plug is the most compact of the three. It can withstand a lot of current, although the other two plug types can withstand even more. 
 
-The EC3 and XT plugs have a bigger form factor, which leads to a more secure attachment and a higher current handling capability. The XT plugs are available in different sizes, while the larger XT60 is used most often, and come even in a horizontal configuration. 
+The EC3 and XT plugs have a more spacious form factor, which leads to a more secure attachment and a higher current handling capability. The XT plugs are available in different sizes, while the larger XT60 is used most often and comes even in a horizontal configuration. 
 
-Most importantly, there are female and male connectors of all three plug types, while the battery most often features the female connector. So, when designing our board, we have to use male connectors of the correct type to fit our battery. 
+Most importantly, there are female and male connectors of all three plug types, while the battery most often features the female connector. So, when designing our board, we must use male connectors of the correct type to fit our battery. 
 
 #### Summary
-When selecting the right battery, we must first decide on which battery type we want to use. 
-There are three types that are best suited for model rocketry:
+When selecting the battery, we must first choose the battery type.
+Three types are best suited for model rocketry:
 Li-Ion, Li-Po, and NiMH. 
-Li-Ion and Li-Po have a nominal voltage of around 3.6V, have high energy density, high current discharge capabilities, but are dangerous if not used correctly. 
-NiMH on the other hand have a voltage of around 1.2V, have a moderate energy density, and moderate current output capabilities, and are more robust, which makes them easier to use. 
+Li-Ion and Li-Po have a nominal voltage of around 3.6V, have high energy density, and have high current discharge capabilities, but are dangerous if not used correctly. 
+NiMH, on the other hand, have a voltage of around 1.2V, a moderate energy density, moderate current output capabilities, and are more robust, which makes them easier to use. 
 
-The capacity of a battery states how much energy it can store and is given in Ampere times hours. In reality we can only use around 80% of the capacity, as we would otherwise deep-discharge the battery. 
+The capacity of a battery states how much energy it can store and is given in Ampere times hours. In reality, we can only use around 80% of the capacity, as we would otherwise deep-discharge the battery. 
 
-The next factor when selecting the battery, is the cell number. A cell number of two means that two cells are put in series, which doubles the voltage and maintains the capacity. So, by selecting the cell number, we can select the voltage range at which our battery should operate. 
+The next factor when selecting the battery is the cell number. A cell number of two means that two cells are put in series, which doubles the voltage and maintains the capacity. So, by selecting the cell number, we can choose the voltage range at which our battery operates. 
 
-Then, there is the C-rating which states how much charge discharge current a battery can handle at a certain capacity. 
+Then, there is the C-rating, which states how much charge-discharge current a battery can handle at its capacity. 
 
 And finally, there are different battery connectors, such as the T-plug, EC3, and the XT plugs. Batteries most often feature the female plug, while we have to incorporate the male plug on our boards. 
 
 ## Level 3 - Voltage Regulation 
 ### Lecture 
-Our power supply is primarily based on batteries. It's important to note that a battery's voltage varies across its charging state; for example, a LiPo battery's voltage ranges from 12.6V when fully charged to 11.1V when discharged. Additionally, many integrated circuits require a specific voltage, such as 3.3V, and other components, like servos, are uniformly controllable using 5V.
+We primarily base our power supply on batteries. It's important to note that a battery's voltage varies across its charging state; for example, a LiPo battery's voltage ranges from 12.6V when fully charged to 11.1V when discharged. Additionally, many integrated circuits require a specific voltage, such as 3.3V, and other components, like servos, are uniformly controllable using 5V.
 
-The job of a voltage regulator is to provide these exact voltages. Mostly, they convert an input voltage to a lower output voltage, and in some cases, they can even perform the inverse. We mainly categorize voltage regulators into linear regulators (LDOs) and switching regulators. However, there is an even simpler form known as the "Shunt Regulator."
+The job of a voltage regulator is to provide these exact voltages. They convert an input voltage to a lower output voltage, or they can even perform the inverse. We mainly categorize voltage regulators into linear regulators (LDOs) and switching regulators. However, an even simpler form exists known as the "Shunt Regulator."
+
+At this level, we will look at all three voltage regulator versions. But before we do so, we will learn about the Zener diode to discuss the shunt regulator. 
+
+Up to this point, we have illustrated all the concepts and circuits on the whiteboard. From now on, we will draw up some of the schematics in a printed circuit board design software. The software we will use is Easy EDA. However, there are many more you could use, such as KiCAD, Eagle, or Altium. After you have learned about circuits for flight computer design, we will teach you how to use a PCB design software to create and order your own printed circuit board at the end of the course. However, in the following levels, we will focus on the circuits rather than the software. 
+
 #### Zener Diode 
-To understand the simplest form of a voltage regulator, we must first recall the functional principle of a diode. A diode allows current to flow in one direction if a forward voltage, typically around 0.7V for a silicon diode, is applied. This forward voltage overcomes the depletion region. In the reverse direction, the diode normally blocks current flow, as the reverse voltage enlarges the depletion region of the diode.
+To understand the simplest form of a voltage regulator, we must first recall the functional principle of a diode. A diode allows current to flow in one direction if a forward voltage, typically around 0.7V for a silicon diode, is applied. This forward voltage overcomes the depletion region. In the reverse direction, the diode typically blocks current flow as the reverse voltage enlarges the depletion region of the diode.
 
-However, we haven't yet discussed a special property of all diodes known as the breakdown voltage. While it's generally true that no current flows in reverse bias, this isn't entirely correct. Every diode can become conductive in its reverse direction if the applied reverse voltage exceeds a certain threshold, called the breakdown voltage. For standard diodes, the breakdown voltage is quite high, and reaching it causes immense currents to flow, which can permanently damage the diode.
+However, we haven't yet discussed a particular property of all diodes known as the breakdown voltage. While it's generally true that no current flows in reverse bias, this isn't entirely correct. Every diode can become conductive in its reverse direction if the applied reverse voltage exceeds a certain threshold, called the breakdown voltage. For standard diodes, the breakdown voltage is quite high, and reaching it causes immense currents to flow, which can permanently damage the diode.
 
-There is, however, a special type of diode known as the Zener diode, which is designed to have a low and well-defined breakdown voltage, called the Zener voltage. When the Zener diode reaches this voltage in reverse bias, it becomes conductive without being permanently damaged. This unique property allows Zener diodes to be used effectively in voltage regulation applications.
+There is, however, an extraordinary type of diode known as the Zener diode, which is designed to have a low and well-defined breakdown voltage, called the Zener voltage. When the Zener diode reaches this voltage in reverse bias, it becomes conductive without being permanently damaged. This unique property allows Zener diodes to be used effectively in voltage regulation applications.
+
 #### Shunt Regulator 
-We can use the Zener diode to create the simplest form of voltage regulators - the Shunt Regulator. To do so, we place a resistor in front of a Zener diode that is set in reverse-bias. On the left side, we have the input voltage. On the right side, we have a parallel load and the output voltage. The output voltage is determined by the Zener voltage.
+We can use the Zener diode to create the simplest form of voltage regulator - the Shunt Regulator. First, we place a resistor before a reverse biased Zener diode. On the left side, we have the input voltage. On the right, we have a parallel load and the output voltage. The Zener voltage determines the output voltage.
 
-Keep in mind that the Zener diode becomes conductive in reverse-bias if the applied voltage exceeds the Zener voltage. If only the Zener diode was present, an almost infinite current would flow. To prevent this from happening, we include a series resistor. The flowing current creates a voltage drop across the resistor, according to Ohm's law (𝑉=𝐼𝑅V=IR). The higher the current, the higher the voltage drop. If the current were too high, the voltage drop across the resistor would become excessive, and the voltage across the Zener diode would fall below the Zener voltage. Consequently, the flowing current reaches a balance with the voltage drop across the resistor, so the voltage across the Zener diode remains approximately at the Zener voltage. If the input voltage increases, the current flow increases, and the voltage drop across the series resistor increases as well. The Zener diode essentially clamps the output voltage to its Zener voltage.
+Recall that the Zener diode becomes conductive in reverse bias if the applied voltage exceeds the Zener voltage. If only the Zener diode is present, an almost infinite current flows. To prevent this, we include a series resistor. The flowing current creates a voltage drop across the resistor (V = IR). The higher the current, the higher the voltage drop. If the current becomes too high, the voltage drop across the resistor would become excessive, causing the voltage across the Zener diode to fall below the Zener voltage. As a result, the flowing current reaches a balance with the voltage drop across the resistor, maintaining the voltage across the Zener diode approximately at the Zener voltage. If the input voltage increases, the current flow increases and the voltage drop across the series resistor increases as well. Thus, the Zener diode essentially clamps the output voltage to its Zener voltage.
 
 The disadvantages of this regulator become apparent when examining the circuit:
 
-- The resistor must be selected properly. It must be large enough to limit the current flow to prevent burning out the Zener diode, and it must be small enough to avoid causing too much voltage drop.
+- The resistor must be selected properly. It must be large enough to limit the current flow to prevent burning out the Zener diode. Further, it must be small enough to avoid causing too much voltage drop.
 - If the output device draws high currents, the voltage drop across the resistor increases, which could result in too little voltage across the Zener diode, rendering it unable to clamp the voltage effectively.
-- If no current is drawn by the load, current must still flow through the diode, making this type of regulator inefficient.
+- If the load draws no current, it must still flow through the diode, making this type of regulator inefficient.
 
 Consequently, the shunt regulator is best suited for applications with steady, small current flows. High currents could cause the regulator to provide insufficient voltage. In any case, this type of regulator is inefficient as it regulates the voltage by dissipating excess voltage as heat over the series resistor.
 
 #### Linear Regulator
 A more advanced form of a voltage regulator is the linear regulator. 
-There are different forms of this regulator, however in its simplest form it regulates the voltage by controlling the resistance of a transistor based on the input voltage and the current draw. 
+There are different forms of this regulator. In its simplest form, it regulates the voltage by controlling the resistance of a transistor based on the input voltage and the current draw. 
 
-It its most basic form it consists of a NPN bipolar junction transistor (BJT). Its collector is connected to the input voltage and its emitter is collected the the output voltage. At the base we have Zener diode that is connected to the input side by a series resistor. This again creates a stable reference voltage at the base of the BJT. Additionally, the voltage drop from the base to the emitter is also always constant with around 0.7V. Therefore, the output voltage, is the Zener voltage minus the voltage drop across the base emitter. 
+It uses an NPN  bipolar junction transistor (BJT) in its rudimentary form. Its collector is connected to the input voltage, and its emitter is attached to the output voltage. At the base, we have a Zener diode connected to the input side by a series resistor. This diode again creates a stable reference voltage at the base of the BJT. The voltage drop from the base to the emitter is constant at around 0.7V. Therefore, the output voltage is the Zener voltage minus the voltage drop across the base-emitter. 
 
-This voltage regulator design is beneficial, as the current does not have to flow over the series resistor but instead can flow through the transistor to the load. Through that it is more efficient, as we are not losing as much energy through heat. For the transistor to be able to limit the current flow, it has to operate in the active region, where the resistance across emitter collector varies with the current that is flowing through the base into the emitter. 
+This voltage regulator design is beneficial, as the current does not have to flow over the series resistor but instead can flow through the transistor to the load. Through that, it is more efficient, as we are not losing as much energy through heat. For the transistor to limit the current flow, it operates in the active region, where the resistance across the emitter-collector varies with the current flowing through the base into the emitter. 
 
-Linear regulators, require the input voltage to be higher than the output voltage. The input voltage has to at least higher than the output voltage by the dropout voltage. 
-A special form of linear regulators, are the low dropout voltage regulators, so called LDOs. That compel by very low dropout voltages. 
+Most linear regulators require the input voltage to be higher than the output voltage. The input voltage has to be at least higher than the output voltage by the dropout voltage. 
+An extraordinary form of a linear regulator is the low dropout voltage regulator, the so-called LDO.
 
-A standard series of LDO's is the 78XX series. 
-Such an LDO, integrate a circuit like this into single component. 
+A standard series of LDOs is the 78XX series. 
+Such an LDO integrates a circuit like this into a single component. 
 A component that houses many elements inside is called an integrated circuit. 
 
-These kind of regulators take things a step further than the example that we discussed. 
+These kinds of regulators take things further than the example we discussed. 
 - They incorporate thermal protection. 
-- An internal voltage reference that is accurate over a large input voltage range and output current range. 
-- They achieve very stable outputs. 
-- And as mentioned earlier have a low drop out voltage. 
+- A voltage reference accurate over an enormous input voltage and output current range. 
+- They achieve very stable outputs.
+- And as mentioned earlier, have a low dropout voltage. 
 
 They can be bought in various forms, while the last two letters suggest the output voltage.
 A 7805, for example, would create an output voltage of 5Vs. 
-There, are also special forms that can create adjustable outputs, based on a resistor divider that is fed into the LDO. 
+There are also other forms that can create adjustable output voltage based on a resistor divider that fed into the LDO. 
 
-Linear regulators are commonly favored for their affordability, simplicity, and reliability, making them a popular choice for many applications. However, in scenarios requiring high currents and optimal efficiency, a superior alternative emerges: the switching regulator.
+Linear regulators are commonly favored for their affordability, simplicity, and reliability, making them popular for many applications. However, in scenarios requiring high currents and optimal efficiency, a superior alternative emerges the switching regulator.
 
 #### Switching Regulator
-The switching regulator too steps down the voltage, but it also increases the current. Therefore, the output power is approximately equal to the input power. The converter achieves this internally by a circuit featuring a transistor, a capacitor, and an inductor. The transistor switches the input on and off repetitively. According to the current needed on the output of the converter the duration in which the transistor is turned on increases or decreases. A capacitor smoothens the voltage, while a inductor smoothens the current. As a result, the switch converter has a way higher power efficiency than a linear voltage regulator, often going above 90 percent.
+The switching regulator also steps down the voltage. However, it also increases the current. Therefore, the output power is approximately equal to the input power. The converter achieves this internally by a circuit featuring a transistor, a capacitor, and an inductor. The transistor switches the input on and off repetitively. The on-duration increases or decreases according to the current needed on the converter output. 
 
-Switching Regulators are divide into three sub-categories. 
-The buck converters, the boost converters, and the buck-boost converters. 
-A buck converter is a switching regulator take steps down the voltage and increases the current. So, it converts a high input voltage to a lower output voltage, as the one I described previously. 
-The boost converter is exactly the opposite, it steps up the voltage while reducing the current. Through that a lower input voltage is converted to a higher output voltage. 
-The final form is a buck-boost converter, which is an adjustable voltage regulator and able to do both. 
+A capacitor smoothens the voltage, while an inductor smoothens the current. As a result, the switch converter has a way higher power efficiency than a linear voltage regulator, often going above 90 percent.
 
-There are many switching regulators from numerous manufacturers. All of them come with different advantages and disadvantages. Let's look at just one of them. The buck-converter LM2596S-5.0. The “-5.0” represents the fixed voltage that the regulator outputs. 
+Switching Regulators are divided into three sub-categories:
+Buck converters, Boost converters, and Buck-Boost converters. 
+
+- A Buck converter is a switching regulator that steps down the voltage and increases the current. So, it converts a high input voltage to a lower output voltage, like the one I described previously. 
+- The Boost converter is the opposite. It steps up the voltage while reducing the current. Consequently, it can convert a lower input voltage to a higher output voltage. 
+- The final form is a Buck-Boost converter, an adjustable voltage regulator that can do both. 
+
+There are many switching regulators from numerous manufacturers. All of them come with different advantages and disadvantages. 
+
+Before we continue to design and incorporate our first switching regulator into our power management circuit, let's first examine the IC that we will be using: the LM2596S-5.0 Buck Converter. Let's delve into a few major characteristics that are important when selecting a switching regulator, such as the passive component requirements, the switching frequency, the term ESR, and RMS. By the way, the 5.0 at the end of the name represents the fixed voltage that the regulator outputs.
 
 ##### Passive Components
-As most switching regulator ICs, this one also includes all active components that are needed to create a buck converter. However, we have to provide the passive components on the outside, as they are too large to be incorporated into the IC. These components are: capacitors on the input and output, an inductor, and a diode. 
+As with most switching regulator ICs, the LM2596S includes all active components needed to create a buck converter. However, we have to provide the passive components on the outside, as they are too large to be incorporated into the IC. These components are capacitors on the input and output, an inductor, and a diode. 
 
 ##### Switching Frequency
-If we look at its datasheet we find something that is called the switching frequency. It determines the speed at which the voltage is switched on and off. For this one it is 150kHz which is faster than the 52kHz of the LM2576. The faster switching frequency, the smaller the passive components can be. Remember, that the inductor wants to maintain steady current while the capacitor wants to maintain steady voltage. Those change resistances are time dependent, which means that if the time is very fast even smaller components can achieve the smoothing. 
+If we look at its datasheet, we find something that is called the switching frequency. It determines the speed at which the transistor switches the input voltage. It is 150kHz, which is faster than the 52kHz of the LM2576 (another switching regulator). The faster the switching frequency, the smaller the passive components can be. Remember that the inductor wants to maintain a steady current while the capacitor aims to maintain a persistent voltage. Those resistances to change are time-dependent, which means that if the time is very short, even smaller components can achieve the smoothing. 
 
 ##### ESR
-For the capacitor selection of a switching regulator, we have to look at the ESR (equivalent series resistance) of the capacitor. Ideally capacitors have no resistance, which would mean that an infinite current could flow when connecting a fully discharged capacitor to a voltage source. However, in reality every component has a series resistance, which we call the ESR.
+When selecting the capacitors for the switching regulator, we must look at the capacitor's ESR (equivalent series resistance). In an ideal world, capacitors have no resistance, which means an infinite current could flow when connecting a fully discharged capacitor to a voltage source. However, in reality, every component has a series resistance, which we call the ESR.
 
 If you recall the three main capacitor types, they feature very different typical resistance values: 
 - MLCCs: <0.015Ω
@@ -254,68 +268,85 @@ If you recall the three main capacitor types, they feature very different typica
 - Tantalum Capacitors: 1 - 3Ω
 
 ##### RMS
-Further there is the RMS (root mean square) current rating. The RMS current is the current flowing through the ESR (equal series resistance) of a capacitor causing a temperature rise of +10°C. It indicates the maximum continuous current that the capacitor can handle without exceeding its temperature limits. It's crucial for ensuring that the capacitor can withstand the current demands of the application without overheating. We should select capacitors with RMS current ratings that exceed the expected current levels to ensure reliability and longevity.
+Further, there is the RMS (root mean square) current rating. The RMS current is the current that flows through the ESR (equal series resistance) of a capacitor, causing a temperature rise of +10°C. It indicates the maximum continuous current that the capacitor can handle without exceeding its temperature limits. It's crucial to ensure that the capacitor can withstand the current demands of the application without overheating. We should select capacitors with RMS current ratings that exceed the expected current levels to ensure reliability and longevity.
 
+#### Summary
+So, there are many ways in which we can convert an input voltage. 
+
+The easiest way would be by a Zener diode and a resistor, which we call a Shunt Regulator. Conversely, this regulator type can only be used in continuous current applications with low currents, as the current always has to flow over the series resistor, which dissipates the excess voltage as heat. Further, this process is utterly inefficient. 
+
+Another way would be by using a linear regulator. A linear regulator uses a transistor in its active region to restrict current flow. Here, larger currents can flow as the current doesn't have to flow over a series resistor. Further, the linear regulator can conveniently manage a variable current flow by changing the resistance of the transistor. However, the resistance the transistor provides leads to energy loss through heat. This heat dissipation limits this type of regulator to a current supply of several amps and to moderate efficiencies.
+
+Finally, there are switching regulators, which not only change the voltage but also the current. Through that, the net power the regulator delivers remains constant. The switching regulator achieves this by switching the input power supply and, subsequently, smoothing the signal with a capacitor and an inductor to provide a stable output voltage. There are three types of switching regulators: Buck converters, which step down voltage; Boost converters, which step up voltage; and Buck-Boost converters, which can do both. 
+
+When designing a switching regulator circuit, we provide the passive components as they do not fit into an IC. When selecting the capacitors, we have to watch out for their ESR, their RMS ratings, and the voltages they can withstand. For the inductor and diode, we have to consider their allowed currents. 
 
 ## Level 4 - Regulator Circuit Design
-Now, back to the LM2596:
-Let's set up a voltage regulation circuit that converts a LiPo battery voltage down to 5V. 
-To do that we have to follow the “Application and Implementation” guide of the Texas Instruments LM2596 data sheet. 
+### Lecture
+As previously mentioned, we are now ready to incorporate our first switching regulator IC. For this, we will use the LM2596S-5.
 
-We have the select the input capacitor, output capacitor, inductor, and diode accordingly. 
+We will set up a voltage regulation circuit to convert a 3-cell LiPo battery, which has a voltage range of 9V to 12.6V, down to 5V. To achieve this, we will select the appropriate input capacitor, output capacitor, inductor, and diode according to the "Application and Implementation" guide in the Texas Instruments LM2596 datasheet.
+#### Input Capacitor
+First, we need to determine a suitable input capacitor. The input capacitor provides the LM2596 with instantaneous current each time the transistor switches on. When selecting the input capacitor, we must consider its RMS (root mean square) and voltage rating.
 
-##### Input Capacitor
-First, we have to determine a suitable input capacitor. The input capacitor provides the LM2596 with instantaneous current each time it is switched on. 
-For its selection the RMS (root mean square) current rating, and the voltage rating are most significant. As we can read from the datasheet, the RMS rating should at least be ½ of the DC load current (3A), following a minimum RMS current of 1.5A. The input voltage for an aluminum electrolytic capacitor should be 1.5 times higher than the maximum supply voltage, in our case 12.6V. So, it should have a voltage rating of 18.9V. 
+According to the LM2596 datasheet, the RMS rating of the input capacitor should be at least half of the DC load current, which is 3A in our case. Therefore, the minimum RMS current rating for the input capacitor should be 1.5A. 
 
-##### Output Capacitor
-Secondly, it's crucial to evaluate the output capacitor in switching regulator circuits. The output capacitor serves two main purposes: filtering the output voltage and maintaining stability in the regulator loop. Its most critical design factor is its Equivalent Series Resistance (ESR). This parameter should ideally be kept as low as possible to minimize output ripple. However, it's important to strike a balance, ensuring that the ESR isn't too low, which could potentially destabilize the feedback loop.
+The input voltage rating should be 1.5 times higher than the maximum supply voltage for an aluminum electrolytic capacitor. In our case, the maximum supply voltage is 12.6V, so the capacitor should have a voltage rating of at least 18.9V. The voltage rating of a capacitor gives the maximum voltage we can apply to the capacitor without it suffering damage. 
 
-In switching regulator circuits, where capacitors are commonly employed for filtering, the output ripple typically stems from the regulator's switching action, and is basically a slight periodic change in the output voltage. 
+#### Output Capacitor
+Now, we move on to the output capacitor selection selection. The output capacitor serves two purposes: filtering the output voltage and maintaining stability in the regulator loop. Its most critical design factor is its Equivalent Series Resistance (ESR). This parameter should be as low as possible to minimize output ripple. However, it is crucial to strike a balance, ensuring that the ESR isn't too low, which could potentially destabilize the feedback loop.
 
-As a capacitor type we will select an electrolytic capacitor, as the assumed temperatures of this flight computer’s applications will be above -25°C. Below this temperature a tantalum
-type capacitor would be preferable, as it is stated in the data sheet.
+In switching regulator circuits, the output ripple typically stems from the regulators' switching action and is a slight periodic change in the output voltage. 
 
-##### Inductor
-Third, the inductor was selected. Following the guide in the TI data sheet, the
-inductance needed is around 47μH. It also is stated that it is important to look
-out for a proper core material of the inductor, as cheap core materials can cause
-EMI (electromagnetic interference) in nearby PCB traces. Through a diagram in
-the datasheet, the approximate inductor ripple current can be evaluated. This data
-sheet is based on an input voltage range from 10 – 16V, and can, therefore, be
-used in this case. The maximum inductor ripple current is equal to around
-900mA at full load. And by using a formula included in the datasheet, the
-maximum output voltage ripple can be calculated.
+For this application, considering the expected operating temperatures of the flight computer above -25°C, an electrolytic capacitor is suitable. It offers adequate capacitance and performance for filtering purposes under normal operating conditions. However, if temperatures are anticipated to drop below -25°C, the LM2596 datasheet recommends using tantalum capacitors due to their superior characteristics at lower temperatures.
+
+#### Inductor
+As a third step, we are going to select the inductor. The TI implementation guide provides us with an inductor selection diagram for the LM2596-5.0. Here, we have the maximum load current on the X-axis and the maximum input voltage on the Y-axis. As we expect a maximum input voltage of 12.6V and want to pull the 3A maximum load current, we use an L40 inductor. TI provides us with a table below the graph with recommendations and inductor values. The L40 stands for an inductor of 33μH with a maximum current rating of 3.5A. 
+
+It also is stated that it is vital to look out for proper core material for the inductor, as cheap core materials can cause EMI (electromagnetic interference) in nearby PCB traces. 
+
+In a buck converter like the LM2596-5.0, during each switching cycle:
+When the switch is closed, current flows through the inductor, storing energy in its magnetic field. This causes the current through the inductor to rise.
+
+When the switch opens, the energy stored in the inductor's magnetic field causes the current to continue flowing, albeit now through the load and the diode. This causes the current through the inductor to decrease.
+
+The difference between the peak and valley of this current waveform is known as the inductor ripple current. It represents the alternating current flow through the inductor due to the switching action of the regulator.
 
 ![](/assets/images/Pasted%20image%2020240526110222.png)
+Through another diagram in the datasheet, we can evaluate the approximate inductor ripple current, which is 900mA at full load. 
+
+This current allows us to calculate the change in voltage across the capacitor, which is the ripple voltage.
 
 $Δ𝑈_{𝑂𝑈𝑇 }= Δ𝐼_{𝐼𝑁𝐷} ∗ 𝐸𝑆𝑅_{𝐶𝑜𝑢𝑡}$
 $Δ𝑈_{𝑂𝑈𝑇}$ … Output ripple voltage [V]
 $Δ𝐼_{𝐼𝑁𝐷}$ … Inductor ripple current [A]
 $𝐸𝑆𝑅_{𝐶𝑜𝑢𝑡}$ … Equal serial resistance of the output capacitor [Ω]
 
-This results in a voltage ripple of 0.9A* 0.094Ω = 84.6mV, which is acceptable.
+The calculated output voltage ripple of 84.6mV indicates the amplitude of the output voltage fluctuations. An 84.6mV output voltage ripple is a relatively small value. Whether this ripple is sufficiently small depends on the sensitivity of the components we intend to power. For example, a 3.3V regulator and a servo motor typically have tolerances that can accommodate such a small ripple without significant impact on their operation.
 
-##### Diode
-The fourth component we have to lay out is the catch diode. This diode is needed to
-provide the current with a way to flow back if the internal switch of the regulator
-is turned off. This ensures that the energy stored in the inductor during the on phase of the regulator's switching cycle is safely discharged and utilized by the load. Essentially, the catch diode allows the circuit to maintain continuity of current flow and prevent any abrupt changes or disruptions in the power delivery process. This diode has to work extremely fast and should have a minimal voltage drop. The ideal type of this diode is, therefore, a Schottky diode. Schottky diodes are known for their low amount of voltage that must be applied in forward bias to make them conductive. The diode chosen must also withstand the maximum current of 3A.
+#### Diode
+The fourth component we need to select is the catch diode. This diode is essential in the switching regulator circuit to provide a path for current when the internal switch of the regulator turns off. During the regulator's switching cycle, when the switch is closed, current flows through the inductor, storing energy in its magnetic field. When the switch opens, the energy stored in the inductor needs a path to discharge safely. 
 
-##### On/Off Functionality
-The flight computer features a designated on/off pin. Normally a switch would be interposed in one of the connections to the battery. This would mean that the switch itself must withstand a current as high as 3A, making the PCB heavier and more expensive. By using this on/off pin, only very little current is needed to turn/off and on the entire flight computer. Therefore, the currents the switch must withstand shrink massively. 
+The catch diode ensures continuity of current flow by allowing this energy to flow back to the load circuit. It prevents abrupt changes or disruptions in the power delivery process.
+
+The catch diode must respond quickly to the switching cycles of the regulator to maintain efficiency and stability. Ideally, the diode should have minimal voltage drop to minimize power loss and improve efficiency. Remember, the Schottky diode has a low voltage drop. Therefore, it will be the preferred choice here. The last parameter of the diode that we have to select is that it should be able to handle the maximum current of 3A.
+
+#### On/Off Functionality
+Another beneficial feature of this voltage regulator is that it features a designated on/off pin. Normally, we would interpose a switch on one of the connections to the battery. This switch must withstand a current as high as 20A, as the entire current of the PCB runs through the switch. 
+However, we can spare this heavy and expensive switch by using the on/off pin of the regulator. Instead of disconnecting the battery from the flight computer, we can turn off the regulator by attaching a switch to the switching regulator. 
 
 Additionally, a red LED is added to visualize the power state of the 5V line. This results in the final schematic for the 5V power regulation.
 
 #### Summary
-So there are many ways in which we can convert an input voltage, such as a LiPo battery voltage to a defined output voltage. 
+So, when designing a voltage regulation circuit, the first step is to select an appropriate regulator IC. Important characteristics of the IC selection are the output voltage, the input voltage range, the switching frequency, and the maximum output current. 
 
-The easiest way would be by using a Zener diode and a resistor, which we call a Shunt Regulator. Conversely, this type can only be used in continuous current applications with low currents, as the current always has to flow over the series resistor, which dissipates the excess voltage as heat. This process is extremely inefficient. 
+After we have selected the appropriate IC, it is crucial to follow the implementation guide, which we can find in the IC's datasheet. 
 
-Another way would be by using a linear regulator, which uses a transistor in its active region to restrict current flow. Here, larger currents can flow as the current doesn't have to flow over a series resistor. Further, variable current draws can also be conveniently managed with this type of regulator. However, the transistor itself provides some resistance, and due to that energy loss through heat, which also makes this type of regulator limited to a current supply of several amps and to moderate efficiencies.
-
-Finally, there are switching regulators that while changing the voltage also change the current. Through that the net power the regulator delivers remains constant. This is achieved by turning on and off the input power supply, and then smoothing the signal with a capacitor and an inductor to provide a stable output voltage. There are three forms. The buck converters that step down voltage, the boost converters that step up voltage, and the buck-boost converters that can do both. 
-
-When designing a switching regulator circuit, we have to provide the passive components as they do not fit into a integrated circuit. When selecting the capacitors we have to watch out for their ESR, their RMS ratings, and the voltages they can withstand. For the inductor and diode we have to consider their allowed currents. 
+In most cases, we must select the input and output capacitors, the inductor, and the diode. 
+When choosing the input capacitor, the RMS and the maximum voltage rating are most important. 
+When determining the the output capacitor, the ESR is the most essential characteristic and must strike a perfect balance. It shouldn't be too high or too low. 
+When selecting the inductor, we must pay attention to its inductance, current handling capabilities, and core material to prevent EMI. 
+And finally, for the diode, we will most often choose a Schottky diode. The diode must be able to withstand enough current. 
 
 ### Examples
 Zener Diode
