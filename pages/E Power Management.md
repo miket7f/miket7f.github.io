@@ -182,13 +182,11 @@ And finally, there are different battery connectors, such as the T-plug, EC3, an
 
 ## Level 3 - Voltage Regulation 
 ### Lecture 
-We primarily base our power supply on batteries. It's important to note that a battery's voltage varies across its charging state; for example, a LiPo battery's voltage ranges from 12.6V when fully charged to 11.1V when discharged. Additionally, many integrated circuits require a specific voltage, such as 3.3V, and other components, like servos, are uniformly controllable using 5V.
+We primarily base our power supply on batteries. It's important to note that a battery's voltage varies across its charging state; for example, a LiPo battery's voltage ranges from 12.6V when fully charged to 9V when discharged. Additionally, many integrated circuits require a specific voltage, such as 3.3V, and other components, like servos, are uniformly controllable using 5V.
 
 The job of a voltage regulator is to provide these exact voltages. They convert an input voltage to a lower output voltage, or they can even perform the inverse. We mainly categorize voltage regulators into linear regulators (LDOs) and switching regulators. However, an even simpler form exists known as the "Shunt Regulator."
 
-At this level, we will look at all three voltage regulator versions. But before we do so, we will learn about the Zener diode to discuss the shunt regulator. 
-
-Up to this point, we have illustrated all the concepts and circuits on the whiteboard. From now on, we will draw up some of the schematics in a printed circuit board design software. The software we will use is Easy EDA. However, there are many more you could use, such as KiCAD, Eagle, or Altium. After you have learned about circuits for flight computer design, we will teach you how to use a PCB design software to create and order your own printed circuit board at the end of the course. However, in the following levels, we will focus on the circuits rather than the software. 
+At this level, we will look at all three voltage regulator versions. But before we do so, we will learn more about the Zener diode to discuss the shunt regulator. 
 
 #### Zener Diode 
 To understand the simplest form of a voltage regulator, we must first recall the functional principle of a diode. A diode allows current to flow in one direction if a forward voltage, typically around 0.7V for a silicon diode, is applied. This forward voltage overcomes the depletion region. In the reverse direction, the diode typically blocks current flow as the reverse voltage enlarges the depletion region of the diode.
@@ -198,17 +196,19 @@ However, we haven't yet discussed a particular property of all diodes known as t
 There is, however, an extraordinary type of diode known as the Zener diode, which is designed to have a low and well-defined breakdown voltage, called the Zener voltage. When the Zener diode reaches this voltage in reverse bias, it becomes conductive without being permanently damaged. This unique property allows Zener diodes to be used effectively in voltage regulation applications.
 
 #### Shunt Regulator 
-We can use the Zener diode to create the simplest form of voltage regulator - the Shunt Regulator. First, we place a resistor before a reverse biased Zener diode. On the left side, we have the input voltage. On the right, we have a parallel load and the output voltage. The Zener voltage determines the output voltage.
+We can use the Zener diode to create the simplest form of voltage regulators - the Shunt Regulator. If we put a Zener diode with a Zener voltage of 5V in reverse bias in series to a voltage source of 12.6V, we would get an almost infinite current, as the voltage drop across the Zener diode remains constant at 5V and the resistance across the wire would have to dissipate the remaining 7.6V. 
 
-Recall that the Zener diode becomes conductive in reverse bias if the applied voltage exceeds the Zener voltage. If only the Zener diode is present, an almost infinite current flows. To prevent this, we include a series resistor. The flowing current creates a voltage drop across the resistor (V = IR). The higher the current, the higher the voltage drop. If the current becomes too high, the voltage drop across the resistor would become excessive, causing the voltage across the Zener diode to fall below the Zener voltage. As a result, the flowing current reaches a balance with the voltage drop across the resistor, maintaining the voltage across the Zener diode approximately at the Zener voltage. If the input voltage increases, the current flow increases and the voltage drop across the series resistor increases as well. Thus, the Zener diode essentially clamps the output voltage to its Zener voltage.
+To form a shunt regulator, we add a current limiting resistor in front of the Zener diode. Further, we attach the load in parallel to the Zener diode. Let's assume we have a 100 Ohm series resistor and a 500 Ohm load. We know that the Zener diode clamps the voltage to 5V. Therefore, the voltage drop across the load is also 5V. We can determine the flowing current over the resistor to be 10mA. Then we also know the voltage drop across the current limiting resistor to be 7.6V. Consequently, the maximum current this regulator can provide is 76mA. The difference in current the 76-10mA = 66mA must flow over the Zener diode.
 
-The disadvantages of this regulator become apparent when examining the circuit:
+If the load resistance changes to 100 Ohm, the flowing current would become 50mA, which would mean that only 26mA would flow through the diode. 
 
-- The resistor must be selected properly. It must be large enough to limit the current flow to prevent burning out the Zener diode. Further, it must be small enough to avoid causing too much voltage drop.
-- If the output device draws high currents, the voltage drop across the resistor increases, which could result in too little voltage across the Zener diode, rendering it unable to clamp the voltage effectively.
-- If the load draws no current, it must still flow through the diode, making this type of regulator inefficient.
+When the load resistance is reduced to 50 Ohms, the load draws 100mA, which is more than the current available from the current limiting resistor (76mA). This results in the Zener diode being unable to maintain its Zener voltage of 5V, causing the voltage across the load to drop below 5V.
 
-Consequently, the shunt regulator is best suited for applications with steady, small current flows. High currents could cause the regulator to provide insufficient voltage. In any case, this type of regulator is inefficient as it regulates the voltage by dissipating excess voltage as heat over the series resistor.
+The disadvantages of this regulator become apparent:
+- The resistor must be selected properly. It must be large enough to limit the current flow to prevent burning out the Zener diode. Further, it must be small enough to provide sufficient current to the load. If the current draw of the load is too high, the Zener diode can no longer maintain the regulated voltage. 
+- The remaining current that the load does not use is translated into heat over the Zener diode. Further, the excessive voltage is also discarded as heat over the current limiting resistor. Both aspects make this regulator type highly inefficient. 
+
+Consequently, the shunt regulator is best suited for applications with steady current flows. Too high currents could cause the regulator to provide insufficient voltage, while too small load currents would make the regulator highly inefficient.
 
 #### Linear Regulator
 A more advanced form of a voltage regulator is the linear regulator. 
@@ -222,7 +222,7 @@ Most linear regulators require the input voltage to be higher than the output vo
 An extraordinary form of a linear regulator is the low dropout voltage regulator, the so-called LDO.
 
 A standard series of LDOs is the 78XX series. 
-Such an LDO integrates a circuit like this into a single component. 
+Such an LDO integrates a circuit like this into a single component and only requires two external capacitors. 
 A component that houses many elements inside is called an integrated circuit. 
 
 These kinds of regulators take things further than the example we discussed. 
@@ -238,9 +238,9 @@ There are also other forms that can create adjustable output voltage based on a 
 Linear regulators are commonly favored for their affordability, simplicity, and reliability, making them popular for many applications. However, in scenarios requiring high currents and optimal efficiency, a superior alternative emerges the switching regulator.
 
 #### Switching Regulator
-The switching regulator also steps down the voltage. However, it also increases the current. Therefore, the output power is approximately equal to the input power. The converter achieves this internally by a circuit featuring a transistor, a capacitor, and an inductor. The transistor switches the input on and off repetitively. The on-duration increases or decreases according to the current needed on the converter output. 
+The switching regulator also steps down the voltage. However, it also increases the current. Therefore, the output power is approximately equal to the input power. The converter achieves this internally by a circuit featuring a transistor, capacitors, an inductor, and a diode. The transistor switches the input on and off repetitively. The on-duration increases or decreases according to the current needed on the converter output. 
 
-A capacitor smoothens the voltage, while an inductor smoothens the current. As a result, the switch converter has a way higher power efficiency than a linear voltage regulator, often going above 90 percent.
+A capacitor smoothens the voltage, while an inductor smoothens the current. The switch converter has a way higher power efficiency than a linear voltage regulator, often going above 90 percent.
 
 Switching Regulators are divided into three sub-categories:
 Buck converters, Boost converters, and Buck-Boost converters. 
@@ -285,21 +285,32 @@ When designing a switching regulator circuit, we provide the passive components 
 ### Lecture
 As previously mentioned, we are now ready to incorporate our first switching regulator IC. For this, we will use the LM2596S-5.
 
-We will set up a voltage regulation circuit to convert a 3-cell LiPo battery, which has a voltage range of 9V to 12.6V, down to 5V. To achieve this, we will select the appropriate input capacitor, output capacitor, inductor, and diode according to the "Application and Implementation" guide in the Texas Instruments LM2596 datasheet.
+We will set up a voltage regulation circuit to convert a 3-cell LiPo battery, which has a voltage range of 9V to 12.6V, down to 5V. To achieve this, we follow the "Application and Implementation" guide in the Texas Instruments LM2596 datasheet.
+
+The first thing we look up in the datasheet is the typical application diagram that we can find on page 23. As we can see, the external components we will need are: an input capacitor, an output capacitor, an inductor, and a diode. 
+
+We can see that the regulator has a total of five pins. 
+We connect the GND pin to GND. For the LM2596 to be active later on, we have to connect the ON/OFF pin to GND. We attach our battery voltage to the input pin of the Buck converter. We add the input capacitor, which shall provide the switching regulator with instantaneous current each time it switches on. Then, we connect the output pin to our 5V line, add a second capacitor for smoothening the output voltage, and an inductor for filtering the output current. Further, we implement a diode before the inductor. Now, the inductor's current has a path to flow during the off-phase of the switching regulator. Finally, we connect the feedback pin to the output voltage. Through this pin, the regulator is able to improve the stability of the output voltage. 
+
+Now, that we have placed all the components, we have to select the component's properties to be suitable for the regulator design. 
 #### Input Capacitor
-First, we need to determine a suitable input capacitor. The input capacitor provides the LM2596 with instantaneous current each time the transistor switches on. When selecting the input capacitor, we must consider its RMS (root mean square) and voltage rating.
+Let's begin with the input capacitor. The input capacitor provides the LM2596 with instantaneous current each time the transistor switches on. When selecting the input capacitor, we must consider its RMS (root mean square) and voltage rating.
 
 According to the LM2596 datasheet, the RMS rating of the input capacitor should be at least half of the DC load current, which is 3A in our case. Therefore, the minimum RMS current rating for the input capacitor should be 1.5A. 
 
 The input voltage rating should be 1.5 times higher than the maximum supply voltage for an aluminum electrolytic capacitor. In our case, the maximum supply voltage is 12.6V, so the capacitor should have a voltage rating of at least 18.9V. The voltage rating of a capacitor gives the maximum voltage we can apply to the capacitor without it suffering damage. 
 
+So, our capacitor should have a RMS current of at least 1.5A, should withstand a voltage of at least 18.9V, and should have a capacitance of 680 uF according to the datasheet. 
 #### Output Capacitor
 Now, we move on to the output capacitor selection selection. The output capacitor serves two purposes: filtering the output voltage and maintaining stability in the regulator loop. Its most critical design factor is its Equivalent Series Resistance (ESR). This parameter should be as low as possible to minimize output ripple. However, it is crucial to strike a balance, ensuring that the ESR isn't too low, which could potentially destabilize the feedback loop.
 
 In switching regulator circuits, the output ripple typically stems from the regulators' switching action and is a slight periodic change in the output voltage. 
 
-For this application, considering the expected operating temperatures of the flight computer above -25°C, an electrolytic capacitor is suitable. It offers adequate capacitance and performance for filtering purposes under normal operating conditions. However, if temperatures are anticipated to drop below -25°C, the LM2596 datasheet recommends using tantalum capacitors due to their superior characteristics at lower temperatures.
+For this application, considering the expected operating temperatures of the flight computer above -25°C, an electrolytic capacitor is suitable. However, if temperatures are anticipated to drop below -25°C, the LM2596 datasheet recommends using tantalum capacitors due to their superior characteristics at lower temperatures.
 
+An ESR value of the aluminum electrolytic capacitor is related to the capacitance value and its voltage rating. In most cases, higher voltage electrolytic capacitors have lower ESR values. Often, capacitors with much higher voltage ratings can be required to provide the low ESR values required for low output ripple voltage.
+
+For now we will take a capacitor with an ESR of 94mOhm. We will see whether or not this is sufficient after we have selected the inductor. As indicated in the datasheet, the capacitance value should be 220uF. Further, the capacitor should at least withstand the output voltage of 5V. The one that we selected withstands a voltage of 16V.  
 #### Inductor
 As a third step, we are going to select the inductor. The TI implementation guide provides us with an inductor selection diagram for the LM2596-5.0. Here, we have the maximum load current on the X-axis and the maximum input voltage on the Y-axis. As we expect a maximum input voltage of 12.6V and want to pull the 3A maximum load current, we use an L40 inductor. TI provides us with a table below the graph with recommendations and inductor values. The L40 stands for an inductor of 33μH with a maximum current rating of 3.5A. 
 
@@ -322,12 +333,12 @@ $Δ𝑈_{𝑂𝑈𝑇}$ … Output ripple voltage [V]
 $Δ𝐼_{𝐼𝑁𝐷}$ … Inductor ripple current [A]
 $𝐸𝑆𝑅_{𝐶𝑜𝑢𝑡}$ … Equal serial resistance of the output capacitor [Ω]
 
-The calculated output voltage ripple of 84.6mV indicates the amplitude of the output voltage fluctuations. An 84.6mV output voltage ripple is a relatively small value. Whether this ripple is sufficiently small depends on the sensitivity of the components we intend to power. For example, a 3.3V regulator and a servo motor typically have tolerances that can accommodate such a small ripple without significant impact on their operation.
+This results in an voltage ripple of 84.6mV. An 84.6mV output voltage ripple is a relatively small value. Whether this ripple is sufficiently small depends on the sensitivity of the components we intend to power. For example, a 3.3V regulator and a servo motor typically have tolerances that can accommodate such a small ripple without significant impact on their operation.
 
 #### Diode
 The fourth component we need to select is the catch diode. This diode is essential in the switching regulator circuit to provide a path for current when the internal switch of the regulator turns off. During the regulator's switching cycle, when the switch is closed, current flows through the inductor, storing energy in its magnetic field. When the switch opens, the energy stored in the inductor needs a path to discharge safely. 
 
-The catch diode ensures continuity of current flow by allowing this energy to flow back to the load circuit. It prevents abrupt changes or disruptions in the power delivery process.
+The catch diode ensures continuity of current flow by allowing this energy to flow back to the load circuit. 
 
 The catch diode must respond quickly to the switching cycles of the regulator to maintain efficiency and stability. Ideally, the diode should have minimal voltage drop to minimize power loss and improve efficiency. Remember, the Schottky diode has a low voltage drop. Therefore, it will be the preferred choice here. The last parameter of the diode that we have to select is that it should be able to handle the maximum current of 3A.
 
@@ -353,3 +364,5 @@ Zener Diode
 Shunt Regulator 
 L7805
 LM2596
+
+Up to this point, we have illustrated all the concepts and circuits on the whiteboard. From now on, we will draw up some of the schematics in a printed circuit board design software. The software we will use is Easy EDA. However, there are many more you could use, such as KiCAD, Eagle, or Altium. After you have learned about circuits for flight computer design, we will teach you how to use a PCB design software to create and order your own printed circuit board at the end of the course. However, in the following levels, we will focus on the circuits rather than the software. 
