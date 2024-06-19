@@ -129,9 +129,7 @@ Firstly, let's distinguish between serial and parallel bus protocols. In a seria
 
 I2C utilizes two essential lines: the Serial Data Line (SDA) and the Serial Clock Line (SCL) pulled up by resistors to prevent undefined states. The clock line is there to synchronize the timing of the different devices, as they might vary slightly per used crystal. 
 
-There is always one master and one or more slaves. The master produces the serial clock line and initiates the communication. The slaves listen to the serial data line and receive the clock line.
-
-Let's say we have a microcontroller to which sensors are connected through I2C. Every component has its 7-bit I2C address. Now, let's look at what such a communication would look like.
+There is always one master and one or more slaves. The master produces the serial clock line and initiates the communication. The slaves listen to the serial data line to determine whether or not they are addressed and receive the clock line to synchronize with the master. Every component has its 7-bit I2C address, through which the master can indicate with which slave it wants to communicate with. 
 
 The master continuously produces the timing on the serial clock line. Its frequency determines the speed of the transmission, and there are different modes of operation. 100 kbits/s would correspond the standard I2C mode, while 400 kbit/s would correspond to the fast mode. There are even faster modes, but remember: the faster the frequency, the easier it is to smoothen the data curve. At high frequencies, even a small capacitor can smooth the curve, and if we have a smooth signal, no communication can occur. At fast enough frequencies, even the capacitance of the wire itself can be enough to disrupt the communication. 
 
