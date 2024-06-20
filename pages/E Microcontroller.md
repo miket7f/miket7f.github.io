@@ -228,134 +228,180 @@ Temperature Measuring Device with Button - with Interrupt
 
 ## Level 5 - Specific Microcontrollers
 ### Lecture
-Now, with all the microcontroller basics out of the way, let's look at three specific microcontroller examples. But before we do so, let's talk about breakout boards and on-PCB design.
+Now, with all the microcontroller basics out of the way, let's look at three specific microcontroller examples. But before we do so, let's talk about breakout boards, modules, and on-PCB design.
 #### Breakout vs Embedded Microcontroller
 We can implement a microcontroller into our flight computer in one of three ways. 
 
-The first way would be to use a third-party breakout board. Breakout boards are ready to use microcontrollers, where all the necessary components are already pre installed. The breakout board most often features a voltage regulator which provides the exact 3.3V needed, has an integrated crystal oscillator which provides the microcontroller with accurate timing, and incorporates a chip (a USB to UART bridge) for proper communication between the PC and microcontroller. Further, it features a pin header for easy access of the microcontroller pins and has the bootloader pre-installed. 
-This implementation is easiest, as those breakout boards can be used out of the box. An Arduino Uno, an ESP32 Dev Module, or a Teensy, would all be examples of such breakout boards. The processor that they incorporate are from different companies. An Arduino Uno, for example, features an ATMEGA16 microcontroller. The disadvantage is the increased weight, as we have an additional PCB, and pin rows. Further, it is not as reliable as the connection between the pins could be error prone. However, it is very beginner friendly, and if we came to just damage the microcontroller it could be replaced more easily. 
+The first way would be to use a third-party breakout board. Breakout boards are ready-to-use microcontrollers where all the necessary components are already pre-installed. The breakout board most often features a voltage regulator that provides the exact 3.3V needed, has an integrated crystal oscillator that provides accurate timing for the microcontroller, and incorporates a chip (a USB to UART bridge) for proper communication between the PC and microcontroller. Further, it features a pin header for easy access to the microcontroller pins and has a pre-installed bootloader. This implementation is most straightforward, as we can use those breakout boards out of the box. An Arduino Uno, an ESP32 Dev Module, or a Teensy 4.1 are all examples of such breakout boards. The processors that they incorporate are from different companies. An Arduino Uno, for example, features an ATMEGA16 microcontroller. The disadvantage is the increased weight, as we have an additional PCB and pin rows. Further, it is not as reliable as the connection between the pins could be error-prone. However, it is very beginner-friendly, and if we came to damage the microcontroller, we could replace it more easily. 
 
-The second way would be by using a so called module. A famous example is the ESP32-Wroom module, which we will look at. This module can be directly implemented on our own PCB and spares as a few steps compared with a full microcontroller implementation. Such a module internally features a crystal for timing, has a pre-installed bootloader, has extra FLASH memory, and a Bluetooth antenna. In this case we only have to be concerned with the USB to UART bridge, for programming, and the power management of the microcontroller. 
+The second way would be by using a so-called module. A famous example is the ESP32-Wroom module, which we will look at. This module can be directly implemented on our own PCB and spares us a few steps compared with a full microcontroller implementation. Such a module internally features a crystal for timing, has a pre-installed bootloader, has extra FLASH memory, and a Bluetooth antenna. In this case, we only have to be concerned with the USB to UART bridge for programming and the power management of the microcontroller. 
 
-The final way would be an onto the PCB embedded microcontroller. In this case we have to do all the implementation ourselves. We have to select a proper crystal, have to establish the USB to UART bridge, provide proper power management, and sometimes have to install the Bootloader. Additional functionalities like Bluetooth and WIFI, must also be implemented by us, which requires antenna design and RF matching. We will look at this kind of implementation by using an STM32 microcontroller. This method allows us to adjust our design to our needs to the maximum degree, and results in the most lightweight PCBs, as we can decide which features we want to incorporate and which we want to exclude. 
+The final way would be onto the PCB-embedded microcontroller. In this case, we have to do all the implementation ourselves. We have to select a proper crystal, establish the USB to UART bridge, provide power management, and sometimes have to install the Bootloader. Additional functionalities, like Bluetooth and WIFI, must also be implemented by us, which requires antenna design and RF matching. We will look at this kind of implementation by using an STM32 microcontroller. This method allows us to adjust our design to our needs to the maximum degree and results in the most lightweight PCBs, as we can decide which features we want to incorporate and which we desire to exclude. 
+
+#### Summary
+To summarize:
+There are breakout boards, microcontroller modules, and plain on-PCB microcontrollers. 
+Breakout board microcontrollers are ready out of the box without the need for any further integration. They incorporate voltage regulation, crystal oscillators for proper timing, sometimes add memory such as Flash and RAM, and handle microcontrollers to PC communication. These microcontrollers are the most straightforward to implement but the least flexible. 
+Examples: Arduino Uno, ESP32 Dev Module, Teensy.
+
+Microcontroller modules are similar but require us to do the power management and create the connection between the microcontroller's UART protocol and the PC's USB protocol through a USB-to-UART bridge. Yet, these modules integrate memory sources, a crystal oscillator, and functionalities like Wi-Fi and Bluetooth.
+These microcontrollers are still relatively easy to implement but come with the advantage of a more flexible integration, leading to a more lightweight design. 
+Example: ESP32-Wroom module.
+
+Finally, the plain on-PCB microcontrollers require us to do the entire implementation. From the power management, the crystal oscillator, the USB-to-UART bridge, the addition of memory sources, or even RF antenna design, we must do all aspects ourselves. However, they also allow for the most flexible implementations, as we can choose from numerous microcontroller chip lines and are free to omit any features we won't use.
+Example: STM32 line of microcontrollers.
+
+In summary, breakout boards are the easiest to use but least customizable; microcontroller modules offer a balance of ease and flexibility; and plain on-PCB microcontrollers provide the highest level of customization at the cost of increased complexity in implementation.
 
 ## Level 6 - Teensy 4.1
-A famous breakout board line of microcontrollers are the Teensys from PJRC. 
-They are known for their fast processing speeds, and are compatibility with the Arduino IDE, an easy to use programming environment for microcontrollers.
+### Lecture
+We are going to examine one example of each type of microcontroller implementation over the following levels. For each type, we will look at their features and their implementation. By the end of this section, you will have an understanding of how to implement anything from a breakout board microcontroller to a microcontroller on the PCB.
+
+We will start with the simplest method of all three: the breakout board, specifically the Teensy 4.1. 
+
+#### Features
+A famous breakout board line of microcontrollers is the Teensy line of microcontrollers from PJRC. They are known for their fast processing speeds and are compatible with the Arduino IDE, an easy-to-use microcontroller programming environment.
 
 Let's specifically look at their Teensy 4.1, which is their newest microcontroller and a powerhouse for flight computers. 
 
-The Teensy 4.1 incorporates a Cortex-M7 microcontroller, which runs at a clock speed of 600MHz. With the processing power this microcontroller provides, you can achieve almost any goal in model rocketry. It run our program over a thousand times per second, and is the fastest of all microcontrollers we will discuss here. 
-Regarding peripherals it is an outstanding option. If we look at the pinout, we can see that there are countless (55) GPIO pins, a lot of PWM pins (32), and 18 analog input pins. Further, there are several bus interfaces, such as 3 I2C, 3 SPI, and 8 UART. The Teensy 4.1 almost certainly has the pin you will need. 
+The Teensy 4.1 incorporates a Cortex-M7 microcontroller, which runs at a clock speed of 600MHz. This clock speed is around 300 times that of the Apollo guidance computer. So, with this processing speed, you can achieve almost any goal in model rocketry. It ran our program over a thousand times per second and is the fastest of all microcontrollers we will discuss here. 
 
-What is also special, is that the Teensy 4.1 already implements an on-board SD card to which we can store flight data. An SD card is actually nothing more than a Flash memory with a specific form factor. 
+Regarding peripherals, it is an outstanding option. If we look at the pinout, we can see countless (55) GPIO pins, lots of PWM pins (32), and 18 analog input pins. Further, it incorporates several bus interfaces, such as 3 I2C, 3 SPI, and 8 UART bus systems. The Teensy 4.1 almost certainly has the pin you will need. 
+
+Another notable feature of the Teensy 4.1 is its onboard SD card slot, which allows for convenient flight data storage. Interestingly, an SD card is just a form of Flash memory tailored to a specific physical format. 
 
 If the SD card storage or the internal Flash or RAM of the Teensy 4.1 aren't enough, we can add up to two QSPI Flash memory chips or two 8MB PSRAM chips to the bottom of the board.
 
-QSPI stands for quad serial peripheral interface, and is an advanced form of SPI, which we discussed previously. It has four (quad) data lines, which enables way higher transfer speed, which allows for several times faster reading/writing speeds. 
+QSPI stands for quad serial peripheral interface and is an advanced form of SPI, which we discussed previously. It has four (quad) data lines, which enables way higher transfer speed, which allows for several times faster reading/writing speeds. 
 
-PSRAM. Is a pseudo-static RAM. We can use an additional chip like this to outsource large variable arrays to this temporal storage to be able to quickly process data in real-time applications. This could be beneficial, for example, to process camera information. 
+PSRAM is a pseudo-static RAM. We can use an additional chip like this to outsource large variable arrays to this temporal storage for real-time data processing. This memory addition could be beneficial, for example, to process camera information. 
 
-The Teensy 4.1 is an outstanding option if you are looking for a microcontroller with outstanding processing speed, countless GPIO pins, and an easy project integration. 
+The Teensy 4.1 is an outstanding option if you are looking for a microcontroller with incredible processing speed, countless GPIO pins, and easy project integration. 
 
-##### Implementation
-To implement a breakout board microcontroller in your project not much is required. The only thing you have to provide is the power supply. Often, like in the case of the Teensy 4.1, these boards even feature their own voltage regulator on board. In the case of the microcontroller we could provide input voltage from 3.3 - 5V. So, by simply connecting VIN to 5V and GND ports to GND, the microcontroller can be up and running. 
+#### Implementation
+Implementing a breakout board microcontroller in your project, such as the Teensy 4.1, is straightforward. The only thing you have to provide is the power supply. Often, like in the case of the Teensy 4.1, these boards even feature their voltage regulator. In the case of the Teensy 4.1 microcontroller, we could provide input voltage from 3.3 - 5V. So, by simply connecting VIN to 5V and GND ports to GND, the microcontroller is up and running. 
 
-Now, the only task left to do, is to connect our sensors and outputs to the appropriate pins of the microcontroller. Here, a pin out can be highly useful, which indicates what can be used for which purposes. Let's look at it pinout, then we can see that we can use pin 1 for PWM control, as well as the transmitter for the UART protocol, indicated by TX1. Pin 12, could be used to as one of the SPI pins (the MISO pin) or again as a PWM pin. All pins in this pinout can be used as regular GPIO pins. 
+Now, the only task left to do is to connect our sensors and outputs to the appropriate pins of the microcontroller. Here, a pinout can be highly useful. The pinout indicates which pins we can use for which purposes. Let's look at the Teensy's pinout. Here, we can see that we can use pin 1 for PWM control or the transmitter for the UART protocol, indicated by TX1. We could use pin 12 as one of the SPI pins (the MISO pin) or again as a PWM pin. Further, we can use all pins as regular GPIO pins. 
+
+#### Summary
+So, in summary:
+The Teensy 4.1 offers a supreme processing speed of 600MHz and can do almost any calculation. Further, it adds countless GPIO pins, PWM pins, and bus protocols. This microcontroller will almost certainly have the pin you need. The onboard SD card slot simplifies data logging.
+
+Finally, the implementation is very straightforward and only requires us to provide the board with power and to connect our sensors and outputs to the appropriate pins of the microcontroller. To do so, we can look up the pinout most breakout board manufacturers will provide. 
 
 ## Level 7 - ESP32
-An example of microcontroller modules are the ESP32-WROOM line of modules. Specifically, we will be looking at the ESP32-WROOM32E-N8. 
+### Lecture 
+In this lecture, we will examine another way of microcontroller implementation - the microcontroller module. We will specifically take a look at the ESP32-Wroom module and its implementation. By doing so, we will learn about the USB to UART bridge. 
+#### Features
+An example of microcontroller modules is the ESP32-WROOM line of modules. Specifically, we will be looking at the ESP32-WROOM32E-N8. 
 
-An ESP32-WROOM module incorporates a 40MHz crystal oscillator, an QSPI Flash memory chip, and RF matching circuits. They are known for their Bluetooth and WIFI capabilities, which they incorporate inside the enclosure, and are also programmable using the Arduino IDE. 
+An ESP32-WROOM module incorporates a 40MHz crystal oscillator, a QSPI Flash memory chip, and RF matching circuits into a single module. They are known for their Bluetooth and WIFI capabilities, which they incorporate inside the enclosure, and are also programmable using the Arduino IDE. 
 
-In the WROOM line of ESP32 microcontroller there are different build forms, which are indicated by the letter after the WROOM32. The main difference in build forms is that there are modules that already incorporate the antenna (E) and ones that incorporate a UFL connector to which a antenna must be connected (UE). The -N8 at the end suggests how large the incorporated QSPI Flash memory is, in our case 8MB. Further there are module variants that indicate -N8R2, which suggests the same flash memory size and an additional PSRAM of 2MB. 
+In the WROOM line of the ESP32 microcontroller, there are different build forms - indicated by the letter after the WROOM32. The main difference in build forms is that some modules already incorporate the antenna (E) while others include a UFL connector to which an antenna must be connected (UE). The -N8 at the end suggests how large the incorporated QSPI Flash memory is (in our case, it is 8MB). Further, there are module variants with the ending -N8R2, which suggests the same flash memory size and an additional PSRAM of 2MB. 
 
-This ESP32 variant has two CPUs that can both run at up to 240MHz. Additionally, it features a low-power co-processor that can be used for trivial tasks. 
+This ESP32 variant has two CPUs that can run at up to 240MHz. Additionally, it features a low-power co-processor that we can use for trivial tasks. 
 
-The used microcontroller inside the module would feature 48 GPIO pins. However, only 25 are broken out to the module. All of them can be used as PWM pins.  It features 15 12-bit resolution ADC analog input pins and it even features 2 analog output channels to create real analog voltages with the help of a 8-bit DAC. 
+The used microcontroller inside the module would feature 48 GPIO pins. However, the module only breaks out 25 of them. We can use all of those as PWM pins. Further, the module features 15 12-bit resolution ADC analog input pins, and they even feature two analog output channels to create analog voltages with the help of an 8-bit DAC. 
 
-It has 2 UART, 3 SPI, 1 I2C, and 3 special I2S buses. I2S is similar to I2C and stands for inter integrated sound. Those bus systems are very useful to control chips for stereo sound or microphone inputs. 
+It has 2 UART, 3 SPI, 1 I2C, and 3 unique I2S buses. I2S is similar to I2C and stands for inter-integrated sound. Those bus systems are utterly valuable to control chips for stereo sound or microphone inputs. 
 
-The ESP32 WROOM modules, are perfect for projects in which we require easy connectivity, such as Bluetooth or WIFI. They are a little bit more difficult to implement than a breakout board microcontroller, but still rather seamless to integrate. They feature a descent amount of GPIO pins and processing power, and excel at projects with low power consumption. Their sleep currents can be less than 5uA. 
+The ESP32 WROOM modules are perfect for projects that require easy connectivity, such as Bluetooth or WIFI. They are more challenging to implement than a breakout board microcontroller but still seamless to integrate. They feature a decent amount of GPIO pins and processing power and excel at projects with low power consumption. Their sleep currents can be less than 5uA. 
 
-To use ESP32 WROOM modules, we have to provide them with power, and we have to establish the connection between the microcontroller and our programming device. 
+For those who want to spare themselves the trouble of implementing the module, you can also use an ESP32 Dev module, which features this ESP32-WROOM-32E module as a breakout board. 
 
-##### USB to UART bridge
-Now we have ask how a computer communicate can communicate with our microcontroller. 
-You are for sure familiar with USB, and you might think of it as solely being the connector. 
-However, USB actually stands for "Universal Serial Bus", which clarifies that USB is also the communication protocol with which our laptops and PCs communicate with their devices, such as keyboards, mouses, and much more. 
+#### USB to UART bridge
+Now, it's time to implement such a microcontroller module.
+The first question we have to answer is how a computer can communicate with our microcontroller. You are probably familiar with USB, and you might think of it as solely being the connector. However, USB stands for "Universal Serial Bus," which clarifies that USB is the communication protocol with which our laptops and PCs communicate with their devices, such as keyboards, mice, and much more. 
 
-The USB bus additionally provides the devices with power. It consists of a host (our PC) and multiple peripheral slaves (our devices). It can communicate at very high speeds, depending on the used protocol. USB 3.1, for example, can reach transfer speeds of up to 10 Gbps (gigabits per second). Further, it is very complex protocol, able to do multiple transfer modes, and device enumeration. Their connectors a standardized, and common ones are: USB-C, micro-USB, and USB type A. 
+The USB bus additionally provides the devices with power and consists of a host (our PC) and multiple peripheral slaves (our devices). It can communicate at very high speeds, depending on the protocol. USB 3.1, for example, can reach transfer speeds of up to 10 Gbps (gigabits per second). Further, it is a very complex protocol, able to do multiple transfer modes and device enumeration. Their connectors are standardized. Common ones are USB-C, micro-USB, and USB type A. 
 
-Now, let's recall the UART (universal asynchronous transmitter receiver) protocol.
-As we discussed previously, it is one of the protocols with which our microcontroller communicates. It's speed is given by the Baud rate, where common values are 9600-115200 (bits per second), magnitudes less than the speed of the USB protocol. The UART protocol is only intended for communication between two devices, without a master/slave system. 
+Now, let's recall the UART (universal asynchronous transmitter-receiver) protocol. As we discussed previously, it is one of the protocols with which our microcontroller communicates. Its speed is given by the Baud rate, where standard values are 9600-115200 (bits per second), magnitudes less than the speed of the USB protocol. The UART protocol is intended for communication between two devices only, without a master/slave system. 
 
-Okay, so a computer commonly communicates by USB, while a microcontroller communicates with the UART protocol. While both are serial protocols, we have seen that they differ in significant ways, which explains why we need a device that translates between USB and UART. 
+Okay, a computer commonly communicates by USB, while a microcontroller communicates with the UART protocol. While both are serial protocols, we have seen that they differ significantly, which explains why we need a device that translates between USB and UART. 
 
-For us to upload code from a PC to a microcontroller. We, therefore, need a USB to UART bridge. 
-Two famous ones are the CP2102 and the CH340. 
+For us to upload code from a PC to a microcontroller, we need a USB to UART bridge. Two famous ones are the CP2102 and the CH340. 
 
-The CP2102 is the more expensive one. It emulates a USB device, which is immediately recognized by the PC as soon as we connect to it. To upload code through this bridge, we do not have to install any drivers or what so ever, and it simply works out of the box. 
+The CP2102 is the most expensive one. It emulates a USB device, which the PC immediately recognizes when we connect it. We do not have to install drivers to upload code through this bridge. Instead, it simply works out of the box. 
 
-A CH340, on the other hand, is cheaper, but needs a driver in order for the PC to recognize the device. 
+A CH340, on the other hand, is cheaper but needs a driver for the PC to recognize the device. 
+#### Implementation 
+With the basics of the USB-to-UART bridge out of the way, it is time to implement such a module.
 
-##### Implementation 
-Implementing a microcontroller module like the ESP32 is a little trickier than implementing a breakout board. Yet, it is still relatively easy to do. 
+First, we have to provide power to the VDD pins. This time, we have to provide a regulated voltage of 3.3V. Although, it could theoretically also range from 3V to 3.6V. 
 
-We have to again provide power to the VDD pins. However, this time we have to provide a regulated voltage of 3.3V. 
+We also have to provide the RESET and BOOT functionalities manually. The RESET pin is needed to restart the program while the microcontroller is still powered. If the RESET (Enable) pin is pulled high, the microcontroller is in normal operation, while if it is pulled low, the microcontroller is resetting. We connect this reset pin to 3.3V with a pull-up resistor and a button, which connects the EN pin to GND when needed. As buttons tend to bounce when pressed, which is an unintended oscillation of a button's electrical contacts, we also add a capacitor in parallel that filters these spikes that are inconvenient for the microcontroller. 
 
-We also have to provide the RESET and BOOT functionalities manually. The RESET pin is needed to be able to restart the program, while the microcontroller is stilled provided with power. If the RESET (Enable) pin is pulled high, the microcontroller is in normal operation, while if it is pulled low the microcontroller is resetting. We connect this reset pin to 3.3V by a pull-up resistor and to a button that can connect the EN pin to ground when needed. As buttons tend to bounce when pressed, which is an unintended oscillation of a button's electrical contacts. Consequently, we also add a capacitor in parallel that filters these spikes that are inconvenient for the microcontroller. 
-
-The ESP32 will enter the serial bootloader when GPIO0 is held low on reset. Remember the bootloader is the part of the program the microcontroller can enter after start up, which allows us to connect to the microcontroller in order to program it. Therefore, we also connect a button the BOOT pin to ground, and add a capacitor to prevent button bouncing. If the button is not pressed the microcontroller will simply run the program that is currently on the flash, and if it is pressed we have a small time window in which we can program the device.
+The ESP32 will enter the serial bootloader when the boot pin (GPIO0) is held low on reset. Remember, the bootloader is the part of the program the microcontroller can enter after start-up, which allows us to connect to the microcontroller to program it. Therefore, we also connect a button from the BOOT pin to the ground and add a capacitor to prevent the button from bouncing. If the button isn't pressed, the microcontroller will default to run the program, currently on the flash, and if it is, we have a small time window to program the device.
 
 Further, we have to implement a USB to UART bridge, which we connect to the TXD0 and RXD0 pins of the microcontroller. 
 
-Here, we used the CH340, which is a little bit more straightforward to implement than the CP2102. For both we have to first look at their datasheet, and their connection diagrams. We connect the UART pins of the microcontroller to one side of the IC, while we connect the data pins of the USB port to other pins of the IC. We also have to provide the IC with regulated 3.3V power, and some filtering capacitors as indicated in the datasheet. We also connect the USB port to VUSB, as we can take the 5V of the USB line to power the board when connected.
+Here, we used the CH340, which is more straightforward to implement than the CP2102. For both, we look up their datasheets, specifically their connection diagrams. We connect the UART pins of the microcontroller to one side of the IC while we connect the data pins of the USB port to other pins of the IC. We also have to provide the IC with regulated 3.3V power and some filtering capacitors, as indicated in the datasheet. We also connect the USB port to VUSB, as we can take the 5V of the USB line to power the board when connected.
 
-There are two more pins the RTS and DTR which we connected to the USB-TO-UART bridge. 
-These are essential to indicate to the microcontroller that we automatically want to reset and boot the microcontroller to upload code. The PC basically communicates to the USB-TO-UART bridge that we want to upload code now, and by a special transistor circuit these two signals trigger the RESET and the BOOT pins accordingly. The transistor schematic behind it takes to much time to understand in this lecture's context. Just remember that this circuit exists and that you should implement it as soon as you want auto-programming functionality for your flight computer by just one click in your programming environment. 
+There are two more pins: the RTS and DTR, which we connected to the USB-TO-UART bridge. These are essential to indicate to the microcontroller that we automatically want to reset and boot the microcontroller to upload code. The PC communicates to the USB-TO-UART bridge that we want to upload code now, and by a transistor circuit, these two signals trigger the RESET and the BOOT pins accordingly. The transistor schematic behind it takes too much time to understand in this lecture's context. Remember that this circuit exists and that you should implement it as soon as you want auto-programming functionality for your flight computer with just one click in your programming environment. 
+#### Summary
+In this lecture, we explored microcontroller modules, focusing on the ESP32-WROOM module, specifically the ESP32-WROOM32E-N8 variant. These modules are renowned for integrating a 40MHz crystal oscillator, QSPI Flash memory, and RF matching circuits into a single module. They excel in providing Bluetooth and WiFi connectivity and are programmable using the Arduino IDE.
+
+The ESP32-WROOM32E-N8 features dual CPUs running at up to 240MHz along with a low-power co-processor. It offers 48 GPIO pins with 25 broken out to the module, extensive peripheral support including UART, SPI, I2C, and I2S buses, and analog capabilities such as 15 ADC pins and 2 DAC channels.
+
+Implementing an ESP32 module requires providing regulated 3.3V power. Additionally, managing the reset and boot functionalities involves adding buttons to the RESET and BOOT pins and pull-up resistors. When the RESET pin receives a low signal, the microcontroller resets. Pressing the BOOT button after powering up puts the microcontroller into bootloader mode, allowing code uploads. Further, we add a capacitor to prevent the button-bouncing.
+
+Furthermore, integrating a USB-to-UART bridge like the CH340 or CP2102 is essential for programming and communication with a PC. Finally, a transistor circuit allows for auto-uploading code from our programming environments without manually pressing the reset and boot buttons. 
 
 ## Level 8 - STM32
-The final type of microcontroller implementation is that of plain microcontrollers. Two famous lines of microcontroller are the ATMEGA and the STM32 lines. The ATMEGA microcontrollers are commonly implemented in Arduino boards, while the STM32 microcontrollers are heavily used in the industry. Here we will describe the STM32 line of microcontrollers. 
+### Lecture
+We will take things further and implement a plain microcontroller chip at this level. This implementation is the final and most advanced form, and a slight error in your design can easily lead to the entire PCB being dysfunctional. 
 
-There are hundreds of different STM32 chips available, which makes this line of microcontrollers special. There is almost certainly the perfect STM32 microcontroller for every project out there. There are Bluetooth and WIFI variants, variants with numerous GPIO pins, as well as low power and and high speed versions. 
+The implementation of microcontroller chips varies greatly by the used chips. Two famous lines of the microcontroller are the ATMEGA and the STM32 lines. The ATMEGA microcontrollers are commonly implemented in Arduino boards, while the STM32 microcontrollers are heavily used in the industry. Here,we will describe the STM32 line of microcontrollers. 
 
-The amount of options makes the use of those microcontrollers highly saleable. Further, they are known for their robustness, and can be used in critical applications. 
+We will use the STM32 line of microcontrollers. Therefore, we will learn about a few STM32-specific topics, such as their programming interface (serial wire debug) and pin configuration software - the STM32 MX tool. 
 
-Let's look at a specific version of the STM32 the: 
+#### Features
+The STM32 line of microcontrollers stands out due to its extensive range of options. There is almost certainly the perfect STM32 microcontroller for every project out there. There are Bluetooth and WIFI variants, variants with numerous GPIO pins, and low-power and high-speed versions. 
+
+The amount of options makes the use of those microcontrollers highly scaleable. Further, they are known for their robustness, and we can rely on them in critical applications. 
+
+#### Naming Convention
+Let's look at a specific version of the STM32: 
 STM32F722RET6
-The naming might be rather confusing, but there a scheme behind the naming that is true for all the STM32s. If we want to work with these microcontroller it can be highly useful to become familiar with their naming conventions. 
+The naming might be confusing, but it follows the same scheme for all the STM32s. If we want to work with this microcontroller, we should familiarize ourselves with their naming conventions. 
 
-- F7: indicates the used processor. All STM32s use Cortex-M processors. The F stands for the line of STM32. Where F is either a foundation or a high performance variant, G would stand for a mainstream variant, L stands for a low-power version, and H stands for a high performance variant. The 7 stands for a Cortex-M7 processor, which is the highest performance core there is on Cortex processors. This one has a clock speed of 216MHz. 
+- F7: indicates the used processor. All STM32s use Cortex-M processors. The F stands for the line of STM32. Where F is either a foundation or a high-performance variant, G would stand for a mainstream variant, L stands for a low-power version, and H stands for a high-performance variant. The seven stands for a Cortex-M7 processor, which is the highest performance core there is on Cortex processors. This one has a clock speed of 216MHz. 
 - The next two digits indicate the microcontroller line. 
-- The following R stands for the number of pins this microcontroller breaks out. R corresponds to 64 or 66 pins. The one with the least pins is F with only 20 pins and the one with the most is I with 176 pins.
-- The next number or letter: E stands for the flash memory size. In our case E stands for 512Kbytes. You may think that 512Kybtes is very little memory compared to the 8MBytes the ESP32 uses. However, we program the STM32 line with their own tool, which allows to save tremendous amounts of storage. In our case the 512Kbytes where more than enough. 
-- The next one stands for the package of the microcontroller. T stands for LQFP. The package is basically the form factor of the chip. There are variants were the pins are at the bottom of the chip an inaccessible, while there are versions with broken out pins like LQFP. 
-- And last there is the temperature range at which the chip is functional. 6 indicates a range of -40 to +85°C. 
+- The following R represents the number of pins this microcontroller breaks out. R corresponds to 64 or 66 pins. The microcontroller version with the fewest pins is F, with only 20 pins, and the one with the most is I, with 176 pins.
+- The subsequent number or letter stands for the flash memory size. In our case, E stands for 512Kbytes. You may think 512Kybtes is very little memory compared to the 8MBytes the ESP32-WROOM-32E-N8 uses. However, we program the STM32 line with their tool, which allows us to save tremendous amounts of storage. In our case, the 512Kbytes were more than enough. 
+- The next one stands for the package of the microcontroller. T stands for LQFP. The package is the form factor of the chip. There are variants where the pins are at the bottom of the chip and inaccessible, while there are versions with broken-out pins like LQFP. 
+- Finally, there is the temperature range in which the chip is functional. 6 indicates a range of -40 to +85°C. 
 
-The meaning behind all the numbers can be looked up at DigiKey: 
+DigiKey provides a page that outlines the meaning of all the numbers to look up. 
 https://www.digikey.at/de/maker/tutorials/2020/understanding-stm32-naming-conventions?utm_adgroup=STMicroelectronics&utm_source=google&utm_medium=cpc&utm_campaign=Dynamic%20Search_EN_Supplier&utm_term=&productid=&utm_content=STMicroelectronics&utm_id=go_cmp-9415055229_adg-98040915040_ad-668047754589_dsa-459571002621_dev-c_ext-_prd-_sig-Cj0KCQjwpNuyBhCuARIsANJqL9NuQjvpgdRDj_jcrQFeAt_oQAfYkwKz_4l5YTTlH_azxBfwnVOBTP0aAnACEALw_wcB&gad_source=1&gclid=Cj0KCQjwpNuyBhCuARIsANJqL9NuQjvpgdRDj_jcrQFeAt_oQAfYkwKz_4l5YTTlH_azxBfwnVOBTP0aAnACEALw_wcB
 
-The implementation of an STM32 based microcontroller is still a little bit more advanced then the two have looked at before. 
-To see how its done, let's devise the implementation of the STM32F722RET6 we discussed previously. 
+#### Implementation
+The implementation of an STM32-based microcontroller is more advanced than the two we have looked at before. 
+To see how we can do it, let's devise the implementation of the STM32F722RET6 we discussed previously. 
+
+The implementation will consist of 
+- the power management
+- the programming interface (serial wire debug)
+- the configuration pins
+- the oscillator design
+- and the pin assignment using their MX tool
 
 ##### Power Management
-On this IC there are a few more pins which we have to provide with power. We can look up how exactly the power supply should look like by viewing the hardware development guide that ST provides for all there STM microcontrollers. For this one we have to look at the STM32F7 AN4661. 
+On this IC, there are a few more pins that we have to provide with power. We can look up how exactly the power supply should look by viewing the hardware development guide that ST provides for all their STM microcontrollers. For this one, we have to look at the STM32F7 AN4661. 
 
-First of all there are the standard VDD pins for the digital logic of the IC. We have to provide those pins with a voltage of 3.3V and a capacitor of 100nF per pin each, which will vary by package. Additionally, we should add a 4.7uF bulk capacitor for the VDD voltage line. 
+First of all, there are the standard VDD pins for the digital logic of the IC. We provide those pins with a voltage of 3.3V and a capacitor of 100nF per pin each, which will vary by package. Additionally, we add a 4.7uF bulk capacitor for the VDD line. 
 
-The voltage supply for the analog VDDA pins, needs special treatment to improve the ADC's stability and accuracy. To do so the 3.3VDD is implemented on one side with a 1uF capacitor and the 3.3VDDA voltage is implemented with a 1uF and a 10nF capacitors. The two circuits are connected by a ferrite bead, of which you probably didn't yet here about. Ferrite beads are specialized inductors used primarily for filtering high-frequency noise in electronic circuits. A ferrite bead is used in this case to electrically separate the two supply voltages, and to make the analog voltage cleaner.
+The voltage supply for the analog VDDA pins needs special treatment to improve the ADC's stability and accuracy. We create a circuit with the 3.3VDD on one side and add a 1uF capacitor. We add the 3.3VDDA line on the other side and a 1uF and 10nF capacitors. We connect the two circuits by a ferrite bead, which you probably haven't yet heard about. Ferrite beads are specialized inductors that are used primarily for filtering high-frequency noise in electronic circuits. In this case, we utilize the ferrite bead to electrically separate the voltages and to make the analog voltage cleaner.
 
-The next voltage pin we must look at is the VCAP1 pin. This pin is needed for the internal voltage regulator that creates an even stabler voltage for the internal components of the IC. On other STM32F7 this internal regulator could be bypassed. However, on this particular one the regulator is always enabled. To ensure proper functioning of the regulator, we have to provide the controller with a capacitor on the VCAP1 pin. It is important to pay attention to the ESR (equivalent serial resistance) value of the capacitor in this case to only be between 0.1 and 0.2 Ohms!
-The voltage regulator creates a voltage of 1.2V, which should be measurable on the VCAP pin.
-To do the job, I selected two 0402 Samsung 4.7uF capacitors (CL05A475MP5NRNC) that show a proper ESR characteristic in their datasheet that I found on Mouser.
+The next voltage pin we must look at is the VCAP1 pin. The microcontroller needs this pin for the internal voltage regulator that creates an even stabler voltage for the internal components of the IC. On other STM32F7 versions, we can bypass this internal regulator. However, on this particular one, the regulator is always enabled. To ensure the proper functioning of the regulator, we have to provide the controller with a capacitor on the VCAP1 pin. It is crucial to select the capacitor's ESR (equivalent serial resistance) value to fall between 0.1 and 0.2 Ohms.
+The internal voltage regulator creates a voltage of 1.2V, which we should be able to measure on the VCAP pin.
 
-The final pin of the power supply VBAT is not used in our case. It would be in case we wanted to keep real-time clock measurements, such as time of day, day, or month, etc. In this case we would connect a cell button cell that continuously supplies the microcontroller with power. In our case it is not used. In this case, it is recommended to connect it to the standard 3.3VDD line. 
+We don't use the final pin of the power supply VBAT. We would only need this pin in case we wanted to keep real-time clock measurements, such as time of day, day, month, etc. In this case, we would connect a button cell that continuously supplies the microcontroller with power. As we don't use this pin, we connect it to the standard 3.3VDD line. 
 
 ##### Serial Wire Debug (SWD)
-To program an STM32, we do not have to provide the USB to UART bridge ourselves. Instead, there are programming devices, such as the ST-Link V2, which allow us to program any STM32. The programmer connects to the microcontroller by either JTAG or serial wire debug (SWD) and to the PC by USB. 
+To program an STM32, we do not have to provide the USB to the UART bridge ourselves. Instead, we use programming devices such as the ST-Link V2 to program any STM32. The programmer connects to the microcontroller by either JTAG or serial wire debug (SWD) and to the PC by USB. 
 
-JTAG has a total of 20 pins, while SWD uses only four. As we want to minimize weight and PCB real-estate in flight computer design, we will be using the SWD interface which consists of the following four pins: 
+JTAG has a total of 20 pins, while SWD uses only four. As we want to minimize weight and PCB real-estate in-flight computer design, we will be using the SWD interface, which consists of the following four pins: 
 
 - **SWDIO (Serial Wire Debug Data Input/Output):** This is the bidirectional data line used for communication between the debugger and the target microcontroller.
 - **SWCLK (Serial Wire Debug Clock):** This is the clock line used to synchronize the data communication.
@@ -365,40 +411,40 @@ JTAG has a total of 20 pins, while SWD uses only four. As we want to minimize we
 SWD supports full debugging capabilities, including setting breakpoints, stepping through code, inspecting variables, and modifying memory. It also allows for programming the Flash memory of the microcontroller.
 
 ##### Configuration Pins
-Similarly to the ESP32, we also have to provide the STM32 with information whether it shall reset, or whether it shall enter the bootloader upon power up. 
+Similarly to the ESP32, we provide the STM32 with information on whether it shall reset or enter the bootloader upon power-up. 
 
-The NRST pin corresponds to the reset pin in this scenario. The reset happens when this pin is connected to GND. In normal operation it can either be left floating or pulled-up to 3.3V through a pull-up resistor. (Though, the pin is already pulled high internally). Often a capacitor is added between the NRST pin and GND to add EMS (electromagnetic susceptibility) protection and avoid parasitic resets. When using the SWD interface, a program reset via the NRST pin is not actually necessary, since SWD bypasses the bootloader and can reset and flash the MCU directly.
+The NRST pin corresponds to the reset pin in this scenario. The reset happens when we connect this pin to GND. To put the microcontroller in regular operation, we leave the reset pin floating or pull it up to 3.3V through a pull-up resistor. In fact, the IC pulls up the NRST pin internally. So, we don't have to add anything here. Often, a capacitor is added between the NRST pin and GND to add EMS (electromagnetic susceptibility) protection and avoid parasitic resets. When using the SWD interface, a program reset via the NRST pin is not actually necessary since SWD bypasses the bootloader and can reset and flash the MCU directly.
 
-There's also a BOOT pin on the STM32. However, when programming via the SWD interface the bootloader can be bypassed and does not have to be accessed in this way. Yet, if I would want to flash the chip via USB through a USB-TO-UART bridge, I would have to pull BOOT0 high after a reset to enter the internal bootloader. Which internal bootloader (RAM vs system memory) is used depends on the state of BOOT1 on other MCUs, and is configured through software on the F7 series, as the BOOT1 pin is not implemented here. To keep our options open, I recommend to use a tactical switch on the BOOT0 pin that would pull it high with a pull-down resistor that normally pulls BOOT0 low. 
+There's also a BOOT pin on the STM32. However, when we program the microcontroller via the SWD interface, the bootloader is bypassed. Still, if we want to flash the chip via USB through a USB-TO-UART bridge, we would have to pull BOOT0 high after a reset to enter the internal bootloader. To keep our options open, I recommend using a tactical switch on the BOOT0 pin, which pulls it high, with a pull-down resistor that pulls BOOT0 low. 
 
 ##### Oscillator Design 
-Something we also didn't yet have to provide for the microcontroller is the clock source. The clock source for the STM32F7 must fall between 4-26MHz in order for the microcontroller to function. To make a proper oscillator, we also have to attach two capacitors, which are called load capacitors. Load capacitors are capacitors connected to the terminals of a crystal oscillator. They form part of the resonant circuit that determines the oscillator’s frequency. The correct selection of load capacitors is essential for stable and accurate frequency operation.
+Something we also didn't yet provide for the microcontroller is the clock source. The clock source for the STM32F7 must fall between 4-26MHz in order for the microcontroller to function. To establish a reliable oscillator circuit, we need to include two capacitors known as load capacitors. Load capacitors are capacitors connected to the terminals of a crystal oscillator. They form part of the resonance circuit that determines the oscillator frequency. The correct selection of load capacitors is essential for stable and accurate frequency operation.
 
-Let's select a 12MHz crystal which falls between the stated frequency range in the datasheet. The selected crystal also states the external load capacitance it would like to see, which in this case was given by 20pF. 
+Let's select a 12MHz crystal that falls between the stated frequency range in the datasheet. The crystal we selected states the external load capacitance it would like to see, which was given by 20pF. 
 
 Now, there is a rough estimation formula with which we can determine the capacitances of the two capacitors in order for the circuit to work:
 
 $C = 2*(C_{load} - C_{stray})$
 
-The stray capacitance gives the unwanted capacitance of a circuit, and depends the PCB layout and the input capacitance of the oscillator pins.
-For most designs it roughly falls between:
+The stray capacitance gives the unwanted capacitance of a circuit and depends on the PCB layout and the input capacitance of the oscillator pins.
+For most designs, it roughly falls between:
 $C_{stray} = 3 - 5pF$  
 
-When now assuming a stray capacitance of 5pF and by inserting in the formula above we get a value of 30pF for the capacitors that we shall implement. Now we have to chose the next highest available capacitor size which would be 33pF.
+When assuming a stray capacitance of 5pF and inserting in the formula above, we get a value of 30pF for the capacitors that we shall implement. Now, we have to choose the next highest available capacitor size: 33pF.
 
-Just like that our oscillator design, provides our microcontroller with periodic timing information on which it can base its bus protocols, PWM signals and more. 
-##### STM32 CubeIDE MX
-To set up and program the STM32, we don't use the Arduino IDE, but instead use their provided software STM32 CubeIDE. Within this tool, we can write our code, upload the code to our microcontroller by connecting it through a ST-Link, and are able to debug our code live. 
+Just like that, our oscillator design provides our microcontroller with periodic timing information on which it can base its bus protocols, PWM signals, and more. 
 
-There is a CubeIDE MX tool inside the environment that allows us to set up the pins and the used clock during the development process. It graphically shows us which pin function we can assign to which pin, and makes as aware of any conflicts. 
+##### STM32 Cube IDE MX
+To set up and program the STM32, we don't use the Arduino IDE but instead use their provided software - the STM32 Cube IDE. Within this tool, we can write our code, upload code to our microcontroller by connecting it through an ST-Link, and debug our code live. 
 
-So, as you have seen the STM32 line of microcontrollers is very different to the ones we discussed before. They have to be implemented in a very different way, are programed in a different environment, and can be debugged. There is variants for almost any application and they are very robust.  
+There is a Cube IDE MX tool inside the environment, allowing us to set up the pins and the used clock during the development process. It graphically shows us which pin function we can assign to which pin and makes us aware of any conflicts. 
+
+So, as you have seen, the STM32 line of microcontrollers is very different from the ones we discussed before. They are implemented uniquely, programmed in a different environment, and allow debugging. There are variants for almost any application, and they are very robust.  
 
 #### Summary
-If you strive for the fastest processing speed, countless GPIO pins, bus functionalities, and easy implementation, as well as an onboard SD card, a good starting point for your design would be the Teensy 4.1. The option is a good start for any beginner and is definitely sufficient for a great flight computer design.
+Now, you are familiar with all three implementation types.
+If you strive for the fastest processing speed, countless GPIO pins, bus functionalities, easy implementation, and an onboard SD card, a good starting point for your design would be the Teensy 4.1. 
 
-If you want to make a more advanced PCB design, you can implement a microcontroller module. The ESP32-WROOM seamlessly incorporates connectivity, such as Bluetooth and WIFI, and excels in low-power situations. It is not as fast as the Teensy 4.1, but fast enough for most flight computer designs. Further, it is more difficult to implement than a breakout board, as you additionally need to implement a USB-to-UART bridge. Still, it is relatively easy to do. 
+For a more advanced PCB design, you can implement a microcontroller module. The ESP32-WROOM seamlessly incorporates connectivity, such as Bluetooth and WIFI, and excels in low-power situations. It is not as fast as the Teensy 4.1, but fast enough for most flight computer designs. Further, it is more demanding to implement than a breakout board, as you additionally need to implement a USB-to-UART bridge. Still, it is relatively easy to do. 
 
-The last option, is to implement bare-bone microcontrollers. This option is for the advanced of you that want to familiarize themselves to microcontrollers that are used in the industry. The STM32 line offers and option for almost any application, provides fast processing speeds, countless GPIO pins, and many bus protocols. They are programmed in their own environment, upload code through their own ST-Link programmers, and allow for real-time debugging. For making them work, we have to design the oscillator circuit ourselves and have to incorporate the programming interface. 
-
-We will look at how we implement any of those three designs after we learned about the PCB design environment. 
+The last option is to implement bare-bone microcontrollers. This option is for the advanced of you who want to familiarize themselves with microcontrollers used in the industry. The STM32 line offers an option for almost any application and provides fast processing speeds, countless GPIO pins, and many bus protocols. They are programmed in their environment, upload code through ST-Link programmers, and allow real-time debugging. To make them work, we have to design the oscillator circuit ourselves and have to incorporate the programming interface. 
