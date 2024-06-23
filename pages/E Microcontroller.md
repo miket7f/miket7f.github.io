@@ -259,6 +259,7 @@ We are going to examine one example of each type of microcontroller implementati
 
 We will start with the simplest method of all three: the breakout board, specifically the Teensy 4.1. 
 
+Up to this point, we have illustrated all the concepts and circuits on the whiteboard. From now on, we will draw up some of the schematics in a printed circuit board design software. The software we will use is Easy EDA. However, there are many more you could use, such as KiCAD, Eagle, or Altium. After you have learned about circuits for flight computer design, we will teach you how to use a PCB design software to create and order your own printed circuit board at the end of the course. However, in the following levels, we will focus on the circuits rather than the software. 
 #### Features
 A famous breakout board line of microcontrollers is the Teensy line of microcontrollers from PJRC. They are known for their fast processing speeds and are compatible with the Arduino IDE, an easy-to-use microcontroller programming environment.
 
@@ -303,7 +304,7 @@ This ESP32 variant has two CPUs that can run at up to 240MHz. Additionally, it f
 
 The used microcontroller inside the module would feature 48 GPIO pins. However, the module only breaks out 25 of them. We can use all of those as PWM pins. Further, the module features 15 12-bit resolution ADC analog input pins, and they even feature two analog output channels to create analog voltages with the help of an 8-bit DAC. 
 
-It has 2 UART, 3 SPI, 1 I2C, and 3 unique I2S buses. I2S is similar to I2C and stands for inter-integrated sound. Those bus systems are utterly valuable to control chips for stereo sound or microphone inputs. 
+It has 3 UART, 3 SPI, 2 I2C, and 2 unique I2S buses. I2S is similar to I2C and stands for inter-integrated sound. Those bus systems are utterly valuable to control chips for stereo sound or microphone inputs. 
 
 The ESP32 WROOM modules are perfect for projects that require easy connectivity, such as Bluetooth or WIFI. They are more challenging to implement than a breakout board microcontroller but still seamless to integrate. They feature a decent amount of GPIO pins and processing power and excel at projects with low power consumption. Their sleep currents can be less than 5uA. 
 
@@ -353,8 +354,8 @@ We will take things further and implement a plain microcontroller chip at this l
 
 The implementation of microcontroller chips varies greatly by the used chips. Two famous lines of the microcontroller are the ATMEGA and the STM32 lines. The ATMEGA microcontrollers are commonly implemented in Arduino boards, while the STM32 microcontrollers are heavily used in the industry. Here, we will describe the STM32 line of microcontrollers. 
 
-We will use the STM32 line of microcontrollers. Therefore, we will learn about a few STM32-specific topics, such as their programming interface (serial wire debug) and pin configuration software - the STM32 MX tool. 
-
+We will look at their general features. Dive into the naming conventions of STM32 microcontrollers. Look at the implementation of a specific STM32 - the STM32F722RET6-
+By doing so we will acquire information about their specific programming interface Serial Wire Debug (SWD). We will look at our first oscillator implementation, and finally, we will learn about the Cube IDE MX tool.
 #### Features
 The STM32 line of microcontrollers stands out due to its extensive range of options. There is almost certainly the perfect STM32 microcontroller for every project out there. There are Bluetooth and WIFI variants, variants with numerous GPIO pins, and low-power and high-speed versions. 
 
@@ -437,14 +438,10 @@ Just like that, our oscillator design provides our microcontroller with periodic
 ##### STM32 Cube IDE MX
 To set up and program the STM32, we don't use the Arduino IDE but instead use their provided software - the STM32 Cube IDE. Within this tool, we can write our code, upload code to our microcontroller by connecting it through an ST-Link, and debug our code live. 
 
-There is a Cube IDE MX tool inside the environment, allowing us to set up the pins and the used clock during the development process. It graphically shows us which pin function we can assign to which pin and makes us aware of any conflicts. 
+There is a Cube IDE MX tool inside the environment. This tool graphically represents our microcontroller and all its pins. Inside this tool, we can select the programming interface we wish to use. Further, we can demonstrate that we want to use a high-speed external crystal - our oscillator. The MX tool will then show us the pins to which those interfaces are related. In the clock configuration tab, we can input our clock speed and adjust the processing speed. Then, we can also designate the bus protocols we want to use. Let's say we want to use the first I2C bus, the first SPI bus, and the third UART bus. Further, we can allocate the remaining pins to be outputs or inputs according to our needs. We can even assign names to the pins. The tool also indicates potential conflicts that may still be present in our assignment. When we are done with all the assignments that we will need, we can transfer the pin assignment to our schematic. 
 
-So, as you have seen, the STM32 line of microcontrollers is very different from the ones we discussed before. They are implemented uniquely, programmed in a different environment, and allow debugging. There are variants for almost any application, and they are very robust.  
+If you plan to implement a STM32 microcontroller into your own projects, I highly recommend you to also check out Phil's Labs videos on their implementation, as he is an expert on the topic. 
 
-#### Summary
-Now, you are familiar with all three implementation types.
-If you strive for the fastest processing speed, countless GPIO pins, bus functionalities, easy implementation, and an onboard SD card, a good starting point for your design would be the Teensy 4.1. 
-
-For a more advanced PCB design, you can implement a microcontroller module. The ESP32-WROOM seamlessly incorporates connectivity, such as Bluetooth and WIFI, and excels in low-power situations. It is not as fast as the Teensy 4.1, but fast enough for most flight computer designs. Further, it is more demanding to implement than a breakout board, as you additionally need to implement a USB-to-UART bridge. Still, it is relatively easy to do. 
+So, as you have seen, the STM32 line o mplement a microcontroller module. The ESP32-WROOM seamlessly incorporates connectivity, such as Bluetooth and WIFI, and excels in low-power situations. It is not as fast as the Teensy 4.1, but fast enough for most flight computer designs. Further, it is more demanding to implement than a breakout board, as you additionally need to implement a USB-to-UART bridge. Still, it is relatively easy to do. 
 
 The last option is to implement bare-bone microcontrollers. This option is for the advanced of you who want to familiarize themselves with microcontrollers used in the industry. The STM32 line offers an option for almost any application and provides fast processing speeds, countless GPIO pins, and many bus protocols. They are programmed in their environment, upload code through ST-Link programmers, and allow real-time debugging. To make them work, we have to design the oscillator circuit ourselves and have to incorporate the programming interface. 

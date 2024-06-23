@@ -364,5 +364,3 @@ Zener Diode
 Shunt Regulator 
 L7805
 LM2596
-
-Up to this point, we have illustrated all the concepts and circuits on the whiteboard. From now on, we will draw up some of the schematics in a printed circuit board design software. The software we will use is Easy EDA. However, there are many more you could use, such as KiCAD, Eagle, or Altium. After you have learned about circuits for flight computer design, we will teach you how to use a PCB design software to create and order your own printed circuit board at the end of the course. However, in the following levels, we will focus on the circuits rather than the software. 
