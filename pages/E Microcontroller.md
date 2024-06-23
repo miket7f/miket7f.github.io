@@ -351,7 +351,7 @@ Furthermore, integrating a USB-to-UART bridge like the CH340 or CP2102 is essent
 ### Lecture
 We will take things further and implement a plain microcontroller chip at this level. This implementation is the final and most advanced form, and a slight error in your design can easily lead to the entire PCB being dysfunctional. 
 
-The implementation of microcontroller chips varies greatly by the used chips. Two famous lines of the microcontroller are the ATMEGA and the STM32 lines. The ATMEGA microcontrollers are commonly implemented in Arduino boards, while the STM32 microcontrollers are heavily used in the industry. Here,we will describe the STM32 line of microcontrollers. 
+The implementation of microcontroller chips varies greatly by the used chips. Two famous lines of the microcontroller are the ATMEGA and the STM32 lines. The ATMEGA microcontrollers are commonly implemented in Arduino boards, while the STM32 microcontrollers are heavily used in the industry. Here, we will describe the STM32 line of microcontrollers. 
 
 We will use the STM32 line of microcontrollers. Therefore, we will learn about a few STM32-specific topics, such as their programming interface (serial wire debug) and pin configuration software - the STM32 MX tool. 
 
