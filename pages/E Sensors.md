@@ -7,6 +7,7 @@ permalink: flight
 The material that we provide in the following levels is by now means complete but it might help you to learn about the subject yourself, while we are working on providing content for you! 
 
 ## Level 1 -  Gyroscope
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dm8qmzwrdJI?si=rGth4ZI4xDmzJ54Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Sensors are the sensory organs of our flight computer. With the help of them, we can determine our rocket's orientation, its acceleration, velocity, and position, as well as its altitude. 
 Based on the input of our sensors, our rocket can make informed decisions about steering the engines, deployment mechanisms or aborting the flight. Further, they help us to analyze our rocket flights by storing their data. 
@@ -71,6 +72,7 @@ We use three gyroscopes to measure the rocket's orientation, each measuring angu
 We must calibrate gyroscopes to account for zero offsets and TCO. During calibration, the gyroscope measures and averages angular rates while stationary, and this average is subtracted from future readings to improve accuracy.
 
 ## Level 2 - Accelerometer
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eT_AuN07kJs?si=Z81385Q_rrmwtbun" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>+
 ### Lecture
 Another way though for rockets not as important way to determine orientation is by the means of an accelerometer. It measures the total acceleration acting on the sensors internal mass.
 
@@ -104,6 +106,7 @@ By analyzing the ratios of gravitational components along different axes, the ro
 The parameters listed in accelerometer datasheets are quite similar to those found in gyroscopes. However, the operating range for accelerometers is specified in g-forces, representing multiples of Earth's gravitational acceleration.
 
 ## Level 3 - BMI088 Implementation
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ke1CmTQ54lY?si=PhJY7yjby85cw2to" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Both ways of determining orientation come with their own sacrifice. 
 Gyroscopes tend to drift over time due to their indirect nature, while accelerometers are prone to vibrations and are difficult to use while powered ascent. 
@@ -172,6 +175,7 @@ To select the communication interface, the protocol select (PS) pin is pulled lo
 The BMI088 features up to four interrupt pins (two for the accelerometer and two for the gyroscope) that signal data readiness or FIFO buffer status. Using these interrupts, data synchronization between the accelerometer and gyroscope can be managed efficiently, potentially reducing the need for multiple interrupt signals.
 
 ## Level 4 - Barometer
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iGVSC9UGHMM?si=ZD2nQCJX8Usuga47" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 When launching a rocket, we also want to know the altitude it reaches. One method for determining altitude in model rockets and drones involves using a barometer. A barometer measures both air pressure and air temperature to calculate altitude effectively. The use of a barometer is also the classic way in which drones determine their height. 
 
@@ -210,6 +214,7 @@ Key parameters for barometers include pressure range, absolute and relative accu
 Environmental factors like humidity, diurnal pressure changes, and weather conditions can affect accuracy. However, these are not as detrimental for relative accuracy as for absolute accuracy. 
 
 ## Level 5 - BMP388 Implementation
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UZY3L5ofSPc?si=NSnP7XRaQG7A7roo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Now, at this level, let's look at a specific example of a barometer - the BMP388 from Bosch. By doing so, we will explore its properties and implement it in a circuit. 
 #### Properties
@@ -251,6 +256,7 @@ During implementation, it's essential to provide a regulated 3.3V power supply a
 Additionally, the BMP388 allows adjustment of oversampling rates and configuration of an infinite impulse response (IIR) filter to enhance measurement accuracy. Oversampling improves resolution by averaging multiple measurements, while the IIR filter reduces noise and stabilizes sensor output.
 
 ## Level 6 - Voltmeter
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UZY3L5ofSPc?si=NSnP7XRaQG7A7roo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Another practical sensor for model rocketry is the voltmeter. The voltmeter is intended to measure the battery's voltage level to ensure a sufficient power supply.
 
@@ -309,6 +315,7 @@ Just like that, we have created a simple battery voltage gauge.
 If you require more accurate readings of the battery's charging state, there are specialized fuel gauge or battery management ICs with which you can do so. 
 
 ## Level 7 - Other Sensors
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YSCpfo2fhkw?si=foiJwllgt3x36UVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 While we discussed the four most vital sensors that most advanced model rockets will need (the gyroscope, accelerometer, barometer, and voltmeter), there are many more that you may require on your own project or flight computer. 
 

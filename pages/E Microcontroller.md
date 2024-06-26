@@ -7,6 +7,7 @@ permalink: flight
 The material that we provide in the following levels is by now means complete but it might help you to learn about the subject yourself, while we are working on providing content for you! 
 
 ## Level 1 - Pin Types
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OMudnSCSlkE?si=Jsw0YBReucYpIBM8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 A microcontroller can be thought of as a mini computer. Unlike a traditional computer, a microcontroller integrates all the essential components into a single package, including the processing core, program memory, and input/output peripherals.
 
@@ -74,6 +75,7 @@ For outputting a voltage between high and low, pulse width modulation (PWM) is u
 In addition to GPIO, microcontrollers also include pins dedicated to bus protocols such as UART, SPI, and I2C. These protocols enable communication with other devices and components. We will learn more about them in a later level. 
 
 ## Level 2 - Clock, Interrupts, and Sleep Modes
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GilS7-x-UNs?si=A5niDhqOWnQ4INPz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 In this level, we delve into crucial aspects of microcontroller functionality: clock generation for precise timing, interrupts for responsive operation, and sleep modes for efficient power management. These elements are pivotal in embedded system design, influencing timing accuracy, system responsiveness, and overall energy efficiency.
 
@@ -119,6 +121,7 @@ Clock speed, determined by the oscillator and CPU multipliers, dictates the numb
 Interrupts allow microcontrollers to respond to external events by temporarily halting normal operations to execute interrupt-service routines (ISRs). This capability is crucial for tasks like waking the microcontroller from low-power sleep modes or sampling sensor data in real-time. Sleep modes can extend battery life in battery-powered devices by magnitudes.
 
 ## Level 3 - Bus Protocols
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QpK-G_KWNxs?si=zEYwAW8NTsZMjlqo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Microcontrollers facilitate communication with other devices such as sensors, microcontrollers, or laptops using bus systems and communication protocols. In this level, we will delve into three fundamental bus protocols: Inter-Integrated Circuit (I2C), Serial Peripheral Interface (SPI), and Universal Asynchronous Receiver Transmitter (UART).
 
@@ -173,6 +176,7 @@ SPI (Serial Peripheral Interface) requires four wires: SCK (serial clock), MOSI 
 UART (Universal Asynchronous Receiver Transmitter) is another serial communication protocol used between two devices, typically a microcontroller and a PC. It utilizes two lines: RX (receive) and TX (transmit), and operates at a predefined baud rate. UART is straightforward but supports only point-to-point communication without a master-slave hierarchy.
 
 ## Level 4 - Memory Sources and Programming
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RH56VlN6feY?si=df9JFKt7_yLHSQHz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Microcontrollers rely on various memory sources for storing firmware, programs, data, and configuration settings. Understanding these memory types is essential for the microcontroller selection for our flight computer designs.
 
@@ -227,6 +231,7 @@ Output - LED + diming LED (oscilloscope)
 Temperature Measuring Device with Button - with Interrupt 
 
 ## Level 5 - Specific Microcontrollers
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uWUyqHQ8FEk?si=MKklnrLhLdkzX307" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Now, with all the microcontroller basics out of the way, let's look at three specific microcontroller examples. But before we do so, let's talk about breakout boards, modules, and on-PCB design.
 #### Breakout vs Embedded Microcontroller
@@ -254,6 +259,7 @@ Example: STM32 line of microcontrollers.
 In summary, breakout boards are the easiest to use but least customizable; microcontroller modules offer a balance of ease and flexibility; and plain on-PCB microcontrollers provide the highest level of customization at the cost of increased complexity in implementation.
 
 ## Level 6 - Teensy 4.1
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2HjFBwXpSfw?si=YVjiuIaLtwlFIQ1j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 We are going to examine one example of each type of microcontroller implementation over the following levels. For each type, we will look at their features and their implementation. By the end of this section, you will have an understanding of how to implement anything from a breakout board microcontroller to a microcontroller on the PCB.
 
@@ -291,6 +297,7 @@ The Teensy 4.1 offers a supreme processing speed of 600MHz and can do almost any
 Finally, the implementation is very straightforward and only requires us to provide the board with power and to connect our sensors and outputs to the appropriate pins of the microcontroller. To do so, we can look up the pinout most breakout board manufacturers will provide. 
 
 ## Level 7 - ESP32
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QLiEcxBSDEA?si=zvIlbmmwC9uyg71s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture 
 In this lecture, we will examine another way of microcontroller implementation - the microcontroller module. We will specifically take a look at the ESP32-Wroom module and its implementation. By doing so, we will learn about the USB to UART bridge. 
 #### Features
@@ -349,6 +356,7 @@ Implementing an ESP32 module requires providing regulated 3.3V power. Additional
 Furthermore, integrating a USB-to-UART bridge like the CH340 or CP2102 is essential for programming and communication with a PC. Finally, a transistor circuit allows for auto-uploading code from our programming environments without manually pressing the reset and boot buttons. 
 
 ## Level 8 - STM32
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hjtwoY0-eYs?si=bwWvjl2EVYiXZp4_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 We will take things further and implement a plain microcontroller chip at this level. This implementation is the final and most advanced form, and a slight error in your design can easily lead to the entire PCB being dysfunctional. 
 

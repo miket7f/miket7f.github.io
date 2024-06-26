@@ -7,6 +7,7 @@ permalink: flight
 The material that we provide in the following levels is by now means complete but it might help you to learn about the subject yourself, while we are working on providing content for you! 
 
 ## Level 1 - Voltaic Cell 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yo7f84Dyqrc?si=vLG_uGg4OazzFoso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 In the development process of a flight computer, a reliable and robust power supply is crucial for its success. The power supply must provide stable and sufficient power to all the components of the flight computer. We will learn how we can achieve this in the following levels.
 At this level, we will learn about the element that powers our flight computer - the battery or voltaic cell. 
@@ -71,6 +72,7 @@ How much voltage a cell creates depends on the standard potential, which is give
 
 A zinc/copper cell is usually not rechargeable. However, for rechargeable batteries, we connect a higher voltage to the two poles of the battery that pressure the materials to undo the previous reaction. 
 ## Level 2 - Battery Selection
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ukjpkTd8uA8?si=lP3KWA9C-QxQtW0q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Now that we understand the basic functioning of voltaic cells, we can discuss a few different battery types that are suitable for model rocketry. We will focus on the three most relevant ones:
 
@@ -181,6 +183,7 @@ Then, there is the C-rating, which states how much charge-discharge current a ba
 And finally, there are different battery connectors, such as the T-plug, EC3, and the XT plugs. Batteries most often feature the female plug, while we have to incorporate the male plug on our boards. 
 
 ## Level 3 - Voltage Regulation 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_E5jVRzjCOM?si=mibO3TJppCDcBDQa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture 
 We primarily base our power supply on batteries. It's important to note that a battery's voltage varies across its charging state; for example, a LiPo battery's voltage ranges from 12.6V when fully charged to 9V when discharged. Additionally, many integrated circuits require a specific voltage, such as 3.3V, and other components, like servos, are uniformly controllable using 5V.
 
@@ -282,6 +285,7 @@ Finally, there are switching regulators, which not only change the voltage but a
 When designing a switching regulator circuit, we provide the passive components as they do not fit into an IC. When selecting the capacitors, we have to watch out for their ESR, their RMS ratings, and the voltages they can withstand. For the inductor and diode, we have to consider their allowed currents. 
 
 ## Level 4 - Regulator Circuit Design
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9X6rjfNuQeQ?si=kBMgazga21G-Xe_F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 As previously mentioned, we are now ready to incorporate our first switching regulator IC. For this, we will use the LM2596S-5.
 
