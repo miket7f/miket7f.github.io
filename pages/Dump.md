@@ -130,3 +130,4 @@ where E is measured in Newtons per Coulomb (N/C), F is the force, and q is the c
 Our two capacitor plates are also electrically charged, which means that they too have an electric field. However, the circular field lines of the individual charges overlap and result in field lines that are parallel to each other. 
 
 At any point between those two plates, an electric charge would experience the same force. We call such an electric field a homogenous electric field. 
+
