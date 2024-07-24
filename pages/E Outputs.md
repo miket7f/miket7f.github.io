@@ -203,7 +203,7 @@ By understanding and correctly implementing these indicators, a flight computer 
 
 ## Level 3 - Pyro Channels
 ### Lecture
-One of the most important outputs on our flight computers is the pyro channels. Those are needed to control pyrotechnic devices such as heating wires and electric igniters. 
+One of the most important outputs on our flight computers are the pyro channels. Those are needed to control pyrotechnic devices such as heating wires and electric igniters. 
 
 Many mechanical systems that we use on our rockets are deployed by heating wires. The deployment via heating wires benefits from forming less complex, lighter, more reliable, and smaller deployment systems. Additionally, the rocket's engines must be able to use electric igniters. These can also be controlled with this system.
 
@@ -244,7 +244,7 @@ Since this is less than the 1.5 amps required for each igniter to ignite, both i
 
 In most applications, especially in pyrotechnics, where simultaneous ignition of multiple devices is required, parallel configurations are preferred. This setup allows for the simultaneous triggering of multiple igniters while keeping the voltage requirement constant. The total current increases with additional parallel igniters. 
 
-In most cases, you will use a parallel configuration, as it will allow you to trigger different pyrotechnics at different times. The parallel configuration comes with the advantage of being able to ignite multiple electric igniters simultaneously. By doing so, the current increases, but the voltage requirement remains the same. For our designs, multi-electric igniter ignition was essential, as we had to use engine clusters. However, if your project does not require simultaneous multi-ignition, you might not need to deal with such complexities.
+For our designs, multi-electric igniter ignition was essential, as we had to use engine clusters. However, if your project does not require simultaneous multi-ignition, you might not need to deal with such complexities.
 
 #### Heating Wire
 Heating wires are similar to electric igniters in their operation. They consist of resistance wires with a specific resistance per meter. The resistance of the wire is influenced by its thickness: thinner wires have higher resistance, while thicker wires have lower resistance, as described by the following formula:
@@ -253,10 +253,9 @@ $R=\rho \frac{L}{A}​$
 
 Where R is the resistance, ρ is the resistivity of the wire material, L is the length of the wire, and A is the cross-sectional area of the wire.
 
-When a voltage is applied to the heating wire, a current flows through it. The power dissipated as heat in the wire is given by:
+When a voltage is applied to the heating wire, a current flows through it. The power the wire dissipates as heat in the wire is given by:
 
 $P= I^2 R$
-This power is converted into heat, causing the wire to heat up.
 
 If it generates too much, the wire may become damaged or break. We can control the time the wire is powered or adjust the voltage using Pulse Width Modulation (PWM) to manage heat generation. Additionally, by varying the length and thickness of the wire, we can influence its resistance and, consequently, the amount of heat generated.
 
@@ -264,7 +263,7 @@ Heating wires are commonly made from nichrome, a nickel-chromium alloy known for
 
 We acknowledge that using heating wires for mechanism deployment is an experimental approach. However, this method is valuable for its simplicity and effectiveness in model rocketry. By utilizing nichrome heating wires, you can achieve precise control over mechanisms such as the release of recovery systems or the separation of stages while also minimizing weight and complexity. 
 
-Let's assume we have a Nichrome heating wire with a resistance of 15 Ω/m. We power this wire using a 3-cell LiPo battery (12.6V). If we use a wire length of 0.1 m, the wire’s resistance will be 1.5 Ω. This results in a current draw of 8.4 A. The power dissipated by the wire can be calculated using the formula $P=I^2*R$, which gives us 101.6 W. This power is too high for the wire to handle safely. Therefore, we must manage the power dissipation by adjusting the on-time or reducing the voltage with PWM to prevent damaging the wire due to excessive heat.
+Let's assume we have a Nichrome heating wire with a resistance of 15 Ω/m. We power this wire using a 3-cell LiPo battery (12.6V). If we use a wire length of 0.1 m, the wire’s resistance will be 1.5 Ω. This results in a current draw of 8.4 A. The power dissipated by the wire can be calculated using the formula $P=I^2*R$, which gives us 105.84 W. This power is too high for the wire to handle safely. Therefore, we must manage the power dissipation by adjusting the on-time or reducing the voltage with PWM to prevent damaging the wire due to excessive heat.
 
 #### Basic Pyro Channel
 Now that we have identified the devices we want to control, the next step is to figure out how to manage them effectively. In the case of the Buffalo L rocket, which utilizes an engine cluster with four to five engines, simultaneous ignition requires a substantial current supply. We need to supply a total current of up to 5 x 1.5A = 7.5A in a parallel configuration. 
@@ -276,6 +275,8 @@ Therefore, we should assume that our pyro channel must be capable of switching o
 Furthermore, we must ensure that the power source can simultaneously deliver the required current for multiple pyro channels. For example, if we plan to activate two heating wires at once, the battery must be capable of supplying 2 × 10A = 20A.
 
 Most often, the pyro channels are powered directly from the battery because regulated power supplies cannot handle such high currents. Additionally, minor voltage drops resulting from battery discharge are generally not critical to the application's functionality.
+
+It is important to watch out for the C-rating of the battery to ensure that the battery can handle these high currents.
 
 To manage these high currents, power MOSFETs that can handle the maximum current requirements are employed. In the setup, the battery's positive terminal is connected to one pin of a terminal block, and the other pin of the terminal block is connected to the drain of an N-channel MOSFET. The source of the MOSFET is connected to the ground (GND). 
 
@@ -292,9 +293,9 @@ For improved safety, we could add an optocoupler, a fuse, or a low-side driver.
 For improved practicality, we could utilize indicator LEDs or continuity detection. 
 Let's start by discussing additional safety features.
 #### Optocoupler
-An optocoupler is a component that transfers electrical signals between two isolated circuits using light. It typically consists of an LED and a photodetector housed in a single package. When an electrical signal energizes the LED, it emits light that is detected by the photodetector, which then generates a corresponding electrical signal in the isolated circuit.
+An optocoupler is a component that transfers electrical signals between two isolated circuits using light. It typically consists of an LED and a photodetector, a transistor with a light-dependent base, housed in a single package. When an electrical signal energizes the LED, it emits light that is detected by the transistor's base which makes the transistor conductive.
 
-In the pyro channel application, we place the optocoupler between the microcontroller and the MOSFET gate. The microcontroller activates the LED inside the optocoupler, which then triggers the photodetector. The photodetector drives the gate of the MOSFET, allowing it to switch the high current from the battery to the igniter or heating wire.
+In the pyro channel application, we place the optocoupler between the microcontroller and the MOSFET gate. The microcontroller activates the LED inside the optocoupler, which then triggers the photodetector. As the transistor switches the gate of the MOSFET, it allows the MOSFET to switch the high current from the battery to the igniter or heating wire.
 
 The primary benefit of using an optocoupler is the electrical isolation it provides. This isolation separates the low-voltage control circuitry (the microcontroller) from the high-current switching side (the MOSFET and the power circuit). This setup protects the microcontroller from potential damage that could occur if the MOSFET fails or if there's an overcurrent situation.
 #### Fuses
@@ -303,18 +304,21 @@ Fuses are safety devices designed to protect electrical circuits from overcurren
 In a pyro channel, we can use fuses to protect our circuit from overcurrent situations. For instance, if a component like the MOSFET or wiring is subjected to a higher current than it can handle, the fuse will blow, disconnecting the circuit and preventing damage. Choosing a fuse with a rating slightly above the operating current but below the maximum tolerance of components ensures protection while allowing normal operation. 
 
 For instance, if the heating wire is too short, leading to an excessive current that could exceed the MOSFET's maximum rating, the fuse will blow and disconnect the circuit, thereby protecting the MOSFET from damage. After such an event, we would have to replace the fuse to restore the circuit to operational status.
-#### Low Side Drivers
-For additional protection of the microcontroller, low-side drivers can be used and interposed between the microcontroller and the MOSFETs. Switching the MOSFET on requires charging the MOSFET's internal capacitance, and if the current spike is too high, it could potentially damage the microcontroller. Thus, the higher switching capabilities of a low-side driver, such as the ULN2003A, could provide further protection for the microcontroller. However, keep in mind that this is not required if you are using an optocoupler, as it offers a different method for achieving protection and isolation.
+#### High Side Drivers
+For additional protection of the microcontroller, an driver IC can be used and interposed between the microcontroller and the MOSFETs. To control N-channel MOSFETS we have to use a high side driver, as low-side drivers would have to be added between the MOSFET's source and GND. Consequently, a low side driver would have to bear the entire current load. Now back to the high side driver design. Switching the MOSFET on requires charging the MOSFET's internal capacitance, and if the current spike is too high, it could potentially damage the microcontroller. Thus, the higher switching capabilities of a driver could provide further protection for the microcontroller. However, keep in mind that this is not required if you are using an optocoupler, as it offers a different method for achieving protection and isolation.
 
 To further improve the practicality of the pyro channel, we can incorporate additional features such as indicator LEDs and continuity detection.
 #### Indicator
 For the user to be aware of pyro channel activation, we can add an LED in parallel to the MOSFET. We could connect an LED in parallel to the MOSFET and the MOSFET's current limiting resistor. Additionally, we have to add a current limiting resistor for the LED. When the channel is activated, the LED lights up, signaling that the current is flowing and the channel is engaged. This feature helps to quickly verify whether the pyro channel is functioning correctly without needing to test the output directly.
 
+However, an lighting LED doesn't imply that current is flowing through the MOSFET. It simply means that the microcontroller's output is on.
 #### Continuity Detection 
-Another beneficial feature is continuity detection. It ensures that our heating wires and electric ignitors are connected and in good condition. We can implement a simple LED-based method to achieve this.
+This leads us to our next circuit: continuity detection.
+It ensures that our heating wires and electric ignitors are connected and in good condition. We can implement a simple LED-based method to achieve this.
 
 First, we add an LED to the second terminal block connected to the MOSFET. We then connect the LED to a current-limiting resistor and ground (GND) through a button. When we press the button, the LED lights up to indicate that the circuit is complete and that the pyrotechnic device is securely connected. If the LED does not light up, it suggests a problem with the connection or the device itself. We need to choose the current-limiting resistor carefully to prevent accidental ignition of the pyrotechnic device.
 
+If the resistor is too small, the current that flows through the pyrotechnic device and the LED might be too high, causing the pyrotechnic device to be triggered. 
 #### Connectors
 Finally, let's talk about how we can connect our pyrotechnic devices to our PCB.
 The heating wires and electric igniters are connected to the flight computer using terminal blocks, which provide a secure and reliable interface for electrical connections. The two most common ones we used are the screw terminal block and the pluggable systems terminal block. 
@@ -360,6 +364,8 @@ Their ability to provide accurate feedback and adjust to specific angles with hi
 
 #### Summary
 Now, to summarize the entire chapter. 
+To be able to analyze flights, we have to integrate some kind of flight data storage. To do so, we can either choose a flash memory chip, or an SD card, which is a flash memory with a specific form factor. It is important to choose an SD card with the right capacity, most often an SDHC card will do the job. Further, we have to choose the SD Card with the right file format. Here, an SD card of the type FAT32 is advisable, as it cooperates smoothly with many libraries. Both flash memories and SD cards can be interfaced by SPI. 
+
 LEDs are diodes that emit light when in forward bias. They have a forward voltage that should drop across them and a rated current. To limit the current, when a voltage larger than the forward voltage is applied, a current-limiting resistor is used. RGB LEDs use three LEDs of the colors red, green, and blue to create any color except black.
 
 For microcontrollers with insufficient GPIO output current, a driver IC can be used. The driver IC is a transistor array that allows control of high currents with the GPIO pins of the microcontroller. A low-side driver is easiest to use as the gate voltages are referenced to the ground, and different source voltages can be on the load side. The transistor is interposed between the load and GND, compared to the high-side driver that is interposed between the source and the load.
