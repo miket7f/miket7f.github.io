@@ -7,6 +7,7 @@ permalink: flight
 The material that we provide in the following levels is by now means complete but it might help you to learn about the subject yourself, while we are working on providing content for you! 
 
 ## Level 1 - Flight Data Storage
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tjG84FDy4Ak?si=PKYHxn0xzuraWT9S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Now, we have implemented the microcontroller and its sensors. Our flight computer is now able to interpret its environment, but it cannot yet take any corrective action. The flight computer might notice that it is unstable by 30° in the yaw axis. However, there is no way of changing those circumstances yet. Here, the flight computer's outputs come into play. 
 
@@ -92,6 +93,7 @@ On the other hand, we could use a flash memory chip. Those come with the advanta
 A final method we have not yet mentioned is to use the microcontroller's flash memory to store flight data. The ESP32-WROOM-32-N8, for example, already features an internal 8MB Flash memory, which we could use for flight data storage. We did implement this methodology on the Buffalo performance flight computer design.
 
 ## Level 2 - Indicator
+<iframe width="560" height="315" src="https://www.youtube.com/embed/07J46OSvcYg?si=bETE_a_Bxa0dpghP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Indicators are crucial components in flight computers, providing essential feedback through visual and acoustic signals. In this lecture, we will explore various types of indicators.
 
@@ -184,7 +186,7 @@ In a **mono** audio setup, the same audio signal is sent to all speakers. This m
 
 In contrast, **stereo** audio uses two channels: left and right. Each channel carries a different audio signal, which creates a sense of directionality and space. This setup plays slightly different sounds through each speaker, mimicking how we naturally perceive sounds from various directions. Stereo audio is ideal for music playback, video soundtracks, and any application where a richer and more immersive audio experience is desired.
 
-### Summary
+#### Summary
 Indicators such as LEDs, buzzers, and speakers are essential components in flight computer design, providing visual and acoustic feedback to the user. Let's summarize the key points for each type of indicator:
 
 Light-emitting diodes or LEDs emit light and become conductive when the applied voltage reaches the LED's forward voltage. The forward voltage is the specific voltage at which the LED begins to emit light in forward bias and varies by color. 
@@ -202,6 +204,7 @@ Speakers are similar to passive buzzers but capable of producing a wider range o
 By understanding and correctly implementing these indicators, a flight computer can provide clear and effective feedback, enhancing the user experience and ensuring proper operation during various flight states.
 
 ## Level 3 - Pyro Channels
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jJ9oiYAq7mc?si=yDr6gFXS-Yvrh11C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 One of the most important outputs on our flight computers are the pyro channels. Those are needed to control pyrotechnic devices such as heating wires and electric igniters. 
 
@@ -345,6 +348,7 @@ Other practical improvements include adding indicator LEDs for visual confirmati
 Connectors for these systems typically include screw terminal blocks, which provide a stable connection by clamping wires with screws, and pluggable terminal blocks, which offer a removable plug-and-socket design for ease of maintenance and replacement. Direct soldering of wires to the PCB is another option, providing a rigid but less flexible connection.
 
 ## Level 4 - Actuators
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aI1_r9nGbFY?si=xur6DId0YU9WiDF9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 In this lecture on actuators, we will focus on servos for thrust vector control (TVC). While there are various types of actuators, including different motors, our primary focus will be on servos due to their critical role in TVC systems.
 
@@ -372,6 +376,6 @@ For microcontrollers with insufficient GPIO output current, a driver IC can be u
 
 Buzzers work with an electromagnet that moves a diaphragm. The oscillation of the diaphragm creates sound waves that we can hear. We differentiate between active buzzers, which internally feature an IC that creates the oscillating signal, and passive buzzers, which require an external signal, such as PWM, to produce sound. The external signal allows us to alter the pitch. Speakers can also be used to produce sound and often require amplifiers to ensure the audio signal is strong enough to drive the speakers effectively.
 
-Pyro channels are needed to trigger heating wires and electric ignitors. They interpose an N-channel MOSFET between the battery source and GND. The heating wires and electric ignitors are connected to a screw terminal that has the battery voltage connected to one pin and the drain of the MOSFET to the other pin. The MOSFET is controlled by a voltage that the microcontroller applies to the gate. It also features a pull-down resistor between the gate and the source to prevent accidental power and adds a current-limiting resistor to the gate to protect the microcontroller. Additional features could include optocouplers for electrical isolation, low-side drivers for GPIO pin protection, fuses for overcurrent protection, continuity detection to ensure proper heating wire or electric ignitor connections, and LEDs to indicate the status of the pyro channel.
+Pyro channels are needed to trigger heating wires and electric ignitors. They interpose an N-channel MOSFET between the battery source and GND. The heating wires and electric ignitors are connected to a screw terminal that has the battery voltage connected to one pin and the drain of the MOSFET to the other pin. The MOSFET is controlled by a voltage that the microcontroller applies to the gate. It also features a pull-down resistor between the gate and the source to prevent accidental power and adds a current-limiting resistor to the gate to protect the microcontroller. Additional features could include optocouplers for electrical isolation, high-side drivers for GPIO pin protection, fuses for overcurrent protection, continuity detection to ensure proper heating wire or electric ignitor connections, and LEDs to indicate the status of the pyro channel.
 
 Servos are electric motors that feature a potentiometer for closed-loop angle control and often only have a range of motion of ±90°. To control them, a PWM signal with a duration of 20 ms is supplied. The active region tells the servo which angle it shall target. If it's 1 ms, it should steer to -90°; if it's 1.5 ms, it should reach 0°; and if it is 2 ms, it should target +90°. However, this behavior can vary depending on the specific servo model, and there are exceptions to these standard pulse widths and ranges.
