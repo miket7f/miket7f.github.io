@@ -7,23 +7,87 @@ permalink: elec-design
 The material that we provide in the following levels is by now means complete but it might help you to learn about the subject yourself, while we are working on providing content for you! 
 
 ## Level 1 - Introduction to the Electronics Path
+### Course Overview
+**Level 1:** Introduction to the Electronics Path (Sections, Why Fundamentals, and Outlook).
+
+**Electronic Fundamentals**
+**Level 1:** Atoms, Electrons, Coulomb Force, the Periodic Table, Bohr’s Atom Model, and Ions.
+**Level 2:** Metallic Bonding, Conductivity, Electric Current, and Direction of Flow.
+**Level 3:** Electric Potential, Voltage, and the Water Analogy.
+**Level 4:** Resistance, Ohm's Law, Resistor, Resistor Values, and First Look at Schematics.
+**Level 5:** Resistor Circuits, Resistors in Series and Parallel, Kirchhoff’s Voltage and Current Laws, and Short Circuits.
+**Level 6:** Structure Capacitor, Capacitance, Usage, Water Analogy, Capacitors in Parallel and Series, Capacitor Types.
+**Level 7:** Covalent Bonding, Semiconductors, Doping, PN-Junction, Diode Types.
+**Level 8:** BJT Transistor & Types and MOSFET Transistor & Types.
+**Level 9:** Magnets, Electromagnetism, Electromagnetic Induction, and Inductors.
+**Level 10:** LC-Circuits, Piezoelectricity, and Crystal Oscillators.
+**Level 11:** First Glimpse at Buffalo Stack.
+
+**Electronic Circuits**
+**Level 1:** Circuits Overview (Power Management, Microcontroller, Sensors, Outputs, and Telemetry).
+
+**Power Management**
+**Level 1:** Voltaic Cell (Oxidation & Reduction, Noble Metals, Galvanic Series, Zinc/Copper Voltaic Cell, and Discharge/Recharge).
+**Level 2:** Battery Selection (Li-Ion, LiPo, NiMH, Capacity, Cell Number, C-Rating, and Connector).
+**Level 3:** Voltage Regulator (Shunt Regulator, Linear Regulator, and Switching Regulator).
+**Level 4:** Regulator Circuit Design (LM2596).
+
+**Microcontroller**
+**Level 1:** Pin Types (GPIO, Pull-Up/Pull-Down Resistors, Analog Input, PWM).
+**Level 2:** Clock, Interrupts, and Sleep Mode.
+**Level 3:** Bus Protocols (I2C, SPI, and UART).
+**Level 4:** Memory Sources and Programming (Flash, EEPROM, RAM, and Bootloader).
+**Level 5:** Specific Microcontrollers (Breakout, Modules, and Embedded Microcontroller).
+**Level 6:** Teensy 4.1 (Features and Implementation).
+**Level 7:** ESP32 (Features, USB to UART bridge, and Implementation).
+**Level 8:** STM32 (Features, Naming Convention, Implementation, Serial Wire Debug, Oscillator Design, and STM32 MX Tool).
+
+**Sensors**
+**Level 1:** Gyroscope (Function Principle, Determining Orientation, Parameters, and Calibration).
+**Level 2:** Accelerometer (Function Principle, Determining Orientation, and Parameters).
+**Level 3:** BMI088 Implementation
+**Level 4:** Barometer (Function Principle, and Parameters).
+**Level 5:** BMP388 Implementation (Properties, Oversampling, and IIR Filter).
+**Level 6:** Voltmeter (Voltage Divider with ADC).
+**Level 7:** Other Sensors (Magnetometer, GNSS Receiver, and more).
+
+**Outputs**
+**Level 1:** Flight Data Storage (SD Card, Implementation, and Flash Memory).
+**Level 2:** Indicators (LED, RGBLED, Driver ICs, Buzzer, Speaker, Audio Amplifier, and Mono vs Stereo Audio).
+**Level 3:** Pyro Channels (Electric Ignitor, Heating Wire, Basic Design, Optocoupler, Fuse, Driver, and Continuity Detection).
+**Level 4:** Actuators (Servo and PWM).
+
+**PCB Design**
+To be created
+
 ### Lecture 
-We know you are eager to develop your flight computer right away. However, we have to get you set up with the fundamentals first. Trust me, I have been there, designing my first flight computer without caring about the fundamentals, and well I can tell you that my first designs didn't work out as planned. 
+Welcome to the electronics path! We’re excited to have you embark on this journey with us, where you'll gain a deep understanding of electronics theory, components, and circuit design. By the end of this course, you will have the skills needed to design your own cutting-edge flight computer. While this course is tailored for model rocket enthusiasts, the knowledge you gain will extend far beyond rocket flight computers. You’ll also be well-equipped to design flight controllers for drones, RC cars, RC planes, and many other innovative applications.
 
-For you to get the best understanding of circuit design possible, we have to start at the beginning. 
-We will start within the atom and take a look at an even smaller unit - the electron. Then, we will zoom out and take a look at how atoms bond with each other. We will learn about the force that acts between them, describe what an electric charge is, and look at the concept of electric fields. Further, we will learn about conductivity, electric current, and electric potential difference or voltage.
+#### The Sections
+The electronics path is structured into three comprehensive sections:
+Electronic Fundamentals, Electronic Circuits, and PCB Design.
 
-You may wonder why we would want to understand all these theoretical concepts first. 
-Well, almost every circuit uses a combination of the following components, of which you might already have seen some. (Video of the components)
-To understand any one of them, you have to be familiar with their underlying concepts. 
-This one, for example, is called a resistor. To understand it, you have to know about electric current, voltage, and ohms law. 
-If you use a set of multiple resistors, you will have to learn about Kirchhoff's laws. 
-Then here we have a capacitor. To understand it you additionally will need to know about electric charge. 
-Finally, to understand a diode and a transistor we will have to understand how p-n junctions function. 
+In the first section - **Electronic Fundamentals**, we will start from the very basics and gradually build up your knowledge. We will cover the fundamental concepts of atom theory to explain  conductivity, electric current, voltage, resistance, and how they interplay within circuits. Based on these and other underlying theoretical concepts we will cover, you will be able to understand electronic components such as resistors, capacitors, diodes, transistors, inductors, and crystal oscillators. 
 
-Within the first section of this electronics course, we will cover the theoretical fundamentals as well as the basic electronics components. In the second section, we will learn how to arrange those components to create functional circuits of which we can devise our flight computer. In the third section, we will dive into PCB design using the PCB design software Easy Eda. At the end, you will create your extension module for the Stack flight computer, and you will be able to self-develop flight computers.
+In the second section - **Electronic Circuits**, we will continue by learning how to arrange those components to create functional circuits of which we can devise our flight computer. You will learn about all necessary circuits, including power management, microcontrollers, sensors, and output implementations. By the end of this section, you will have the knowledge needed to devise your own flight computer tailored to your specific requirements.
 
-All may sound terrifying to you at the beginning. Yet, stick with us and you will see that those concepts are way easier than as they sound. 
+But understanding and designing circuits is only part of the journey. To bring your designs to life, you need to know how to physically realize them. This is where the third section - **PCB Design** - comes in. We will use the EasyEDA design software to guide you through the entire PCB design process. You’ll learn how to create schematics, place components on the layout, route PCB traces, and enhance the design with the silkscreen layers. We’ll also cover how to select components and utilize assembly services. By the end of this section, you’ll place your first PCB order, transforming your theoretical designs into tangible, functional hardware.
+
+Along the way, we will incorporate practical examples to demonstrate concepts, components and circuits. Additionally, there will be activities after each lecture to help you apply and solidify your understanding.
+
+#### Why Start with Fundamentals?
+You might be wondering why we dedicate an entire section to exploring foundational concepts, even delving into details like atomic theory.
+
+While it's tempting to dive straight into designing complex circuits, such as flight computers, a thorough understanding of fundamental principles is crucial. Trust me, I've been there—developing my first flight computer without grasping the underlying theory didn’t go as planned. I ended up having to learn these basics the hard way, scrapping three initial designs along the way.
+
+So, why not save yourself the trouble? By starting with the fundamentals now, you’ll avoid unnecessary setbacks and build a solid foundation that will make the rest of the course smoother and more effective. Whether you like it or not, a strong grasp of these concepts is essential for successful circuit design.
+
+#### Outlook
+When I first started developing model rocket flight computers, I wished there had been a comprehensive course like this one, covering everything from the basics to the final PCB design. I can't imagine how much time a course like this would have saved me. This course distills the  experience I've accumulated over five years of model rocket development and through more than 20 flight computer designs, several of which have been successful.
+
+Naturally, condensing five years' worth of knowledge into a single course means it will be quite packed. I understand that the electronics path may seem dense and challenging, but that’s because it's designed to be as thorough as possible. Stay curious and engaged, and don’t hesitate to revisit topics as needed to fully grasp the material. As you progress, the concepts will start to connect, and you'll gain the skills needed to create your own innovative flight computer designs.
+
+
 ## Level 2 - The Electron
 <iframe width="560" height="315" src="https://www.youtube.com/embed/58GRvLRFcb4?si=NeR_7JKmpwnh5kvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture 
@@ -954,8 +1018,7 @@ When a voltage is applied to a quartz crystal, it contracts and subsequently rel
 When selecting a quartz crystal, we must select the resonance frequency, frequency tolerance, temperature stability, and load capacitance. Load capacitors are needed to stabilize the crystal's oscillation. 
 ## Level 12 - Glimpse at Stack
 ### Lecture
-We learned about atom theory, electric charges, electric potential, voltage, Kirchhoff's laws, magnetic fields, and inductance to derive the function principle of the most used electrical components:
-resistors, capacitors, inductors, semiconductors, including diodes and transistors, and oscillators. 
+Congratulations on making it this far! You’ve learned the essential concepts that form the backbone of electronics: from understanding the electron, current, and the voltage to the application of resistance, capacitance, semiconductors, and inductors. 
 
 The concepts build the foundation upon which we will now be able to learn how to interconnect them to form circuits that we can use in our flight computers. 
 

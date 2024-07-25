@@ -10,27 +10,38 @@ Now that you are familiar with the basics of electronics and some standard compo
 
 ## Level 1 - System Overview
 ### Lecture
-Let's look at what a typical flight computer system might look like. 
-Here we have the overview of a single microcontroller flight computer system. 
-We have used systems like these four over five years, and only recently made the switch to multiple microcontroller design. 
+Let's look at what a typical flight computer system might look like. Below is an overview of a single microcontroller flight computer system. We have used systems like these for over five years and have only recently switched to a multiple microcontroller design.
 ![](/assets/images/Flowchart.jpeg)
-As you can see, we can divide a flight computer into many sub-units that all have their own responsibilities. There are some sub-units that are always required and some that could be left out. 
+As you can see, we can divide a flight computer into many sub-units, each with its responsibilities. Some sub-units are always required, while others can be optional. In the following chapters of this electronics course, we will focus on each aspect of a flight computer one by one.
+For now, let's get a brief overview of all the subsections that make up a flight computer design.
+
 #### Power Management
-One that will be required is the power management unit, as all components and ICs need to be powered in order to function. The power management unit takes a input voltage and regulates it to the needed voltage levels - often 5V and 3.3V. Most ICs that we will use for our circuits require a specific voltage (most of the time 3.3V) in order to function.
+An on-all-board required sub-section is the power management unit, as all components and ICs need power to function. Essentially, the power management unit handles everything that is involved in delivering the right amount of voltage and current to your electronic components. 
 
-The power management doesn't necessarily have to sit on the board that you develop, but it must happen somewhere. In stack, for example, the power management is done on the CORE board. The FUSION and the OUT board do not bear their own power management systems, but instead receive power through the connector with which they connect to the CORE board. 
-
+In the chapter about power management, you will explore several key topics:
+- **Voltaic Cell:** First, we’ll cover fundamental concepts such as oxidation and reduction, noble metals, and the galvanic series to explain the simplest form of a battery - the zinc/copper voltaic cell. Additionally, we’ll discuss discharge and recharge processes to provide a comprehensive understanding of how these cells function.
+- **Battery Selection:** Building on that foundation, you’ll learn about different battery types, including Li-Ion, LiPo, and NiMH. We’ll also address important factors for battery selection, such as capacity, cell number, C-rating, and connectors.
+- **Voltage Regulator:** Moving forward, we’ll examine various types of regulators, including shunt regulators, linear regulators, and switching regulators. Understanding these will help you select the correct regulator type and implement it accordingly. 
+- **Regulator Circuit Design:** Finally, we will look at the implementation of the LM2596, a specific switching regulator.
 #### Microcontroller
-You can think of a microcontroller to be a mini computer. It is comprised in a single package integrated circuit and incorporates one or multiple CPU cores along with memory and programmable input/output peripherals. 
+We can think of a microcontroller as a mini-computer. It is a single-package integrated circuit with one or more CPU cores with memory and programmable input/output peripherals.
 
-The input/output peripherals allow us to read out sensor data and to control components. Microcontrollers feature many pins around their package. Some of them are needed to power the microcontroller, some can be used to input an accurate timing signal, and some are GPIOs (general purpose input/output pins). 
+The input/output peripherals allow us to read sensor data and control outputs. Microcontrollers feature many pins around their package. Some pins power the microcontroller, some provide accurate timing signals, and others are GPIOs (general-purpose input/output pins). 
 
-We can assign the GPIO pins to be an input or an output pin. Some GPIOs have additional functionalities, like communication, to which we can assign them to. 
+In the chapter about microcontrollers, we will delve into the following key topics:
+- **Pin Types:** To begin, we’ll cover different pin types, including GPIO pins, analog input, analog output, and PWM pins. We’ll also discuss pull-up and pull-down resistors, which play a role in signal stability.
+- **Clock Generator:** Moving forward, we’ll explore the clock generator. You’ll learn about clock speed, interrupts, and sleep modes, which are essential for managing the microcontroller’s performance and power consumption.
+- **Bus Protocols:** Next, we’ll provide an overview of bus protocols such as I2C, SPI, and UART. Understanding these protocols will help you interface the microcontroller with other components and devices.
+- **Memory Sources:** Additionally, we’ll examine different types of memory, including Flash, EEPROM, and RAM. We’ll also discuss how microcontrollers are interfaced for programming.
 
+Finally, we will explore three levels of microcontroller implementation:
+- **Beginner Level:** We’ll start with the implementation of a complete microcontroller, the Teensy 4.1, onto our flight computer.
+- **Intermediate Level:** Next, we’ll look at the incorporation of a microcontroller module, the ESP32.
+- **Advanced Level:** Lastly, we will examine the industry-standard STM32, offering insights into how to implement bare-bone microcontrollers.
 #### Sensors
-Sensors are our sensory organs of our flight computer. With the help of them we can determine our rocket's orientation, its acceleration, velocity, and position, as well as its altitude. 
+Sensors are the sensory organs of our flight computer. They can determine our rocket's orientation, acceleration, velocity, position, and altitude. 
 
-There are many more sensor we could add to our flight computer to determine properties such as:
+There are many more sensors we could add to our flight computer to determine properties such as:
 - temperature 
 - humidity
 - voltage or current
@@ -38,40 +49,50 @@ There are many more sensor we could add to our flight computer to determine prop
 - light and infrared wavelengths 
 - gas compositions 
 
-Our microcontroller communicates with the sensors via a bus protocol, which we will also learn about in a later level. 
+In the chapter about sensors, we will explore:
+- First, the **Gyroscope**, including its functional principle, how it determines orientation, key parameters for selection, and the importance of calibration.
+- Next, we will move on to the **Accelerometer**. Similar to the gyroscope, we will cover its operational principles and key considerations for use.
+- Following that, we will examine the implementation of the **BMI088** into our flight computer, which combines both a gyroscope and accelerometer into a single package. 
+- Then, we will delve into **Barometers**, specifically studying the BMP388 and focusing on concepts like oversampling and the IIR filter.
+- Afterward, we will explore the **Voltmeter** and its application in our flight computer.
+- Finally, we will consider **Additional Sensors**. This lecture includes other helpful sensors such as the magnetometer, GNSS receiver, and more.
 
 #### Outputs
-The flight computer's outputs are like the limbs the muscles of our body. With them we can intervene in our environment. For model rocketry, we can subdivide them into:
-- pyro channels
-- indicators
-- and servo control
+The flight computer's outputs are like the limbs or muscles of our body. With them, we can intervene in our environment. For model rocketry, we can subdivide them into:
+- Flight data storage
+- Indicators
+- Pyro Channels
+- And, Actuators
 
-These outputs are controlled by the microcontroller and the instructions of when the microcontroller should control which outputs are set in the program we uploaded.
-Most of the decisions will be based on the sensory readings. 
+These outputs are controlled by the microcontroller. The instructions of when the microcontroller should control which outputs are set in the program we uploaded. Most of the decisions will be based on the sensory readings. 
 
-Pyro channels are needed to ignite model rocket engines and to trigger heating wires. With heating wires, we can, in turn, control various mechanisms, such as landing legs, air brakes, and the deployment of our parachute. 
+In the chapter on outputs, we will explore: 
+First, **Flight Data Storage.** After performing model rocket flights, we want to be able to analyze them to identify potential problems or assess the rocket's performance. To do so, we must access the flight's sensor data and the microcontroller's decisions. Currently, all flight data is lost immediately, so we must store our flight data using SD cards or flash memory chips. 
 
-Indicators, visually represent flight states or current errors to the user by the means of LEDs, speakers, or displays. 
+Next, we will move on to **Indicators.** These visually represent flight states or current errors to the user through LEDs, speakers, or displays.
 
-And servo control is needed to steer our thrust vector control system (TVC) to actively stabilize our rocket. 
+Following that, we will delve into **Pyro Channels.** Pyro channels are needed to ignite model rocket engines and trigger heating wires. With heating wires, we can control various mechanisms, such as landing legs, air brakes, and the deployment of our parachute. 
+
+Finally, we will consider **Actuators**, specifically the servo motor needed to steer our thrust vector control system (TVC).
 
 #### Telemetry 
-Another way of communicating with the user, is by the means of telemetry. 
+Another way of communicating with the user is by means of telemetry. 
 Telemetry is the transmission of data through the air. 
 The transmission can occur in both ways. 
 
-So, the rocket could send us live flight data, such as altitude and orientation. 
-While, we could send the rocket commands to change the flight settings, to initiate the countdown, or to abort mid-flight. 
+So, the rocket could send us live flight data, such as altitude and orientation. While we could send the rocket commands to change the flight settings, initiate the countdown, or abort mid-flight. 
 
-There are many ways of making such a communication possible, such as through Bluetooth, Wi-Fi, and radio communication. 
+There are many ways of making such communication possible, such as through Bluetooth, Wi-Fi, and radio communication. 
 
 #### Summary
-Every flight computer system can be divided into sub-units that must perform certain tasks. 
+We can divide every flight computer system into sub-units that must perform certain tasks. 
 
-Input voltage must be regulated by the power management unit to supply all the other sub-units with power. 
+The flight computer must regulate the input voltage in the power management unit to supply all the other sub-units with power. 
 
-The microcontroller is a mini computer that features input/output peripherals, which we can program to read out sensor data and to control our outputs. 
+The microcontroller is a mini-computer featuring input/output peripherals, which we can program to communicate with sensors and control outputs. 
 
-Sensors are our sensory organs with which the rocket knows its current state or with which it can record valuable scientific data, while outputs are similar to our muscles with which we can intervene in our environment. 
+Sensors are our sensory organs with which the rocket knows its current state or with which it can record valuable scientific data. Outputs are similar to our muscles, with which we can intervene in our environment. 
 
-And finally, there's telemetry with which we can control our flight computer from afar and receive valuable information mid-flight.  
+And finally, telemetry enables us to control our flight computer from afar and receive valuable information mid-flight.  
+
+The next section of this course is about to begin, so buckle up and get ready to design the circuits for our flight computer. It’s essential to have a clear grasp of the fundamentals we’ve covered so far, as these concepts will underpin the more advanced topics we will explore. If there are any areas where you need more clarity, now is the time to review them. Understanding these basics thoroughly will be crucial as we move forward.
