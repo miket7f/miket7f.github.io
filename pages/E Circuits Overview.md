@@ -9,6 +9,7 @@ The material that we provide in the following levels is by now means complete bu
 Now that you are familiar with the basics of electronics and some standard components, we can think about how we can arrange them to create functional units that we can use to operate our rockets. 
 
 ## Level 1 - System Overview
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e55LFtrIxVw?si=-vC67JVFEke3OihL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Let's look at what a typical flight computer system might look like. Below is an overview of a single microcontroller flight computer system. We have used systems like these for over five years and have only recently switched to a multiple microcontroller design.
 ![](/assets/images/Flowchart.jpeg)

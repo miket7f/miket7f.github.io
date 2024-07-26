@@ -7,6 +7,8 @@ permalink: elec-design
 The material that we provide in the following levels is by now means complete but it might help you to learn about the subject yourself, while we are working on providing content for you! 
 
 ## Level 1 - Introduction to the Electronics Path
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8BSFYYdIAsM?si=Wq8F-Iuqn9orCY2T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Course Overview
 **Level 1:** Introduction to the Electronics Path (Sections, Why Fundamentals, and Outlook).
 
@@ -58,7 +60,11 @@ The material that we provide in the following levels is by now means complete bu
 **Level 4:** Actuators (Servo and PWM).
 
 **PCB Design**
-To be created
+**Level 1:** Schematics (Parts Library, Creating Connections, Source Components, and Devise Own Component).
+**Level 2:** Layout (Board Outline, Component Placement, 2/4/6 Layer PCB, and Thermal Management).
+**Level 3:** Routing (Auto Router, Trace Thickness, Ground Plane, and Design Rule Checking).
+**Level 4:** Assembly Service (Pick and Place File, and Bill of Material File)
+**Level 5:** Order PCB (Export Gerber File and Configure Order).
 
 ### Lecture 
 Welcome to the electronics path! We’re excited to have you embark on this journey with us, where you'll gain a deep understanding of electronics theory, components, and circuit design. By the end of this course, you will have the skills needed to design your own cutting-edge flight computer. While this course is tailored for model rocket enthusiasts, the knowledge you gain will extend far beyond rocket flight computers. You’ll also be well-equipped to design flight controllers for drones, RC cars, RC planes, and many other innovative applications.
@@ -691,6 +697,8 @@ To begin, we need a power source of 5V, a breadboard, a standard 1N4007 diode, a
 ## Level 9 - The Transistor
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MAE1CgEn22M?si=tUNK5HpYq__EGK64" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u5mMdQ2MENU?si=ioQ0RqQ8qr724jcO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Lecture
 There is one more component that is used in practically every electronic device today and makes all our technologies possible. It is another application of semiconductor technology, and you certainly heard about it at some point - the transistor. The transistor is like a switch that can turn on and off current flow. However, it does so without needing any mechanical components.
 
@@ -1017,58 +1025,39 @@ When a voltage is applied to a quartz crystal, it contracts and subsequently rel
 
 When selecting a quartz crystal, we must select the resonance frequency, frequency tolerance, temperature stability, and load capacitance. Load capacitors are needed to stabilize the crystal's oscillation. 
 ## Level 12 - Glimpse at Stack
-### Lecture
-Congratulations on making it this far! You’ve learned the essential concepts that form the backbone of electronics: from understanding the electron, current, and the voltage to the application of resistance, capacitance, semiconductors, and inductors. 
+## Lecture
+**Congratulations on making it this far!** You’ve gained a solid understanding of the fundamental concepts of electronics, from electrons, current, and voltage to resistance, capacitance, semiconductors, and inductors. These concepts form the foundation upon which we’ll learn to interconnect components to create functional circuits for our flight computers.
 
-The concepts build the foundation upon which we will now be able to learn how to interconnect them to form circuits that we can use in our flight computers. 
+To illustrate how these components come together in a practical application, let’s examine our latest flight computer **Stack**, specifically the **Stack CORE** module. This central board in the Stack system is crucial as it provides power to the other boards, runs the main flight program, stores flight data, and handles telemetry.
 
-For you to grasp how often we use these components in a flight computer, let's take a look at Stack. 
+### Used Components on Stack CORE:
+**Microcontroller Module (ESP32):** The most prominent component on the board is the microcontroller module, the ESP32. The microcontroller acts as the brain, handling processing and communication tasks.
 
-As you learned before Stack consists of three boards that function together: 
-Stack CORE, Stack FUSION, and Stack OUT.
+**Power Supply** To power the microcontroller and other components, we use a battery that we connect to this XT60 plug. The battery power is managed by the LM2596 switching regulator, which creates a stable voltage of 5V. This regulator needs two electrolytic capacitors, an inductor, and a diode to function. There is also a switch on the right-hand side of the board. This switch controls the regulator IC, turning it on or off and thereby controlling the power supply to all components. We use a pull-up resistor to define the voltage level of the switch when it is not conductive. Next to the first regulator, we can identify a second voltage regulator that steps down the voltage from 5V to 3.3V, and this regulator uses two tantalum capacitors.
 
-#### CORE
+**Buttons:** The board features two buttons that control the RESET and BOOT pins of the microcontroller. The RESET button allows us to restart the microcontroller's program, while the BOOT button puts the microcontroller into bootloader mode, which is necessary for program uploads. Both buttons are equipped with a ceramic capacitor to smooth out their signals. This is important because pressing a button can cause "button bouncing," which is an unwanted oscillation of the button's contacts that can lead to unreliable signal reading.
+
+**USB to UART Bridge:** Below these buttons is the USB to UART bridge, a crucial component that allows communication between the PC and the microcontroller. PCs use the USB protocol, while microcontrollers use the UART protocol to communicate. The bridge, in this case, the CH340 chip, translates between these two protocols. This chip also requires a ceramic decoupling capacitor. Next to this chip, we find a micro USB connector to connect the flight computer to a PC.
+
+**Transistor Circuit for Auto Uploading:** To facilitate automatic uploading, there is a transistor circuit on the right side of the USB to UART bridge. Without it, we would need to manually reset the microcontroller and press the BOOT button to start the bootloader for programming. This circuit, consisting of two transistors and two resistors, automates that process whenever you initiate an upload from your programming environment.
+
+**Power Source Selection:** When we connect the PCB to the PC, it receives 5V power from both the USB terminal and the 5V voltage regulator. A circuit, which includes a transistor, a diode, and a resistor, manages the selection between these power sources. 
+
+**SD Card:** Above the source selector sits the SD Card, which allows our flight computer to store flight data. This SD card module is accompanied by a decoupling ceramic capacitor for stable operation.
+
+**User Indicators:** To inform the user about the condition of the flight computer, we utilized this RGB LED - a component combining red, green, and blue lights inside a single package. The board adds three resistors for the three lights to limit their flowing current. Further, the board includes a buzzer for acoustic indication.
+
+**Voltage Divider:** Another circuit consisting of two resistors and a capacitor measures the battery voltage.
+
+**Pull-Up Resistors:** Additional resistors pull up several signal lines, ensuring reliable communication with other components, microcontrollers, and sensors on the connected Stack modules.
+
+**Stackable Header:** A stackable header at the bottom of the PCB  allows us to connect other Stack modules to Stack Core. 
+
+**Connectors:** Finally, there are three more connectors. One is for connecting a camera to capture onboard footage, another is to receive signals from an RC receiver for remote control, and the third is for additional connectivity between the Stack CORE and other modules. 
+
 ![](/assets/images/a6700-0328%20-%20frame%20at%200m12s-2.jpg)
-- 13 Resistors
-- 9 Capacitors
-- 1 Inductor
-- 3 Transistors 
-- 5 Diodes
-- 3 Switches 
-#### FUSION
+## Summary:
+If this overview seemed complex and you only grasped a portion of what was covered, don’t worry. We’ll dive deeper into these concepts in the next section on electronic circuits. There, you’ll learn about essential integrated circuits (ICs) frequently used in our designs and how to arrange components to create a functional flight computer like this one.
 
-![](/assets/images/a6700-0327%20-%20frame%20at%200m3s%20-%202.jpg)
-- 4 Resistors 
-- 19 Capacitors
-- 3 Diodes
-- 2 Switches
-- 1 Oscillator 
-#### OUT
-![](/assets/images/a6700-0330%20-%20frame%20at%200m5s%20-%202.jpg)
 
-- 18 Resistors
-- 4 Capacitors
-- 5 Transistors 
-- 8 Diodes
-- 1 Switch
-- 1 Oscillator
 
-All of these modules also have a lot of other components that are called integrated circuits. 
-These circuits also mostly consist of basic components themselves. 
-
-CORE
-- ESP32 Microcontroller
-- CH340 USB to UART driver
-- LM2596 Buck Converter
-
-FUSION
-- STM32F7 Microcontroller
-- BMI088 Gyroscope and Accelerometer
-- BMP388 Barometer
-- ESD Protection
-
-OUT
-- STM32G0 Microcontroller
-- ESD Protection 
-
-In the next topic you just unlocked - **Electronics Circuits** - you will learn about how to arrange the basic components according to your needs to form functional units that we can use for our flight computers. Further, you will learn about the most essential integrated circuits (ICs) which we will use often in our designs. 

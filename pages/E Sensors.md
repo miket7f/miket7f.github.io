@@ -256,7 +256,7 @@ During implementation, it's essential to provide a regulated 3.3V power supply a
 Additionally, the BMP388 allows adjustment of oversampling rates and configuration of an infinite impulse response (IIR) filter to enhance measurement accuracy. Oversampling improves resolution by averaging multiple measurements, while the IIR filter reduces noise and stabilizes sensor output.
 
 ## Level 6 - Voltmeter
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UZY3L5ofSPc?si=NSnP7XRaQG7A7roo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z7GjegkcpaI?si=fWa2-70MxKV7l8jp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 Another practical sensor for model rocketry is the voltmeter. The voltmeter is intended to measure the battery's voltage level to ensure a sufficient power supply.
 

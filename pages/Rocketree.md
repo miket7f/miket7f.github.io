@@ -15,7 +15,7 @@ Learning with Rocketree works similar to upgrading your character in a video gam
 
 For every skill of the tree, there are also levels. So you can decide, whether you want to explore loads of different skills and topics to gain a broad understanding of model rocketry, or whether you want to master a certain skill and to do a deep dive. In fact, after working with Rocketree for a while, your tree will be uniquely yours and almost not tree will look alike.  
 
-You can decide whether you want to fly a model rocket, analyze past flights, design your own rocket, make your own flight computer extension, handle sensor readouts, or program your own control algorithms. And if all of that sounds so exciting that you want to do all of them at once, then you certainly can with Rocketree. 
+You can decide whether you want to fly a model rocket, analyze past flights, design your own rocket, make your own flight computer, handle sensor readouts, or program your own control algorithms. And if all of that sounds so exciting that you want to do all of them at once, then you certainly can with Rocketree. 
 
 
 
