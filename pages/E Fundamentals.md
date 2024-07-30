@@ -949,6 +949,15 @@ If we apply voltage in reverse bias, the holes move to the negative side, while 
 Through that, we have created a component which allows current to flow in only one direction, which we call a diode. 
 A diode can be used to protect our circuits against reverse voltage, or to rectify alternating current to direct current. There a special diodes, such as LEDs, which light up in forward bias and Zener diodes, which allow us to protect our devices from overvoltage.
 
+### Activity 1 - Principles
+1. Which elements perform covalent bonding and how is it done?
+2. What is a semiconductor? 
+
+**Solution
+1. Non-metals with non-metals. Two elements share their valence electrons to reach a full outer shell layer. 
+2. Something in-between a conductor and an insulator. A semiconductor is not conductive in its natural state. However, if a large enough potential is applied to it, electrons are able to move and the material becomes conductive. 
+
+
 ### Example
 #### Transcript
 Now, let's put theory into practice with a hands-on demonstration.
