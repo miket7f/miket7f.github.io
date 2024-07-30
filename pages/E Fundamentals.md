@@ -822,6 +822,38 @@ The ceramic capacitors, especially the MLCCs, are non-polarized, available in ti
 
 **Solution:
 1. By increasing the plate area A, more electrons or cations will fit onto the plate. By decreasing the distance between the plate, the attraction of the two plates increases, which makes it possible for more charges to occupy the plates. By choosing a material that increase the relative dielectric number, the capacitor allows for more field flux and thus a greater charge.  
+2.  $C = \dfrac{\epsilon_r*\epsilon_0*A}{d}=\dfrac{7*\epsilon_0*0.001}{0.01}=6.195*10^{-12}F = 6.195pF$  with $ε_0 = 8.85*10^{-12} \dfrac{F}{m}$ ... vacuum permittivity. The stored energy is equal to $W = \dfrac{U*Q}{2} = \dfrac{C*U^2}{2} = \dfrac{6.195*10^{-12}F*5V^2}{2}=77.43pJ$
+
+### Activity 3 - Capacitor Circuits
+1. We have two capacitors put in series $C_1=900pF$ and $C_2 = 1nF$, which we supply with a voltage of 5V. Calculate the equivalent capacitance, the charge Q in and the voltage across each capacitor. 
+2. We have two put in parallel $C_1=500uF$ and $C_2 = 1mF$, which we supply with a voltage of 9V. Calculate the equivalent capacitance, the charge Q in and the voltage across each capacitor. Further, calculate the total number of electrons that are stored in the two capacitors. 
+
+**Solution:
+1. For capacitors the formulas of the equivalent capacitance are exactly opposite to those of the equivalent resistance. $C_t = \dfrac{C_1*C_2}{C_1+C_2}=473.6pF$, $Q_t = U*C_t=2.368nC$, $Q_1 = Q_2 = Q_t$, $U_1 = \dfrac{Q_1}{C_1} = 2.632V$, and  $U_2 = \dfrac{Q_2}{C_2} = 2.368V$
+2. $C_t = C_1+C_2=1.5mF$, $Q_t=U*C_t=13.5mC$, $U = U_1 = U_2$, $Q_1 = U_1*C_1 = 4.5mC$, $Q_2 = U_2*C_2 = 9mC$, and $n=\dfrac{Q_t}{e_0}=8.426*10^{16} Electrons$
+### Activity 4 - Capacitor Compound Circuit
+
+**Solution:
+
+### Activity 5 - Capacitor Types
+It's crucial to understand capacitance, the structure of a capacitor, and how to calculate the equivalent capacitance of multiple capacitors put in series or parallel. Something, you also have to be able to do is to choose the right capacitor type based on the application. 
+
+1. Recall the names of the three most used capacitor types? 
+
+Next, I will give you an application, and you have to select the type of capacitor that would suit the situation best:
+1. You want to build a weather station that should be able to operate for multiple years and across a wide temperature range
+2. You are a developing a flight computer and want to make your design it as small as possible. The required capacitance is relatively large in the range of mF. 
+3. You are using the capacitor in an AC circuit. 
+4. You require a capacitor with a capacitance in the range of nF that is used in a circuit for data transmission. 
+
+**Solution:
+1. Aluminum electrolytic capacitors, tantalum electrolytic capacitors, and the ceramic capacitors. 
+
+Match the situation:
+1. As we require a longer lifespan and because the capacitor should be able to retain a stable capacitance over a wide temperature range, the tantalum capacitor is suited best. 
+2. We should choose a aluminum electrolytic capacitor, as the capacitance is relatively big and as Elko capacitors feature smaller form factors at similar capacitances as that of the tantalum type. 
+3. Both Elko and tantalum capacitors are polarized and can't withstand reverse polarity. Therefore, we have to choose a ceramic capacitor.
+4. Data transmission happens at rapid speeds and, therefore, high frequencies. Further, the capacitance relatively small. We should choose a ceramic capacitor, as they are readily available at those low capacitances (nF) and as they excel at high frequency. 
 ### Example
 #### Transcript 
 Now, let's demonstrate this concept hands-on.
