@@ -641,6 +641,7 @@ We talked about a short circuit, which occurs when the positive and negative pol
 The following exercises build the foundation of your electronics understanding. Therefore, I encourage you to do them with maximum commitment. Please revise the topics of this lecture as often as you need until you are able to solve these questions with ease. 
 
 In many circuits we don't use just one resistor, but instead combine multiple. 
+![](Level%206%20-%20Activity%201.jpg)
 Let's start by connecting resistors in series:
 Calculate the following circuits: 
 1. $R_1=100\ohm$, $R_2=200\ohm$, and $U=5V$. Determine the equivalent resistance, the flowing current, and the voltage drop across the two resistors. 
@@ -660,6 +661,7 @@ Calculate the following circuits:
 
 ### Activity 2 - Resistors in Parallel
 In other scenarios we connect two or more resistors in parallel.
+![](Level%206%20-%20Activity%202.jpg)
 Let's do some more examples:
 1. $R_1=100\ohm$, $R_2=200\ohm$, and $U=5V$. Determine the equivalent resistance and the flowing currents. 
 2. $R_1=33\ohm$, $R_2=10\ohm$, and $U=3.3V$. Determine the equivalent resistance and the flowing currents. 
@@ -675,9 +677,15 @@ Let's do some more examples:
 5. $\dfrac{1}{R_t}=\dfrac{1}{R_1}+\dfrac{1}{R_2}+\dfrac{1}{R_3}=0.018030$ → $R_t = 55.46\ohm$
 
 ### Activity 3 - Complex Resistor Circuits
-
-
-
+Now, that you are able to do the series and parallel resistor circuits, let's us step up the difficulty a bit more. 
+Solve for all the missing properties in the following resistor circuits: 
+![](Level%206%20-%20Activity%203%20-%20Circuit%201%201.jpg)
+![](Level%206%20-%20Activity%203%20-%20Circuit%202%201.jpg)
+![](Level%206%20-%20Activity%203%20-%20Circuit%203%201.jpg)
+**Solution:
+![](Level%206%20-%20Activity%203%20-%20Circuit%201%20Solution%201.jpg)
+![](Level%206%20-%20Activity%203%20-%20Circuit%202%20Solution%201.jpg)
+![](Level%206%20-%20Activity%203%20-%20Circuit%203%20Solution%201.jpg)
 
 ## Level 7 - Capacitance
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dza9M1-QLIA?si=1_TcqMY-V4sT9AzO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
