@@ -644,37 +644,37 @@ In many circuits we don't use just one resistor, but instead combine multiple.
 ![](Level%206%20-%20Activity%201.jpg)
 Let's start by connecting resistors in series:
 Calculate the following circuits: 
-1. $R_1=100\ohm$, $R_2=200\ohm$, and $U=5V$. Determine the equivalent resistance, the flowing current, and the voltage drop across the two resistors. 
-2. $R_1=33\ohm$, $R_2=10\ohm$, and $U=3.3V$. Determine the equivalent resistance, the flowing current, and the voltage drop across the two resistors. 
-3. $R_1=220m\ohm$, $R_2=1\ohm$, and $U=990mV$. Determine the equivalent resistance, the flowing current, and the voltage drop across the two resistors. 
-4. We have two resistors in series and the following parameters $I=100mA$, $R_1=100\ohm$, and $U_2=6V$. Calculate the resistance of the missing resistor, the voltage drop across the first resistor, the equivalent resistance, and the voltage of the power supply. 
-5. There are three resistors in series $R_1=100\ohm$, $R_2=200\ohm$, $R_3=330\ohm$, and $U=9V$. Determine the equivalent resistance, the flowing current, and the voltage drop across the three resistors.
-6. We have four resistors in series $R_1=100\ohm$, $U_1=1V$, $R_3=330\ohm$, $R_4=10\ohm$ and $U=9V$. Determine the flowing current, the voltage drops across R3 and R4, and the missing resistors' resistance and voltage drop. 
+1. $R_1=100Ω$, $R_2=200Ω$, and $U=5V$. Determine the equivalent resistance, the flowing current, and the voltage drop across the two resistors. 
+2. $R_1=33Ω$, $R_2=10Ω$, and $U=3.3V$. Determine the equivalent resistance, the flowing current, and the voltage drop across the two resistors. 
+3. $R_1=220mΩ$, $R_2=1Ω$, and $U=990mV$. Determine the equivalent resistance, the flowing current, and the voltage drop across the two resistors. 
+4. We have two resistors in series and the following parameters $I=100mA$, $R_1=100Ω$, and $U_2=6V$. Calculate the resistance of the missing resistor, the voltage drop across the first resistor, the equivalent resistance, and the voltage of the power supply. 
+5. There are three resistors in series $R_1=100Ω$, $R_2=200Ω$, $R_3=330Ω$, and $U=9V$. Determine the equivalent resistance, the flowing current, and the voltage drop across the three resistors.
+6. We have four resistors in series $R_1=100Ω$, $U_1=1V$, $R_3=330Ω$, $R_4=10Ω$ and $U=9V$. Determine the flowing current, the voltage drops across R3 and R4, and the missing resistors' resistance and voltage drop. 
 
 **Solution:
-1. $R_t=R_1+R_2=300\ohm$, $I=\dfrac{U}{R_t}=\dfrac{5V}{300\ohm}=16.66mA$, $U_1=R_1*I=1.66V$ and $U_2=R_2*I=3.33V$
-2. $R_t=R_1+R_2=43\ohm$, $I=\dfrac{U}{R_t}=\dfrac{3.3V}{43\ohm}=76.74mA$, $U_1=R_1*I=2.53V$ and $U_2=R_2*I=0.77V$
-3. $R_t=R_1+R_2=1.22\ohm$, $I=\dfrac{U}{R_t}=\dfrac{0.9V}{1.22\ohm}=737.7mA$, $U_1=R_1*I=162.3mV$ and $U_2=R_2*I=737.7mV$
-4. $R_2 = \dfrac{U_2}{I}=60\ohm$, $U_1=R_1*I=10V$,  $R_t=R_1+R_2=160\ohm$, and $U_t = U_1+U_2 = 16V$
-5. $R_t=R_1+R_2+R_3=630\ohm$, $I=\dfrac{U}{R_t}=14.29mA$, $U_1=R_1*I=1.43V$,  $U_2=R_2*I=2.86V$, and $U_3=R_3*I=4.71V$ 
-6. $I=\dfrac{U_1}{R_1}=10mA$, $U_3=R_3*I=3.3V$, $U_4=R_4*I=0.1V$, $U_2=U-U_1-U_3-U_4=4.6V$ and $R_2 = \dfrac{U_2}{I}=460\ohm$.
+1. $R_t=R_1+R_2=300Ω$, $I=\dfrac{U}{R_t}=\dfrac{5V}{300Ω}=16.66mA$, $U_1=R_1*I=1.66V$ and $U_2=R_2*I=3.33V$
+2. $R_t=R_1+R_2=43Ω$, $I=\dfrac{U}{R_t}=\dfrac{3.3V}{43Ω}=76.74mA$, $U_1=R_1*I=2.53V$ and $U_2=R_2*I=0.77V$
+3. $R_t=R_1+R_2=1.22Ω$, $I=\dfrac{U}{R_t}=\dfrac{0.9V}{1.22Ω}=737.7mA$, $U_1=R_1*I=162.3mV$ and $U_2=R_2*I=737.7mV$
+4. $R_2 = \dfrac{U_2}{I}=60Ω$, $U_1=R_1*I=10V$,  $R_t=R_1+R_2=160Ω$, and $U_t = U_1+U_2 = 16V$
+5. $R_t=R_1+R_2+R_3=630Ω$, $I=\dfrac{U}{R_t}=14.29mA$, $U_1=R_1*I=1.43V$,  $U_2=R_2*I=2.86V$, and $U_3=R_3*I=4.71V$ 
+6. $I=\dfrac{U_1}{R_1}=10mA$, $U_3=R_3*I=3.3V$, $U_4=R_4*I=0.1V$, $U_2=U-U_1-U_3-U_4=4.6V$ and $R_2 = \dfrac{U_2}{I}=460Ω$.
 
 ### Activity 2 - Resistors in Parallel
 In other scenarios we connect two or more resistors in parallel.
 ![](Level%206%20-%20Activity%202.jpg)
 Let's do some more examples:
-1. $R_1=100\ohm$, $R_2=200\ohm$, and $U=5V$. Determine the equivalent resistance and the flowing currents. 
-2. $R_1=33\ohm$, $R_2=10\ohm$, and $U=3.3V$. Determine the equivalent resistance and the flowing currents. 
-3. $R_1=220m\ohm$, $R_2=1\ohm$, and $U=990mV$. Determine the equivalent resistance and the flowing currents. 
-4. We have two resistors in parallel and the following parameters $I_1=100mA$, $R_1=100\ohm$, and $I=300mA$. Calculate the flowing current of the second resistor, the resistance of the missing resistor, the voltage of the power supply, and the equivalent resistance. 
-5. There are three resistors in parallel $R_1=100\ohm$, $R_2=200\ohm$, $R_3=330\ohm$, and $U=9V$. Determine the equivalent resistance, and the flowing currents.
+1. $R_1=100Ω$, $R_2=200Ω$, and $U=5V$. Determine the equivalent resistance and the flowing currents. 
+2. $R_1=33Ω$, $R_2=10Ω$, and $U=3.3V$. Determine the equivalent resistance and the flowing currents. 
+3. $R_1=220mΩ$, $R_2=1Ω$, and $U=990mV$. Determine the equivalent resistance and the flowing currents. 
+4. We have two resistors in parallel and the following parameters $I_1=100mA$, $R_1=100Ω$, and $I=300mA$. Calculate the flowing current of the second resistor, the resistance of the missing resistor, the voltage of the power supply, and the equivalent resistance. 
+5. There are three resistors in parallel $R_1=100Ω$, $R_2=200Ω$, $R_3=330Ω$, and $U=9V$. Determine the equivalent resistance, and the flowing currents.
 
 **Solution
-1. $R_t=\dfrac{R_1*R_2}{R_1+R_2}=66.66\ohm$, $I=\dfrac{U}{R_t}=75mA$, $I_1=\dfrac{U}{R_1}=50mA$ and $I_2=\dfrac{U}{R_2}=25mA$
-2. $R_t=\dfrac{R_1*R_2}{R_1+R_2}=7.67\ohm$, $I=\dfrac{U}{R_t}=430mA$, $I_1=\dfrac{U}{R_1}=100mA$ and $I_2=\dfrac{U}{R_2}=330mA$
-3. $R_t=\dfrac{R_1*R_2}{R_1+R_2}=0.18m\ohm$, $I=\dfrac{U}{R_t}=4.991A$, $I_1=\dfrac{U}{R_1}=4.0909A$ and $I_2=I-I_1=0.9A$ (Other way of evaluating the second current based on Kirchhoff's current law).
-4. $U_1 = R_1 * I_1=10V$, $I_2 = I - I_1=200mA$, $R_2 = \dfrac{U_2}{I_2}=45\ohm$, and $R_t=\dfrac{R_1*R_2}{R_1+R_2}=31.034\ohm$
-5. $\dfrac{1}{R_t}=\dfrac{1}{R_1}+\dfrac{1}{R_2}+\dfrac{1}{R_3}=0.018030$ → $R_t = 55.46\ohm$
+1. $R_t=\dfrac{R_1*R_2}{R_1+R_2}=66.66Ω$, $I=\dfrac{U}{R_t}=75mA$, $I_1=\dfrac{U}{R_1}=50mA$ and $I_2=\dfrac{U}{R_2}=25mA$
+2. $R_t=\dfrac{R_1*R_2}{R_1+R_2}=7.67Ω$, $I=\dfrac{U}{R_t}=430mA$, $I_1=\dfrac{U}{R_1}=100mA$ and $I_2=\dfrac{U}{R_2}=330mA$
+3. $R_t=\dfrac{R_1*R_2}{R_1+R_2}=0.18mΩ$, $I=\dfrac{U}{R_t}=4.991A$, $I_1=\dfrac{U}{R_1}=4.0909A$ and $I_2=I-I_1=0.9A$ (Other way of evaluating the second current based on Kirchhoff's current law).
+4. $U_1 = R_1 * I_1=10V$, $I_2 = I - I_1=200mA$, $R_2 = \dfrac{U_2}{I_2}=45Ω$, and $R_t=\dfrac{R_1*R_2}{R_1+R_2}=31.034Ω$
+5. $\dfrac{1}{R_t}=\dfrac{1}{R_1}+\dfrac{1}{R_2}+\dfrac{1}{R_3}=0.018030$ → $R_t = 55.46Ω$
 
 ### Activity 3 - Complex Resistor Circuits
 Now, that you are able to do the series and parallel resistor circuits, let's us step up the difficulty a bit more. 
