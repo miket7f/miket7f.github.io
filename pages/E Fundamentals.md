@@ -148,12 +148,69 @@ Depending on the number of protons you get different elements. There's the Bohr 
 
 Further, there are ions, which result of an imbalance between electrons and protons in an element. The atom can either be charged positively - cations,  negatively - anions, or it can be neutral. 
 
-### Activity
-- labeling the atom 
-- naming element by periodic table 
-- Bohr model and valence electrons
-- metals non-metals?
-- anion vs cation?
+### §Activity 1: Label the Helium Atom
+Now it's time to apply what you have learned in this lecture:
+
+Here's a blank diagram of a Helium atom.
+Label the following parts: Neutrons, Protons, Electrons, Nucleus, and Shell.
+
+**Solution:**
+1. Protons (inside the nucleus)
+2. Neutrons (inside the nucleus)
+3. Electrons (in the shell)
+4. Nucleus (the center part containing protons and neutrons)
+5. Shell (the orbit around the nucleus containing electrons)
+
+### Activity 2: Identifying Elements from the Periodic Table
+Name the following elements and determine the number of protons and electrons they have:
+1. What element has the atomic number 3? 
+2. What element has 8 protons? 
+
+**Solution:**
+1. Lithium (3 protons and 3 electrons)
+2. Oxygen (8 protons and 8 electrons)
+
+### Activity 3: Bohr Model and Valence Electrons
+1. Go ahead and draw the Bohr atom model for the element Carbon (atomic number = 6)
+2. Identify the valence electrons and explain their significance.
+
+**Solution:**
+- Bohr model for Carbon:
+    - First shell: 2 electrons
+    - Second shell: 4 electrons
+    - The number of electrons in each shell follows the formula $2*n^2$
+- Valence electrons: 4 (in the outer shell)
+- Significance: Valence electrons determine the chemical properties and reactivity of the element. Every element wants to have a full outer shell layer. 
+
+### Activity 4: Metals vs. Non-Metals
+1. Categorize the following elements into metals and non-metals based on the periodic table. 
+2. Have metals relatively few or a lot valence electrons? 
+
+**Example Elements:**
+1. Sodium (Na)
+2. Chlorine (Cl)
+3. Iron (Fe) 
+4. Sulfur (S)
+
+**Solution:**
+**Categorization:**
+1. Sodium - Metal
+2. Chlorine - Non-metal
+3. Iron - Metal
+4. Sulfur - Non-metal
+
+**Properties Explanation:**
+- Metals usually have few valence electrons.
+- Non-Metals usually have more valence electrons.
+
+### §Activity 5: Anion vs. Cation
+Here are three variants of the Helium atom. 
+Which of them is neutral, an anion, and a cation? 
+
+**Solution:**
+1. He (Neutral)
+2. He (Negatively charged → Anion)
+3. He (Positively charged → Cation)
 
 ## Level 3 - Current
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7nQuIP_uvTM?si=9LSt_SmRO6_Hzwvl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -204,6 +261,67 @@ A conductor is a material that allows current to flow. Metals are always good co
 The conventional direction of current flow is from the plus to the minus pole, which is used by electrical engineers in all sorts of formulas. It is also what you should use when drawing the direction of the current. However, in reality, the electrons move from the minus to the plus pole. 
 
 Finally, we can divide the current into DC and AC. DC current flows in one direction only, while the alternating current changes periodically in direction and amplitude. 
+
+### Activity 1: Identify Bonding Types
+Classify the following bonding types based on the elements involved, using information from the lecture:
+1. Sodium (Na) bonding with Chlorine (Cl)
+2. Oxygen (O) bonding with Hydrogen (H)
+3. Iron (Fe) bonding with Copper (Cu)
+
+**Solution:**
+1. **Sodium (Na) and Chlorine (Cl)** - Ionic Bond (Metal and Non-metal)
+2. **Oxygen (O) and Hydrogen (H)** - Covalent Bond (Non-metal and Non-metal)
+3. **Iron (Fe) and Copper (Cu)** - Metallic Bond (Metal and Metal)
+
+### §Activity 2: Understanding Metallic Bonding
+Draw and label a simple diagram showing how metallic bonding occurs. Include cations, electron gas, and the regular structure, based on the lecture description.
+
+**Solution:**
+1. Draw a regular arrangement of positive cations (e.g., metal atoms).
+2. Show a 'sea' or 'gas' of delocalized electrons around and between the cations.
+3. Label the cations and electron gas.
+
+### Activity 3: Electric Current Calculation
+Calculate the number of electrons flowing through a conductor with a current of 2 Amp in 1 second, using the lecture formula.
+
+**Formula:** 
+$I=\frac{Q}{t}$ 
+$e_0 = 1.602*10^{-19} C/electron$ 
+
+**Solution:**
+Reformulate the first formula to get
+$Q = I*t$
+
+Insert the given values $I = 2A$ and $t=1s$
+$Q = 2A*1S = 2C$
+
+This is the total charge that moved through the conductor during this time frame.
+ By dividing this charge by the elementary charge, we get the number of electrons:
+ $n = \dfrac{Q}{e_0} = \dfrac{2C}{1.602*10^{-19}C/electron}$ 
+ 
+### §Activity 4: Flow Direction and Conventional Representation
+1. Draw a basic circuit with a battery, a lamp, and two metal conductors.
+2. Indicate the direction of electron flow (from minus to plus) and the conventional current flow direction (from plus to minus) based on the lecture information.
+
+**Solution:**
+1. Draw a simple circuit with labeled battery poles (plus and minus), lamp, and conductors.
+2. Use arrows to show electron flow (from the negative pole of the battery through the circuit to the positive pole).
+3. Use arrows to show conventional current flow (from the positive pole of the battery through the circuit to the negative pole).
+
+### Activity 5: Direct Current (DC) vs. Alternating Current (AC)
+1. Describe the key differences between DC and AC in terms of direction and amplitude, based on the lecture.
+2. Identify whether the following applications use DC or AC:
+    - Power supply for a smartphone
+    - Household electrical outlets
+
+**Solution:**
+1. **Key Differences:**
+    - **DC:** Flows in one direction only, with constant amplitude.
+    - **AC:** Changes direction periodically, with varying amplitude, typically in a sine wave pattern.
+2. **Applications:**
+    - **Power supply for a smartphone:** DC
+    - **Household electrical outlets:** AC
+
 ## Level 4 - Voltage
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-SRMYzVknP4?si=2RhHp4FLpQJvd-mW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
@@ -262,15 +380,37 @@ So, the electric potential resembles the altitude of the water level in a pipeli
 In an electric circuit, the electric potential alone won't tell us how much current will flow in a circuit. If we have one pole with a potential energy not connected to anything, no current will flow. 
 
 Only the difference in electric potential causes electrons to move from one potential to another if connected through a conductor. We can create this electric potential difference or push force through a battery, a lab bench power supply, or any other voltage source. 
+### Activity 1 - Voltage
+The current flowing through a wire is the movement of electrons. 
+1. Why does this movement occur? 
 
+**Solution:
+1. There must be a difference in electric potential energy between the two endings of the wire. This difference is called voltage. The voltage is the force that pushes the electrons to move!
 
+### Activity 2 - Water Analogy
+In the lecture, we explained the concept of voltage by relating it to a water analogy. 
+The water analogy is important to understand the voltage. Therefore, we provided a few questions that you should be able to answer. 
 
+Let's assume we have two pools. 
+1. What would happen if we would connect the two pools, if their water level is at the same altitude? What would be the flow rate? 
+2. Can we predict the flow rate of a two pool system, by only knowing the altitude of one pool? 
 
+**Solution:**
+1. Nothing, as there's no altitude difference, and, therefore, no difference in potential energy. The flow rate would be 0 l/s. 
+2. No we can't, as it isn't about the altitude of the water level of a single pool, but about the altitude difference of the two pools. We could calculate the exact flow rate by using the Bernoulli equation. $p_1 + \dfrac{\rho*w_1^2}{2}+\rho*g*h_1=p_2 + \dfrac{\rho*w_2^2}{2}+\rho*g*h_2$ ($p_1, p_2$ ... static pressure, $w_1, w_2$ ... flow velocity (in pool approximately 0), $h_1, h_2$ ... altitude of water level)
 
+### Activity 3 - Electric Potential
+The electric potential is the equivalent of the potential energy of the water in the water analogy. 
+Here are a few questions that you should be able to answer.
 
+1. There are two positive charges ($q_1 = 1C$, $q_2 = 0.5C$) positioned $r = 1cm$ apart from each other. How do we call the force that is acting between them? Do the charges repel or attract each other? What is the magnitude of the force? 
+2. The electric potential is the energy required to move a charge of 1C from infinity to a certain distance r to another charge q. What is the potential energy of $q_1$ if we moved the charge from infinity to the distance r towards $q_2$? Formula:  $U = -\dfrac{q_2}{4*\pi*e_0}*\dfrac{1}{r_2}$ 
+3. What is the electric potential energy if we reduce the distance to $r = 5mm$? What is the electric potential difference between those two points?  
 
-
-
+**Solution:
+1. The force is called the Coulomb Force, which is present between electric charges. Similar charges repel each other, while opposing charges attract each other. We can calculate the magnitude by: $F_C = \dfrac{1}{4*\pi*ε_0}*\dfrac{q_1*q_2}{r^2} = \dfrac{1}{4*\pi*ε_0}*\dfrac{1C*0.5C}{0.01m^2}=2.48*10^{21}N$
+2.  $U_1 = -\dfrac{q_2}{4*\pi*e_0}*\dfrac{1}{r_2} = -\dfrac{0.5C}{4*\pi*e_0}*\dfrac{1}{0.01m}=-2.48*10^{19}V$. The charge q_1 has an electric potential of $-2.48*10^{19}V$ at a distance of 0.01m towards $q_2$.
+3. $U_2 = -\dfrac{q_2}{4*\pi*e_0}*\dfrac{1}{r_2} = -\dfrac{0.5C}{4*\pi*e_0}*\dfrac{1}{0.005m}=-4.97*10^{19}V$. The charge q_1 has an electric potential of $-4.97*10^{19}V$ at a distance of 0.005m towards $q_2$. $\Delta{U} = U_2 - U_1 = -4.97*10^{19}V - (-2.48*10^{19}V) = -2.48*10^{19}V$ is the electric potential difference. Remember that the electric potential difference is also the voltage between the two points!
 ## Level 5 - Resistance and Schematic
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3aD4S-XhU-E?si=Ygy74rekQYtbScmX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
@@ -346,6 +486,39 @@ Resistors indicate their resistances by their color rings. The first two to thre
 We can illustrate the wiring of our components by a schematic with the specific symbols each component has. A battery is indicated by a symbol with a longer and shorter line, where the longer line represents the positive terminal and the shorter line represents the negative terminal. A resistor is represented by a rectangle with two leads extending from either end.
 
 By connecting the different symbols, we indicate how they should be wired when building the physical circuit. We can calculate the current that flows in a standard battery resistor circuit, by using Ohm's law. 
+
+### Activity 1 - Resistance
+1. What other property to we have to know to be able to determine the current, if we are given the voltage? What is the name of the property and its unit? What is the formula through which we can calculate the current? What is the name of the component featuring this property? 
+
+**Solution:
+1. In order to calculate the current, we need to be given the resistance. Every component even a wire has some resistance. The resistance is given in Ohms. We can calculate the current by the following formula $I = \dfrac{U}{R}$. A dedicated component offering a specific amount of resistance is called a resistor. 
+
+### Activity 2 - Resistor Value Determination
+![](/assets/images/Resistor_color_code.png)
+Determine the resistance and tolerance of the following resistors based on their color code:  
+1. 4 Band resistor with orange, orange, brown, gold.  
+2. 4 Band resistor with brown, black, black, silver.
+3. 5 Band resistor with yellow, pink, black, brown, brown.
+4. 5 Band resistor with black, black, brown, black, silver. 
+
+**Solution:
+1. 33Ω ±5%
+2. 10Ω ±10%
+3. 470Ω ±1%
+4. 1Ω ±10%
+
+### Activity 3 - Resistor Circuits
+1. A resistor with 33Ω is attached to a AAA battery (1.5V). What is the flowing current?
+2. The current flowing through a resistor is 100mA with a voltage dropping across it of 5V. What is the resistor's value?
+3. A resistor with 10kΩ is attached to the output of a microcontroller, as a pull-down resistor. What is the flowing current if the microcontroller is providing 3.3V? What is the maximum and minimum current if we assume a tolerance of ±5%?
+4. A 5 Band resistor has the color code gold, black, black, red, red. We attach this resistor to a battery block. The battery block's voltage depends on its charge status. (7.2 - 9.6V). What is the maximum and minimum current that can flow if you additionally consider the resistor's tolerance? 
+
+**Solution:
+1.  $I = \dfrac{U}{R}= \dfrac{1.5V}{33Ω}=45.45mA$
+2.  $R = \dfrac{U}{I}= \dfrac{5V}{0.1A}=50Ω$
+3. $R_{min} = R*0.95 =9.5kΩ$ and $R_{max} = R*1.05 =10.5kΩ$. Therefore, the minimum current occurs at maximum resistance $I_{min} = \dfrac{U}{R_{max}}= \dfrac{3.3V}{10,500Ω}=0.314mA$ while the maximum current occurs at minimum resistance $I_{max} = \dfrac{U}{R_{min}}= \dfrac{3.3V}{9,500Ω}=0.347mA$.
+4. We first must notice that the labeling of the resistor is this time form right to left, instead of left to right! We are able to come to this conclusion, as the color band gold is only defined for giving tolerances. By following the resistor color band sheet we get a resistance of $220*10^0Ω$ ±5%. $R_{min} = R*0.95 =209Ω$ and $R_{max} = R*1.05 =231Ω$. The minimum current will occur at maximum resistance and minimum voltage $I_{min} = \dfrac{U_min}{R_{max}}= \dfrac{7.2V}{231Ω}=31.17mA$. The maximum current will occur at minimum resistance and maximum voltage $I_{max} = \dfrac{U_max}{R_{min}}= \dfrac{9.6V}{209Ω}=45.93mA$
+
 
 ## Level 6 - Resistor Circuits
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NmUKCjEVO2w?si=7Y2wy-ncY_WXqpZU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -463,6 +636,48 @@ When putting resistors in parallel, we add the reciprocals of the resistances to
 Further, we learned that the directional sum of the voltages in a closed loop must be zero and that the sum of the currents in a node must be zero.
 
 We talked about a short circuit, which occurs when the positive and negative poles of the power supply are connected directly, either accidentally or due to a fault in the circuit. This creates a path of very low resistance, allowing a large amount of current to flow through the circuit. This can cause significant damage to components, generate excessive heat, and potentially lead to fires or other hazards. Therefore, it is crucial to avoid short circuits at all times.
+
+### Activity 1 - Resistors in Series
+The following exercises build the foundation of your electronics understanding. Therefore, I encourage you to do them with maximum commitment. Please revise the topics of this lecture as often as you need until you are able to solve these questions with ease. 
+
+In many circuits we don't use just one resistor, but instead combine multiple. 
+Let's start by connecting resistors in series:
+Calculate the following circuits: 
+1. $R_1=100\ohm$, $R_2=200\ohm$, and $U=5V$. Determine the equivalent resistance, the flowing current, and the voltage drop across the two resistors. 
+2. $R_1=33\ohm$, $R_2=10\ohm$, and $U=3.3V$. Determine the equivalent resistance, the flowing current, and the voltage drop across the two resistors. 
+3. $R_1=220m\ohm$, $R_2=1\ohm$, and $U=990mV$. Determine the equivalent resistance, the flowing current, and the voltage drop across the two resistors. 
+4. We have two resistors in series and the following parameters $I=100mA$, $R_1=100\ohm$, and $U_2=6V$. Calculate the resistance of the missing resistor, the voltage drop across the first resistor, the equivalent resistance, and the voltage of the power supply. 
+5. There are three resistors in series $R_1=100\ohm$, $R_2=200\ohm$, $R_3=330\ohm$, and $U=9V$. Determine the equivalent resistance, the flowing current, and the voltage drop across the three resistors.
+6. We have four resistors in series $R_1=100\ohm$, $U_1=1V$, $R_3=330\ohm$, $R_4=10\ohm$ and $U=9V$. Determine the flowing current, the voltage drops across R3 and R4, and the missing resistors' resistance and voltage drop. 
+
+**Solution:
+1. $R_t=R_1+R_2=300\ohm$, $I=\dfrac{U}{R_t}=\dfrac{5V}{300\ohm}=16.66mA$, $U_1=R_1*I=1.66V$ and $U_2=R_2*I=3.33V$
+2. $R_t=R_1+R_2=43\ohm$, $I=\dfrac{U}{R_t}=\dfrac{3.3V}{43\ohm}=76.74mA$, $U_1=R_1*I=2.53V$ and $U_2=R_2*I=0.77V$
+3. $R_t=R_1+R_2=1.22\ohm$, $I=\dfrac{U}{R_t}=\dfrac{0.9V}{1.22\ohm}=737.7mA$, $U_1=R_1*I=162.3mV$ and $U_2=R_2*I=737.7mV$
+4. $R_2 = \dfrac{U_2}{I}=60\ohm$, $U_1=R_1*I=10V$,  $R_t=R_1+R_2=160\ohm$, and $U_t = U_1+U_2 = 16V$
+5. $R_t=R_1+R_2+R_3=630\ohm$, $I=\dfrac{U}{R_t}=14.29mA$, $U_1=R_1*I=1.43V$,  $U_2=R_2*I=2.86V$, and $U_3=R_3*I=4.71V$ 
+6. $I=\dfrac{U_1}{R_1}=10mA$, $U_3=R_3*I=3.3V$, $U_4=R_4*I=0.1V$, $U_2=U-U_1-U_3-U_4=4.6V$ and $R_2 = \dfrac{U_2}{I}=460\ohm$.
+
+### Activity 2 - Resistors in Parallel
+In other scenarios we connect two or more resistors in parallel.
+Let's do some more examples:
+1. $R_1=100\ohm$, $R_2=200\ohm$, and $U=5V$. Determine the equivalent resistance and the flowing currents. 
+2. $R_1=33\ohm$, $R_2=10\ohm$, and $U=3.3V$. Determine the equivalent resistance and the flowing currents. 
+3. $R_1=220m\ohm$, $R_2=1\ohm$, and $U=990mV$. Determine the equivalent resistance and the flowing currents. 
+4. We have two resistors in parallel and the following parameters $I_1=100mA$, $R_1=100\ohm$, and $I=300mA$. Calculate the flowing current of the second resistor, the resistance of the missing resistor, the voltage of the power supply, and the equivalent resistance. 
+5. There are three resistors in parallel $R_1=100\ohm$, $R_2=200\ohm$, $R_3=330\ohm$, and $U=9V$. Determine the equivalent resistance, and the flowing currents.
+
+**Solution
+1. $R_t=\dfrac{R_1*R_2}{R_1+R_2}=66.66\ohm$, $I=\dfrac{U}{R_t}=75mA$, $I_1=\dfrac{U}{R_1}=50mA$ and $I_2=\dfrac{U}{R_2}=25mA$
+2. $R_t=\dfrac{R_1*R_2}{R_1+R_2}=7.67\ohm$, $I=\dfrac{U}{R_t}=430mA$, $I_1=\dfrac{U}{R_1}=100mA$ and $I_2=\dfrac{U}{R_2}=330mA$
+3. $R_t=\dfrac{R_1*R_2}{R_1+R_2}=0.18m\ohm$, $I=\dfrac{U}{R_t}=4.991A$, $I_1=\dfrac{U}{R_1}=4.0909A$ and $I_2=I-I_1=0.9A$ (Other way of evaluating the second current based on Kirchhoff's current law).
+4. $U_1 = R_1 * I_1=10V$, $I_2 = I - I_1=200mA$, $R_2 = \dfrac{U_2}{I_2}=45\ohm$, and $R_t=\dfrac{R_1*R_2}{R_1+R_2}=31.034\ohm$
+5. $\dfrac{1}{R_t}=\dfrac{1}{R_1}+\dfrac{1}{R_2}+\dfrac{1}{R_3}=0.018030$ → $R_t = 55.46\ohm$
+
+### Activity 3 - Complex Resistor Circuits
+
+
+
 
 ## Level 7 - Capacitance
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dza9M1-QLIA?si=1_TcqMY-V4sT9AzO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -1025,6 +1240,8 @@ When a voltage is applied to a quartz crystal, it contracts and subsequently rel
 
 When selecting a quartz crystal, we must select the resonance frequency, frequency tolerance, temperature stability, and load capacitance. Load capacitors are needed to stabilize the crystal's oscillation. 
 ## Level 12 - Glimpse at Stack
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lfo5WuIJjmM?si=pH1Vbd5ui8G9Wfot" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Lecture
 **Congratulations on making it this far!** You’ve gained a solid understanding of the fundamental concepts of electronics, from electrons, current, and voltage to resistance, capacitance, semiconductors, and inductors. These concepts form the foundation upon which we’ll learn to interconnect components to create functional circuits for our flight computers.
 
@@ -1054,9 +1271,7 @@ To illustrate how these components come together in a practical application, let
 **Stackable Header:** A stackable header at the bottom of the PCB  allows us to connect other Stack modules to Stack Core. 
 
 **Connectors:** Finally, there are three more connectors. One is for connecting a camera to capture onboard footage, another is to receive signals from an RC receiver for remote control, and the third is for additional connectivity between the Stack CORE and other modules. 
-
-![](/assets/images/a6700-0328%20-%20frame%20at%200m12s-2.jpg)
-## Summary:
+### Summary
 If this overview seemed complex and you only grasped a portion of what was covered, don’t worry. We’ll dive deeper into these concepts in the next section on electronic circuits. There, you’ll learn about essential integrated circuits (ICs) frequently used in our designs and how to arrange components to create a functional flight computer like this one.
 
 
