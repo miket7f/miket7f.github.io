@@ -818,7 +818,7 @@ The ceramic capacitors, especially the MLCCs, are non-polarized, available in ti
 2. The higher the voltage that is applied to the capacitor, the higher the pushing force, and the more electrons or electron holes are stored on each plate. This relationship is linear and depends on the form of the capacitor plates, the distance between the plates, and the dielectric material between the plates. The proportionality is called capacitance $C=\dfrac{Q}{U}$ given in $\dfrac{A*s}{V}$or F Farads. 
 ### Activity 2 - Calculation
 1. The main properties of a capacitor are the plate area A, the distance d between the plates, and the relative dielectric number $\epsilon_r$ (a constant to account for the different dielectric materials present between the capacitor plates). How do we have to change these three parameters in order to increase the capacitance of a capacitor and why do we have to change them that way? 
-2. 
+2. Calculate the capacitance of the following capacitor: $A=10cm^2$, $d=0.01m$, and $\epsilon_r =7$ (glass). What is the energy stored in this capacitor when fully charged if supplied with 5V.  
 
 **Solution:
 1. By increasing the plate area A, more electrons or cations will fit onto the plate. By decreasing the distance between the plate, the attraction of the two plates increases, which makes it possible for more charges to occupy the plates. By choosing a material that increase the relative dielectric number, the capacitor allows for more field flux and thus a greater charge.  
