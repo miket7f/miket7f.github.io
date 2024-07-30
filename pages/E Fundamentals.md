@@ -1109,8 +1109,8 @@ Finally, in the N-channel depletion type MOSFET, a conductive channel (or tunnel
 MOSFETs have faster switching speeds, higher efficiency, and are more scalable, leading to their more frequent use compared to BJTs.
 
 ### Activity 1 - Simple Transistor
-1. What is the simples transistor type that is based on the concept of a PN-Junction?
-2. What are the two different variants? Describe the names of the leads attached to the three regions of the transistor. 
+1. What is the simplest transistor type that is based on the concept of a PN-Junction? 
+2. What are the two different variants? Describe the names of the leads attached to the three regions of the transistor. Draw their circuit symbols. 
 3. Describe the function principle of the NPN variant as a switch. 
 4. How can we use such a transistor as a current controlling device?
 
@@ -1118,14 +1118,21 @@ MOSFETs have faster switching speeds, higher efficiency, and are more scalable, 
 **Solution:
 1. The bipolar junction transistor. It consists of a PN junction and either an added N or P region. 
 2. If we add an N-region, it's called a NPN transistor, and if we add a P-region it's called a PNP transistor. For an NPN transistor, the lead connected to the first N-region is called the Emitter, the lead that is connected to the P-region is called the Base, and the lead attached to the second N-region is called the Collector. 
-3. We are already aware of the function principle of the PN-junction. That's that it is only conductive in forward bias. If we now add a second N-region to the P-region, we get an NPN transistor. In essence, we now have two opposite facing diodes. Consequently, current is not flowing in either direction. However, if we apply a positive voltage to the base, electrons are attracted from the N-region and fill up some of the electron holes of the P-region. If enough voltage is applied, there are freely moving electrons in the P-region, which makes it conductive. Consequently, current can flow from the emitter to the collector. 
-4. A current controlling device is, as the name suggests, a device with which we can control the current flow in a circuit. We can do exactly that with a BJT by varying the current flowing into the Base. The higher the base-emitter current, the more freely moving electrons, and the higher the emitter-collector current. 
-
-
-
+3. We are already aware of the function principle of the PN-junction. That's that it is only conductive in forward bias. If we now add a second N-region to the P-region, we get an NPN transistor. In essence, we now have two opposite facing diodes. Consequently, current is not flowing in either direction. However, if we apply a positive voltage to the base, electrons are attracted from the N-region and fill up some of the electron holes of the P-region. If enough voltage is applied, there are freely moving electrons in the P-region, which makes it conductive. Consequently, current can flow from the collector to the emitter.
+4. A current controlling device is, as the name suggests, a device with which we can control the current flow in a circuit. We can do exactly that with a BJT by varying the current flowing into the Base. As soon as current flows into the base of the transistor, the P-region becomes conductive and current can flow from the emitter to the collector. However, this current flow depends on the saturation of the P-region. The higher the base-emitter current, the more freely moving electrons, and the higher the collector-emitter current. 
 ### Activity 2 - MOSFET
-5. In what ways is a MOSFET different? 
-6. Which MOSFET types are there? 
+1. How are MOSFETs categorized? Draw their circuit symbols. 
+2. Describe the working principle of the N-channel enhancement type MOSFET. 
+3. How is it different compared to a BJT?
+4. How is an N-channel MOSFET different form a P-channel MOSFET? 
+5. How is a depletion type different from an enhancement type?
+
+**Solution:
+1. Into N and P-channel MOSFETS, as well as into enhancement and depletion types. 
+2. A N-channel enhancement type MOSFET consists of four ports: source, gate, drain, and substrate body. The substrate port is internally attached to the source pin. The source is connected to the first N region, the Drain to the second, and the Gate is connected to the P-region. However, between the gate and the P-region, there is a dielectric, which allows no current to flow, and opposite the gate is the substrate body plate. When we apply a voltage between the gate and the source, an electric field between the gate and the substrate body is created. This electric field draws electrons from the N-region to the plate, which again fills up electron holes, and if enough voltage is applied the plate becomes negatively charged as in a capacitor. This charged region creates a tunnel between the two N-regions, which makes current flow possible.
+3. A MOSFET is a voltage controlling device rather than a current controlling device. The Gate of the MOSFET only requires current to charge the plate (capacitor). After the plate is charged, no more current is required to keep the MOSFET activated. Consequently, the MOSFET is more efficient. Further, it is easier to control the current that flows through a MOSFET, as we only have to vary the voltage at the Gate. By increasing the drain-source voltage, the current rises linearly in the ohmic region of the transistor. The higher the drain-source voltage gets, the larger the depletion region on the drain N-region becomes because it is in reverse bias. This enlargement in the depletion area limits the drain-source current, which we call the saturation current. The saturation current changes with the applied voltage to the gate, as the gate voltage can enlarge the tunnel. 
+4. In an N-channel MOSFET, a positive voltage must be applied to the gate relative to the source to make the MOSFET conductive, allowing current to flow between the drain and the source. For a P-channel MOSFET, the source must be at a higher potential than the drain. To turn the P-channel MOSFET on, the gate voltage must be lower than the source voltage. This means that a negative voltage relative to the source needs to be applied to the gate to allow current to flow between the source and the drain.
+5. For the enhancement type to allow current to flow from the source to the drain, we have to apply a voltage to the gate. Talking in terms of switches, this MOSFET type is a commonly open type of switch. As for switches, there's also a commonly closed type of switch. This type is called the depletion type MOSFET. In the N-channel depletion type MOSFET, a conductive channel (or tunnel) is pre-manufactured into the device. By applying a negative voltage to the gate, the channel can be narrowed or closed, reducing or stopping the current flow.
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5mMdQ2MENU?si=ioQ0RqQ8qr724jcO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
