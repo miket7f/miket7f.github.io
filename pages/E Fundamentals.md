@@ -426,7 +426,7 @@ In electricity, the water pipe diameter analog would be the resistance of the co
 #### Ohms Law
 The current and the voltage are, in fact, proportionally linked through Ohms law: 
 
-$R = \dfrac{U}{I}$  given in $\ohm$
+$R = \dfrac{U}{I}$  given in $Ω$
 U ... Voltage [V]
 I ... Current [A]
 #### Resistor 
@@ -808,6 +808,20 @@ Finally, there are many different capacitor types.
 The aluminum electrolytic capacitors feature high capacitances, are cheap, polar, and have a limited lifespan. 
 The tantalum capacitors have slightly lower capacitances at the same volume but are very stable in temperature and voltage changes. However, they are more expensive, sensitive to voltage spikes, and still polarized.
 The ceramic capacitors, especially the MLCCs, are non-polarized, available in tiny form factors, and excel in high-frequency applications. However, their capacitance can vary with voltage and temperature. They have lower capacitance values. 
+
+### Activity 1 - Functional Principle
+1. What is the working principle of a capacitor? 
+2. What is the property that gives the relationship between the applied voltage and the stored charge in a capacitor? What is the unit of this property? 
+
+**Solution:
+1. A capacitor consists of two plates that are spaced apart from each other by a certain distance d. If a voltage is applied to the plates, with the positive terminal of the battery attached to one plate and the negative to the other, the voltage pushes the electrons from the negative pole to the attached plate. As the two plates are not connected by a conductor, the electrons can't move to the other plate. Due to the opposing charges of the electrons sitting on the plate, they spread equally. Conversely, some electrons from the other plate are drawn into the positive terminal of the battery, which makes this plate positively charged. When, a capacitor is connected to a voltage, its plates are charged and energy is stored in the form of electric charge.   
+2. The higher the voltage that is applied to the capacitor, the higher the pushing force, and the more electrons or electron holes are stored on each plate. This relationship is linear and depends on the form of the capacitor plates, the distance between the plates, and the dielectric material between the plates. The proportionality is called capacitance $C=\dfrac{Q}{U}$ given in $\dfrac{A*s}{V}$or F Farads. 
+### Activity 2 - Calculation
+1. The main properties of a capacitor are the plate area A, the distance d between the plates, and the relative dielectric number $\epsilon_r$ (a constant to account for the different dielectric materials present between the capacitor plates). How do we have to change these three parameters in order to increase the capacitance of a capacitor and why do we have to change them that way? 
+2. 
+
+**Solution:
+1. By increasing the plate area A, more electrons or cations will fit onto the plate. By decreasing the distance between the plate, the attraction of the two plates increases, which makes it possible for more charges to occupy the plates. By choosing a material that increase the relative dielectric number, the capacitor allows for more field flux and thus a greater charge.  
 ### Example
 #### Transcript 
 Now, let's demonstrate this concept hands-on.
