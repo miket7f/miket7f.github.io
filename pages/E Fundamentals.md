@@ -689,10 +689,6 @@ Solve for all the missing properties in the following resistor circuits:
 
 ## Level 7 - Capacitance
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dza9M1-QLIA?si=1_TcqMY-V4sT9AzO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/28Kisy15diA?si=o6WfG9l2kKMFwGad" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ### Lecture
 In this lecture, we're moving on to our next electronic component: the capacitor. 
 We'll start by exploring the concept of capacitance, then move on to understand the structure of capacitors, their various applications, capacitor circuits, and the different types of capacitors encountered in flight computer development.
@@ -854,6 +850,8 @@ Match the situation:
 2. We should choose a aluminum electrolytic capacitor, as the capacitance is relatively big and as Elko capacitors feature smaller form factors at similar capacitances as that of the tantalum type. 
 3. Both Elko and tantalum capacitors are polarized and can't withstand reverse polarity. Therefore, we have to choose a ceramic capacitor.
 4. Data transmission happens at rapid speeds and, therefore, high frequencies. Further, the capacitance relatively small. We should choose a ceramic capacitor, as they are readily available at those low capacitances (nF) and as they excel at high frequency. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/28Kisy15diA?si=o6WfG9l2kKMFwGad" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Example
 #### Transcript 
 Now, let's demonstrate this concept hands-on.
@@ -952,12 +950,37 @@ A diode can be used to protect our circuits against reverse voltage, or to recti
 ### Activity 1 - Principles
 1. Which elements perform covalent bonding and how is it done?
 2. What is a semiconductor? 
+3. Explain doping. 
+4. Draw a Silicon structure in which Aluminum is inserted and one in which Phosphorus is inserted. Which of them is the P-doped semiconductor and which of them is the N-doped semiconductor. 
 
 **Solution
 1. Non-metals with non-metals. Two elements share their valence electrons to reach a full outer shell layer. 
 2. Something in-between a conductor and an insulator. A semiconductor is not conductive in its natural state. However, if a large enough potential is applied to it, electrons are able to move and the material becomes conductive. 
+3. Doping is the insertion of a foreign element into a structure. In the case of semiconductors, doping gives the semiconductor material the properties which make it ultra useful. 
+4. Silicon has four valence electrons. Therefore, each Silicon atom bonds with four more Silicon atoms, and the Silicon compound forms a crystal.  If we insert Aluminum that only has three valence electrons, a electron hole was created in the structure. Electrons from nearby Silicon atoms try to fill the electron hole, and by doings so create a new one. Therefore, we like to think that the electron holes are moving. If, on the other hand, we insert phosphorus with five valence electrons, an extra electron is now in the structure. This electron can move freely. As the negative charge can move in this example, it is called an N-doped semiconductor. 
+### Activity 2 - PN Junction
+1. What is the depletion region in a PN junction? 
+2. What happens if we connect the positive pole of a battery to the p-side and the negative pole to the n-side of a PN junction? 
+3. What happens if we reverse the battery polarity? 
+4. What is the name of the component that represents a PN junction? Draw its circuit symbol and state what it is uses for.
 
+**Solution:
+1. The freely moving electrons of the N-doped semiconductor travel to the P-doped semiconductor to fill up the electron holes. Consequently, the a slim region in the N-doped semiconductor now lacks electrons, which makes this part slightly positively charged, while the P-doped semiconductor has extra electrons, which makes it slightly negatively charged. This results in an electric field between the two regions, which prevents further electrons to travel from the N-region to the P-region. 
+2. When we now connect a voltage source to the p-n junction, with the positive pole connected to the p-side and the negative pole connected to the n-side. We push the electrons to move from the n-side to the p-side. This is what we call forward bias. However, for the movement to occur, the pushing force - the voltage - must be high enough to overcome the barrier. If the voltage is higher than 0.7V, the barrier is overcome and the p-n junction becomes conductive.
+3. If we reverse the polarity of the battery, we connect the positive pole to the n-side and the negative pole to the p-side. Something entirely different happens. The electrons on the n-side are attracted to the plus pole, while the holes on the p-side are attracted to the minus pole. Therefore, the depletion region or barrier expands and no current can flow. 
+4. A diode. It is used for reverse polarity protection and for rectifying (translating) AC voltages to DC voltages.
 
+### Activity 3 - Diode Types
+1. What are the three diode types that we discussed in this lecture?
+2. What is the name of the diode that emits light in forward bias? And is this diode type also conductive in reverse bias?
+3. What is the name of the diode that becomes conductive at a precise voltage in reverse-bias?
+4. What is the name of the diode that has high switching capabilities and a lower forward voltage? How is it's junction built up?
+
+**Solution:
+1. Schottky Diodes, Light Emitting Diode, and Zener Diode. 
+2. LED. No, it is not. However, there's an exception. All diode become conductive in reverse bias if the applied voltage is large enough to breakdown the entire PN junction. This voltage is called the reverse breakdown voltage and can be found in many datasheets. 
+3. The Zener diode. This diode type is mostly used in reverse bias to protect different components, for example, the input of a microcontroller. 
+4. The Schottky diode. Standard diodes have forward voltages of around 0.7V, while Schottky diodes allow for forward voltages of 0.4V and less. They feature a metal-semiconductor junction instead of a PN junction, which enables it to receive those properties. 
 ### Example
 #### Transcript
 Now, let's put theory into practice with a hands-on demonstration.
@@ -974,9 +997,6 @@ To begin, we need a power source of 5V, a breadboard, a standard 1N4007 diode, a
 
 ## Level 9 - The Transistor
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MAE1CgEn22M?si=tUNK5HpYq__EGK64" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u5mMdQ2MENU?si=ioQ0RqQ8qr724jcO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ### Lecture
 There is one more component that is used in practically every electronic device today and makes all our technologies possible. It is another application of semiconductor technology, and you certainly heard about it at some point - the transistor. The transistor is like a switch that can turn on and off current flow. However, it does so without needing any mechanical components.
 
@@ -1000,7 +1020,7 @@ Let's analyze the NPN-type transistor.
 The transistor consists of three ports. 
 One is connected to the first N region, which is called the emitter.
 Another connected to the second N region is called the collector.
-The port connected to the P region is called the gate.
+The port connected to the P region is called the base.
 
 We can think about a transistor as consisting of two diodes facing in opposing directions. If we apply a voltage from the emitter to the collector, one of them is always in reverse bias and won't allow current to flow. 
 
@@ -1087,6 +1107,28 @@ For a P-channel MOSFET, the voltage must be applied with the source at a higher 
 Finally, in the N-channel depletion type MOSFET, a conductive channel (or tunnel) is pre-manufactured into the device. By applying a negative voltage to the gate, the channel can be narrowed or closed, reducing or stopping the current flow.
 
 MOSFETs have faster switching speeds, higher efficiency, and are more scalable, leading to their more frequent use compared to BJTs.
+
+### Activity 1 - Simple Transistor
+1. What is the simples transistor type that is based on the concept of a PN-Junction?
+2. What are the two different variants? Describe the names of the leads attached to the three regions of the transistor. 
+3. Describe the function principle of the NPN variant as a switch. 
+4. How can we use such a transistor as a current controlling device?
+
+
+**Solution:
+1. The bipolar junction transistor. It consists of a PN junction and either an added N or P region. 
+2. If we add an N-region, it's called a NPN transistor, and if we add a P-region it's called a PNP transistor. For an NPN transistor, the lead connected to the first N-region is called the Emitter, the lead that is connected to the P-region is called the Base, and the lead attached to the second N-region is called the Collector. 
+3. We are already aware of the function principle of the PN-junction. That's that it is only conductive in forward bias. If we now add a second N-region to the P-region, we get an NPN transistor. In essence, we now have two opposite facing diodes. Consequently, current is not flowing in either direction. However, if we apply a positive voltage to the base, electrons are attracted from the N-region and fill up some of the electron holes of the P-region. If enough voltage is applied, there are freely moving electrons in the P-region, which makes it conductive. Consequently, current can flow from the emitter to the collector. 
+4. A current controlling device is, as the name suggests, a device with which we can control the current flow in a circuit. We can do exactly that with a BJT by varying the current flowing into the Base. The higher the base-emitter current, the more freely moving electrons, and the higher the emitter-collector current. 
+
+
+
+### Activity 2 - MOSFET
+5. In what ways is a MOSFET different? 
+6. Which MOSFET types are there? 
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u5mMdQ2MENU?si=ioQ0RqQ8qr724jcO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Example
 #### Transcript 1
 Now, let's put theory into practice with a hands-on demonstration.
