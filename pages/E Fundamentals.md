@@ -1300,13 +1300,12 @@ We use inductors to store energy, to smoothen a current supply, or in company wi
 ### Activity 2 - Electromagnetism
 1. What is the correlation between the current flowing in a wire and magnetic fields? What is the direction of the field lines? 
 2. What is the unit of the magnetic field strength? 
-3. Let's assume we have a current flowing through a wire and a strong magnetic field around the wire. What happens if we turn off the current flow? What happens if we activate it again? 
+3. Let's assume we have a current flowing through a wire and a strong magnetic field around the wire. What happens if we turn off the power supply? What happens if we activate it again? 
 
 **Solution
 1. If current is flowing through a wire (i.e. moving charges), a concentric magnetic field is created around the wire. The magnetic field strength decreases with increased distance to the wire. We can determine the direction of the field lines by using the right-hand rule. By gripping the wire and aligning the thumb in the direction of conventional current flow, the other fingers will show the direction of the field lines. 
 2. Tesla. 
-3. 
-
+3. The magnetic field resists changes in current. In case we turn off the power supply, the magnetic field releases its stored energy and creates the pushing force that keeps the electrons flowing. This process continues until no stored energy is left. If we activate the power supply again, the wire must build up the electric field, requiring energy. Consequently, the current flow at the beginning isn't maximum, as the magnetic field initially resists the current. 
 
 ### Activity 3 - Component
 1. What is the component that is used in electronic circuits and takes advantage of electromagnetic induction? Draw its circuit symbol. How does this component achieve high inductance values?
@@ -1316,7 +1315,7 @@ We use inductors to store energy, to smoothen a current supply, or in company wi
 1. An Inductor. They magnify the electromagnetic effect of a wire by adding many turns of wire to create a coil and can increase the inductance further by inserting a ferromagnetic material - like Iron - into the coil. 
 2. They require a certain size and are relatively spacious. Further, it is essential to watch out for EMI (Electromagnetic Interference) in nearby PCB traces. EMI could interfere with signal lines and ICs. 
 
-### Activity 3 - Example
+### Activity 4 - Example
 In this demonstration, we'll explore how an inductor can continue to provide power to an LED even after disconnecting the power supply, utilizing the energy stored in the inductor's magnetic field.
 
 To build this circuit, we need the following components:
@@ -1337,7 +1336,6 @@ Hook up:
 5. Connect the cathode (shorter lead) of the LED to one end of the 220Ω resistor.
 6. Connect the other end of the resistor to the negative rail (GND).
 7. Place the diode in parallel to the inductor, LED, and resistor. 
-
 
 - When we first connect the circuit to the power supply, the inductor will resist the change in current, and the LED will only slowly start to light up, as the inductor builds up its magnetic field. 
 - After some time the magnetic field is at its maximum, and the LED lights fully. 
@@ -1387,6 +1385,49 @@ To ensure precise timing for communication protocols and integrated circuits, we
 When a voltage is applied to a quartz crystal, it contracts and subsequently releases a voltage as it returns to its original state. By amplifying and feeding back this voltage output into the crystal, oscillation is achieved. This oscillation, characterized by the crystal's natural resonance frequency, is notably more power-efficient than other methods, as it minimizes energy loss per cycle.
 
 When selecting a quartz crystal, we must select the resonance frequency, frequency tolerance, temperature stability, and load capacitance. Load capacitors are needed to stabilize the crystal's oscillation. 
+
+### Activity 1
+1. Explain the functioning of an LC circuit oscillation. What is different in an RLC circuit? 
+2. Explain the piezoelectric effect.
+3. How does a crystal take advantage of this effect for effective oscillation? Draw the circuit symbol of a crystal. What are the advantages of a crystal compared to an LC circuit? 
+4. What are factors we must consider when selecting a crystal for our microcontroller?
+5. Why does a crystal require load capacitors?
+
+**Solution:
+1. An LC circuit consists of an inductor and a capacitor connected in parallel. It oscillates by transferring energy between the inductor's magnetic field and the capacitor's electric field. Initially, we charge the capacitor by a power supply. Once the power supply is removed, the capacitor discharges, creating a current that flows through the inductor. The inductor resists this flowing current and builds up its magnetic field. When the capacitor is fully discharged, the inductor's magnetic field is at its maximum. The inductor then transfers energy back to the capacitor, recharging it with opposite polarity. This process repeats, causing continuous oscillation at the circuit's resonant frequency. When adding resistance to the LC circuit, the amplitude of the oscillation gradually decreases until no oscillation is left. 
+2. A quartz generates a voltage when it is subjected to mechanical stress. The inverse of this effect, is that the quartz deforms when a voltage is applied to it.
+3. A crystal oscillator circuit sustains oscillation by taking a voltage signal from the quartz resonator, amplifying it, and feeding it back to the oscillator. The oscillation occurs at the resonance frequency of the quartz resonator. 
+4. The frequency, the frequency tolerance, the temperature stability, and the load capacitance. 
+5. To stabilize the oscillation by providing the necessary capacitance for the circuit.
+
+### Activity 2 - LC Oscillator Circuit
+In this demonstration, we will create a basic LC oscillator circuit to visualize how energy is transferred between an inductor and a capacitor, creating an oscillating voltage signal.
+#### Components Needed:
+1. A power source (5V)
+2. A breadboard
+3. An inductor (10mH)
+4. A capacitor (1µF)
+5. An oscilloscope or a frequency counter
+6. A push button
+7. Jumper wires
+
+#### Circuit Hookup:
+1. Connect the positive terminal of the power supply (5V) to one end of the breadboard.
+2. Connect the negative terminal (GND) to the other end of the breadboard.
+3. Place the inductor (10mH) into the breadboard, with one end connected to the positive rail.
+4. Connect the capacitor (1µF) in series with the inductor.
+5. Connect the other end of the capacitor to the negative rail (GND).
+6. Attach the oscilloscope probes across the capacitor to visualize the oscillation.
+7. Place the push button in series with the power supply to control when the circuit is energized.
+8. Use jumper wires to make the necessary connections.
+
+#### Explanation:
+- **Initial Energizing**: When you press the push button, the power supply energizes the LC circuit.
+- **Energy Storage**: The inductor resists the sudden change in current and begins to store energy in its magnetic field. Simultaneously, the capacitor charges up.
+- **Oscillation Start**: Once you release the push button, the power supply is disconnected. The energy stored in the inductor’s magnetic field starts to transfer to the capacitor, causing it to discharge.
+- **Energy Transfer**: This transfer of energy continues back and forth between the inductor and the capacitor, creating an oscillating voltage across the capacitor.
+- **Oscilloscope Observation**: Using the oscilloscope, you can observe the oscillating waveform, which is a direct result of the resonant frequency of the LC circuit. The frequency of oscillation is determined by the values of the inductor and capacitor and can be calculated using the formula $f= \frac{1}{2\pi\sqrt{LC}}$
+
 ## Level 12 - Glimpse at Stack
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lfo5WuIJjmM?si=pH1Vbd5ui8G9Wfot" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
