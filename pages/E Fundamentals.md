@@ -400,9 +400,9 @@ Let's assume we have two pools.
 The electric potential is the equivalent of the potential energy of the water in the water analogy. 
 Here are a few questions that you should be able to answer before you proceed.
 
-1. There are two positive charges ($q_1 = 1C$, $q_2 = 0.5C$) positioned $r = 1cm$ apart from each other. What do we call the force that is acting between them? Do the charges repel or attract each other? What is the magnitude of the force? 
+1. There are two positive charges ($q_1 = 1C$, $q_2 = 0.5C$) positioned $r = 1cm$ apart from each other. What do we call the force that is acting between them? Do the charges repel or attract each other? What is the magnitude of the force? ![](Level%204%20-%20Q1%20and%20Q2.jpg)
 2. The electric potential is the energy required to move a charge of 1C from infinity to a certain distance r to another charge q. What is the potential energy of $q_1$ if we moved the charge from infinity to the distance r towards $q_2$? Formula:  $U = -\dfrac{q_2}{4*\pi*e_0}*\dfrac{1}{r_2}$ 
-3. What is the electric potential energy if we reduce the distance to $r = 5mm$? What is the electric potential energy difference between those two points?  
+3. What is the electric potential energy if we reduce the distance to $r = 5mm$? What is the electric potential energy difference between those two points?  ![](Level%204%20-%20Q1%20and%20Q2%20Closer.jpg)
 
 **Solution:
 1. The force is called the Coulomb Force, which is present between electric charges. Similar charges repel each other while opposing charges attract each other. We can calculate the magnitude by: $F_C = \dfrac{1}{4*\pi*ε_0}*\dfrac{q_1*q_2}{r^2} = \dfrac{1}{4*\pi*ε_0}*\dfrac{1C*0.5C}{0.01m^2}=2.48*10^{21}N$
@@ -803,11 +803,12 @@ The tantalum capacitors have slightly lower capacitances at the same volume but 
 The ceramic capacitors, especially the MLCCs, are non-polarized, available in tiny form factors, and excel in high-frequency applications. However, their capacitance can vary with voltage and temperature. They have lower capacitance values. 
 
 ### Activity 1 - Functional Principle
-1. What is the working principle of a capacitor? 
+1. What is the working principle of a capacitor? Draw its two symbol variants.
 2. What property gives the relationship between the applied voltage and the stored charge in a capacitor? What is the unit of this property? 
 
 **Solution:
 1. A capacitor consists of two plates that are spaced apart from each other by a certain distance d. If a voltage is applied to the plates, with the positive terminal of the battery attached to one plate and the negative to the other, the voltage pushes the electrons from the negative pole to the attached plate. As the two plates are not connected by a conductor, the electrons can't move to the other plate. Due to the opposing charges of the electrons sitting on the plate, they spread equally. Conversely, some electrons from the other plate are drawn into the positive terminal of the battery, which makes this plate positively charged. When a capacitor is connected to a voltage, its plates are charged, and energy is stored through an electric charge.
+![](Level%207%20-%20Capacitor%20Symbol.jpg)
 2. The higher the applied voltage, the higher the pushing force, and the more electrons or electron holes are stored on each plate. This relationship is linear and depends on the form of the capacitor plates, the distance between the plates, and the dielectric material between the plates. The proportionality is called capacitance $C=\dfrac{Q}{U}$ given in $\dfrac{A*s}{V}$or F Farads. 
 
 ### Activity 2 - Calculation
@@ -826,9 +827,17 @@ The ceramic capacitors, especially the MLCCs, are non-polarized, available in ti
 1. The formulas of the equivalent capacitance are exactly opposite to those of the equivalent resistance. $C_t = \dfrac{C_1*C_2}{C_1+C_2}=473.6pF$, $Q_t = U*C_t=2.368nC$, $Q_1 = Q_2 = Q_t$, $U_1 = \dfrac{Q_1}{C_1} = 2.632V$, and  $U_2 = \dfrac{Q_2}{C_2} = 2.368V$
 2. $C_t = C_1+C_2=1.5mF$, $Q_t=U*C_t=13.5mC$, $U = U_1 = U_2$, $Q_1 = U_1*C_1 = 4.5mC$, $Q_2 = U_2*C_2 = 9mC$, and $n=\dfrac{Q_t}{e_0}=8.426*10^{16} Electrons$
 ### Activity 4 - Capacitor Compound Circuit
+Although it is quite rare, there are occasions when combining multiple capacitors is necessary to achieve a specific equivalent capacitance. In the circuit shown:
+![](Level%207%20-%20Capacitor%20Circuit.jpg)
+Determine the following:
+1. The equivalent capacitance of the circuit.
+2. The charges $Q_1$, $Q_2$​, and $Q_3$​ on each capacitor.
+3. The voltage drops $U_1$, $U_2$​, and $U_3$​ across each capacitor.
+4. The current flowing through the circuit, assuming the power supply has been connected for a long time and the capacitors are fully charged.
 
-**Solution:
-
+**Solution:**
+![](Level%207%20-%20Capacitor%20Circuit%20Solution.jpg)
+Note that no current is flowing through the circuit, as the capacitors are fully charged. Since all the plates of the capacitors are fully occupied with charges, no additional electrons are moving to or from the capacitor plates.
 ### Activity 5 - Capacitor Types
 It's crucial to understand capacitance, the structure of a capacitor, and how to calculate the equivalent capacitance of multiple capacitors put in series or parallel. Something you also have to be able to do is to choose the right capacitor type based on the application. 
 
@@ -966,6 +975,7 @@ A diode can be used to protect our circuits against reverse voltage, or to recti
 2. When we now connect a voltage source to the p-n junction, with the positive pole connected to the p-side and the negative pole connected to the n-side. We push the electrons to move from the n-side to the p-side. This is what we call forward bias. However, for the movement to occur, the pushing force - the voltage - must be high enough to overcome the barrier. If the voltage is higher than 0.7V, the barrier is overcome, and the p-n junction becomes conductive.
 3. If we reverse the polarity of the battery, we connect the positive pole to the n-side and the negative pole to the p-side. Something entirely different happens. The electrons on the n-side are attracted to the plus pole, while the holes on the p-side are attracted to the minus pole. Therefore, the depletion region or barrier expands, and no current can flow. 
 4. A diode. It is used for reverse polarity protection and for rectifying (translating) AC voltages to DC voltages.
+![](Level%208%20-%20Diode%20Symbol.jpg)
 
 ### Activity 3 - Diode Types
 1. What are the three diode types we discussed in this lecture? Draw their circuit Symbols.
@@ -1139,14 +1149,43 @@ MOSFETs have faster switching speeds, higher efficiency, and are more scalable, 
 4. In an N-channel MOSFET, a positive voltage must be applied to the gate relative to the source to make the MOSFET conductive, allowing current to flow between the drain and the source. For a P-channel MOSFET, the source must be at a higher potential than the drain. The gate voltage must be lower than the source voltage to turn the P-channel MOSFET on. This means that a negative voltage relative to the source needs to be applied to the gate to allow current to flow between the source and the drain.
 5. For the enhancement type to allow current to flow from the source to the drain, we apply a voltage to the gate. This MOSFET type is a commonly open type of switch. As for switches, there's also an originally closed type of switch. This type is called the depletion type MOSFET. In the N-channel depletion type MOSFET, a conductive channel (or tunnel) is pre-manufactured into the device. By applying a negative voltage to the gate, the channel can be narrowed or closed, reducing or stopping the current flow
 
-### Activity 3 - Calculations
-BJT in Circuit with resistor
+### Activity 3 - Calculation 1
+Even though we did not cover calculations extensively in this lecture, here are two calculation examples that are highly useful to understand when it comes to transistors.
 
-**Solution:
+Here's what you need to understand:
+
+To calculate the higher current flowing from the collector to the emitter in a Bipolar Junction Transistor (BJT), you need to know the current flowing into the base. To find the base current, you first need to determine the voltage drop across the base resistor.
+
+Here's the circuit:
+![](Level%209%20-%20Transistor%20Circuit%201.jpg)
+What base voltage does the transistor need in order to deliver 100mA of current to the load resistor?
+
+**Solution:**
+![](Level%209%20-%20Transistor%20Circuit%201%20-%20Solution.jpg)
+First, we calculated the required base current so that the transistor can allow the desired collector-emitter current. To do this, we used the current gain factor ($h_{FE}$) of the transistor.
+
+After determining the base current needed to achieve the desired collector-emitter current, we then calculated the voltage drop across the current-limiting resistor connected to the base.
+
+To find the actual voltage that must be applied to the base, we need to add the base-emitter voltage drop ($V_{BE}$​) to this voltage drop across the resistor.
+
+### Activity 4 - Calculation 2
+Here's another calculation example:
+![](Level%209%20-%20Transistor%20Circuit%202.jpg)
+You should calculate the collector-emitter current, determine whether the transistor reached saturation, and evaluate the voltage drop across the resistor $U_L$.
+
+**Solution:**
+![](Level%209%20-%20Transistor%20Circuit%202%20Solution.jpg)
+We first calculated the voltage drop across the current-limiting resistor connected to the transistor's base to determine the base current. With the base current known, we then calculated the collector-emitter current. Based on this, we calculated the voltage drop across the load resistor.
+
+However, we observed an unexpected result: a voltage of 780V was calculated to drop across the load resistor, even though only 6V was supplied. This indicates that the transistor is already saturated. In saturation, the transistor is fully on, and the current flow is limited by the resistor rather than by the transistor's characteristics.
+
+In this saturated state, the voltage drop across the collector-emitter junction is approximately 0V, and the voltage drop across the load resistor is close to the supply voltage of 6V.
+
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5mMdQ2MENU?si=ioQ0RqQ8qr724jcO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Activity 4 - Example
+### Activity 5 - Example
 #### Transcript 1
 Now, let's put theory into practice with a hands-on demonstration.
 We will do a total of two examples. 
@@ -1318,6 +1357,7 @@ We use inductors to store energy, to smoothen a current supply, or in company wi
 
 **Solution
 1. An Inductor. They magnify the electromagnetic effect of a wire by adding many turns of wire to create a coil. Further, they insert a ferromagnetic material - like Iron - into the coil. 
+![](Level%2010%20-%20Symbol%20Inductor.jpg)
 2. They require a certain size and are relatively spacious. Further, it is essential to watch out for EMI (Electromagnetic Interference) in nearby PCB traces. EMI could interfere with signal lines and ICs. 
 
 ### Activity 4 - Example
@@ -1402,6 +1442,7 @@ When selecting a quartz crystal, we must select the resonance frequency, frequen
 1. An LC circuit consists of an inductor and a capacitor connected in parallel. It oscillates by transferring energy between the inductor's magnetic field and the capacitor's electric field. Initially, we charge the capacitor with a power supply. Once the power supply is removed, the capacitor discharges, creating a current that flows through the inductor. The inductor resists this flowing current and builds up its magnetic field. When the capacitor is fully discharged, the inductor's magnetic field is at its maximum. The inductor then transfers energy back to the capacitor, recharging it with opposite polarity. This process repeats, causing continuous oscillation at the circuit's resonant frequency. When adding resistance to the LC circuit, the amplitude of the oscillation gradually decreases until no oscillation is left. 
 2. A quartz generates a voltage when it is subjected to mechanical stress. The inverse of this effect is that the quartz deforms when a voltage is applied to it.
 3. A crystal oscillator circuit sustains oscillation by taking a voltage signal from the quartz resonator, amplifying it, and feeding it back to the oscillator. The oscillation occurs at the resonance frequency of the quartz resonator. 
+![](Level%2011%20-%20Symbol%20Crystal.jpg)
 4. The frequency, the frequency tolerance, the temperature stability, and the load capacitance. 
 5. To stabilize the oscillation by providing the necessary capacitance for the circuit.
 
@@ -1487,3 +1528,6 @@ Now, let's do the same for some of the components on the Stack Out board, and th
 
 Oscillator, MOSFET, LED, ESD-Protection, Pluggable Terminal Block, and Microcontroller
 ![](Level%2012%20-%20Q3.jpg)
+
+**Solution:
+![](Level%2012%20-%20A3.jpg)
