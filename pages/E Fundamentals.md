@@ -1114,12 +1114,12 @@ MOSFETs have faster switching speeds, higher efficiency, and are more scalable, 
 3. Describe the function principle of the NPN variant as a switch. 
 4. How can we use such a transistor as a current controlling device?
 
-
 **Solution:
 1. The bipolar junction transistor. It consists of a PN junction and either an added N or P region. 
 2. If we add an N-region, it's called a NPN transistor, and if we add a P-region it's called a PNP transistor. For an NPN transistor, the lead connected to the first N-region is called the Emitter, the lead that is connected to the P-region is called the Base, and the lead attached to the second N-region is called the Collector. 
 3. We are already aware of the function principle of the PN-junction. That's that it is only conductive in forward bias. If we now add a second N-region to the P-region, we get an NPN transistor. In essence, we now have two opposite facing diodes. Consequently, current is not flowing in either direction. However, if we apply a positive voltage to the base, electrons are attracted from the N-region and fill up some of the electron holes of the P-region. If enough voltage is applied, there are freely moving electrons in the P-region, which makes it conductive. Consequently, current can flow from the collector to the emitter.
 4. A current controlling device is, as the name suggests, a device with which we can control the current flow in a circuit. We can do exactly that with a BJT by varying the current flowing into the Base. As soon as current flows into the base of the transistor, the P-region becomes conductive and current can flow from the emitter to the collector. However, this current flow depends on the saturation of the P-region. The higher the base-emitter current, the more freely moving electrons, and the higher the collector-emitter current. 
+
 ### Activity 2 - MOSFET
 1. How are MOSFETs categorized? Draw their circuit symbols. 
 2. Describe the working principle of the N-channel enhancement type MOSFET. 
@@ -1132,10 +1132,15 @@ MOSFETs have faster switching speeds, higher efficiency, and are more scalable, 
 2. A N-channel enhancement type MOSFET consists of four ports: source, gate, drain, and substrate body. The substrate port is internally attached to the source pin. The source is connected to the first N region, the Drain to the second, and the Gate is connected to the P-region. However, between the gate and the P-region, there is a dielectric, which allows no current to flow, and opposite the gate is the substrate body plate. When we apply a voltage between the gate and the source, an electric field between the gate and the substrate body is created. This electric field draws electrons from the N-region to the plate, which again fills up electron holes, and if enough voltage is applied the plate becomes negatively charged as in a capacitor. This charged region creates a tunnel between the two N-regions, which makes current flow possible.
 3. A MOSFET is a voltage controlling device rather than a current controlling device. The Gate of the MOSFET only requires current to charge the plate (capacitor). After the plate is charged, no more current is required to keep the MOSFET activated. Consequently, the MOSFET is more efficient. Further, it is easier to control the current that flows through a MOSFET, as we only have to vary the voltage at the Gate. By increasing the drain-source voltage, the current rises linearly in the ohmic region of the transistor. The higher the drain-source voltage gets, the larger the depletion region on the drain N-region becomes because it is in reverse bias. This enlargement in the depletion area limits the drain-source current, which we call the saturation current. The saturation current changes with the applied voltage to the gate, as the gate voltage can enlarge the tunnel. 
 4. In an N-channel MOSFET, a positive voltage must be applied to the gate relative to the source to make the MOSFET conductive, allowing current to flow between the drain and the source. For a P-channel MOSFET, the source must be at a higher potential than the drain. To turn the P-channel MOSFET on, the gate voltage must be lower than the source voltage. This means that a negative voltage relative to the source needs to be applied to the gate to allow current to flow between the source and the drain.
-5. For the enhancement type to allow current to flow from the source to the drain, we have to apply a voltage to the gate. Talking in terms of switches, this MOSFET type is a commonly open type of switch. As for switches, there's also a commonly closed type of switch. This type is called the depletion type MOSFET. In the N-channel depletion type MOSFET, a conductive channel (or tunnel) is pre-manufactured into the device. By applying a negative voltage to the gate, the channel can be narrowed or closed, reducing or stopping the current flow.
+5. For the enhancement type to allow current to flow from the source to the drain, we have to apply a voltage to the gate. Talking in terms of switches, this MOSFET type is a commonly open type of switch. As for switches, there's also a commonly closed type of switch. This type is called the depletion type MOSFET. In the N-channel depletion type MOSFET, a conductive channel (or tunnel) is pre-manufactured into the device. By applying a negative voltage to the gate, the channel can be narrowed or closed, reducing or stopping the current flow
 
+### Activity 3 - Calculations
+BJT in Circuit with resistor
+
+**Solution:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5mMdQ2MENU?si=ioQ0RqQ8qr724jcO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Example
 #### Transcript 1
 Now, let's put theory into practice with a hands-on demonstration.
@@ -1280,7 +1285,38 @@ Ferromagnets are metals that become magnetic by applying a strong external magne
 
 We use inductors to store energy, to smoothen a current supply, or in company with a capacitor to create a stable DC from a switch mode power supply. When creating the layout, we must carefully consider their placement so that their magnetic field does not influence signal lines or integrated circuits, and so it isn't influenced by a magnetic field itself. 
 
-### Example
+### Activity 1 - Magnetism
+1. Is it possible to only have a single magnetic North or South pole without the other? Do any other property related to electronics come to your mind that has this ability?
+2. What happens if we cut a bar magnet in half?
+3. What is a ferromagnetic material?
+4. How can we destroy the magnetic properties of a ferromagnet?
+
+**Solution
+1. No, they always must occur together. Yes, electric charges can exist on their own. 
+2. We get two bar magnets, each with their own magnetic North and South pole.
+3. A material that is not magnetic out of the box, but can become magnetic if a large enough outside magnetic field is applied. This is because the ferromagnet's inner bar magnets align with the external field, and stay aligned even after the field is removed.
+4.  By heating the ferromagnet, so that the inner bar magnets are randomized again. 
+
+### Activity 2 - Electromagnetism
+1. What is the correlation between the current flowing in a wire and magnetic fields? What is the direction of the field lines? 
+2. What is the unit of the magnetic field strength? 
+3. Let's assume we have a current flowing through a wire and a strong magnetic field around the wire. What happens if we turn off the current flow? What happens if we activate it again? 
+
+**Solution
+1. If current is flowing through a wire (i.e. moving charges), a concentric magnetic field is created around the wire. The magnetic field strength decreases with increased distance to the wire. We can determine the direction of the field lines by using the right-hand rule. By gripping the wire and aligning the thumb in the direction of conventional current flow, the other fingers will show the direction of the field lines. 
+2. Tesla. 
+3. 
+
+
+### Activity 3 - Component
+1. What is the component that is used in electronic circuits and takes advantage of electromagnetic induction? Draw its circuit symbol. How does this component achieve high inductance values?
+2. What are the implications of this component when placing them onto a PCB?
+
+**Solution
+1. An Inductor. They magnify the electromagnetic effect of a wire by adding many turns of wire to create a coil and can increase the inductance further by inserting a ferromagnetic material - like Iron - into the coil. 
+2. They require a certain size and are relatively spacious. Further, it is essential to watch out for EMI (Electromagnetic Interference) in nearby PCB traces. EMI could interfere with signal lines and ICs. 
+
+### Activity 3 - Example
 In this demonstration, we'll explore how an inductor can continue to provide power to an LED even after disconnecting the power supply, utilizing the energy stored in the inductor's magnetic field.
 
 To build this circuit, we need the following components:
