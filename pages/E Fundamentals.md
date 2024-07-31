@@ -1472,3 +1472,18 @@ If this overview seemed complex and you only grasped a portion of what was cover
 ### Activity 1 - Stack Fusion
 Now that you have reviewed the components on the Stack Core, you should be able to assign the following components to the Stack Fusion board. You will be provided with a picture that shows numbered components, as well as a list of component names. Your task is to match each name to the correct number on the picture. Multiple pictures will be given for practice in recognizing components on PCBs.
 
+Button, Resistor, RGB-LED, and Microcontroller
+![](Level%2012%20-Q1.jpg)
+
+
+Capacitor, Barometer, Micro USB, Crystal, Accelerometer and Gyroscope
+![](Level%2012%20-%20Q2.jpg)
+
+**Solution
+![](Level%2012%20-%20A1.jpg)![](Level%2012%20-%20A2.jpg)
+
+### Activity 3 - Stack Out
+Now, let's do the same for some of the components on the Stack Out board, and then you'll be ready to move on to the next section of this course!
+
+Oscillator, MOSFET, LED, ESD-Protection, Pluggable Terminal Block, and Microcontroller
+![](Level%2012%20-%20Q3.jpg)
