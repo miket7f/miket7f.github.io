@@ -1463,5 +1463,6 @@ To illustrate how these components come together in a practical application, let
 ### Summary
 If this overview seemed complex and you only grasped a portion of what was covered, don’t worry. We’ll dive deeper into these concepts in the next section on electronic circuits. There, you’ll learn about essential integrated circuits (ICs) frequently used in our designs and how to arrange components to create a functional flight computer like this one.
 
-
+### Activity 1 - Stack Fusion
+Now that you have reviewed the components on the Stack Core, you should be able to assign the following components to the Stack Fusion board. You will be provided with a picture that shows numbered components, as well as a list of component names. Your task is to match each name to the correct number on the picture. Multiple pictures will be given for practice in recognizing components on PCBs.
 
