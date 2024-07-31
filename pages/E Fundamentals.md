@@ -804,52 +804,54 @@ The ceramic capacitors, especially the MLCCs, are non-polarized, available in ti
 
 ### Activity 1 - Functional Principle
 1. What is the working principle of a capacitor? 
-2. What is the property that gives the relationship between the applied voltage and the stored charge in a capacitor? What is the unit of this property? 
+2. What property gives the relationship between the applied voltage and the stored charge in a capacitor? What is the unit of this property? 
 
 **Solution:
-1. A capacitor consists of two plates that are spaced apart from each other by a certain distance d. If a voltage is applied to the plates, with the positive terminal of the battery attached to one plate and the negative to the other, the voltage pushes the electrons from the negative pole to the attached plate. As the two plates are not connected by a conductor, the electrons can't move to the other plate. Due to the opposing charges of the electrons sitting on the plate, they spread equally. Conversely, some electrons from the other plate are drawn into the positive terminal of the battery, which makes this plate positively charged. When, a capacitor is connected to a voltage, its plates are charged and energy is stored in the form of electric charge.   
-2. The higher the voltage that is applied to the capacitor, the higher the pushing force, and the more electrons or electron holes are stored on each plate. This relationship is linear and depends on the form of the capacitor plates, the distance between the plates, and the dielectric material between the plates. The proportionality is called capacitance $C=\dfrac{Q}{U}$ given in $\dfrac{A*s}{V}$or F Farads. 
+1. A capacitor consists of two plates that are spaced apart from each other by a certain distance d. If a voltage is applied to the plates, with the positive terminal of the battery attached to one plate and the negative to the other, the voltage pushes the electrons from the negative pole to the attached plate. As the two plates are not connected by a conductor, the electrons can't move to the other plate. Due to the opposing charges of the electrons sitting on the plate, they spread equally. Conversely, some electrons from the other plate are drawn into the positive terminal of the battery, which makes this plate positively charged. When a capacitor is connected to a voltage, its plates are charged, and energy is stored through an electric charge.
+2. The higher the applied voltage, the higher the pushing force, and the more electrons or electron holes are stored on each plate. This relationship is linear and depends on the form of the capacitor plates, the distance between the plates, and the dielectric material between the plates. The proportionality is called capacitance $C=\dfrac{Q}{U}$ given in $\dfrac{A*s}{V}$or F Farads. 
+
 ### Activity 2 - Calculation
-1. The main properties of a capacitor are the plate area A, the distance d between the plates, and the relative dielectric number $\epsilon_r$ (a constant to account for the different dielectric materials present between the capacitor plates). How do we have to change these three parameters in order to increase the capacitance of a capacitor and why do we have to change them that way? 
-2. Calculate the capacitance of the following capacitor: $A=10cm^2$, $d=0.01m$, and $\epsilon_r =7$ (glass). What is the energy stored in this capacitor when fully charged if supplied with 5V.  
+1. The main properties of a capacitor are the plate area A, the distance d between the plates, and the relative dielectric number $\epsilon_r$ (a constant to account for the different dielectric materials present between the capacitor plates). How do we have to change these three parameters to increase the capacitance of a capacitor, and why do we have to change them that way? 
+2. Calculate the capacitance of the following capacitor: $A=10cm^2$, $d=0.01m$, and $\epsilon_r =7$ (glass). What energy is stored in this capacitor when fully charged if supplied with 5V?  
 
 **Solution:
-1. By increasing the plate area A, more electrons or cations will fit onto the plate. By decreasing the distance between the plate, the attraction of the two plates increases, which makes it possible for more charges to occupy the plates. By choosing a material that increase the relative dielectric number, the capacitor allows for more field flux and thus a greater charge.  
+1. By increasing the plate area A, more electrons or cations will fit onto the plate. By decreasing the distance between the plates, the attraction of the two plates increases, which makes it possible for more charges to occupy the plates. By choosing a material that increases the relative dielectric number, the capacitor allows for more field flux and, thus, a greater charge.  
 2.  $C = \dfrac{\epsilon_r*\epsilon_0*A}{d}=\dfrac{7*\epsilon_0*0.001}{0.01}=6.195*10^{-12}F = 6.195pF$  with $ε_0 = 8.85*10^{-12} \dfrac{F}{m}$ ... vacuum permittivity. The stored energy is equal to $W = \dfrac{U*Q}{2} = \dfrac{C*U^2}{2} = \dfrac{6.195*10^{-12}F*5V^2}{2}=77.43pJ$
 
 ### Activity 3 - Capacitor Circuits
-1. We have two capacitors put in series $C_1=900pF$ and $C_2 = 1nF$, which we supply with a voltage of 5V. Calculate the equivalent capacitance, the charge Q in and the voltage across each capacitor. 
-2. We have two put in parallel $C_1=500uF$ and $C_2 = 1mF$, which we supply with a voltage of 9V. Calculate the equivalent capacitance, the charge Q in and the voltage across each capacitor. Further, calculate the total number of electrons that are stored in the two capacitors. 
+1. We have two capacitors put in series $C_1=900pF$ and $C_2 = 1nF$, which we supply with a voltage of 5V. Calculate the equivalent capacitance, the charge Q in, and the voltage across each capacitor. 
+2. We have two put in parallel $C_1=500uF$ and $C_2 = 1mF$, which we supply with a voltage of 9V. Calculate the equivalent capacitance, the charge Q in, and the voltage across each capacitor. Further, calculate the total number of electrons stored in the two capacitors. 
 
 **Solution:
-1. For capacitors the formulas of the equivalent capacitance are exactly opposite to those of the equivalent resistance. $C_t = \dfrac{C_1*C_2}{C_1+C_2}=473.6pF$, $Q_t = U*C_t=2.368nC$, $Q_1 = Q_2 = Q_t$, $U_1 = \dfrac{Q_1}{C_1} = 2.632V$, and  $U_2 = \dfrac{Q_2}{C_2} = 2.368V$
+1. The formulas of the equivalent capacitance are exactly opposite to those of the equivalent resistance. $C_t = \dfrac{C_1*C_2}{C_1+C_2}=473.6pF$, $Q_t = U*C_t=2.368nC$, $Q_1 = Q_2 = Q_t$, $U_1 = \dfrac{Q_1}{C_1} = 2.632V$, and  $U_2 = \dfrac{Q_2}{C_2} = 2.368V$
 2. $C_t = C_1+C_2=1.5mF$, $Q_t=U*C_t=13.5mC$, $U = U_1 = U_2$, $Q_1 = U_1*C_1 = 4.5mC$, $Q_2 = U_2*C_2 = 9mC$, and $n=\dfrac{Q_t}{e_0}=8.426*10^{16} Electrons$
 ### Activity 4 - Capacitor Compound Circuit
 
 **Solution:
 
 ### Activity 5 - Capacitor Types
-It's crucial to understand capacitance, the structure of a capacitor, and how to calculate the equivalent capacitance of multiple capacitors put in series or parallel. Something, you also have to be able to do is to choose the right capacitor type based on the application. 
+It's crucial to understand capacitance, the structure of a capacitor, and how to calculate the equivalent capacitance of multiple capacitors put in series or parallel. Something you also have to be able to do is to choose the right capacitor type based on the application. 
 
-1. Recall the names of the three most used capacitor types? 
+1. Recall the names of the three most used capacitor types. 
 
 Next, I will give you an application, and you have to select the type of capacitor that would suit the situation best:
 1. You want to build a weather station that should be able to operate for multiple years and across a wide temperature range
-2. You are a developing a flight computer and want to make your design it as small as possible. The required capacitance is relatively large in the range of mF. 
+2. You are developing a flight computer and want to make your design as small as possible. The required capacitance is relatively large in the range of mF. 
 3. You are using the capacitor in an AC circuit. 
 4. You require a capacitor with a capacitance in the range of nF that is used in a circuit for data transmission. 
 
 **Solution:
-1. Aluminum electrolytic capacitors, tantalum electrolytic capacitors, and the ceramic capacitors. 
+1. Aluminum electrolytic capacitors, tantalum electrolytic capacitors, and ceramic capacitors. 
 
 Match the situation:
-1. As we require a longer lifespan and because the capacitor should be able to retain a stable capacitance over a wide temperature range, the tantalum capacitor is suited best. 
-2. We should choose a aluminum electrolytic capacitor, as the capacitance is relatively big and as Elko capacitors feature smaller form factors at similar capacitances as that of the tantalum type. 
-3. Both Elko and tantalum capacitors are polarized and can't withstand reverse polarity. Therefore, we have to choose a ceramic capacitor.
-4. Data transmission happens at rapid speeds and, therefore, high frequencies. Further, the capacitance relatively small. We should choose a ceramic capacitor, as they are readily available at those low capacitances (nF) and as they excel at high frequency. 
+1. As we require a longer lifespan and because the capacitor should be able to retain a stable capacitance over a wide temperature range, the tantalum capacitor is best suited. 
+2. We should choose an aluminum electrolytic capacitor, as the capacitance is relatively large, and Elko capacitors feature smaller form factors at similar capacitances as the tantalum type. 
+3. Elko and tantalum capacitors are polarized and can't withstand reverse polarity. Therefore, we have to choose a ceramic capacitor.
+4. Data transmission happens at rapid speeds and high frequencies. Further, the capacitance is relatively small. We should choose a ceramic capacitor, as they are readily available at those low capacitances (nF) and excel at high frequency. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/28Kisy15diA?si=o6WfG9l2kKMFwGad" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-### Example
+
+### Activity 6 - Example
 #### Transcript 
 Now, let's demonstrate this concept hands-on.
 
@@ -866,8 +868,6 @@ As soon as voltage is applied to the circuit, the capacitor charges. If we now d
 ## Level 8 - Semiconductor and Diode
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qTu7wQJbnaY?si=ODHeszIma9d0nYk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F5tJNmRe5TY?si=KlugeGmqlySTQ8Qn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
 In this lecture, you'll get to know yet another component: the diode. 
 We'll kick things off by exploring the concept of covalent bonding, setting the stage for our understanding of semiconductor materials. From there, we'll learn about semiconductors and the concept of doping. We'll then dissect the p-n junction for you to understand the workings of a diode. 
@@ -945,40 +945,45 @@ Through that, we have created a component which allows current to flow in only o
 A diode can be used to protect our circuits against reverse voltage, or to rectify alternating current to direct current. There a special diodes, such as LEDs, which light up in forward bias and Zener diodes, which allow us to protect our devices from overvoltage.
 
 ### Activity 1 - Principles
-1. Which elements perform covalent bonding and how is it done?
+1. Which elements perform covalent bonding, and how is it done?
 2. What is a semiconductor? 
 3. Explain doping. 
-4. Draw a Silicon structure in which Aluminum is inserted and one in which Phosphorus is inserted. Which of them is the P-doped semiconductor and which of them is the N-doped semiconductor. 
+4. Draw a Silicon structure and insert an Aluminum and a Phosphorus element. Which of them is the P-doped semiconductor, and which is the N-doped semiconductor? 
 
 **Solution
-1. Non-metals with non-metals. Two elements share their valence electrons to reach a full outer shell layer. 
-2. Something in-between a conductor and an insulator. A semiconductor is not conductive in its natural state. However, if a large enough potential is applied to it, electrons are able to move and the material becomes conductive. 
-3. Doping is the insertion of a foreign element into a structure. In the case of semiconductors, doping gives the semiconductor material the properties which make it ultra useful. 
-4. Silicon has four valence electrons. Therefore, each Silicon atom bonds with four more Silicon atoms, and the Silicon compound forms a crystal.  If we insert Aluminum that only has three valence electrons, a electron hole was created in the structure. Electrons from nearby Silicon atoms try to fill the electron hole, and by doings so create a new one. Therefore, we like to think that the electron holes are moving. If, on the other hand, we insert phosphorus with five valence electrons, an extra electron is now in the structure. This electron can move freely. As the negative charge can move in this example, it is called an N-doped semiconductor. 
+1. Non-metals with non-metals share their valence electrons to achieve a full outer shell.
+2. A semiconductor is something between a conductor and an insulator. It is not conductive in its natural state. However, if a large enough potential is applied, electrons can move, making the material conductive.
+3. Doping involves inserting a foreign element into a structure. In semiconductors, doping gives the material properties that make it extremely useful.
+4. Silicon has four valence electrons, allowing each silicon atom to bond with four other silicon atoms, forming a crystal. When aluminum, which has three valence electrons, is inserted, an electron hole is created in the structure. Electrons from nearby silicon atoms try to fill this hole, creating a new one in the process. This makes it seem like the electron holes are moving. As we think of positive moving charges, it is called a P-doped semiconductor. Conversely, if phosphorus, with five valence electrons, is inserted, an extra electron is added to the structure. This electron can move freely. Since the negative charge can move in this example, it is called an N-doped semiconductor.
 ### Activity 2 - PN Junction
 1. What is the depletion region in a PN junction? 
 2. What happens if we connect the positive pole of a battery to the p-side and the negative pole to the n-side of a PN junction? 
 3. What happens if we reverse the battery polarity? 
-4. What is the name of the component that represents a PN junction? Draw its circuit symbol and state what it is uses for.
+4. What is the component representing a PN junction? Draw its circuit symbol and state what it is used for.
 
 **Solution:
-1. The freely moving electrons of the N-doped semiconductor travel to the P-doped semiconductor to fill up the electron holes. Consequently, the a slim region in the N-doped semiconductor now lacks electrons, which makes this part slightly positively charged, while the P-doped semiconductor has extra electrons, which makes it slightly negatively charged. This results in an electric field between the two regions, which prevents further electrons to travel from the N-region to the P-region. 
-2. When we now connect a voltage source to the p-n junction, with the positive pole connected to the p-side and the negative pole connected to the n-side. We push the electrons to move from the n-side to the p-side. This is what we call forward bias. However, for the movement to occur, the pushing force - the voltage - must be high enough to overcome the barrier. If the voltage is higher than 0.7V, the barrier is overcome and the p-n junction becomes conductive.
-3. If we reverse the polarity of the battery, we connect the positive pole to the n-side and the negative pole to the p-side. Something entirely different happens. The electrons on the n-side are attracted to the plus pole, while the holes on the p-side are attracted to the minus pole. Therefore, the depletion region or barrier expands and no current can flow. 
+1. The freely moving electrons of the N-doped semiconductor travel to the P-doped semiconductor to fill the electron holes. Consequently, the slim region in the N-doped semiconductor now lacks electrons, which makes this part slightly positively charged, while the P-doped semiconductor has extra electrons, which makes it slightly negatively charged. This results in an electric field between the two regions, which prevents further electrons from traveling from the N-region to the P-region. 
+2. When we now connect a voltage source to the p-n junction, with the positive pole connected to the p-side and the negative pole connected to the n-side. We push the electrons to move from the n-side to the p-side. This is what we call forward bias. However, for the movement to occur, the pushing force - the voltage - must be high enough to overcome the barrier. If the voltage is higher than 0.7V, the barrier is overcome, and the p-n junction becomes conductive.
+3. If we reverse the polarity of the battery, we connect the positive pole to the n-side and the negative pole to the p-side. Something entirely different happens. The electrons on the n-side are attracted to the plus pole, while the holes on the p-side are attracted to the minus pole. Therefore, the depletion region or barrier expands, and no current can flow. 
 4. A diode. It is used for reverse polarity protection and for rectifying (translating) AC voltages to DC voltages.
 
 ### Activity 3 - Diode Types
-1. What are the three diode types that we discussed in this lecture? Draw their circuit Symbols.
+1. What are the three diode types we discussed in this lecture? Draw their circuit Symbols.
 2. What is the name of the diode that emits light in forward bias? And is this diode type also conductive in reverse bias?
-3. What is the name of the diode that becomes conductive at a precise voltage in reverse-bias?
-4. What is the name of the diode that has high switching capabilities and a lower forward voltage? How is it's junction built up?
+3. What is the name of the diode that becomes conductive at a precise voltage in reverse bias?
+4. What is the name of the diode with high-speed switching capabilities and a lower forward voltage? How is its junction built up?
 
 **Solution:
 1. Schottky Diodes, Light Emitting Diode, and Zener Diode. 
-2. LED. No, it is not. However, there's an exception. All diode become conductive in reverse bias if the applied voltage is large enough to breakdown the entire PN junction. This voltage is called the reverse breakdown voltage and can be found in many datasheets. 
-3. The Zener diode. This diode type is mostly used in reverse bias to protect different components, for example, the input of a microcontroller. 
-4. The Schottky diode. Standard diodes have forward voltages of around 0.7V, while Schottky diodes allow for forward voltages of 0.4V and less. They feature a metal-semiconductor junction instead of a PN junction, which enables it to receive those properties. 
-### Example
+![](Symbols%20Diode.jpg)
+3. LED. No, it is not. However, there's an exception. All diodes become conductive in reverse bias if the applied voltage is large enough to break down the entire PN junction. This voltage is called the reverse breakdown voltage and can be found in many datasheets. 
+4. The Zener diode. This diode type is mostly used in reverse bias to protect different components, for example, the input of a microcontroller. 
+5. The Schottky diode. Standard diodes have forward voltages of around 0.7V, while Schottky diodes allow for forward voltages of 0.4V and less. They feature a metal-semiconductor junction instead of a PN junction, which enables it to receive those properties. 
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F5tJNmRe5TY?si=KlugeGmqlySTQ8Qn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Activity 4 - Example
 #### Transcript
 Now, let's put theory into practice with a hands-on demonstration.
 
@@ -1106,30 +1111,33 @@ Finally, in the N-channel depletion type MOSFET, a conductive channel (or tunnel
 MOSFETs have faster switching speeds, higher efficiency, and are more scalable, leading to their more frequent use compared to BJTs.
 
 ### Activity 1 - Simple Transistor
-1. What is the simplest transistor type that is based on the concept of a PN-Junction? 
+1. What is the simplest transistor type based on the concept of a PN-Junction? 
 2. What are the two different variants? Describe the names of the leads attached to the three regions of the transistor. Draw their circuit symbols. 
 3. Describe the function principle of the NPN variant as a switch. 
-4. How can we use such a transistor as a current controlling device?
+4. How can we use such a transistor as a current-controlling device?
 
 **Solution:
-1. The bipolar junction transistor. It consists of a PN junction and either an added N or P region. 
-2. If we add an N-region, it's called a NPN transistor, and if we add a P-region it's called a PNP transistor. For an NPN transistor, the lead connected to the first N-region is called the Emitter, the lead that is connected to the P-region is called the Base, and the lead attached to the second N-region is called the Collector. 
-3. We are already aware of the function principle of the PN-junction. That's that it is only conductive in forward bias. If we now add a second N-region to the P-region, we get an NPN transistor. In essence, we now have two opposite facing diodes. Consequently, current is not flowing in either direction. However, if we apply a positive voltage to the base, electrons are attracted from the N-region and fill up some of the electron holes of the P-region. If enough voltage is applied, there are freely moving electrons in the P-region, which makes it conductive. Consequently, current can flow from the collector to the emitter.
-4. A current controlling device is, as the name suggests, a device with which we can control the current flow in a circuit. We can do exactly that with a BJT by varying the current flowing into the Base. As soon as current flows into the base of the transistor, the P-region becomes conductive and current can flow from the emitter to the collector. However, this current flow depends on the saturation of the P-region. The higher the base-emitter current, the more freely moving electrons, and the higher the collector-emitter current. 
+1. The bipolar junction transistor. It consists of a PN junction and an added N or P region. 
+2. If we add an N-region, it's called an NPN transistor. If we add a P-region, it's called a PNP transistor. For an NPN transistor, the lead connected to the first N-region is called the emitter, the lead connected to the P-region is called the base, and the lead attached to the second N-region is called the collector. 
+![](Level%209%20-%20Symbols%20BJT.jpg)
+3. We are already aware of the function principle of the PN junction. That's that it is only conductive in forward bias. If we add a second N-region to the P-region, we get an NPN transistor. In essence, we now have two opposite-facing diodes. Consequently, the current is not flowing in either direction. However, if we apply a positive voltage to the base, electrons are attracted from the N-region and fill up some of the electron holes of the P-region. If enough voltage is applied, there are freely moving electrons in the P-region, which makes it conductive. Consequently, current can flow from the collector to the emitter.
+4. A current-controlling device is, as the name suggests, a device with which we can control the current flow in a circuit. We can do that with a BJT by varying the current flowing into the base. As soon as current flows into the base of the transistor, the P-region becomes conductive, and current can flow from the emitter to the collector. However, this current flow depends on the saturation of the P-region. The higher the base-emitter current, the more freely moving electrons, and the higher the collector-emitter current. 
 
 ### Activity 2 - MOSFET
 1. How are MOSFETs categorized? Draw their circuit symbols. 
 2. Describe the working principle of the N-channel enhancement type MOSFET. 
 3. How is it different compared to a BJT?
-4. How is an N-channel MOSFET different form a P-channel MOSFET? 
+4. How is an N-channel MOSFET different from a P-channel MOSFET? 
 5. How is a depletion type different from an enhancement type?
 
 **Solution:
-1. Into N and P-channel MOSFETS, as well as into enhancement and depletion types. 
-2. A N-channel enhancement type MOSFET consists of four ports: source, gate, drain, and substrate body. The substrate port is internally attached to the source pin. The source is connected to the first N region, the Drain to the second, and the Gate is connected to the P-region. However, between the gate and the P-region, there is a dielectric, which allows no current to flow, and opposite the gate is the substrate body plate. When we apply a voltage between the gate and the source, an electric field between the gate and the substrate body is created. This electric field draws electrons from the N-region to the plate, which again fills up electron holes, and if enough voltage is applied the plate becomes negatively charged as in a capacitor. This charged region creates a tunnel between the two N-regions, which makes current flow possible.
-3. A MOSFET is a voltage controlling device rather than a current controlling device. The Gate of the MOSFET only requires current to charge the plate (capacitor). After the plate is charged, no more current is required to keep the MOSFET activated. Consequently, the MOSFET is more efficient. Further, it is easier to control the current that flows through a MOSFET, as we only have to vary the voltage at the Gate. By increasing the drain-source voltage, the current rises linearly in the ohmic region of the transistor. The higher the drain-source voltage gets, the larger the depletion region on the drain N-region becomes because it is in reverse bias. This enlargement in the depletion area limits the drain-source current, which we call the saturation current. The saturation current changes with the applied voltage to the gate, as the gate voltage can enlarge the tunnel. 
-4. In an N-channel MOSFET, a positive voltage must be applied to the gate relative to the source to make the MOSFET conductive, allowing current to flow between the drain and the source. For a P-channel MOSFET, the source must be at a higher potential than the drain. To turn the P-channel MOSFET on, the gate voltage must be lower than the source voltage. This means that a negative voltage relative to the source needs to be applied to the gate to allow current to flow between the source and the drain.
-5. For the enhancement type to allow current to flow from the source to the drain, we have to apply a voltage to the gate. Talking in terms of switches, this MOSFET type is a commonly open type of switch. As for switches, there's also a commonly closed type of switch. This type is called the depletion type MOSFET. In the N-channel depletion type MOSFET, a conductive channel (or tunnel) is pre-manufactured into the device. By applying a negative voltage to the gate, the channel can be narrowed or closed, reducing or stopping the current flow
+1. Into N and P-channel MOSFETs, as well as into enhancement and depletion types. 
+![](Level%209%20-%20Symbols%20MOSFETs.jpg)
+
+2. A N-channel enhancement type MOSFET consists of four ports: source, gate, drain, and substrate body. The substrate port is internally attached to the source pin. The source is connected to the first N region, the Drain to the second, and the Gate to the P-region. However, a dielectric between the gate and the P-region allows no current to flow. Opposite the gate is the substrate body plate. When we apply a voltage between the gate and the source, an electric field between the gate and the substrate body is created. This electric field draws electrons from the N-region to the plate, which again fills up electron holes, and if enough voltage is applied, the plate becomes negatively charged as in a capacitor. This charged region creates a tunnel between the two N-regions, which makes current flow possible.
+3. A MOSFET is a voltage-controlling device rather than a current-controlling device. The Gate of the MOSFET only requires current to charge the plate (capacitor). After the plate is charged, no more current is required. Consequently, the MOSFET is more efficient. Further, it is easier to control the current that flows through a MOSFET, as we only have to vary the voltage at the gate. By increasing the drain-source voltage, the current rises linearly in the ohmic region of the transistor. The higher the drain-source voltage gets, the larger the depletion region on the drain N-region becomes because it is in reverse bias. This enlargement in the depletion area limits the drain-source current, which we call the saturation current. The saturation current changes with the applied voltage to the gate, as the gate voltage can enlarge the tunnel. 
+4. In an N-channel MOSFET, a positive voltage must be applied to the gate relative to the source to make the MOSFET conductive, allowing current to flow between the drain and the source. For a P-channel MOSFET, the source must be at a higher potential than the drain. The gate voltage must be lower than the source voltage to turn the P-channel MOSFET on. This means that a negative voltage relative to the source needs to be applied to the gate to allow current to flow between the source and the drain.
+5. For the enhancement type to allow current to flow from the source to the drain, we apply a voltage to the gate. This MOSFET type is a commonly open type of switch. As for switches, there's also an originally closed type of switch. This type is called the depletion type MOSFET. In the N-channel depletion type MOSFET, a conductive channel (or tunnel) is pre-manufactured into the device. By applying a negative voltage to the gate, the channel can be narrowed or closed, reducing or stopping the current flow
 
 ### Activity 3 - Calculations
 BJT in Circuit with resistor
@@ -1138,7 +1146,7 @@ BJT in Circuit with resistor
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5mMdQ2MENU?si=ioQ0RqQ8qr724jcO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Example
+### Activity 4 - Example
 #### Transcript 1
 Now, let's put theory into practice with a hands-on demonstration.
 We will do a total of two examples. 
@@ -1283,16 +1291,16 @@ Ferromagnets are metals that become magnetic by applying a strong external magne
 We use inductors to store energy, to smoothen a current supply, or in company with a capacitor to create a stable DC from a switch mode power supply. When creating the layout, we must carefully consider their placement so that their magnetic field does not influence signal lines or integrated circuits, and so it isn't influenced by a magnetic field itself. 
 
 ### Activity 1 - Magnetism
-1. Is it possible to only have a single magnetic North or South pole without the other? Do any other property related to electronics come to your mind that has this ability?
+1. Is it possible to have only a single magnetic North or South pole without the other? Does any other property related to electronics come to mind that has this ability?
 2. What happens if we cut a bar magnet in half?
 3. What is a ferromagnetic material?
 4. How can we destroy the magnetic properties of a ferromagnet?
 
 **Solution
 1. No, they always must occur together. Yes, electric charges can exist on their own. 
-2. We get two bar magnets, each with their own magnetic North and South pole.
-3. A material that is not magnetic out of the box, but can become magnetic if a large enough outside magnetic field is applied. This is because the ferromagnet's inner bar magnets align with the external field, and stay aligned even after the field is removed.
-4.  By heating the ferromagnet, so that the inner bar magnets are randomized again. 
+2. We get two bar magnets, each with a magnetic North and South pole.
+3. A material that is not magnetic but can become magnetic if a large enough outside magnetic field is applied. This is because the ferromagnet's inner bar magnets align with the external field and stay aligned even after the field is removed.
+4. By heating the ferromagnet so that the inner bar magnets are randomized again. 
 
 ### Activity 2 - Electromagnetism
 1. What is the correlation between the current flowing in a wire and magnetic fields? What is the direction of the field lines? 
@@ -1300,16 +1308,16 @@ We use inductors to store energy, to smoothen a current supply, or in company wi
 3. Let's assume we have a current flowing through a wire and a strong magnetic field around the wire. What happens if we turn off the power supply? What happens if we activate it again? 
 
 **Solution
-1. If current is flowing through a wire (i.e. moving charges), a concentric magnetic field is created around the wire. The magnetic field strength decreases with increased distance to the wire. We can determine the direction of the field lines by using the right-hand rule. By gripping the wire and aligning the thumb in the direction of conventional current flow, the other fingers will show the direction of the field lines. 
+1. If the current is flowing through a wire (i.e., moving charges), a concentric magnetic field is created around the wire. The magnetic field strength decreases with increased distance to the wire. We can determine the direction of the field lines by using the right-hand rule. By gripping the wire and aligning the thumb in the direction of conventional current flow, the other fingers will show the direction of the field lines. 
 2. Tesla. 
 3. The magnetic field resists changes in current. In case we turn off the power supply, the magnetic field releases its stored energy and creates the pushing force that keeps the electrons flowing. This process continues until no stored energy is left. If we activate the power supply again, the wire must build up the electric field, requiring energy. Consequently, the current flow at the beginning isn't maximum, as the magnetic field initially resists the current. 
 
 ### Activity 3 - Component
-1. What is the component that is used in electronic circuits and takes advantage of electromagnetic induction? Draw its circuit symbol. How does this component achieve high inductance values?
+1. What component is used in electronic circuits taking advantage of electromagnetic induction? Draw its circuit symbol. How does this component achieve high inductance values?
 2. What are the implications of this component when placing them onto a PCB?
 
 **Solution
-1. An Inductor. They magnify the electromagnetic effect of a wire by adding many turns of wire to create a coil and can increase the inductance further by inserting a ferromagnetic material - like Iron - into the coil. 
+1. An Inductor. They magnify the electromagnetic effect of a wire by adding many turns of wire to create a coil. Further, they insert a ferromagnetic material - like Iron - into the coil. 
 2. They require a certain size and are relatively spacious. Further, it is essential to watch out for EMI (Electromagnetic Interference) in nearby PCB traces. EMI could interfere with signal lines and ICs. 
 
 ### Activity 4 - Example
@@ -1386,20 +1394,21 @@ When selecting a quartz crystal, we must select the resonance frequency, frequen
 ### Activity 1
 1. Explain the functioning of an LC circuit oscillation. What is different in an RLC circuit? 
 2. Explain the piezoelectric effect.
-3. How does a crystal take advantage of this effect for effective oscillation? Draw the circuit symbol of a crystal. What are the advantages of a crystal compared to an LC circuit? 
-4. What are factors we must consider when selecting a crystal for our microcontroller?
+3. How does a crystal harness this effect for effective oscillation? Draw the circuit symbol of a crystal. What are the advantages of a crystal compared to an LC circuit? 
+4. What must we consider when selecting a crystal for our microcontroller?
 5. Why does a crystal require load capacitors?
 
 **Solution:
-1. An LC circuit consists of an inductor and a capacitor connected in parallel. It oscillates by transferring energy between the inductor's magnetic field and the capacitor's electric field. Initially, we charge the capacitor by a power supply. Once the power supply is removed, the capacitor discharges, creating a current that flows through the inductor. The inductor resists this flowing current and builds up its magnetic field. When the capacitor is fully discharged, the inductor's magnetic field is at its maximum. The inductor then transfers energy back to the capacitor, recharging it with opposite polarity. This process repeats, causing continuous oscillation at the circuit's resonant frequency. When adding resistance to the LC circuit, the amplitude of the oscillation gradually decreases until no oscillation is left. 
-2. A quartz generates a voltage when it is subjected to mechanical stress. The inverse of this effect, is that the quartz deforms when a voltage is applied to it.
+1. An LC circuit consists of an inductor and a capacitor connected in parallel. It oscillates by transferring energy between the inductor's magnetic field and the capacitor's electric field. Initially, we charge the capacitor with a power supply. Once the power supply is removed, the capacitor discharges, creating a current that flows through the inductor. The inductor resists this flowing current and builds up its magnetic field. When the capacitor is fully discharged, the inductor's magnetic field is at its maximum. The inductor then transfers energy back to the capacitor, recharging it with opposite polarity. This process repeats, causing continuous oscillation at the circuit's resonant frequency. When adding resistance to the LC circuit, the amplitude of the oscillation gradually decreases until no oscillation is left. 
+2. A quartz generates a voltage when it is subjected to mechanical stress. The inverse of this effect is that the quartz deforms when a voltage is applied to it.
 3. A crystal oscillator circuit sustains oscillation by taking a voltage signal from the quartz resonator, amplifying it, and feeding it back to the oscillator. The oscillation occurs at the resonance frequency of the quartz resonator. 
 4. The frequency, the frequency tolerance, the temperature stability, and the load capacitance. 
 5. To stabilize the oscillation by providing the necessary capacitance for the circuit.
 
-### Activity 2 - LC Oscillator Circuit
+### Activity 2 - Example 1 (LC Oscillator Circuit)
 In this demonstration, we will create a basic LC oscillator circuit to visualize how energy is transferred between an inductor and a capacitor, creating an oscillating voltage signal.
-#### Components Needed:
+
+To build this circuit, we need the following components:
 1. A power source (5V)
 2. A breadboard
 3. An inductor (10mH)
@@ -1408,7 +1417,7 @@ In this demonstration, we will create a basic LC oscillator circuit to visualize
 6. A push button
 7. Jumper wires
 
-#### Circuit Hookup:
+Hook up:
 1. Connect the positive terminal of the power supply (5V) to one end of the breadboard.
 2. Connect the negative terminal (GND) to the other end of the breadboard.
 3. Place the inductor (10mH) into the breadboard, with one end connected to the positive rail.
@@ -1418,7 +1427,7 @@ In this demonstration, we will create a basic LC oscillator circuit to visualize
 7. Place the push button in series with the power supply to control when the circuit is energized.
 8. Use jumper wires to make the necessary connections.
 
-#### Explanation:
+Here's how it works:
 - **Initial Energizing**: When you press the push button, the power supply energizes the LC circuit.
 - **Energy Storage**: The inductor resists the sudden change in current and begins to store energy in its magnetic field. Simultaneously, the capacitor charges up.
 - **Oscillation Start**: Once you release the push button, the power supply is disconnected. The energy stored in the inductor’s magnetic field starts to transfer to the capacitor, causing it to discharge.
