@@ -131,3 +131,64 @@ Our two capacitor plates are also electrically charged, which means that they to
 
 At any point between those two plates, an electric charge would experience the same force. We call such an electric field a homogenous electric field. 
 
+## Level 3 - Getting to know the hardware
+
+To make the use of Rocketree most convenient we provide you with products that make the start into advanced model rocketry more seamless.
+
+For each path and skill that follows you will build upon our products. 
+If, for example, you want to focus on software design, you will need a flight computer to program.
+If, on the other hand, you want to get insights into launching rockets, then you will need a physical model, a flight computer, and the according software. 
+By using our products you can focus on the skill you want to develop, without having to create all aspects of advanced model rocketry yourself. 
+
+We provide you with 
+- our flight computer system **Rocketree Stack**
+- our flight software **Rocketree OS**
+- our post-flight analysis tool **Rocketree Studio**
+- and our rocket **Buffalo**
+
+Because you will work with those products a lot, we want to briefly introduce you to them.
+### Rocketree Stack
+Rocketree Stack is our newest flight computer system. 
+A flight computer has to carry out many different tasks and most often those are united on a single PCB. However, our design is highly modular and splits the tasks across three or more different boards.
+
+Buffalo Stack: 
+![](/assets/images/DSC00751-2.jpg)
+
+One module runs the main flight software and handles telemetry, another one provides readily processed sensor data, and yet another controls the outputs.
+
+Resulting in
+- Rocketree CORE (upper module)
+- Rocketree FUSION (middle module)
+- Rocketree OUT (lower module)
+#### Rocketree CORE
+![](/assets/images/Buffalo%20Stack%20-%20Core.81.jpg)Rocketree CORE is always required. It is powered by a LiPo battery and features the power management for the entire flight computer system. Further, it bears functionality to store flight data and embeds connectivity.
+#### Rocketree FUSION
+![](/assets/images/Buffalo%20Stack%20%20-%20Fusion.82.jpg)
+Then, there is Rocketree  FUSION. Its task is to perform reliable state estimation and provide accurate position, velocity and attitude estimates to the CORE board for flight decisions and the control of active stabilization systems.
+#### Rocketree OUT
+![](/assets/images/Buffalo%20Stack%20-%20Out.83.jpg)The third board is the Buffalo OUT. This one incorporates pyro channels to trigger heating wires and electric ignitors, as well as servo ports to control the thrust vector control system.
+
+#### Rocketree CONNECT
+The boards interface with each other via a stackable header that we call Rocketree CONNECT.
+Rocketree CONNECT, supplies battery voltage, regulated 5V, and regulated 3.3V from the CORE board to all the other sub-boards.
+
+Through this connector, a total of 255 FUSION and OUT boards could be added to one CORE board, which makes its use cases almost endless.
+### Rocketree OS
+Rocketree OS is our fully functional operating system that was improved over several flight tests and years. 
+
+When launching a rocket, it will do the work for you, and when you decide to program Rocketree Stack yourself you can base your work upon parts of our operating system. 
+This way you don't have to program everything, enabling you to focus on one aspect of the software or on one board at a time.
+### Rocketree Studio
+![](/assets/images/Visualization%20GUI%20-%20JM%20Eagle%20Control%20-%20angles.jpg)
+
+Rocketree Studio is our post flight analysis tool. 
+
+It allows you to reconstruct a flight with the flight data your flight computer recorded. Rocketree Studio visually represents all relevant information in a visually appealing and convenient way. Some of its representation are even adjustable; so, you can tweak them to fit your needs. 
+
+This tool is invaluable if you want to analyze your flights, find potential error sources, and improve your rocket's performance. 
+### Buffalo
+![](/assets/images/Buffalo%20L%20Block%202%20-%20First%20Asm.84.jpg)The Buffalo rocket comes with a parachute deployment system, the flight computer integration, and a thrust vector control system (TVC). The TVC comes in three to five engine variants, which allows you to choose whatever suits you best.  
+
+Buffalo is a highly modular rocket that you can adjust to your needs. If for example, you choose to design your own TVC you can easily implement it on this rocket. Further, you can easily insert extension between two existing modules if you wish. 
+
+ If you are not much into CAD design at all then you can use Buffalo to test your flight software and to conduct flights. 
