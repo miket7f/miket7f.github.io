@@ -358,6 +358,8 @@ Furthermore, integrating a USB-to-UART bridge like the CH340 or CP2102 is essent
 ## Level 8 - STM32
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hjtwoY0-eYs?si=bwWvjl2EVYiXZp4_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
+
+
 We will take things further and implement a plain microcontroller chip at this level. This implementation is the final and most advanced form, and a slight error in your design can easily lead to the entire PCB being dysfunctional. 
 
 The implementation of microcontroller chips varies greatly by the used chips. Two famous lines of the microcontroller are the ATMEGA and the STM32 lines. The ATMEGA microcontrollers are commonly implemented in Arduino boards, while the STM32 microcontrollers are heavily used in the industry. Here, we will describe the STM32 line of microcontrollers. 

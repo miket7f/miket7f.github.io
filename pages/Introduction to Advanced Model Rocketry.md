@@ -8,7 +8,7 @@ Estimated time: 1h
 
 ## Level 1 - Advanced Model Rocketry 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WLidfyD4eUM?si=bem5eocQpaBIVsTQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cjVwNH6Tl-k?si=F9xDsfhb36Ba1h5D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>+
 
 The newest missions of SpaceX, Blue Origin, Virgin Galactic, Rocket Lab, NASA, and ESA inspire many people to become involved in aerospace engineering. I, for example, wanted to study aerospace engineering ever since I saw the side-by-side landing of the Falcon Heavy side boosters during their first test flight. 
 ### Model Rocketry 
@@ -28,9 +28,6 @@ As mentioned, we use parachutes to recover our model rockets, so we don’t have
 Once we've completed the physical design and selected the appropriate engine, we can simulate the flight using software like Open Rocket. After running the simulation and ensuring everything is in order, it’s time to launch the rocket.
 
 Launching a model rocket is a straightforward process, yet incredibly fun!
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wfUrUc6JtHw?si=hJ_v5sFWVHvJLoUD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ### Real Rocketry
 Conventional model rocketry is a fun endeavor and relatively easy to do. However, it has almost nothing to do with the real deal.
 

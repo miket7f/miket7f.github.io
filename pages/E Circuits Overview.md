@@ -97,3 +97,14 @@ Sensors are our sensory organs with which the rocket knows its current state or 
 And finally, telemetry enables us to control our flight computer from afar and receive valuable information mid-flight.  
 
 The next section of this course is about to begin, so buckle up and get ready to design the circuits for our flight computer. It’s essential to have a clear grasp of the fundamentals we’ve covered so far, as these concepts will underpin the more advanced topics we will explore. If there are any areas where you need more clarity, now is the time to review them. Understanding these basics thoroughly will be crucial as we move forward.
+
+
+### Activity 1: Unit Dissection
+As you just learned, we can split every flight computer into many sub-units.
+Your task is to do the same with the Buffalo Rev. E flight computer. 
+The different sections are marked in different colors, and your match the different colors to the corresponding sub-section name. 
+
+Additionally, major components of each section will be provided with names. So, you can look them up in the web if you don't know what the section could be about. 
+
+**Solution:**
+
