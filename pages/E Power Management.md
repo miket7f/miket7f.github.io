@@ -89,12 +89,38 @@ Would an magnesium nail corrode in a zinc-sulfate solution?
 
 **Solution:**
 The nobility of a metal depends on its reactivity. The nobler the metal the less likely it is to act as the anode in an oxidation/reduction reaction. Consequently, the nobler the metal, the likelier galvanic corrosion occurs. Generally, metals found in their pure state in nature are referred to as noble metals. 
+
 Silver is found in its raw state in nature. Zinc, on the other hand, mostly occurs with other elements
 in the form of minerals. So, we can conclude that silver is nobler than zinc. 
+
 Magnesium is less noble than zinc. Therefore, the magnesium nail would corrode (oxidize) in a zinc-sulfate solution. 
 
+### Activity 3 - Copper/Zinc Galvanic Cell
+Describe what a half-cell is? 
+What happens if we connect two half-cells through a wire?
+Why do we need a membrane between the two half-cells.
 
+**Solution:**
+A half-cell is structure that contains both an electrode and an electrolyte. In the case of the Zinc in the zinc sulfate solution. The zins metal is the electrode, while the zinc-sulfate solution is the electrolyte. 
 
+A half-cell on its own doesn't react in any way. However, if we connect two half-cells that feature metals with different nobilities and oxidation reduction reaction occurs. In the case of a zinc/copper cell. The zinc gives up electrons that move through the wire. These electrons attract cupper ions from the copper ion solution, which become solid and attach to the copper electrode. The zinc elements that gave up the electrons are now ions too, which makes them liquid and dissolve in the zinc-sulfate solution. 
+
+Even though the reaction would initially work, there would be a point at which both the zinc and copper sulfate solutions would be charged to such extend that they wouldn't take up any more ions. The positively charged zinc ions that occupy the zinc sulfate solution, lead to the solution becoming net positively charged. The missing copper ions in the copper sulfate solution, lead to the copper sulfate solution being negatively charged. To counteract the build up of charge in the sulfate solution, a sulfate movement occurs between the two half-elements through the membrane. The sulfate ions move from the copper sulfate to the zinc sulfate solution, making both neutral again. The membrane allows for this sulfate movement to occur while preventing the movement of other elements.  
+
+### Activity 4 - Standard Potential and Charging
+When does the reaction in a galvanic cell (Cu/Zn) stop? 
+How is the principle behind recharging? 
+Explain the standard potential. 
+Determine the standard potential of a zinc/magnesium cell with the help of the internet. 
+
+**Solution:**
+When there are too few zinc elements and copper ions available for the reaction to occur. Before the reaction stops entirely, the cell voltage decreases. 
+
+The reaction is reverted by applying a voltage to the two poles pushing the electrons from the nobler to the less noble metal. Through that the less noble metal ions again take up the electrons and become solid, while the nobler metal gives up electrons and dissolves in its solution again. However, for some galvanic cells this process might be inefficient, as the metals might dissovle unevenly. 
+
+The standard potential is the voltage measured of the element compared to a hydrogen electrode. If the element gives up electrons to the hydrogen electrode it has a negative standard potential, while if it receives electrons from the hydrogen electrode, it has a positive standard potential. 
+
+Zinc has a standard potential of -0.76V, while Magnesium has a standard potential of -2.36V. Therefore, the nobler zinc would act as the cathode, while the magnesium would represent the anode (give up electrons). The potential of a zinc/magnesium cell is around -0.76V-(-2.36V) = 1.6V.
 
 ## Level 2 - Battery Selection
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ukjpkTd8uA8?si=lP3KWA9C-QxQtW0q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -206,6 +232,91 @@ The next factor when selecting the battery is the cell number. A cell number of 
 Then, there is the C-rating, which states how much charge-discharge current a battery can handle at its capacity. 
 
 And finally, there are different battery connectors, such as the T-plug, EC3, and the XT plugs. Batteries most often feature the female plug, while we have to incorporate the male plug on our boards. 
+
+### Activity 1 - Battery Types
+Given different scenarios, you should select the best battery type for the application. 
+
+A vehicle, where the lightest and tiniest form factor are most important. 
+An application, where reliability and safety are of utmost importance. 
+A vehicle with a cubic form factor of 60x30x10mm that aims to maximize the capacity for this given volume. 
+A vehicle that requires a voltage supply of 7.2V. 
+
+**Solution:**
+Li-Ion. The battery type with the highest energy density. Therefore, also the battery with the tiniest and lightest possible form factor. 
+
+NiMH. Impresses with its safeness and reliability. 
+
+LiPo. This one is a little bit more tricky, as you might be undecided between LiPo and Li-Ion. However, given the volume constraints, we know that LiPo batteries are available in many more form factors. Assuming that we can have a battery with the exact dimensions, the reached capacity can be way more for the same volume compared to using a standard Li-Ion cylindrical battery. 
+
+2 celled LiPo/Li-Ion or a 6 celled NiMH. 
+### Activity 2 - Capacity and Voltage
+What are the four C's of battery selection?
+What does 1500mAh mean, if it is stated on a battery? 
+How much of the stated capacity can we actually use? 
+How do the voltage and capacity change, if battery cells are connected in series vs. in parallel? 
+
+**Solution:**
+Capacity, C-Rating, Cell-number, and Connector
+
+1500mAh refers to the battery's capacity. The capacity is the amount of energy stored in the battery. In the case of this 1.5Ah battery, we could discharge it with 1A of current for one and a half hour. 
+
+To not damage a battery due to discharging, it shall usually not discharge more than 80% of its capacity. 
+
+If two battery cells are connected in series, the voltage doubles while the capacity remains the same. If we connect two batteries in parallel, the capacity doubles while the voltage remains the same. 
+
+### Activity 2 - C-Rating and Connectors
+What does the C-Rating of the battery indicate. What does a C-Rating of 1 imply. 
+Please decode the following battery specification:  LiPo 25C 3S 1Ah
+Name the three most common battery connectors. 
+
+Your job is to assign, the most suited battery connector to the given specifications. 
+A flight computer that needs to safe as much space as possible. 
+A PCB that requires a very robust connector. 
+
+Do we mostly have to implement the male or female plug on our PCB? 
+
+**Solution:**
+The C-Rating of the battery states the allowed current draw in dependence of the battery's capacity. A C-Rating of 1, means that 1A can be drawn if the battery has a capacity of 1Ah. 
+
+The battery has a capacity of 1Ah, a C-Rating of 25C, and is a three-celled LiPo type. 
+
+T-plug, XT60 plug, and the EC3. 
+
+Either an XT30 plug or a T-plug would be recommendable, due to their low footprint. 
+The XT60 plug is a favorable choice for a very rigid and reliably connection. 
+
+Most batteries come with the female plug. Therefore, we have to implement the male plug on our boards. 
+### Activity 3 - Calculations
+Determine the nominal voltage of the battery: LiPo 3S. 
+
+How long can we draw 1.5A of current from a 150mAh LiPo battery if we don't want to deep discharge the battery? 
+
+We have a red LED (forward voltage = 2.2V) powered by 1S LiPo battery. What resistance value do we have to choose to not exceed the LED's current rating of 20mA? We want to operate this LED for over 5h. What capacity do we have to choose? What is the minimal C-Rating required for the task? (Capacity used from fully charged voltage to nominal voltage is around 50-60%)
+
+We have a 5C 6S 1.5Ah NiMH battery. We want to supply a pyro channel that requires 6A of current for a few ms. Our continuous current draw is expected to be 0.5A, and we want to battery to operate for a full hour. Our voltage regulator requires a input voltage of at least 7.2V. Can we use this battery? 
+
+**Solution:**
+The nominal cell voltage of a LiPo is around 3.6V or 3.7V. Therefore a three-celled LiPo that connects those three cells in series indicated by the "S", has a nominal voltage of $V=3*3.6=10.8V$ or $V=3*3.7=11.1V$
+
+$C_{80}=0.15Ah*0.8=0.12Ah$
+$t=\dfrac{C_{80}}{I}=0.08h=4.8 min$
+Assuming we only discharge 80% of the battery's capacity, it can run for around 4.8min. 
+
+The voltage range of a LiPo battery is 4.2V (fully charged) to 3V (fully discharged). To not exceed the maximum limits we select the resistor based on the battery's highest voltage. $R=\dfrac{V_{battery-max}-V_{forward-voltage}}{I_{LED-max}}=\dfrac{4.2V-2.2V}{0.02A}=100Ω$
+The current flow at the beginning of the battery discharge is: 
+$I_{LED-max}=\dfrac{V_{battery-max}-V_{forward-voltage}}{R}=20mA$
+$I_{LED-min}=\dfrac{V_{battery-min}-V_{forward-voltage}}{R}=\dfrac{3V-2.2V}{100A}=8mA$
+We use the average current consumption to calculate the capacity. $I_{avg}=\dfrac{I_{LED-max}+I_{LED-min}}{2}=14mA$
+$C_{80}=I_{avg}*t=0.014A*5h=0.07Ah$
+We divide the capacity by the 80% for us to get the capacity rating that we have to watch out for when buying the battery. 
+$C=\dfrac{C_{80}}{0.8}=0.0875Ah=87.5mAh$
+
+The maximum current draw this battery can supply is: $I_{max}=C*E=5\dfrac{1}{h}*1.5Ah=7.5A$. Therefore, the battery can supply the required 6A of current. 
+The capacity of this battery is 1.5Ah. $C_{80}=1.5Ah*0.8=1.2Ah$
+$t=\dfrac{C_{80}}{I}=2.4h$. The battery can run for over 2 hours, which is more than sufficient to power our flight computer.
+The nominal voltage of a NiMH cell is 1.2V, while the fully charged voltage is 1.4V, and the fully discharged is 1V. For a six-celled battery that connects the cells in series, this results in 6V, 7.2V, and 8.4V. Therefore, the battery can be used from its fully charged stated until its nominal voltage state. Below its nominal voltage, we can not use the battery as it goes below the minimum regulator input voltage. 
+Base on internet sources, we discharge around 50-60% of the battery's capacity from fully charged to their nominal voltage. As we can discharge below nominal voltage, we can only use around 50-60% of the battery's capacity. $C_{50}=1.5Ah*0.5=0.75Ah$
+$t=\dfrac{C_{50}}{I}=1.5h$. We still get over an hour battery lifetime, which leads us to the conclusion that this battery is sufficient for the application. 
 
 ## Level 3 - Voltage Regulation 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_E5jVRzjCOM?si=mibO3TJppCDcBDQa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
