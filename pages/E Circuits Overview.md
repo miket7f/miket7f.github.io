@@ -108,3 +108,8 @@ Additionally, major components of each section will be provided with names. So, 
 
 **Solution:**
 
+### Activity 2
+Which subsection/subsections could we leave out to implement in our flight computer for it to still be able to record flight data? 
+
+**Solution:**
+Telemetry

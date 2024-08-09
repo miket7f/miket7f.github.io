@@ -71,6 +71,31 @@ Zinc is in the zinc sulfate solution, and copper is in a copper sulfate solution
 How much voltage a cell creates depends on the standard potential, which is given in the galvanic series. A zinc/copper cell creates around 1.11V. This voltage will reduce gradually until no electron movement is left. This is what we call a discharged battery.
 
 A zinc/copper cell is usually not rechargeable. However, for rechargeable batteries, we connect a higher voltage to the two poles of the battery that pressure the materials to undo the previous reaction. 
+
+### Activity 1 - Oxidation - Reduction
+Explain oxidation and reduction? 
+Can one of them occur on its own?
+What is the location called at which oxidation occurs? 
+
+**Solution:**
+Oxidation occurs when an element gives up electrons, while reduction is the process in which an electron receives electrons. 
+Neither of them can occur on their own. If one elements wants to give up electrons, another must be willing to take them up. 
+The place of oxidation is the anode. 
+
+### Activity 2 - Noble Metals
+What is a noble metal? 
+Which element is nobler silver or zinc? 
+Would an magnesium nail corrode in a zinc-sulfate solution? 
+
+**Solution:**
+The nobility of a metal depends on its reactivity. The nobler the metal the less likely it is to act as the anode in an oxidation/reduction reaction. Consequently, the nobler the metal, the likelier galvanic corrosion occurs. Generally, metals found in their pure state in nature are referred to as noble metals. 
+Silver is found in its raw state in nature. Zinc, on the other hand, mostly occurs with other elements
+in the form of minerals. So, we can conclude that silver is nobler than zinc. 
+Magnesium is less noble than zinc. Therefore, the magnesium nail would corrode (oxidize) in a zinc-sulfate solution. 
+
+
+
+
 ## Level 2 - Battery Selection
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ukjpkTd8uA8?si=lP3KWA9C-QxQtW0q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
