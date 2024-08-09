@@ -310,6 +310,8 @@ We use the average current consumption to calculate the capacity. $I_{avg}=\dfra
 $C_{80}=I_{avg}*t=0.014A*5h=0.07Ah$
 We divide the capacity by the 80% for us to get the capacity rating that we have to watch out for when buying the battery. 
 $C=\dfrac{C_{80}}{0.8}=0.0875Ah=87.5mAh$
+$C_r=\dfrac{I_{max}}{E}=\dfrac{0.02A}{0.0875}=0.229$. 
+The next possible battery that we will be able to choose is a 1S 1C 100mAh LiPo battery. 
 
 The maximum current draw this battery can supply is: $I_{max}=C*E=5\dfrac{1}{h}*1.5Ah=7.5A$. Therefore, the battery can supply the required 6A of current. 
 The capacity of this battery is 1.5Ah. $C_{80}=1.5Ah*0.8=1.2Ah$
