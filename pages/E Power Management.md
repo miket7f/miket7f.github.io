@@ -422,6 +422,33 @@ Finally, there are switching regulators, which not only change the voltage but a
 
 When designing a switching regulator circuit, we provide the passive components as they do not fit into an IC. When selecting the capacitors, we have to watch out for their ESR, their RMS ratings, and the voltages they can withstand. For the inductor and diode, we have to consider their allowed currents. 
 
+### Activity 1 - Shunt Regulator
+What is the breakdown voltage of a diode? 
+Which diode uses this voltage to its advantage and what is the voltage called in its case? 
+How can we create a regulator based on this diode? 
+What are the limitations of this type of regulator? 
+
+**Solution:**
+The breakdown voltage is the voltage above which the diode even becomes conductive in reverse bias.
+
+The Zener diode uses this voltage to be able to clamp signals and to protect ICs. The breakdown voltage of the Zener diode is known as the Zener voltage. 
+
+To create one of the simplest regulators, we utilize a Zener diode and a resistor. We put the resistor in series to the Zener diode, and the Zener diode in reverse bias. The input voltage must be larger than the Zener voltage. Through that, the Zener diode becomes conductive in reverse bias, and the voltage that drops across it is approximately the Zener voltage. The output is connected in parallel to the Zener diode, which ensures a constant voltage supply based on a variable input voltage.
+
+The limitations of this design are that it allows only small output currents and that it draws continues current. Both limitations are due to the current limiting resistor before the Zener diode. As we apply a larger voltage than the Zener voltage, the diode becomes conductive. Without a resistor, the current that could flow can become very large and damage the circuit. So, we must select the resistor to be large enough so that the flowing current is low enough to not damage the diode. If no load is connected to the circuit, the Zener diode will provide a constant output voltage. However, if we connect a load, the load draws additional current. This current leads to a larger voltage drop across the resistor, which leads to less voltage drop across the diode. Therefore, the drawn current by the load must be so small that the voltage drop across the resistor isn't significantly increased. A too high current draw leads to a decrease in output voltage. 
+
+### Activity 2 - Linear Voltage Regulator
+How can we improve upon the shunt regulator design? What is the new voltage regulator called?
+What are the advantages of this regulator? 
+
+**Solution:**
+To increase the effectiveness of the shunt regulator, we add a transistor to the circuit. We connect the shunt regulator to the base and a resistor form the base to the input voltage. The input voltage must again be above the Zener voltage. Through that, the Zener voltage provides a stable reference voltage for the transistor base. The collector of the transistor is connected to the input voltage, while the emitter is connected to the output voltage. The voltage on the base is larger than the collector voltage by the base-emitter voltage (mostly 0.7V). Therefore, we have a constant output voltage of the Zener voltage - 0.7V from the emitter to the ground. The more current we draw on the output side, the more current will flow into the base. Remember, the relationship between the collector-emitter current and the base-emitter current is proportional by hfe. This regulator is called a linear regulator.
+
+The major advantage is that this regulator allows for higher current draws, as the current must not flow through the current limiting resistor but instead can flow through the transistor. The transistor operates in its active region, which enables it to limit the current flow based on the attached load.  
+### Activity 3 - Linear Voltage Regulator
+### Example - Shunt Regulator
+
+
 ## Level 4 - Regulator Circuit Design
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9X6rjfNuQeQ?si=kBMgazga21G-Xe_F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### Lecture
