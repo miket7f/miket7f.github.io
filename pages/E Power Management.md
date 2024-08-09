@@ -445,7 +445,7 @@ What are the advantages of this regulator?
 To increase the effectiveness of the shunt regulator, we add a transistor to the circuit. We connect the shunt regulator to the base and a resistor form the base to the input voltage. The input voltage must again be above the Zener voltage. Through that, the Zener voltage provides a stable reference voltage for the transistor base. The collector of the transistor is connected to the input voltage, while the emitter is connected to the output voltage. The voltage on the base is larger than the collector voltage by the base-emitter voltage (mostly 0.7V). Therefore, we have a constant output voltage of the Zener voltage - 0.7V from the emitter to the ground. The more current we draw on the output side, the more current will flow into the base. Remember, the relationship between the collector-emitter current and the base-emitter current is proportional by hfe. This regulator is called a linear regulator.
 
 The major advantage is that this regulator allows for higher current draws, as the current must not flow through the current limiting resistor but instead can flow through the transistor. The transistor operates in its active region, which enables it to limit the current flow based on the attached load.  
-### Activity 3 - Linear Voltage Regulator
+### Activity 3
 ### Example - Shunt Regulator
 
 
